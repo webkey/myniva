@@ -1,0 +1,74 @@
+/*icons*/
+[class|="depict-icon"],
+[class*=" depict-icon-"]{
+	background:url(../img/sprite-icons.png) 0 0 no-repeat;
+	display: inline-block;
+	vertical-align: top;
+}
+.depict-icon-arrow-wb{ background-position: 0 0; width: 10px; height: 7px; }
+.depict-icon-arrow-wt{ background-position: 0 -27px; width: 11px; height: 7px; }
+.depict-icon-arrow-br{ background-position: 0 -54px; width: 7px; height: 10px; }
+.depict-icon-arrow-bl{ background-position: 0 -84px; width: 7px; height: 10px; }
+.depict-icon-arrow-bt{ background-position: 0 -114px; width: 10px; height: 7px; }
+.depict-icon-arrow-bb{ background-position: 0 -141px; width: 10px; height: 7px; }
+/*icons end*/
+
+/*depict files*/
+[class|="depict-files"],
+[class*=" depict-files-"]{
+	background:url(../img/sprite-files.png) 0 0 no-repeat;
+	display: inline-block;
+	vertical-align: top;
+}
+.depict-files-pdf{ background-position: 0 0; width: 39px; height: 46px; }
+.depict-files-xls{ background-position: 0 -66px; width: 39px; height: 46px; }
+.depict-files-doc{ background-position: 0 -132px; width: 39px; height: 46px; }
+.depict-files-zip{ background-position: 0 -198px; width: 39px; height: 46px; }
+.depict-files-jpg{ background-position: 0 -264px; width: 39px; height: 46px; }
+/*depict files end*/
+
+/*social icons*/
+[class|="soc-icon"],
+[class*=" soc-icon-"] {
+	background:url(../img/sprite-social.png) 0 0 no-repeat;
+	display: inline-block;
+	vertical-align: top;
+}
+/*social icons end*/
+
+/*arrows*/
+[class|="arrow"],
+[class*=" arrow-"] {
+	background:url(../img/sprite-arrows.png) 0 0 no-repeat;
+	display: inline-block;
+	vertical-align: top;
+}
+/*arrows end*/
+
+/*form icons*/
+[class|="icon-form"],
+[class*=" icon-form-"] {
+	background:url(../img/sprite-forms.png) 0 0 no-repeat;
+	display: inline-block;
+	vertical-align: top;
+}
+/*form icons end*/
+
+/*stars*/
+[class|="icon-star"],
+.icon-star,
+[class*=" icon-star-"]{
+	background:url(../img/sprite-rating.png) 0 0 no-repeat;
+	display: inline-block;
+	vertical-align: top;
+}
+/*stars end*/
+
+/*corners*/
+[class|="corner"],
+[class*=" corner-"] {
+	background:url(../img/sprite-corners.png) 0 0 no-repeat;
+	display: inline-block;
+	vertical-align: top;
+}
+/*corners end*/
