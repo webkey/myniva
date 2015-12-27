@@ -34,7 +34,7 @@ input[type="reset"],
 button{
 	font: 16px/20px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	color: #fff;
-	padding: 12px 18px;
+	padding: 12px 25px;
 	border: 1px solid transparent;
 	background: #d32e2e;
 	-webkit-transition: 0.2s;
@@ -53,8 +53,8 @@ input[type="submit"]:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 button:active{
-	right: -1px;
-	bottom: -1px;
+	/*right: -1px;*/
+	/*bottom: -1px;*/
 }
 /*btn-default end*/
 /*btn-default-alt*/
