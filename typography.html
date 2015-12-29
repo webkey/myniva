@@ -155,6 +155,7 @@
 							</div>
 						</div>
 						<p>Сегодня группа компаний «Нива» с головным офисом в г. Солигорск имеет производственные подразделения в Солигорске, Уречье, Любани, свободных экономических зонах «Минск» и «Могилёв» со штатом сотрудников свыше 2600 работников. Площадь производственных цехов составляет свыше 60 000 квадратных метров. Ежегодно группа компаний производит более 40 000 тонн машиностроительной продукции.</p>
+						<!--table styling-->
 						<div class="table">
 							<table class="tbl">
 								<thead>
@@ -214,6 +215,69 @@
 								</tbody>
 							</table>
 						</div>
+						<!--table styling end-->
+						<h4>Таблица без стилей</h4>
+						<!--default table-->
+						<div class="table">
+							<table>
+								<thead>
+									<tr>
+										<th>При этом</th>
+										<th>Обратите внимание</th>
+										<th>Что в таблице может</th>
+										<th>Отсутствовать <br> шапка</th>
+										<th>Как таковая</th>
+									</tr>
+								</thead>
+								<tfoot>
+									<tr>
+										<td>Итого</td>
+										<td>55%</td>
+										<td>23422</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+									</tr>
+								</tfoot>
+								<tbody>
+									<tr>
+										<td>Содержаться</td>
+										<td colspan="2">объединённые ячейки</td>
+										<!--<td></td>-->
+										<td>как в колонках</td>
+										<td>так и встроках</td>
+									</tr>
+									<tr>
+										<td>Например так</td>
+										<td>30%</td>
+										<td>14343</td>
+										<td>Информация</td>
+										<td>в таблицах</td>
+									</tr>
+									<tr>
+										<td>Компания производит продукции</td>
+										<td>13%</td>
+										<td>23233</td>
+										<td>Площадь производственных цехов составляет свыше <nobr>60 000</nobr></td>
+										<td>читабельной</td>
+									</tr>
+									<tr>
+										<td>&nbsp;</td>
+										<td>30%</td>
+										<td>14343</td>
+										<td>Информация</td>
+										<td>в таблицах</td>
+									</tr>
+									<tr>
+										<td>Вот так</td>
+										<td>13%</td>
+										<td>23233</td>
+										<td>Да</td>
+										<td>Нет</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--default table end-->
 						<!--download files items-->
 						<div class="files">
 							<!--files item-->
@@ -301,10 +365,23 @@
 							</label>
 							<!--custom select end-->
 						</div>
-						<div style="padding: 0 0 28px;">
+						<div>
 							<!--breadcrumbs-->
 							<div class="breadcrumbs">
 								<div class="breadcrumbs__item"><a href="#">Продукция</a><i class="arrow fa fa-chevron-right"></i></div>
+								<div class="breadcrumbs__item breadcrumbs__item_has-drop">
+									<a href="#"><span>Материалы</span><i class="arrow-drop fa fa-chevron-down"></i></a>
+									<div class="breadcrumbs-drop">
+										<div class="breadcrumbs-drop__holder">
+											<div class="breadcrumbs-drop__item"><a href="#">Оборудование для очистной выемки</a></div>
+											<div class="breadcrumbs-drop__item"><a href="#">Проходческо-очистное оборудование</a></div>
+											<div class="breadcrumbs-drop__item"><a href="#">Обогатительное оборудование</a></div>
+											<div class="breadcrumbs-drop__item"><a href="#">Вспомогательное оборудование</a></div>
+											<div class="breadcrumbs-drop__item"><a href="#">Подъемно- транспортное оборудование</a></div>
+										</div>
+									</div>
+									<i class="arrow fa fa-chevron-right"></i>
+								</div>
 								<div class="breadcrumbs__item breadcrumbs__item_has-drop">
 									<a href="#"><span>Обогатительное оборудование</span><i class="arrow-drop fa fa-chevron-down"></i></a>
 									<div class="breadcrumbs-drop">
@@ -319,14 +396,16 @@
 									<i class="arrow fa fa-chevron-right"></i>
 								</div>
 								<div class="breadcrumbs__item breadcrumbs__item_has-drop breadcrumbs__item_last">
-									<a href="#"><span>Обогатительное оборудование</span><i class="arrow-drop fa fa-chevron-down"></i></a>
+									<a href="#"><span>Подъемно-транспортное оборудование, или даже длиннее пунк</span><i class="arrow-drop fa fa-chevron-down"></i></a>
 									<div class="breadcrumbs-drop">
 										<div class="breadcrumbs-drop__holder">
 											<div class="breadcrumbs-drop__item"><a href="#">Оборудование для очистной выемки</a></div>
 											<div class="breadcrumbs-drop__item"><a href="#">Проходческо-очистное оборудование</a></div>
+											<div class="breadcrumbs-drop__item"><a href="#">Вспомогательное оборудование</a></div>
 											<div class="breadcrumbs-drop__item"><a href="#">Материалы</a></div>
 											<div class="breadcrumbs-drop__item"><a href="#">Вспомогательное оборудование</a></div>
-											<div class="breadcrumbs-drop__item"><a href="#">Подъемно- транспортное оборудование</a></div>
+											<div class="breadcrumbs-drop__item"><a href="#">Обогатительное оборудование</a></div>
+											<div class="breadcrumbs-drop__item"><a href="#">Вспомогательное оборудование</a></div>
 										</div>
 									</div>
 								</div>

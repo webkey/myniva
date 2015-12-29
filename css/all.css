@@ -89,7 +89,7 @@ img{
 	border: none;
 	vertical-align: top;
 }
-b, strong{
+b, strong, th{
 	font-family:'gothampro-bold', Arial, Helvetica, sans-serif;
 	font-weight:normal;
 }
@@ -222,8 +222,7 @@ strong em{
 	padding: 0 5px 0 0;
 }
 /*numbered list (OL) styling end*/
-
-/*default table styling*/
+/*table styling*/
 .table{
 	overflow: auto;
 	max-width: 100%;
@@ -273,7 +272,20 @@ strong em{
 	font-family: 'gothampro-bold', Arial, Helvetica, sans-serif;
 	background: #e5eef6;
 }
-/*default table styling end*/
+/*table styling end*/
+/*default table*/
+table{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+table td,
+table th{
+	padding: 5px;
+	border: 1px solid #99bddb;
+	font-size: 14px;
+	line-height: 1.4;
+}
+/*default table end*/
 /*blockquote*/
 .blockquote{
 	background-color: #e5eef6;

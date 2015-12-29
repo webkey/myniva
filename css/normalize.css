@@ -67,5 +67,5 @@ blockquote:before, blockquote:after, q:before, q:after{ content: ''; content: no
 ins{ text-decoration: none; }
 del{ text-decoration: line-through; }
 fieldset{ border: none; margin: 0; padding: 0; }
-table{ border: 0; width: 100%; padding: 0; margin: 0; }
+table{ border: 0; padding: 0; margin: 0; }
 /* reset end */
