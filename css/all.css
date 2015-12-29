@@ -610,12 +610,11 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	padding-left: 0;
 }
 .breadcrumbs__item .arrow{
-	background: url(../img/sprite-icons.png) 0 -54px;
 	position: absolute;
-	right: 12px;
+	right: 13px;
 	top: 13px;
-	width: 7px;
-	height: 10px;
+	color: #0059a6;
+	font-size: 11px;
 }
 .breadcrumbs a{
 	color: #333;
@@ -634,11 +633,14 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	margin: 0 32px 0 0;
 }
 .breadcrumbs__item_has-drop .arrow{
+	position: absolute;
 	right: auto;
 	left: 100%;
 	margin-left: 13px;
 	pointer-events: none;
 	z-index: -1;
+	color: #0059a6;
+	font-size: 11px;
 }
 .breadcrumbs__item_has-drop:last-of-type,
 .breadcrumbs__item_has-drop:last-child,
@@ -666,14 +668,20 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 }
 .breadcrumbs__item_has-drop .arrow-drop{
 	position: absolute;
-	right: 10px;
-	top: 13px;
-	background: url(../img/sprite-icons.png) 0 -141px;
-	width: 10px;
-	height: 7px;
+	right: 9px;
+	top: 11px;
+	color: #0059a6;
+	font-size: 11px;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
 }
 .breadcrumbs__item_has-drop:hover .arrow-drop{
-	background-position: 0 -114px;
+	/*-webkit-transform: rotate(-180deg);*/
+	/*-ms-transform: rotate(-180deg);*/
+	/*transform: rotate(-180deg);*/
+	-webkit-transform: rotateX(-180deg);
+	-ms-transform: rotateX(-180deg);
+	transform: rotateX(-180deg);
 }
 .breadcrumbs-drop{
 	border: 1px solid #0059a6;
@@ -818,7 +826,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	line-height: 1;
 	color: #0059a6;
 	margin-top: -5px;
-	z-index: -1;
+	pointer-events: none;
 }
 /*main navigation end*/
 /*user options*/
