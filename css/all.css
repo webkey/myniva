@@ -630,7 +630,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	background: #fff;
 	width: 258px;
 	padding: 0;
-	margin: 0 32px 0 0;
+	margin: 0 32px 8px 0;
 }
 .breadcrumbs__item_has-drop .arrow{
 	position: absolute;
@@ -685,9 +685,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 }
 .breadcrumbs-drop{
 	border: 1px solid #0059a6;
-	border-top-color: #fff;
 	background: #fff;
-	padding: 0 13px 10px;
 	position: absolute;
 	left: -1px;
 	right: -1px;
@@ -697,6 +695,12 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	-webkit-transition: opacity 0.3s;
 	transition: opacity 0.3s;
 	opacity: 0;
+}
+.breadcrumbs-drop__holder{
+	padding: 1px 13px 9px;
+	background: #fff;
+	position: relative;
+	top: -1px;
 }
 .breadcrumbs__item_has-drop:hover>.breadcrumbs-drop{
 	top: 100%;
