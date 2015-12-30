@@ -748,7 +748,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 }
 .header{
 	position: relative;
-	z-index: 5;
+	z-index: 3;
 }
 .main{
 	padding: 0 0 130px;
@@ -837,10 +837,13 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	border-top: 1px solid #a3c3df;
 	position: relative;
 }
+.nav-list li.hide-element{
+	display: none;
+}
 .nav-list li>a{
 	display: block;
 	position: relative;
-	padding: 14px 30px 13px;
+	padding: 14px 40px 13px 30px;
 	font: 14px/17px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	color: #0059a6;
@@ -872,28 +875,29 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .nav-list li.active>.depict-angle,
 .nav-list li.active>a>.depict-angle{
 	color: #fff;
-	-webkit-transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
-	transform: rotate(90deg);
-}
-.nav-list li.has-drop-alt.active>.depict-angle,
-.nav-list li.has-drop-alt.active>a>.depict-angle{
-	-webkit-transform: rotate(0deg);
-	-ms-transform: rotate(0deg);
-	transform: rotate(0deg);
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
 }
 /*nav-list end*/
 
 /*nav-drop*/
 .nav-drop{
 	background: #e5eef6;
+	display: none;
 }
-.has-drop-alt .nav-drop{
+.drop-visible{
 	width: 240px;
 	height: 100%;
 	position: fixed;
 	left: 240px;
 	top: 0;
+}
+.two-menu-active .drop-visible{
+	display: block;
+}
+.drop-visible .nav-drop__list{
+	border-bottom: 1px solid #b7d0e6;
 }
 .nav-drop__list li{
 	border-top: 1px solid #a3c3df;
@@ -911,16 +915,36 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	background: #d32e2e;
 	color: #fff;
 }
-.nav-drop__list li.active>.depict-angle,
-.nav-drop__list li.active>a>.depict-angle{
-	color: #fff;
+.two-menu-active .has-drop-visible>a,
+.two-menu-active .has-drop-visible.active>a,
+.two-menu-active .has-drop-hidden>a,
+.two-menu-active .has-drop-hidden.active>a{
+	background: #e5eef6;
+	color: #0059a6;
+}
+.nav-list .has-drop-visible>.depict-angle,
+.nav-list .has-drop-visible>a>.depict-angle,
+.nav-list .has-drop-hidden>.depict-angle,
+.nav-list .has-drop-hidden>a>.depict-angle{
 	-webkit-transform: rotate(90deg);
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
 }
+.nav-drop__list li.active>.depict-angle,
+.nav-drop__list li.active>a>.depict-angle{
+	color: #fff;
+}
 /*nav-drop end*/
 
 /*nav-sub-drop*/
+.nav-sub-drop{
+	display: none;
+}
+/*exclusion*/
+.drop-visible .nav-drop__list>li:first-child .nav-sub-drop{
+	display: block;
+}
+/*exclusion end*/
 .nav-sub-drop__list li{
 	border-top: 1px solid #ccdeed;
 	position: relative;
@@ -942,9 +966,6 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .nav-sub-drop__list li.active>.depict-angle,
 .nav-sub-drop__list li.active>a>.depict-angle{
 	color: #fff;
-	-webkit-transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
-	transform: rotate(90deg);
 }
 /*nav-sub-drop end*/
 /*main navigation end*/

@@ -144,7 +144,7 @@ function showInput(){
 
 /*custom scroll init*/
 function customScrollInit(){
-	$(".panel-frame, .has-drop-alt .nav-drop").mCustomScrollbar({
+	$(".panel-frame, .has-drop-visible .nav-drop, .has-drop-hidden .nav-drop").mCustomScrollbar({
 		//axis:"x",
 		theme:"minimal-dark",
 		scrollbarPosition: "inside",
@@ -180,28 +180,31 @@ function navAccordion() {
 	//
 	//	e.preventDefault();
 	//});
-
-	$($navigationList).on('click', 'li.has-drop:not(.has-drop-alt) > a', function (e) {
+	$($navigationList).on('click', 'a', function (e) {
 		var $currentLink = $(this);
 		var $currentItem = $currentLink.closest('li');
-		var $drop = $('.drop-js');
-		if($currentItem.hasClass('active')){
-			closeDrops($drop);
-			return;
-		}
-		closeDrops($drop);
-		$currentItem
-				.children('.drop-js').stop().slideToggle(dur, function () {
-			$(this).closest('li').addClass('active');
-		});
+		if(!$currentItem.has('ul').length || $currentItem.has('.drop-visible').length) { return; }
+
+		var $siblingDrop = $currentItem.siblings('li:not(.has-drop-visible, .has-drop-hidden)').find('.nav-drop, .nav-sub-drop');
+		var $currentItemDrop = $currentItem.find('.nav-drop, .nav-sub-drop');
 
 		e.preventDefault();
+		if($currentItem.hasClass('active')){
+			closeDrops($siblingDrop);
+			closeDrops($currentItemDrop);
+			return;
+		}
+		closeDrops($siblingDrop);
+		closeDrops($currentItemDrop);
+		$currentItem
+				.children('.nav-drop, .nav-sub-drop')
+				.stop().slideDown(dur);
+		$currentItem.addClass('active');
 	});
 	/*close all drops*/
 	function closeDrops(drop) {
-		drop.slideUp(dur, function () {
-			$(this).closest('li').removeClass('active');
-		});
+		drop.slideUp(dur);
+		drop.closest('li').removeClass('active');
 	}
 }
 /*navigation accordion end*/
