@@ -161,10 +161,10 @@
 		.example-search-form form{ float: left; width: 100%; }
 		.example-search-form .input-wrap{ padding: 0; position: relative; }
 		.example-search-form .input-wrapper{ padding: 0; }
-		.example-search-form .btn-search{ position: absolute; right: 9px; top: 10px; width: 16px; height: 16px; }
-		.example-search-form .btn-search .icon-magnifier{ width: 11px; height: 11px; background: #fff; border: 2px solid #afafaf; border-radius: 50%; display: block; position: relative; }
-		.example-search-form .btn-search .icon-magnifier:after{ content: ''; position: absolute; right: -6px; bottom: -3px; width: 6px; border: 1px solid #afafaf; border-radius: 1px; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); pointer-events: none; }
-		.example-search-form .btn-search:hover .icon-magnifier, .example-search-form .btn-search:hover .icon-magnifier:after{ border-color: #8f8f8f; }
+		.example-search-form .btn-search-open{ position: absolute; right: 9px; top: 10px; width: 16px; height: 16px; }
+		.example-search-form .btn-search-open .icon-magnifier{ width: 11px; height: 11px; background: #fff; border: 2px solid #afafaf; border-radius: 50%; display: block; position: relative; }
+		.example-search-form .btn-search-open .icon-magnifier:after{ content: ''; position: absolute; right: -6px; bottom: -3px; width: 6px; border: 1px solid #afafaf; border-radius: 1px; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); pointer-events: none; }
+		.example-search-form .btn-search-open:hover .icon-magnifier, .example-search-form .btn-search-open:hover .icon-magnifier:after{ border-color: #8f8f8f; }
 		/*example-search-form end*/
 
 		/*example form*/
@@ -413,7 +413,7 @@
 								<div class="input-wrapper">
 									<input type="search" placeholder="Search text">
 								</div>
-								<div class="btn-search">
+								<div class="btn-search-open">
 									<span class="icon-magnifier"></span>
 									<input type="submit" value="">
 								</div>

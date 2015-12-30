@@ -117,42 +117,26 @@ function breadDrop(){
 function showInput(){
 	var searchForm = $('.search-form');
 	if(!searchForm.length){ return; }
-	searchForm.on('click', '.btn-search', function(e){
-		var currentSearchBtn = $(this);
-		var currentForm = currentSearchBtn.closest('.search-form');
-		var searchWrapper = currentForm.find('.input-wrapper');
-		var searchField = searchWrapper.find('input');
-		var dur = 200;
-		if ( currentSearchBtn.closest('form').find('input').val().length && currentSearchBtn.parents('.search-form').find('.input-wrapper').is(':visible') ){
-			currentSearchBtn.closest('form').submit();
-		} else {
-			var maxWidth = searchWrapper.data('max-width');
-			var minWidth = searchWrapper.data('min-width');
-			currentForm.addClass('search-init');
-			searchWrapper
-				.stop()
-				.animate({
-					width: maxWidth
-				}, dur, function(){
-					searchWrapper.find('input').val('');
-					searchWrapper.find('input').trigger('focus');
-				});
-			searchField.stop().fadeIn(dur);
-			var yourClick = true;
-			$(document).on('click.EventSearch', function (e) {
-				if ( !yourClick && $(e.target).closest($('.input-wrapper')).length  == 0 ) {
-					currentForm.removeClass('search-init');
-					searchWrapper
-						.stop()
-						.animate({
-							width:minWidth
-						});
-					searchField.stop().fadeOut(dur);
-					$(document).unbind('click.EventSearch');
-				}
-				yourClick = false;
+	$('body').on('click', '.switcher-form-js', function(e){
+		var $currentBtnOpen = $(this);
+		var $currentWrap = $currentBtnOpen.closest('.header');
+		var $searchForm = $currentWrap.find('.search-form');
+		if ($searchForm.is(':visible')) {
+			closeSearchForm($searchForm);
+			return;
+		}
+
+		var dur = 300;
+		$searchForm
+			.stop()
+			.slideDown(dur, function(){
+				$searchForm.find('input[type="search"]').val('');
+				$searchForm.find('input[type="search"]').trigger('focus');
+				$currentWrap.addClass('form-opened')
 			});
-			e.preventDefault();
+		function closeSearchForm(form){
+			form.stop().slideUp(dur);
+			form.closest('.header').removeClass('form-opened')
 		}
 	});
 }
