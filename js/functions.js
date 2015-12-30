@@ -130,8 +130,8 @@ function showInput(){
 		$searchForm
 			.stop()
 			.slideDown(dur, function(){
-				$searchForm.find('input[type="search"]').val('');
-				$searchForm.find('input[type="search"]').trigger('focus');
+				$searchForm.find('input[type="search"], input[type="text"]').val('');
+				$searchForm.find('input[type="search"], input[type="text"]').trigger('focus');
 				$currentWrap.addClass('form-opened')
 			});
 		function closeSearchForm(form){
@@ -144,7 +144,7 @@ function showInput(){
 
 /*custom scroll init*/
 function customScrollInit(){
-	$(".panel-frame").mCustomScrollbar({
+	$(".panel-frame, .has-drop-alt .nav-drop").mCustomScrollbar({
 		//axis:"x",
 		theme:"minimal-dark",
 		scrollbarPosition: "inside",
@@ -154,6 +154,58 @@ function customScrollInit(){
 }
 /*custom scroll init end*/
 
+/*navigation accordion*/
+function navAccordion() {
+	var dur = 200;
+	var $navigationList = $('.nav-list');
+	if (!$navigationList.length) {
+		return;
+	}
+
+	//$('.btn-nav').on('click', function (e) {
+	//	var current = $(this);
+	//
+	//	var headerHeight = current.closest('.wrapper').find('.header').outerHeight();
+	//	var windowHeight = $(window).height();
+	//	current
+	//			.addClass('active')
+	//			.closest('.header')
+	//			.find('.nav-holder')
+	//			.height(windowHeight - headerHeight)
+	//			.stop().slideToggle(dur, function () {
+	//		$(this)
+	//				.closest('.header')
+	//				.find('.btn-nav').toggleClass('active', $(this).is(':visible'));
+	//	});
+	//
+	//	e.preventDefault();
+	//});
+
+	$($navigationList).on('click', 'li.has-drop:not(.has-drop-alt) > a', function (e) {
+		var $currentLink = $(this);
+		var $currentItem = $currentLink.closest('li');
+		var $drop = $('.drop-js');
+		if($currentItem.hasClass('active')){
+			closeDrops($drop);
+			return;
+		}
+		closeDrops($drop);
+		$currentItem
+				.children('.drop-js').stop().slideToggle(dur, function () {
+			$(this).closest('li').addClass('active');
+		});
+
+		e.preventDefault();
+	});
+	/*close all drops*/
+	function closeDrops(drop) {
+		drop.slideUp(dur, function () {
+			$(this).closest('li').removeClass('active');
+		});
+	}
+}
+/*navigation accordion end*/
+
 /** ready/load/resize document **/
 
 $(document).ready(function(){
@@ -161,6 +213,7 @@ $(document).ready(function(){
 	customSelect($('select.cselect'));
 	//breadDrop();
 	showInput();
+	navAccordion();
 });
 $(window).load(function () {
 	customScrollInit();

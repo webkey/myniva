@@ -19,7 +19,7 @@
 </head>
 <body>
 <!--wrapper-->
-<div class="wrapper">
+<div class="wrapper two-menu-active">
 	<!--sidebar-->
 	<aside class="panel">
 		<!--logo-->
@@ -30,9 +30,9 @@
 				<!-- main navigation -->
 				<nav class="nav">
 					<ul class="nav-list">
-						<li class="active">
+						<li class="nav-item has-drop active">
 							<a href="#"><span>О компании</span><i class="depict-angle fa fa-chevron-right"></i></a>
-							<div class="nav-drop">
+							<div class="nav-drop drop-js">
 								<ul class="nav-drop__list">
 									<li><a href="#">Насосы</a></li>
 									<li><a href="#">Электронасосные агрегаты</a></li>
@@ -46,11 +46,39 @@
 								</ul>
 							</div>
 						</li>
-						<li><a href="#"><span>Новости и закупки</span></a></li>
-						<li><a href="#"><span>Предприятия</span><i class="depict-angle fa fa-chevron-right"></i></a></li>
-						<li><a href="#"><span>Продукция</span><i class="depict-angle fa fa-chevron-right"></i></a></li>
-						<li><a href="#"><span>Партнёры и представители</span></a></li>
-						<li><a href="#"><span>Контакты</span></a></li>
+						<li class="nav-item"><a href="#"><span>Новости и закупки</span></a></li>
+						<li class="nav-item has-drop-alt active">
+							<a href="#"><span>Предприятия</span><i class="depict-angle fa fa-chevron-right"></i></a>
+							<div class="nav-drop drop-js">
+								<ul class="nav-drop__list">
+									<li class="active">
+										<a href="#">ОАО «ЛМЗ Универсал»<i class="depict-angle fa fa-chevron-right"></i></a>
+										<div class="nav-sub-drop">
+											<ul class="nav-sub-drop__list">
+												<li><a href="#">О компании</a></li>
+												<li><a href="#">Продукция</a></li>
+												<li><a href="#">Новости</a></li>
+												<li><a href="#">Закупки</a></li>
+												<li><a href="#">Партнёрам</a></li>
+												<li><a href="#">Клиентам</a></li>
+												<li><a href="#">Контакты</a></li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<a href="#">Филиал «Завод горно-шахтного оборудования»<i class="depict-angle fa fa-chevron-right"></i></a>
+									</li>
+									<li><a href="#">Филиал «Нива- Сервис». ДЧУП «Окнасервисцентр»</a></li>
+									<li><a href="#">ДЧПУП «Завод силовой гидравлики»</a></li>
+									<li><a href="#">ПЧУП «Завод горного машиностроения»</a></li>
+									<li><a href="#">ДУП «Белгидравлика»</a></li>
+									<li><a href="#">ООО «Нива- Кривбасс»</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="nav-item"><a href="#"><span>Продукция</span><i class="depict-angle fa fa-chevron-right"></i></a></li>
+						<li class="nav-item"><a href="#"><span>Партнёры и представители</span></a></li>
+						<li class="nav-item"><a href="#"><span>Контакты</span></a></li>
 					</ul>
 				</nav>
 				<!-- main navigation end -->
@@ -75,7 +103,7 @@
 		<div class="max-wrap">
 			<!--search form-->
 			<div class="search-form">
-				<div class="header-align">
+				<div class="large-align">
 					<form action="#">
 						<div class="input-wrapper">
 							<input type="search" placeholder="Поиск по сайту" />
@@ -90,7 +118,7 @@
 			</div>
 			<!--search form end-->
 			<div class="header-holder">
-				<div class="header-align">
+				<div class="large-align">
 					<div class="header-options">
 						<!--search form opener-->
 						<div class="btn-search-open switcher-form-js">
@@ -113,7 +141,7 @@
 		<div class="max-wrap">
 			<div class="content">
 				<div class="heading">
-					<div class="heading-align">
+					<div class="large-align">
 						<!--breadcrumbs-->
 						<div class="breadcrumbs">
 							<div class="breadcrumbs__item"><a href="#">Продукция</a><i class="arrow"></i></div>
@@ -456,11 +484,16 @@
 <!--footer-->
 <footer class="footer">
 	<div class="max-wrap">
-		<!--footer holder-->
-		<div class="footer-holder">
-
+		<div class="large-align">
+			<div class="footer-holder">
+				<div class="footer-col footer-col_left">
+					<span class="copyright">&copy; УПП «Нива» 2005 - 2015</span>
+				</div>
+				<div class="footer-col footer-col_right">
+					<div class="site-developer"><span class="text-inner">Разработка сайта –</span> <a href="#" class="site-developer_logo">Astronim*Support</a></div>
+				</div>
+			</div>
 		</div>
-		<!--footer holder end-->
 	</div>
 </footer>
 <!--footer end-->

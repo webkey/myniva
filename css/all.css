@@ -728,6 +728,16 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 /*TEXT PAGES end*/
 
 /*main blocks*/
+.panel{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 240px;
+	height: 100%;
+	background: #ccdeed;
+	min-height: 260px;
+	z-index: 4;
+}
 .wrapper{
 	margin: 0;
 	min-height: 100%;
@@ -744,38 +754,38 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	padding: 0 0 130px;
 	position: relative;
 	clear: both;
-	z-index: 4;
+	z-index: 3;
 }
 .content{
 	margin: 0;
 	min-height: 50px;
 	padding: 30px 0 0;
 }
-.heading-align{
+.large-align{
 	max-width: 1300px;
 	padding: 0 30px;
 	margin: 0 auto;
 }
-.panel{
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 240px;
-	height: 100%;
-	background: #f4f4f4;
-	z-index: 99;
-	min-height: 260px;
-}
 .footer{
-	margin: -68px auto 0;
+	margin: -68px auto 0 240px;
 	height: 68px;
-	background: #ccdeed;
 	position: relative;
 	clear: both;
 	z-index: 5;
 }
+/*MAX-WRAP*/
 .max-wrap{
 	max-width: 1600px;
+	padding-left: 240px;
+}
+.two-menu-active .max-wrap{
+	padding-left: 480px;
+}
+.footer .max-wrap{
+	max-width: 1360px;
+	padding-left: 0;
+}
+.two-menu-active .footer .max-wrap{
 	padding-left: 240px;
 }
 .content-align{
@@ -783,6 +793,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	padding: 0 30px;
 	margin: 0 auto;
 }
+/*MAX-WRAP end*/
 /*main blocks end*/
 
 /*sidebar*/
@@ -817,6 +828,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 }
 /*logo end*/
 /*main navigation*/
+/*nav-list*/
 .nav-list{
 	border-bottom: 1px solid #a3c3df;
 	background: #ccdeed;
@@ -836,15 +848,16 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 }
-.nav-list>li>a:hover{
+.nav-list>li>a:hover,
+.nav-list>li:hover>a{
 	background: #e5eef6;
 }
-.nav-list>li.active>a{
+.nav-list li.active>a{
 	background: #d32e2e;
 	color: #fff;
 }
-.nav-list>li>.depict-angle,
-.nav-list>li>a>.depict-angle{
+.nav-list li>.depict-angle,
+.nav-list li>a>.depict-angle{
 	position: absolute;
 	right: 22px;
 	top: 50%;
@@ -856,15 +869,32 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 }
-.nav-list>li.active>.depict-angle,
-.nav-list>li.active>a>.depict-angle{
+.nav-list li.active>.depict-angle,
+.nav-list li.active>a>.depict-angle{
 	color: #fff;
 	-webkit-transform: rotate(90deg);
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
 }
-.nav-drop{}
-.nav-drop__list{}
+.nav-list li.has-drop-alt.active>.depict-angle,
+.nav-list li.has-drop-alt.active>a>.depict-angle{
+	-webkit-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+/*nav-list end*/
+
+/*nav-drop*/
+.nav-drop{
+	background: #e5eef6;
+}
+.has-drop-alt .nav-drop{
+	width: 240px;
+	height: 100%;
+	position: fixed;
+	left: 240px;
+	top: 0;
+}
 .nav-drop__list li{
 	border-top: 1px solid #a3c3df;
 	position: relative;
@@ -873,9 +903,50 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	background: #e5eef6;
 	text-transform: none;
 }
-.nav-drop__list li>a:hover{
+.nav-drop__list li>a:hover,
+.nav-drop__list li:hover>a{
 	background: #fff;
 }
+.nav-drop__list li.active>a{
+	background: #d32e2e;
+	color: #fff;
+}
+.nav-drop__list li.active>.depict-angle,
+.nav-drop__list li.active>a>.depict-angle{
+	color: #fff;
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+/*nav-drop end*/
+
+/*nav-sub-drop*/
+.nav-sub-drop__list li{
+	border-top: 1px solid #ccdeed;
+	position: relative;
+}
+.nav-sub-drop__list li>a{
+	font-family: 'gothampro-regular', Arial, Helvetica, sans-serif;
+	background: #fff;
+	text-transform: none;
+}
+.nav-sub-drop__list li>a:hover,
+.nav-sub-drop__list li:hover>a{
+	background: #fff;
+	text-decoration: underline;
+}
+.nav-sub-drop__list li.active>a{
+	background: #d32e2e;
+	color: #fff;
+}
+.nav-sub-drop__list li.active>.depict-angle,
+.nav-sub-drop__list li.active>a>.depict-angle{
+	color: #fff;
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+/*nav-sub-drop end*/
 /*main navigation end*/
 /*user options*/
 .panel .user-options{
@@ -951,11 +1022,6 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .header-holder:before,
 .header-holder:after { content: ""; display: table; }
 .header-holder:after { clear: both; }
-.header-align{
-	max-width: 1300px;
-	padding: 0 30px;
-	margin: 0 auto;
-}
 .header-options{
 	float: right;
 	padding: 22px 0 23px;
@@ -973,19 +1039,20 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .search-form form:after { content: ""; display: table; }
 .search-form form:after { clear: both; }
 .search-form .input-wrapper{
-	padding: 15px 0;
+	padding: 15px 55px 15px 60px;
 	position: relative;
 	opacity: 0;
-	-webkit-transition: opacity 0.3s;
-	transition: opacity 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
 }
 .header.form-opened .search-form .input-wrapper{
 	opacity: 1;
 }
-.search-form .input-wrapper input[type="search"]{
+.search-form .input-wrapper input[type="search"],
+.search-form .input-wrapper input[type="text"]{
 	color: #333;
 	font: 26px/30px 'gothampro-light', Arial, Helvetica, sans-serif;
-	padding: 10px 55px 10px 60px;
+	padding: 10px 0;
 	height: auto;
 	background: none;
 	box-shadow: none;
@@ -1013,8 +1080,9 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 }
 .btn-search .depict-search{
 	color: #666;
-	font-size: 46px;
+	font-size: 30px;
 	line-height: inherit;
+	vertical-align: top;
 	-webkit-transition: 0.3s;
 	transition: 0.3s;
 }
@@ -1031,20 +1099,20 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	position: absolute;
 	top: 50%;
 	right: 0;
-	margin: -20px 0 0;
+	margin: -15px 0 0;
 	display: block;
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
 	cursor: pointer;
 }
 .btn-search-close:before,
 .btn-search-close:after{
 	content: '';
 	position: absolute;
-	left: -8px;
-	top: 18px;
-	height: 4px;
-	width: 56px;
+	left: -0.3em;
+	top: 0.9em;
+	height: 3px;
+	width: 40px;
 	background: #666;
 	border-radius: 5px;
 	-webkit-transition: 0.3s;
@@ -1102,9 +1170,60 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 /*main end*/
 
 /*footer*/
-/*footer holder*/
-.footer-holder{
-	padding: 10px 0 0;
+.footer .max-wrap{
+	background: #ccdeed;
+	height: 100%;
 }
-/*footer holder end*/
+.footer .large-align{
+	height: 100%;
+}
+.footer-holder{
+	padding: 0;
+	height: 100%;
+	font-size: 0;
+	line-height: 1;
+	letter-spacing: -4px;
+	color: #0059a6;
+}
+.footer-holder:before{
+	content: '';
+	display: inline-block;
+	display:-moz-inline-stack;
+	height: 100%;
+	vertical-align: middle;
+}
+.footer-col{
+	display: inline-block;
+	vertical-align: middle;
+	width: 50%;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: normal;
+}
+.footer-col_left{
+	text-align: left;
+}
+.footer-col_right{
+	text-align: right;
+}
+.site-developer{
+	line-height: 23px;
+}
+.site-developer_logo{
+	display: inline-block;
+	vertical-align: top;
+	background: url(../img/bg-developer.png) no-repeat;
+	width: 123px;
+	height: 23px;
+	font-size: 12px;
+	line-height: 23px;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+	-webkit-transition: all 0.1s;
+	transition: all 0.1s;
+}
+.site-developer_logo:hover{
+	background-position: -123px 0;
+}
 /*footer end*/
