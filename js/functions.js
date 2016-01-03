@@ -212,13 +212,9 @@ function breadDrop(){
 
 /*breadcrumbs add hover class*/
 function breadHover(){
-	$('.breadcrumbs__item_has-drop').on('mouseenter', function () {
-		$(this).addClass('hover');
-	}).on('mouseleave', function () {
-		$(this).removeClass('hover');
-	});
+	var $breadcrumbsItemHasDrop = $('.breadcrumbs__item_has-drop');
 	if (md.mobile()) {
-		$('.breadcrumbs__item_has-drop').on('click', function (e) {
+		$breadcrumbsItemHasDrop.on('click', function (e) {
 			if ($(this).hasClass('hover')){
 				return;
 			}
@@ -234,7 +230,13 @@ function breadHover(){
 		$(document).on('click', function () {
 			$('.breadcrumbs__item_has-drop').removeClass('hover');
 		});
+		return;
 	}
+	$breadcrumbsItemHasDrop.on('mouseenter', function () {
+		$(this).addClass('hover');
+	}).on('mouseleave', function () {
+		$(this).removeClass('hover');
+	});
 }
 /*breadcrumbs add hover class end*/
 
