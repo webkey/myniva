@@ -4,6 +4,8 @@ function placeholderInit(){
 }
 /* placeholder end */
 
+var md = new MobileDetect(window.navigator.userAgent);
+
 /* multiselect init */
 // add ui position add class
 function addPositionClass(position, feedback, obj){
@@ -101,18 +103,6 @@ function selectResize(){
 }
 /* multiselect init end */
 
-/*breadcrumbs drop*/
-function breadDrop(){
-	$('bread-has-drop').on('click', function (e) {
-		e.stopPropagation();
-		var $currentItem = $(this);
-		$('bread-has-drop').removeClass('opened');
-		$currentItem.addClass('opened');
-		e.preventDefault();
-	})
-}
-/*breadcrumbs drop end*/
-
 /*showInput */
 function showInput(){
 	var searchForm = $('.search-form');
@@ -144,7 +134,7 @@ function showInput(){
 
 /*custom scroll init*/
 function customScrollInit(){
-	$(".panel-frame, .has-drop-visible .nav-drop, .has-drop-hidden .nav-drop").mCustomScrollbar({
+	$(".panel-frame, .drop-visible__holder").mCustomScrollbar({
 		//axis:"x",
 		theme:"minimal-dark",
 		scrollbarPosition: "inside",
@@ -209,14 +199,55 @@ function navAccordion() {
 }
 /*navigation accordion end*/
 
+/*breadcrumbs drop*/
+function breadDrop(){
+	$('bread-has-drop').on('click', function (e) {
+
+		var $currentItem = $(this);
+		$('bread-has-drop').removeClass('opened');
+		$currentItem.addClass('opened');
+	})
+}
+/*breadcrumbs drop end*/
+
+/*breadcrumbs add hover class*/
+function breadHover(){
+	$('.breadcrumbs__item_has-drop').on('mouseenter', function () {
+		$(this).addClass('hover');
+	}).on('mouseleave', function () {
+		$(this).removeClass('hover');
+	});
+	if (md.mobile()) {
+		$('.breadcrumbs__item_has-drop').on('click', function (e) {
+			if ($(this).hasClass('hover')){
+				return;
+			}
+			e.stopPropagation();
+			$(this).toggleClass('hover');
+			e.preventDefault();
+		});
+
+		$('.breadcrumbs-drop').on('click', function (e) {
+			e.stopPropagation();
+		});
+
+		$(document).on('click', function () {
+			$('.breadcrumbs__item_has-drop').removeClass('hover');
+		});
+	}
+}
+/*breadcrumbs add hover class end*/
+
 /** ready/load/resize document **/
 
 $(document).ready(function(){
+
 	placeholderInit();
 	customSelect($('select.cselect'));
-	//breadDrop();
 	showInput();
 	navAccordion();
+	//breadDrop();
+	breadHover();
 });
 $(window).load(function () {
 	customScrollInit();
