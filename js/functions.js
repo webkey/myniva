@@ -213,7 +213,7 @@ function breadDrop(){
 /*breadcrumbs add hover class*/
 function breadHover(){
 	var $breadcrumbsItemHasDrop = $('.breadcrumbs__item_has-drop');
-	if (!md.mobile()) {
+	if (md.mobile()) {
 		$breadcrumbsItemHasDrop.on('click', function (e) {
 			if ($(this).hasClass('hover')){
 				return;
