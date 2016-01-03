@@ -1065,9 +1065,9 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	padding: 15px 55px 15px 60px;
 	position: relative;
 	opacity: 0;
-	-webkit-transform: scale(-0.1, -0.1);
-	-ms-transform: scale(-0.1, -0.1);
-	transform: scale(-0.1, -0.1);
+	-webkit-transform: scale(0.9, 0.9);
+	-ms-transform: scale(0.9, 0.9);
+	transform: scale(0.9, 0.9);
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 }
