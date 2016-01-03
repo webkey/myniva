@@ -105,12 +105,12 @@ function selectResize(){
 
 /*showInput */
 function showInput(){
-	var searchForm = $('.search-form');
+	var searchForm = $('.search-form__header');
 	if(!searchForm.length){ return; }
 	$('body').on('click', '.switcher-form-js', function(e){
 		var $currentBtnOpen = $(this);
 		var $currentWrap = $currentBtnOpen.closest('.header');
-		var $searchForm = $currentWrap.find('.search-form');
+		var $searchForm = $currentWrap.find('.search-form__header');
 		if ($searchForm.is(':visible')) {
 			closeSearchForm($searchForm);
 			return;
@@ -242,6 +242,35 @@ function breadHover(){
 }
 /*breadcrumbs add hover class end*/
 
+/*slick sliders init*/
+function slickSlidersInit(){
+	/*promo slider*/
+	var sliderPromoContainer = $('.promo-slider');
+	if(sliderPromoContainer.length){
+		//sliderPromoContainer.on('init', function () {
+		//	$(this).find('.slick-current').addClass('slick-animate');
+		//});
+		sliderPromoContainer.slick({
+			fade: true,
+			speed: 500,
+			infinite: true,
+			//autoplay: true,
+			//autoplaySpeed: 3000,
+			dots: true,
+			cssEase: 'ease-in-out',
+			arrow: false
+		});
+	}
+	/*promo slider end*/
+}
+/*slick sliders init end*/
+
+/*main tabs*/
+function mainTab(){
+
+}
+/*main tabs end*/
+
 /** ready/load/resize document **/
 
 $(document).ready(function(){
@@ -252,6 +281,8 @@ $(document).ready(function(){
 	navAccordion();
 	//breadDrop();
 	breadHover();
+	slickSlidersInit();
+	mainTab();
 });
 $(window).load(function () {
 	customScrollInit();

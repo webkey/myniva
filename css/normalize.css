@@ -69,3 +69,7 @@ del{ text-decoration: line-through; }
 fieldset{ border: none; margin: 0; padding: 0; }
 table{ border: 0; padding: 0; margin: 0; }
 /* reset end */
+*, :after, :before {
+	/*-webkit-font-smoothing: antialiased;*/
+	/*-moz-osx-font-smoothing: grayscale;*/
+}
