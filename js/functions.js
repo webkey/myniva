@@ -213,12 +213,13 @@ function breadDrop(){
 /*breadcrumbs add hover class*/
 function breadHover(){
 	var $breadcrumbsItemHasDrop = $('.breadcrumbs__item_has-drop');
-	if (md.mobile()) {
+	if (!md.mobile()) {
 		$breadcrumbsItemHasDrop.on('click', function (e) {
 			if ($(this).hasClass('hover')){
 				return;
 			}
 			e.stopPropagation();
+			$breadcrumbsItemHasDrop.removeClass('hover');
 			$(this).toggleClass('hover');
 			e.preventDefault();
 		});
@@ -233,6 +234,7 @@ function breadHover(){
 		return;
 	}
 	$breadcrumbsItemHasDrop.on('mouseenter', function () {
+		$breadcrumbsItemHasDrop.removeClass('hover');
 		$(this).addClass('hover');
 	}).on('mouseleave', function () {
 		$(this).removeClass('hover');
