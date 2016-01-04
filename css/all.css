@@ -518,11 +518,21 @@ button.cselect .select-inner{
 	background-color: #d32e2e;
 	border: 1px solid #d32e2e;
 	border-radius: 0;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+}
+button.cselect:hover .select-inner{
+	background-color: #b41e18;
+	border-color: #b41e18;
 }
 button.cselect,
 button.cselect .select-inner{
 	font: 14px/17px 'gothampro-regular', Arial, Helvetica, sans-serif;
 	color: #fff;
+}
+button.cselect:active{
+	right: auto;
+	bottom: auto;
 }
 button.cselect .select-text{
 	display: block;
@@ -750,11 +760,11 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	position: relative;
 	z-index: 3;
 }
-.header_main{
-	position: fixed;
-	width: 100%;
-	left: 0;
-	top: 0;
+.header-main{
+	margin: 0 0 -57px;
+}
+.header-main .header-options{
+	padding: 8px 0 0;
 }
 .main{
 	padding: 0 0 130px;
@@ -1052,7 +1062,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	-webkit-background-size: cover;
 	background-size: cover;
 }
-.header_main .header-holder{
+.header-main .header-holder{
 	background: none;
 }
 .header-holder:before,
@@ -1367,7 +1377,6 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 }
 .connect li>a:active{
 	background: #b41e18;
-	right: -1px;
 	bottom: -1px;
 }
 .connect li>a i{
@@ -1805,6 +1814,77 @@ li.active .rubrics-thumbs__icon{
 /*synopsis end*/
 
 /*location*/
+.location{
+	position: relative;
+}
+/*location head*/
+.location-head{
+	padding: 30px 25px 20px;
+	background: #d32e2e;
+}
+.location .location-head{
+	width: 425px;
+	position: absolute;
+	top: 40px;
+	left: 40px;
+	z-index: 9;
+	height: 77px;
+}
+.location-select{
+	float: left;
+	width: 176px;
+	margin: 0 0 0 14px;
+}
+button.cselect-local .select-inner{
+	padding: 0 0 1px;
+	border-bottom-color: #fff;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+}
+button.cselect-local,
+button.cselect-local .select-inner{
+	font: 14px/17px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: -0.01em;
+}
+button.cselect-local:hover .select-inner{
+	background-color: #d32e2e;
+	border-color: #d32e2e;
+}
+button.cselect-local.ui-state-active .select-inner,
+button.cselect-local:hover .select-inner{
+	border-color: transparent;
+}
+button.cselect-local .ui-icon .arrow-select {
+	right: 0;
+	top: 5px;
+}
+div.cselect-local .ui-multiselect-checkboxes{
+	margin: 6px -17px;
+	padding: 10px 0;
+}
+.location-link{
+	float: right;
+	font: 14px/17px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	letter-spacing: -0.01em;
+	text-transform: uppercase;
+	color: #fff;
+	margin-left: 20px;
+}
+.location-link a{
+	text-decoration: none;
+	color: #fff;
+	padding-bottom: 3px;
+	border-bottom: 1px dotted #fff;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+}
+.location-link a:hover{
+	border-bottom-color: transparent;
+}
+/*location head end*/
+
+/*location map*/
 .local-map {
 	width: 100%;
 	height: 485px;
@@ -1838,6 +1918,49 @@ li.active .rubrics-thumbs__icon{
 .gm-style-iw a {
 	color: #4272db;
 }
+/*location map end*/
+
+/*location info*/
+.location-info{
+	padding: 25px 40px;
+	background: #0059a6;
+	background: rgba(0, 89, 166, 0.9);
+	font-size: 16px;
+	line-height: 19px;
+	color: #fff;
+}
+.location .location-info{
+	position: absolute;
+	top: 117px;
+	width: 425px;
+	left: 40px;
+}
+.location-info h3{
+	color: #fff;
+	font: 20px/24px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	padding: 0 0 10px;
+}
+.location-info-list{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.location-info-list li{
+	padding: 0 0 10px;
+}
+.location-info-list a{
+	color: #fff;
+}
+.location-info-btn{}
+.location-info-btn [class*="btn-"]{
+	border-color: #fff;
+	color: #fff;
+}
+.location-info-btn [class*="btn-"]:hover{
+	background: #fff;
+	color: #0059a6;
+}
+/*location info end*/
 /*location end*/
 /*main end*/
 
