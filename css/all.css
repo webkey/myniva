@@ -769,7 +769,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	padding: 8px 0 0;
 }
 .main{
-	padding: 0 0 130px;
+	padding: 0 0 88px;
 	position: relative;
 	clear: both;
 	z-index: 2;
@@ -1776,10 +1776,9 @@ li.active .rubrics-thumbs__text,
 }
 .departments-slider .slick-prev:after,
 .departments-slider .slick-next:after{
-	top: 22px;
+	top: 23px;
 }
-.departments-slider .slick-disabled:before,
-.departments-slider .slick-disabled:after{
+.departments-slider .slick-disabled{
 	opacity: 0.3;
 }
 /*departments slider end*/
@@ -2007,6 +2006,136 @@ div.cselect-local .ui-multiselect-checkboxes{
 }
 /*location info end*/
 /*location end*/
+
+/*clients*/
+.clients-section{
+	padding: 46px 40px 20px;
+}
+.clients-section h2{
+	color: #0059a6;
+	font: 20px/24px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	padding: 0 0 25px;
+}
+/*clients slider*/
+.clients-list{
+	list-style:none;
+	padding:0;
+	margin:0;
+	white-space: nowrap;
+}
+.clients-list li{
+	display: inline-block;
+	vertical-align: top;
+	white-space: normal;
+}
+.clients-list .slick-slide{
+	height: 68px;
+	position: relative;
+	margin: 0;
+}
+.clients-list .slick-slide:before,
+.clients-list .slick-slide:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 0;
+	border-left: 1px solid #ccdeed;
+}
+.clients-list .slick-slide:before{
+	left: -1px;
+}
+.clients-list .slick-active:first-child:before,
+.clients-list [aria-hidden="true"] + .slick-active:before{
+	left: 0;
+}
+.clients-list .slick-slide:after{
+	right: 0;
+}
+.clients-list li a{
+	display: block;
+	height: 100%;
+	font-size: 0;
+	letter-spacing: -1px;
+	text-align: center;
+	padding: 0 8px;
+}
+.clients-list li a:after{
+	content: '';
+	display: inline-block;
+	display:-moz-inline-stack;
+	height: 100%;
+	vertical-align: middle;
+}
+.clients-list li a img{
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 14px;
+	letter-spacing: normal;
+}
+
+/*clients slider arrows end*/
+.clients-list .slick-prev,
+.clients-list .slick-next{
+	width: 20px;
+	height: 51px;
+	margin-top: 7px \9;
+	margin-top: 7px;
+	cursor: pointer;
+	position: relative;
+	top: auto !important;
+	left: auto !important;
+	right: auto !important;
+	-webkit-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+.clients-list .slick-prev{
+	float: left;
+	margin-right: 20px;
+}
+.clients-list .slick-next{
+	float: right;
+	margin-left: 20px;
+}
+.clients-list .slick-prev:before,
+.clients-list .slick-prev:after,
+.clients-list .slick-next:before,
+.clients-list .slick-next:after{
+	content: '';
+	position: absolute;
+	left: 9px;
+	top: -2px;
+	height: 32px;
+	width: 2px;
+	border-radius: 1px;
+	background: #d32e2e;
+	opacity: 1;
+}
+.clients-list .slick-prev:before,
+.clients-list .slick-next:after{
+	-webkit-transform: rotate(35deg);
+	-ms-transform: rotate(35deg);
+	transform: rotate(35deg);
+}
+.clients-list .slick-prev:after,
+.clients-list .slick-next:before{
+	-webkit-transform: rotate(-35deg);
+	-ms-transform: rotate(-35deg);
+	transform: rotate(-35deg);
+}
+.clients-list .slick-prev:after,
+.clients-list .slick-next:after{
+	top: 23px;
+}
+.clients-list .slick-disabled{
+	opacity: 0.3;
+	cursor: default;
+}
+/*clients slider arrows end*/
+/*clients slider end*/
+/*clients end*/
 /*main end*/
 
 /*footer*/

@@ -184,6 +184,11 @@
 	outline: none;
 	background: transparent;
 }
+.slick-prev:active,
+.slick-next:active{
+	right: auto !important;
+	bottom: auto !important;
+}
 .slick-prev:hover:before,
 .slick-prev:focus:before,
 .slick-next:hover:before,
