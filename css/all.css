@@ -1378,22 +1378,23 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .products-slider__thumbs-list{
 	list-style:none;
 	padding:0;
-	margin:0;
-	overflow: hidden;
+	margin:0 -5px;
+	font-size: 0;
+	letter-spacing: -4px;
 }
 .products-slider__thumbs-list li{
-	float: left;
-	width: 20%;
+	display: inline-block;
+	vertical-align: top;
+	width: 146px;
 	font-size: 12px;
 	line-height: 18px;
+	letter-spacing: normal;
 	text-transform: uppercase;
 	color: #80acd3;
+	margin: 0 5px;
 }
 .products-slider__thumbs-list li.active{
 	color: #fff;
-}
-.products-slider__thumbs-item{
-	padding: 0 6px;
 }
 .products-slider__thumbs-icon{
 	background: no-repeat 50% 50%;

@@ -265,11 +265,17 @@ function slickSlidersInit(){
 }
 /*slick sliders init end*/
 
-/*main tabs*/
-function mainTab(){
-
+/*products slider*/
+function productsSliderInit(){
+	$(".products-slider__thumbs-list").mCustomScrollbar({
+		axis:"x",
+		theme:"minimal-dark",
+		scrollbarPosition: "inside",
+		autoExpandScrollbar:true
+		//advanced:{autoExpandHorizontalScroll:true}
+	});
 }
-/*main tabs end*/
+/*products slider end*/
 
 /** ready/load/resize document **/
 
@@ -282,7 +288,7 @@ $(document).ready(function(){
 	//breadDrop();
 	breadHover();
 	slickSlidersInit();
-	mainTab();
+	productsSliderInit();
 });
 $(window).load(function () {
 	customScrollInit();
