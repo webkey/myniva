@@ -163,10 +163,10 @@ function customScrollInit(){
 	var $rubricsMinimal = $(".rubrics-minimal");
 	if($rubricsMinimal.length){
 		$rubricsMinimal.mCustomScrollbar({
-			axis:"x",
+			//axis:"x",
 			theme:"minimal-dark",
-			scrollbarPosition: "inside"
-			//autoExpandScrollbar:true,
+			scrollbarPosition: "inside",
+			autoExpandScrollbar:true,
 			//advanced:{autoExpandHorizontalScroll:true}
 		});
 	}
@@ -330,7 +330,7 @@ function mapInit(){
 	var map;
 	function init() {
 		var mapOptions = {
-			center: new google.maps.LatLng(53.57782335899915,22.72702740340762),
+			center: new google.maps.LatLng(54.03666787309223,22.594093177112136),
 			zoom: 6,
 			zoomControl: true,
 			zoomControlOptions: {

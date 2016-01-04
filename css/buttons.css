@@ -113,6 +113,11 @@ input[type="reset"].btn-default-empty:active{
 }
 /*btn-default-empty end*/
 [class*="btn-"] i{
-	margin-right: 10px;
+	margin-right: 12px;
+	font-size: 19px;
+	line-height: 20px;
+}
+[class*="btn-"] i.fa-envelope{
+	font-size: 19px;
 }
 /*style default button end*/
