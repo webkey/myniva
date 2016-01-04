@@ -214,10 +214,10 @@
 	left: auto;
 }
 .slick-prev:before{
-	content: '?';
+	content: '←';
 }
 [dir='rtl'] .slick-prev:before{
-	content: '?';
+	content: '←';
 }
 .slick-next{
 	right: -25px;
@@ -227,10 +227,10 @@
 	left: -25px;
 }
 .slick-next:before{
-	content: '?';
+	content: '→';
 }
 [dir='rtl'] .slick-next:before{
-	content: '?';
+	content: '→';
 }
 /* Dots */
 .slick-slider{
