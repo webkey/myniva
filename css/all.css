@@ -847,6 +847,10 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .logo a{
 	display: block;
 	height: 100%;
+	cursor: default;
+}
+.logo a:link{
+	cursor: pointer;
 }
 /*logo end*/
 /*main navigation*/
