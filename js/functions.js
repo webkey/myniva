@@ -166,11 +166,24 @@ function customScrollInit(){
 			//axis:"x",
 			theme:"minimal-dark",
 			scrollbarPosition: "inside",
-			autoExpandScrollbar:true,
+			autoExpandScrollbar:true
 			//advanced:{autoExpandHorizontalScroll:true}
 		});
 	}
 	/*rubrics minimal end*/
+
+	/*rubrics full*/
+	var $rubricsMinimal = $('.rubrics-full-holder, .product-box__menu');
+	if($rubricsMinimal.length){
+		$rubricsMinimal.mCustomScrollbar({
+			//axis:"x",
+			theme:"minimal-dark",
+			scrollbarPosition: "inside",
+			autoExpandScrollbar:true
+			//advanced:{autoExpandHorizontalScroll:true}
+		});
+	}
+	/*rubrics full end*/
 }
 /*custom scroll init end*/
 
