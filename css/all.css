@@ -34,6 +34,16 @@ h1{
 	color: #d32e2e;
 	padding: 0 0 37px;
 }
+.main-heading{
+	padding: 0 0 37px;
+}
+.main-heading:before,
+.main-heading:after { content: ""; display: table; }
+.main-heading:after { clear: both; }
+.main-heading h1{
+	overflow: hidden;
+	padding: 0 20px 0 0;
+}
 h2{
 	font-size: 24px;
 	line-height: 28px;
@@ -260,7 +270,7 @@ strong em{
 .tbl tfoot td:first-child{
 	border-left-width: 0;
 }
-.tbl thead th,
+.tbl th,
 .tbl thead td{
 	font-family: 'gothampro-bold', Arial, Helvetica, sans-serif;
 	line-height: 17px;
@@ -612,6 +622,81 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 /* custom select menu end*/
 /*custom select style*/
 /*select end*/
+/*choose box*/
+.choose-box{
+	width: 100%;
+}
+.choose-box>a{
+	display: block;
+	position: relative;
+	padding: 14px 30px 13px 17px;
+	background-color: #d32e2e;
+	border: 1px solid #d32e2e;
+	border-radius: 0;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+	text-decoration: none;
+
+	font: 14px/17px 'gothampro-regular', Arial, Helvetica, sans-serif;
+	color: #fff;
+}
+.choose-box>a:hover{
+	background-color: #b41e18;
+	border-color: #b41e18;
+}
+.choose-box>a>.choose-current{
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.choose-box>a>.choose-angle{
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	width: 30px;
+	display: block;
+	background: none;
+	text-align: center;
+}
+.choose-box>a>.choose-angle i{
+	font-size: 10px;
+	line-height: inherit;
+}
+.choose-drop{
+	padding: 0;
+	margin: 0;
+}
+.choose-drop__holder{
+	padding: 15px 0;
+	margin: 0;
+	list-style-type: none;
+	height: auto !important;
+	max-height: 350px;
+	overflow: auto;
+	background-color: #fff;
+	border: 1px solid #d32e2e;
+	border-radius: 0;
+}
+.choose-drop__item{
+	display: block;
+	cursor: pointer;
+	font: 14px/17px 'gothampro-regular', Arial, Helvetica, sans-serif;
+}
+.choose-drop__item>a{
+	display: block;
+	color: #0059a6;
+	font-weight: 400;
+	padding: 5px 17px 4px;
+	text-decoration: none;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+}
+.choose-drop__item>a:hover{
+	text-decoration: underline;
+}
+/*choose box end*/
 /*elements form style end*/
 /* breadcrumbs */
 .breadcrumbs{
@@ -816,7 +901,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 /*MAX-WRAP end*/
 /*main blocks end*/
 
-/*sidebar*/
+/*panel*/
 .panel-holder{
 	height: 100%;
 	padding: 173px 0 80px;
@@ -1059,7 +1144,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	text-decoration: none;
 }
 /*user options end*/
-/*sidebar end*/
+/*panel end*/
 
 /*header*/
 .header-holder{
@@ -1228,6 +1313,10 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 /*header end*/
 
 /*main*/
+.main-heading .cselect-wrap{
+	float: right;
+	width: 290px;
+}
 .promo-section{
 	position: relative;
 }
@@ -2140,6 +2229,10 @@ div.cselect-local .ui-multiselect-checkboxes{
 /*clients slider arrows end*/
 /*clients slider end*/
 /*clients end*/
+
+/*product menu*/
+.product-menu{}
+/*product menu end*/
 /*main end*/
 
 /*footer*/
