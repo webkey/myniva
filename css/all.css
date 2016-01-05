@@ -1007,7 +1007,6 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 }
 .drop-visible__holder{
 	height: 100%;
-	border-bottom: 1px solid #b7d0e6;
 }
 .two-menu-active .drop-visible{
 	display: block;
@@ -1022,15 +1021,13 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	border-top: 1px solid #a3c3df;
 	position: relative;
 }
+.drop-visible .nav-drop__list li{
+	border-top: 1px solid #b7d0e6;
+}
 .nav-drop__list li>a{
 	background: #e5eef6;
 	text-transform: none;
 	padding: 10px 45px 9px 30px;
-
-	/*fade-slide effect*/
-	-webkit-transform: translateY(0px) perspective(400px) rotateX(60deg);
-	-ms-transform: translateY(0px) perspective(400px) rotateX(60deg);
-	transform: translateY(0px) perspective(400px) rotateX(60deg);
 }
 .nav-drop__list li>a:hover,
 .nav-drop__list li:hover>a{
@@ -1039,11 +1036,6 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .nav-drop__list li.active>a{
 	background: #d32e2e;
 	color: #fff;
-}
-li.active>.nav-drop>.nav-drop__list>li>a{
-	-webkit-transform: translateY(0) perspective(400px) rotateX(0deg);
-	-ms-transform: translateY(0) perspective(400px) rotateX(0deg);
-	transform: translateY(0) perspective(400px) rotateX(0deg);
 }
 .two-menu-active .has-drop-visible>a,
 .two-menu-active .has-drop-visible.active>a{
@@ -2287,6 +2279,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 	display: table-cell;
 	vertical-align: middle;
 	height: 100%;
+	cursor: default;
 }
 .product-box__title_icon{
 	background: no-repeat 50% 50%;
@@ -2322,7 +2315,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 }
 .product-box__list,
 .user-content .product-box__list{
-	padding: 22px 30px;
+	padding: 25px 30px;
 }
 .product-box__list>li,
 .user-content .product-box__list>li{
@@ -2386,14 +2379,15 @@ div.cselect-local .ui-multiselect-checkboxes{
 .product-box__list .product-box__sub-sub ul,
 .user-content .product-box__list .product-box__sub-sub ul{
 	margin-top: 10px;
+	padding-bottom: 6px;
 }
 .product-box__list ul ul li,
 .user-content .product-box__list ul ul li{
-	padding: 0 0 10px;
+	padding: 10px 0 0;
 }
 .product-box__list ul ul li:first-child,
 .user-content .product-box__list ul ul li:first-child{
-	padding: 10px 0;
+	padding: 5px 0 0;
 }
 .product-box__list ul ul li a{
 	font-family: 'gothampro-regular', Arial, Helvetica, sans-serif;
