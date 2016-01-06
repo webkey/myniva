@@ -48,11 +48,7 @@ input[type="reset"]:hover,
 button:hover{
 	background: #b41e18;
 }
-.btn-default:active,
-input[type="submit"]:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-button:active{
+.btn-default:active{
 	bottom: -1px;
 }
 /*btn-default end*/
