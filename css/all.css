@@ -2214,11 +2214,15 @@ div.cselect-local .ui-multiselect-checkboxes{
 .clients-list .slick-slide:before{
 	content: '';
 	position: absolute;
-	left: -1px;
+	left: 0;
 	top: 0;
 	height: 100%;
 	width: 0;
 	border-left: 1px solid #ccdeed;
+}
+.clients-list [aria-hidden="true"] + .slick-active:before,
+.clients-list .slick-active:first-child:before{
+	border: none;
 }
 .clients-list li a{
 	display: block;
@@ -2514,12 +2518,9 @@ div.cselect-local .ui-multiselect-checkboxes{
 /*company map end*/
 /*company contacts end*/
 
-.prod-section{
-	padding: 0 0 10px;
-}
-/*products company*/
+/*company products*/
 .prod{
-	background: #0059a6;
+	padding: 0 0 30px;
 }
 /*products thumbs*/
 .prod-thumbs{
@@ -2746,7 +2747,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 }
 /*products box list end*/
 /*products container end*/
-/*products company end*/
+/*company products end*/
 /*main end*/
 
 /*footer*/

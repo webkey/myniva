@@ -377,8 +377,32 @@ function slickSlidersInit(){
 		});
 	}
 	/*clients slider end*/
+
+	/*gallery*/
+	var gallery = $('.gallery');
+	if(gallery.length){
+		gallery.slick({
+			infinite: true,
+			speed: 300,
+			slidesToShow: 1,
+			//centerMode: true,
+			variableWidth: true
+		});
+	}
+	/*gallery end*/
 }
 /*slick sliders init end*/
+
+/*owl carousel init*/
+function owlInit(){
+	$(".gallery").owlCarousel({
+		margin:0,
+		loop:true,
+		autoWidth:true,
+		items:4
+	});
+}
+/*owl carousel init end*/
 
 /*map init*/
 function mapInitNiva(){
@@ -790,9 +814,9 @@ function fancyboxInit(){
 	}
 
 	/*fancybox gallery*/
-	if ($('.photo-gallery-list').length) {
+	if ($('.fancybox-gallery').length) {
 		$('.fancybox-gallery')
-				.attr('data-fancybox-group', 'photo-gallery')
+				//.attr('data-fancybox-group', 'photo-gallery')
 				.fancybox({
 					openEffect: 'elastic',
 					closeEffect: 'elastic'
