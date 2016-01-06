@@ -316,7 +316,7 @@
 						<div class="input-wrapper">
 							<input type="search" placeholder="Поиск по сайту" />
 							<div class="btn-search">
-								<i class="depict-search fa fa-search"></i>
+								<i class="depict-search"></i>
 								<input type="submit" value="" />
 							</div>
 							<div class="btn-search-close switcher-form-js"></div>
@@ -472,6 +472,13 @@
 															</ul>
 														</li>
 														<li class="produce-full-menu__col">
+															<ul>
+																<li><a href="#"><span>Флотомашины</span> <i class="fa fa-chevron-right"></i></a></li>
+																<li><a href="#"><span>Гидроциклоны</span> <i class="fa fa-chevron-right"></i></a></li>
+																<li><a href="#"><span>Классификаторы спиральные</span> <i class="fa fa-chevron-right"></i></a></li>
+																<li><a href="#"><span>Сушильные барабаны</span> <i class="fa fa-chevron-right"></i></a></li>
+																<li><a href="#"><span>Сгустители</span> <i class="fa fa-chevron-right"></i></a></li>
+															</ul>
 															<ul>
 																<li><a href="#"><span>Флотомашины</span> <i class="fa fa-chevron-right"></i></a></li>
 																<li><a href="#"><span>Гидроциклоны</span> <i class="fa fa-chevron-right"></i></a></li>
@@ -814,14 +821,18 @@
 					<!--location map end-->
 					<!--location info-->
 					<div class="location-info">
-						<h3>Унитарное производственное предприятие «Нива-холдинг»</h3>
-						<ul class="location-info-list">
-							<li>223710, Республика Беларусь, Минская область, Солигорский район, ул. Заводская, 4</li>
-							<li>Приёмная: +37517 426-98-03</li>
-							<li>Эл. почта: <a href="mailto:info@niva.by">info@niva.by</a></li>
-						</ul>
+						<div class="location-info__holder">
+							<h3>Унитарное производственное предприятие «Нива-холдинг»</h3>
+							<ul class="location-info-list">
+								<li>223710, Республика Беларусь, Минская область, Солигорский район, ул. Заводская, 4</li>
+								<li>223710, Республика Беларусь, Минская область, Солигорский район, ул. Заводская, 4</li>
+								<li>Приёмная: +37517 426-98-03</li>
+								<li>Приёмная: +37517 426-98-03</li>
+								<li>Эл. почта: <a href="mailto:info@niva.by">info@niva.by</a></li>
+							</ul>
+						</div>
 						<div class="location-info-btn">
-							<a href="#" class="btn-default-empty"><i class="fa fa-envelope"></i><span class="text-inner">Обратная связь</span></a>
+							<a href="#callback-popup" class="btn-default-empty fancybox-open"><i class="fa fa-envelope"></i><span class="text-inner">Обратная связь</span></a>
 						</div>
 					</div>
 					<!--location info end-->
@@ -883,6 +894,40 @@
 	</div>
 </footer>
 <!--footer end-->
+
+<!--popups-->
+<div class="popups">
+	<div class="popup">
+		<!-- callback form -->
+		<div id="callback-popup" class="callback-form">
+			<form action="#" method="get">
+				<div class="callback-popup-title">Форма обратной связи</div>
+				<div class="form-row">
+					<div class="input-wrap">
+						<input type="text" placeholder="Имя">
+					</div>
+					<div class="input-wrap">
+						<input type="text" placeholder="Компания">
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="input-wrap">
+						<input type="email" placeholder="Эл. почта">
+					</div>
+					<div class="input-wrap">
+						<input type="text" placeholder="Телефон">
+					</div>
+				</div>
+				<textarea placeholder="Сообщение"></textarea>
+				<div class="form-buttons">
+					<input type="submit" value="Отправить">
+				</div>
+			</form>
+		</div>
+		<!-- callback form end -->
+	</div>
+</div>
+<!--popups-->
 
 <!--JQuery library-->
 <script src="js/jquery-1.11.3.min.js"></script>

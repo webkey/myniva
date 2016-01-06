@@ -186,13 +186,19 @@ function customScrollInit(){
 	/*produce minimal end*/
 
 	/*produce full*/
-	var $produceMinimal = $('.produce-full-holder, .product-box__menu');
+	var $produceMinimal = $('.location-info__holder, .produce-full-holder, .product-box__menu');
 	if($produceMinimal.length){
 		$produceMinimal.mCustomScrollbar({
 			//axis:"x",
 			theme:"minimal-dark",
 			scrollbarPosition: "inside",
-			autoExpandScrollbar:true
+			autoExpandScrollbar:true,
+			callbacks:{
+				onInit:function(){
+					console.log("Scrollbars initialized", $(this));
+					$(this).addClass('scrollbar-style-alt');
+				}
+			}
 			//advanced:{autoExpandHorizontalScroll:true}
 		});
 	}
@@ -583,7 +589,7 @@ function mapInitLMZ(){
 			zoomControlOptions: {
 				style: google.maps.ZoomControlStyle.DEFAULT,
 			},
-			disableDoubleClickZoom: true,
+			disableDoubleClickZoom: false,
 			mapTypeControl: false,
 			scaleControl: false,
 			scrollwheel: false,
@@ -770,6 +776,31 @@ function mapInitLMZ(){
 }
 /*map init end*/
 
+/* fancybox initial */
+function fancyboxInit(){
+	/*example popups*/
+	var popup = $('.fancybox-open');
+	if (popup.length) {
+		popup.fancybox({
+			wrapCSS: 'fancybox-callback',
+			padding: 0,
+			openEffect: 'none',
+			closeEffect: 'none'
+		});
+	}
+
+	/*fancybox gallery*/
+	if ($('.photo-gallery-list').length) {
+		$('.fancybox-gallery')
+				.attr('data-fancybox-group', 'photo-gallery')
+				.fancybox({
+					openEffect: 'elastic',
+					closeEffect: 'elastic'
+				});
+	}
+}
+/* fancybox initial */
+
 /*produce slider*/
 function produceSliderInit(){
 
@@ -790,6 +821,7 @@ $(document).ready(function(){
 	produceSliderInit();
 	mapInitNiva();
 	mapInitLMZ();
+	fancyboxInit();
 });
 $(window).load(function () {
 	customScrollInit();

@@ -1200,7 +1200,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .search-form .input-wrapper input[type="search"],
 .search-form .input-wrapper input[type="text"]{
 	color: #333;
-	font: 26px/30px 'gothampro-light', Arial, Helvetica, sans-serif;
+	font: 18px/30px 'gothampro-light', Arial, Helvetica, sans-serif;
 	padding: 10px 0;
 	height: auto;
 	background: none;
@@ -1217,26 +1217,67 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 /*.search-form input:focus:-moz-placeholder{ color: transparent !important; }*/
 /*.search-form input:focus::-moz-placeholder{ color: transparent !important; }*/
 /*.search-form input:focus:-ms-input-placeholder{ color: transparent !important; }*/
-/*.search-form input.placeholder:focus{ color: transparent !important; }*/
 .search-form .btn-search{
 	float: left;
 	font: 46px/60px 'gothampro-regular', Arial, Helvetica, sans-serif;
-	height: 60px;
+	height: 32px;
 	position: absolute;
 	top: 50%;
-	margin-top: -30px;
+	margin-top: -16px;
 	left: 5px;
+	width: 32px;
+	-webkit-transition: 0.4s cubic-bezier(0, 0, 0, 1);
+	transition: 0.4s cubic-bezier(0, 0, 0, 1);
 }
+/*.search-form input.placeholder:focus{ color: transparent !important; }*/
 .btn-search .depict-search{
 	color: #666;
 	font-size: 30px;
 	line-height: inherit;
 	vertical-align: top;
-	-webkit-transition: 0.3s;
-	transition: 0.3s;
+	width: 32px;
+	height: 32px;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+.btn-search .depict-search:before,
+.btn-search .depict-search:after{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	border: 1px solid #666;
+	border-radius: 1px;
+	-webkit-transition: 0.4s cubic-bezier(0, 0, 0, 1);
+	transition: 0.4s cubic-bezier(0, 0, 0, 1);
+}
+.btn-search .depict-search:before{
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	border-width: 2px;
+}
+.btn-search .depict-search:after{
+	left: 25px;
+	top: 20px;
+	width: 0;
+	height: 14px;
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.btn-search:hover{
+	-webkit-transform: scale(1.2, 1.2);
+	-ms-transform: scale(1.2, 1.2);
+	transform: scale(1.2, 1.2);
 }
 .btn-search:hover .depict-search{
 	color: #333;
+}
+.btn-search:hover .depict-search:before,
+.btn-search:hover .depict-search:after{
+	border-color: #333;
 }
 .search-form .btn-search input[type="submit"]{
 	padding: 0;
@@ -1253,6 +1294,8 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	width: 30px;
 	height: 30px;
 	cursor: pointer;
+	-webkit-transition: 0.4s cubic-bezier(0, 0, 0, 1);
+	transition: 0.4s cubic-bezier(0, 0, 0, 1);
 }
 .btn-search-close:before,
 .btn-search-close:after{
@@ -1260,7 +1303,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	position: absolute;
 	left: -0.3em;
 	top: 0.9em;
-	height: 3px;
+	height: 2px;
 	width: 40px;
 	background: #666;
 	border-radius: 5px;
@@ -1276,6 +1319,11 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	-webkit-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg);
+}
+.btn-search-close:hover{
+	-webkit-transform: scale(1.2, 1.2);
+	-ms-transform: scale(1.2, 1.2);
+	transform: scale(1.2, 1.2);
 }
 .btn-search-close:hover:before,
 .btn-search-close:hover:after{
@@ -1547,6 +1595,9 @@ li.active .produce-thumbs__text,
 .produce-thumbs .mCSB_horizontal.mCSB_inside > .mCSB_container{
 	margin: 0 0 20px;
 }
+.produce-thumbs .mCSB_scrollTools{
+	opacity: 1;
+}
 .produce-thumbs .mCSB_scrollTools.mCSB_scrollTools_horizontal{
 	height: 10px;
 }
@@ -1589,6 +1640,10 @@ li.active .produce-thumbs__text,
 /*produce thumbs*/
 
 /*produce full*/
+.produce-full{
+	max-height: 242px;
+	overflow: hidden;
+}
 .produce-full.slick-initialized{
 	margin: 0;
 }
@@ -1990,7 +2045,7 @@ li.active .produce-thumbs__text,
 	margin: 0 0 0 14px;
 }
 button.cselect-local .select-inner{
-	padding: 0 0 1px;
+	padding: 0 10px 1px 0;
 	border-bottom-color: #fff;
 	-webkit-transition: 0.2s;
 	transition: 0.2s;
@@ -2008,6 +2063,9 @@ button.cselect-local:hover .select-inner{
 button.cselect-local.ui-state-active .select-inner,
 button.cselect-local:hover .select-inner{
 	border-color: transparent;
+}
+button.cselect-local .ui-icon {
+	width: 12px;
 }
 button.cselect-local .ui-icon .arrow-select {
 	right: 0;
@@ -2093,6 +2151,11 @@ div.cselect-local .ui-multiselect-checkboxes{
 	width: 425px;
 	left: 40px;
 }
+.location-info__holder{
+	height: 201px;
+	margin: 0 0 15px;
+	overflow: hidden;
+}
 .location-info h3{
 	color: #fff;
 	font: 20px/24px 'gothampro-bold', Arial, Helvetica, sans-serif;
@@ -2100,7 +2163,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 }
 .location-info-list{
 	margin:0;
-	padding:0 0 15px;
+	padding:0;
 	list-style:none;
 }
 .location-info-list li{
@@ -2148,24 +2211,14 @@ div.cselect-local .ui-multiselect-checkboxes{
 	position: relative;
 	margin: 0;
 }
-.clients-list .slick-slide:before,
-.clients-list .slick-slide:after{
+.clients-list .slick-slide:before{
 	content: '';
 	position: absolute;
+	left: -1px;
 	top: 0;
 	height: 100%;
 	width: 0;
 	border-left: 1px solid #ccdeed;
-}
-.clients-list .slick-slide:before{
-	left: -1px;
-}
-.clients-list .slick-active:first-child:before,
-.clients-list [aria-hidden="true"] + .slick-active:before{
-	left: 0;
-}
-.clients-list .slick-slide:after{
-	right: 0;
 }
 .clients-list li a{
 	display: block;
@@ -2538,6 +2591,9 @@ div.cselect-local .ui-multiselect-checkboxes{
 .prod-thumbs .mCSB_horizontal.mCSB_inside > .mCSB_container{
 	margin: 39px 0 0;
 }
+.prod-thumbs .mCSB_scrollTools{
+	opacity: 1;
+}
 .prod-thumbs .mCSB_scrollTools.mCSB_scrollTools_horizontal{
 	height: 10px;
 	bottom: auto;
@@ -2755,3 +2811,37 @@ div.cselect-local .ui-multiselect-checkboxes{
 	}
 }
 /*footer end*/
+
+@media all{
+	/*popups*/
+	.popups{
+		display: none;
+	}
+	.popup{}
+	/* callback form */
+	.callback-form{
+		width: 800px;
+		padding: 32px 30px;
+		background: #fff;
+	}
+	.callback-form form{
+		width: 100%;
+	}
+	.callback-form .callback-popup-title{
+		font: 24px/28px 'gothampro-bold', Arial, Helvetica, sans-serif;
+		color: #333;
+		text-align: center;
+		padding: 0 0 30px;
+	}
+	.callback-form textarea{
+		resize: none;
+		max-height: 100px;
+		height: 100px;
+	}
+	.callback-form .form-buttons{
+		text-align: center;
+		padding: 4px 0 0;
+	}
+	/* callback form end */
+	/*popups end*/
+}
