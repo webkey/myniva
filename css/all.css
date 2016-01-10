@@ -2292,7 +2292,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 	height: 32px;
 	width: 2px;
 	border-radius: 1px;
-	background: #d32e2e;
+	background: #0059a6;
 	opacity: 1;
 }
 .clients-list .slick-prev:before,
@@ -2759,6 +2759,23 @@ div.cselect-local .ui-multiselect-checkboxes{
 /*products box list end*/
 /*products container end*/
 /*company products end*/
+
+/*gallery*/
+.gallery{}
+.gallery-item{
+	background: #267bc5;
+	/*width: 300px;*/
+}
+.gallery-item a{
+	display: block;
+	height: 100%;
+}
+.gallery-item img{
+	/*opacity: 0 !important;*/
+	/*display: none !important;*/
+}
+
+/*gallery end*/
 /*main end*/
 
 /*footer*/
@@ -2824,8 +2841,8 @@ div.cselect-local .ui-multiselect-checkboxes{
 }
 /*footer end*/
 
+/*popups*/
 @media all{
-	/*popups*/
 	.popups{
 		display: none;
 	}
@@ -2855,5 +2872,5 @@ div.cselect-local .ui-multiselect-checkboxes{
 		padding: 4px 0 0;
 	}
 	/* callback form end */
-	/*popups end*/
 }
+/*popups end*/
