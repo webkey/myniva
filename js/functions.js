@@ -189,7 +189,7 @@ function customScrollInit(){
 	/*produce minimal end*/
 
 	/*produce full*/
-	var $produceFull = $('.location-info__holder, .produce-full-holder');
+	var $produceFull = $('.location-info__holder, .produce-full-holder, .produce-small');
 	if($produceFull.length){
 		$produceFull.mCustomScrollbar({
 			//axis:"x",
@@ -198,7 +198,6 @@ function customScrollInit(){
 			autoExpandScrollbar:true,
 			callbacks:{
 				onInit:function(){
-					console.log("Scrollbars initialized", $(this));
 					$(this).addClass('scrollbar-style-alt');
 				}
 			}
@@ -860,7 +859,15 @@ function fancyboxInit(){
 /*products gallery initial*/
 function productGalleryInit() {
 	var options = {
-		container: '.produce',
+		synopsis_section: '.synopsis-section',
+		synopsis_controls: '.synopsis__controls',
+		synopsis_control: '.synopsis__controls>li>a',
+		control_left: '.synopsis__controls_left',
+		control_right: '.synopsis__controls_right',
+		synopsis_content: '.synopsis-content',
+		small_thumbs: '.produce-small__heading',
+
+		produce_container: '.produce',
 		thumbs: '.produce-thumbs__item',
 		thumbs_container: '.produce-thumbs',
 		full_container: '.produce-full'
@@ -869,22 +876,6 @@ function productGalleryInit() {
 	new ProductGallery(options);
 }
 /*products gallery initial end*/
-
-/*synopsis initial*/
-function synopsisInit() {
-	var options = {
-		synopsis_section: '.synopsis-section',
-		synopsis_controls: '.synopsis__controls',
-		controls_left: '.synopsis__controls_left',
-		controls_right: '.synopsis__controls_right',
-		synopsis_content: '.synopsis-content'
-	};
-
-	var syns = new Synopsys(options);
-
-	console.log(syns);
-}
-/*synopsis initial end*/
 
 /** ready/load/resize document **/
 
@@ -901,7 +892,6 @@ $(document).ready(function(){
 	mapInitLMZ();
 	fancyboxInit();
 	productGalleryInit();
-	synopsisInit();
 });
 $(window).load(function () {
 	owlInit();

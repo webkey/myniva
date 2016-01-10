@@ -99,9 +99,17 @@
 (function () {
 	var ProductGallery = function (options) {
 		this.options = options;
-		var $container = $(options.container);
+		var $synopsis_section = $(options.synopsis_section);
+		this.$synopsisSection = $synopsis_section;
+		this.$synopsisControls = $(options.synopsis_controls, $synopsis_section);
+		this.$synopsisControl = $(options.synopsis_control, $synopsis_section);
+		this.$controlLeft = $(options.control_left, $synopsis_section);
+		this.$controlRight = $(options.control_right, $synopsis_section);
+		this.$synopsisContent = $(options.synopsis_content, $synopsis_section);
+		this.$smallThumbs = $(options.small_thumbs, $synopsis_section);
 
-		this.$synopsisSection = $container;
+		var $container = $(options.produce_container);
+		this.$container = $container;
 		this.$thumbs = $(options.thumbs, $container);
 		this.$thumbsContainer = $(options.thumbs_container, $container);
 		this.$fullContainer = $(options.full_container, $container);
@@ -109,13 +117,49 @@
 		this.modifiers = {
 			hover: 'made-hover',
 			active: 'made-active',
-			open: 'made-opened'
+			open: 'made-opened',
+			lt_active: 'lt-active',
+			rt_active: 'rt-active'
 		};
 
 		this.slick = this.initSlick();
 
 		this.initScrollbar();
 		this.bindEvents();
+
+		this.switchControls();
+	};
+
+	ProductGallery.prototype.switchControls = function () {
+		var self = this,
+			modifiers = this.modifiers,
+			synopsisControl = self.$synopsisControl;
+
+		var $synopsisSection = self.$synopsisSection;
+
+		synopsisControl.on('click', function (event) {
+			event.preventDefault();
+		});
+
+		var clearClasses = function () {
+			$synopsisSection.removeClass(modifiers.lt_active);
+			$synopsisSection.removeClass(modifiers.rt_active);
+			synopsisControl.closest('li').removeClass(modifiers.active);
+		};
+
+		self.$controlLeft.on('click', function () {
+			clearClasses();
+
+			$synopsisSection.addClass(modifiers.lt_active);
+			$(this).closest('li').addClass(modifiers.active);
+		});
+
+		self.$controlRight.on('click', function () {
+			clearClasses();
+
+			$synopsisSection.addClass(modifiers.rt_active);
+			$(this).closest('li').addClass(modifiers.active);
+		})
 	};
 
 	ProductGallery.prototype.initSlick = function () {
@@ -179,23 +223,17 @@
 		self.slick.on('afterChange', function () {
 			self.scrollToActiveThumb();
 		});
+
+		self.$smallThumbs.on('click', function (event) {
+			var current = $(this);
+			self.$controlLeft.trigger('click');
+			setTimeout(function () {
+				self.$thumbs.eq(current.closest('li').index()).trigger('click');
+			}, 400);
+			event.preventDefault();
+		})
 	};
 
 	window.ProductGallery = ProductGallery;
 
-}());
-
-(function () {
-	var Synopsis = function (options) {
-		this.options = options;
-		var $synopsisSection = $(options.container);
-
-		this.$synopsis_section = $synopsisSection;
-		this.$synopsis_controls = $(options.synopsis_controls, $synopsisSection);
-		this.$controls_left = $(options.controls_left, $synopsisSection);
-		this.$controls_right = $(options.controls_right, $synopsisSection);
-		this.$main_container = $(options.main_container, $synopsisSection);
-	};
-
-	window.Synopsys = Synopsis;
 }());
