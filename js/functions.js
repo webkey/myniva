@@ -167,10 +167,12 @@ function customScrollInit(){
 	if($prodThumbs.length){
 		$prodThumbs.mCustomScrollbar({
 			axis:"x",
-			//theme:"dark",
 			scrollbarPosition: "inside",
-			//autoExpandScrollbar:true,
-			advanced:{autoExpandHorizontalScroll:true}
+			advanced:{autoExpandHorizontalScroll:true},
+			mouseWheel:{
+				enable: false
+			},
+			scrollInertia:500
 		});
 	}
 	/*products thumbs end*/
@@ -179,19 +181,17 @@ function customScrollInit(){
 	var $produceMinimal = $(".produce-minimal");
 	if($produceMinimal.length){
 		$produceMinimal.mCustomScrollbar({
-			//axis:"x",
 			theme:"minimal-dark",
 			scrollbarPosition: "inside",
 			autoExpandScrollbar:true
-			//advanced:{autoExpandHorizontalScroll:true}
 		});
 	}
 	/*produce minimal end*/
 
 	/*produce full*/
-	var $produceMinimal = $('.location-info__holder, .produce-full-holder');
-	if($produceMinimal.length){
-		$produceMinimal.mCustomScrollbar({
+	var $produceFull = $('.location-info__holder, .produce-full-holder');
+	if($produceFull.length){
+		$produceFull.mCustomScrollbar({
 			//axis:"x",
 			theme:"minimal-dark",
 			scrollbarPosition: "inside",
@@ -386,19 +386,27 @@ function owlInit(){
 		margin:0,
 		loop:true,
 		autoWidth:true,
-		items:1,
+		items:4,
 		nav: true,
 		dots: false,
+		onInitialize: setWidth,
 		onInitialized: callback1,
 		onChanged: callback2
 	});
+
+	function setWidth (event){
+		var img = $(event.target).find('img').each(function () {
+			var width = $(this).attr('width');
+			$(this).closest('.gallery-item').css('width',width);
+		});
+	}
 
 	function callback1(event) {
 		var item = event.item.index;
 		var cloned = $(event.target).find('.cloned').length;
 		var currentItem = (item ? item - cloned/2 : 0) + 1;
 		var items = event.item.count;
-		$(event.target).find('.owl-prev').after('<div class="owlCounter">' + currentItem + '/' +items+ '</div>');
+		$(event.target).find('.owl-prev').after('<div class="slide-counter">' + currentItem + '/' +items+ '</div>');
 	}
 
 	function callback2(event) {
@@ -417,7 +425,7 @@ function owlInit(){
 		console.log('item ', item);
 		console.log('cloned ', cloned/2);
 		console.log('currentItem ', currentItem);
-		$(event.target).find('.owlCounter').text(currentItem + '/' +items)
+		$(event.target).find('.slide-counter').text(currentItem + '/' +items)
 	}
 
 
@@ -840,9 +848,10 @@ function fancyboxInit(){
 				//.attr('data-fancybox-group', 'photo-gallery')
 				.fancybox({
 					wrapCSS: 'fancybox-gallery-popup',
-					openEffect: 'elastic',
-					closeEffect: 'elastic',
-					padding: 0
+					openEffect: 'none',
+					closeEffect: 'none',
+					padding: 0,
+					margin: [10,50,10,50]
 				});
 	}
 }
@@ -892,7 +901,7 @@ $(document).ready(function(){
 	mapInitLMZ();
 	fancyboxInit();
 	productGalleryInit();
-	//synopsisInit();
+	synopsisInit();
 });
 $(window).load(function () {
 	owlInit();

@@ -5,7 +5,6 @@
 @import url(buttons.css);
 @import url(sp.css);
 @import url(widgets.css);
-@import url(jquery.mCustomScrollbar.css);
 
 /*fonts*/
 /*@import url(fonts.css);*/
@@ -2761,7 +2760,11 @@ div.cselect-local .ui-multiselect-checkboxes{
 /*company products end*/
 
 /*gallery*/
-.gallery{}
+.gallery{
+	padding: 0;
+	margin: 0 0 53px;
+	position: relative;
+}
 .gallery-item{
 	background: #267bc5;
 	/*width: 300px;*/
@@ -2774,7 +2777,95 @@ div.cselect-local .ui-multiselect-checkboxes{
 	/*opacity: 0 !important;*/
 	/*display: none !important;*/
 }
-
+.gallery .owl-nav{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 83px;
+	padding: 0 86px;
+	background: #000;
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+}
+.gallery .owl-nav [class*=owl-]{
+	background: #d32e2e;
+	position: absolute;
+	display: block;
+	width: 46px;
+	height: 46px;
+	top: 50%;
+	margin-top: -23px;
+	text-indent: -9999px;
+	overflow: hidden;
+	border-radius: 0;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.gallery .owl-nav [class*=owl-]:hover{
+	background: #b41e18;
+}
+.gallery .owl-nav .owl-prev{
+	left: 20px;
+}
+.gallery .owl-nav .owl-next{
+	right: 20px;
+}
+.gallery .owl-nav [class*=owl-]:before,
+.gallery .owl-nav [class*=owl-]:after{
+	content: '';
+	position: absolute;
+	left: 20px;
+	top: 15px;
+	height: 12px;
+	width: 2px;
+	border-radius: 5px;
+	background: #fff;
+	opacity: 1;
+}
+.gallery .owl-nav .owl-prev:before,
+.gallery .owl-nav .owl-next:after{
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.gallery .owl-nav .owl-prev:after,
+.gallery .owl-nav .owl-next:before{
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.gallery .owl-nav .owl-prev:after,
+.gallery .owl-nav .owl-next:after{
+	top: 22px;
+}
+.gallery .owl-nav .owl-next:before,
+.gallery .owl-nav .owl-next:after{
+	left: 23px;
+}
+.gallery .slide-counter{
+	display: inline-block;
+	text-align: center;
+	margin-top: 30px;
+	position: relative;
+	cursor: default;
+	min-width: 50px;
+	padding: 0 4px;
+}
+.gallery .slide-counter:before{
+	content: '';
+	position: absolute;
+	right: 100%;
+	top: 50%;
+	margin-top: -10px;
+	margin-right: 0;
+	height: 21px;
+	width: 22px;
+	background: url(../img/depict-camera.png) no-repeat 0 0;
+}
 /*gallery end*/
 /*main end*/
 
