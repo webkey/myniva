@@ -1157,9 +1157,9 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .header-main .header-holder{
 	background: none;
 }
-.header-holder:before,
-.header-holder:after { content: ""; display: table; }
-.header-holder:after { clear: both; }
+.header-holder .large-align{
+	overflow: hidden;
+}
 .header-options{
 	float: right;
 	padding: 22px 0 23px;
@@ -1230,6 +1230,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 }
 /*.search-form input.placeholder:focus{ color: transparent !important; }*/
 .btn-search .depict-search{
+	display: block;
 	color: #666;
 	font-size: 30px;
 	line-height: inherit;
@@ -1477,15 +1478,16 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	width: 100%;
 	height: 5px;
 	opacity: 1;
-	box-shadow: inset 0 0 0 1px transparent;
+	box-shadow: inset 0 0 0 1px transparent, 0 0 0 1px transparent;
 	-webkit-transition: all 0.2s;
 	transition: all 0.2s;
 }
 .promo-slider .slick-dots li button:hover:before{
-	box-shadow: inset 0 0 0 1px #d32e2e;
+	box-shadow: inset 0 0 0 0 #d32e2e, 0 0 0 1px #d32e2e;
 }
 .promo-slider .slick-dots li.slick-active button:before{
 	background: #d32e2e;
+	box-shadow: none;
 }
 /*promo slider end*/
 /*connect*/
@@ -1948,15 +1950,16 @@ li.made-active .produce-thumbs__text,
 	width: 100%;
 	height: 5px;
 	opacity: 1;
-	box-shadow: inset 0 0 0 1px transparent;
+	box-shadow: 0 0 0 1px transparent;
 	-webkit-transition: all 0.2s;
 	transition: all 0.2s;
 }
 .departments-slider .slick-dots li button:hover:before{
-	box-shadow: inset 0 0 0 1px #fff;
+	box-shadow: 0 0 0 1px #fff;
 }
 .departments-slider .slick-dots li.slick-active button:before{
 	background: #fff;
+	box-shadow: none;
 }
 
 .departments-slider .slick-prev,

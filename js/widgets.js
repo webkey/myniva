@@ -101,12 +101,11 @@
 		this.options = options;
 		var $synopsis_section = $(options.synopsis_section);
 		this.$synopsisSection = $synopsis_section;
-		this.$synopsisControls = $(options.synopsis_controls, $synopsis_section);
 		this.$synopsisControl = $(options.synopsis_control, $synopsis_section);
 		this.$controlLeft = $(options.control_left, $synopsis_section);
 		this.$controlRight = $(options.control_right, $synopsis_section);
-		this.$synopsisContent = $(options.synopsis_content, $synopsis_section);
 		this.$smallThumbs = $(options.small_thumbs, $synopsis_section);
+		this.$mask = $(options.mask, $synopsis_section);
 
 		var $container = $(options.produce_container);
 		this.$container = $container;
@@ -231,6 +230,10 @@
 				self.$thumbs.eq(current.closest('li').index()).trigger('click');
 			}, 400);
 			event.preventDefault();
+		})
+
+		self.$mask.on('click', function () {
+			self.$controlRight.trigger('click');
 		})
 	};
 

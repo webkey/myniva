@@ -860,12 +860,11 @@ function fancyboxInit(){
 function productGalleryInit() {
 	var options = {
 		synopsis_section: '.synopsis-section',
-		synopsis_controls: '.synopsis__controls',
 		synopsis_control: '.synopsis__controls>li>a',
 		control_left: '.synopsis__controls_left',
 		control_right: '.synopsis__controls_right',
-		synopsis_content: '.synopsis-content',
 		small_thumbs: '.produce-small__heading',
+		mask: '.rubric-visual-mask',
 
 		produce_container: '.produce',
 		thumbs: '.produce-thumbs__item',
