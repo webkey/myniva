@@ -232,23 +232,23 @@ strong em{
 }
 /*numbered list (OL) styling end*/
 /*table styling*/
-.table{
+.table_auto{
 	overflow: auto;
 	max-width: 100%;
 	-webkit-overflow-scrolling: touch;
 	margin: 0 0 20px;
 }
-.tbl{
+.user-content .tbl{
 	width: 100%;
 	table-layout: fixed;
 	border: 1px solid #99bddb;
 	margin-bottom: 20px;
 }
-.table .tbl{
+.table_auto .tbl{
 	margin: 0;
 }
-.tbl td,
-.tbl th{
+.user-content .tbl td,
+.user-content .tbl th{
 	font: 14px/20px 'gothampro-regular', Arial, Helvetica, sans-serif;
 	text-align: center;
 	color: #333;
@@ -257,27 +257,27 @@ strong em{
 	border-width: 0 0 0 1px;
 	padding: 13px 12px;
 }
-.tbl tbody tr:nth-child(even) td{
+.user-content .tbl tbody tr:nth-child(even) td{
 	background: #e5eef6;
 }
-.tbl td:first-child{
+.user-content .tbl td:first-child{
 	font-family: 'gothampro-bold', Arial, Helvetica, sans-serif;
 	text-align: left;
 	padding-left: 24px;
 }
-.tbl tbody td:first-child,
-.tbl tfoot td:first-child{
+.user-content .tbl tbody td:first-child,
+.user-content .tbl tfoot td:first-child{
 	border-left-width: 0;
 }
-.tbl th,
-.tbl thead td{
+.user-content .tbl th,
+.user-content .tbl thead td{
 	font-family: 'gothampro-bold', Arial, Helvetica, sans-serif;
 	line-height: 17px;
 	color: #fff;
 	background: #0059a6;
 	padding: 16px 12px 17px;
 }
-.tbl tfoot td{
+.user-content .tbl tfoot td{
 	font-family: 'gothampro-bold', Arial, Helvetica, sans-serif;
 	background: #e5eef6;
 }
@@ -3065,6 +3065,44 @@ div.cselect-local .ui-multiselect-checkboxes{
 	padding-top: 0;
 }
 /*contact info end*/
+
+/*spec*/
+.spec table,
+.spec .tbl{
+	table-layout: auto;
+	margin: 0;
+	border: none;
+	width: 100%;
+}
+.spec .tbl td,
+.spec table td{
+	border: none;
+	font-size: 16px;
+	line-height: 22px;
+	color: #333;
+	text-align: center;
+	background: #fff;
+	padding: 10px 18px;
+}
+.spec .tbl td:first-child,
+.spec table td:first-child{
+	font-family: 'gothampro-regular', Arial, Helvetica, sans-serif;
+	text-align: left;
+	padding-left: 18px;
+}
+.spec .tbl td:first-child + td,
+.spec table td:first-child + td{
+	width: 320px;
+}
+.spec .tbl tbody tr:nth-child(even) td,
+.spec table tbody tr:nth-child(even) td{
+	background: #fff;
+}
+.spec .tbl tbody tr:nth-child(odd) td,
+.spec table tbody tr:nth-child(odd) td{
+	background: #e5eef6;
+}
+/*spec end*/
 /*main end*/
 
 /*footer*/
