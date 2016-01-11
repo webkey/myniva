@@ -2305,17 +2305,122 @@ Plugin URI: http://manos.malihu.gr/jquery-custom-content-scroller
 		background-color: rgba(255, 255, 255, 0.9);
 	}
 	/* ---------------------------------------- */
-	/*scrollbar style alt*/
-	.scrollbar-style-alt .mCS-minimal.mCSB_scrollTools .mCSB_draggerRail,
-	.scrollbar-style-alt .mCS-minimal-dark.mCSB_scrollTools .mCSB_draggerRail{
+	/*scrollbar style for thumbs*/
+	.produce-thumbs .mCSB_horizontal.mCSB_inside > .mCSB_container{
+		margin: 0 0 19px;
+	}
+	.produce-thumbs .mCSB_scrollTools{
+		opacity: 1;
+	}
+	.produce-thumbs .mCSB_scrollTools.mCSB_scrollTools_horizontal{
+		height: 10px;
+	}
+	.produce-thumbs .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail{
+		height: 10px;
+		margin: 0;
+		border-radius: 0;
 		background: #267bc5;
 	}
-	.scrollbar-style-alt .mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
-		/*background-color: #d32e2e;*/
-		background-color: #003e74;
+	.produce-thumbs .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar{
+		height: 100%;
+		margin: 0 auto;
+		border-radius: 0;
+		background: #d32e2e;
+	}
+	.produce-thumbs .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar:before{
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 6px;
+		width: 7px;
+		margin: -3px 0 0 -4px;
+		background: none;
+		border-left: 1px solid #fff;
+		border-right: 1px solid #fff;
+	}
+	.produce-thumbs .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar:after{
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 6px;
+		width: 0;
+		margin: -3px 0 0 -1px;
+		background: none;
+		border-left: 1px solid #fff;
+	}
+	/*scrollbar style for thumbs end*/
+	/* ---------------------------------------- */
+	/*scrollbar style alt*/
+	.scrollbar-style-alt .mCSB_outside + .mCSB_scrollTools {
+		right: -16px;
+	}
+	.scrollbar-style-alt .mCSB_scrollTools {
+		opacity: 1;
+	}
+	.scrollbar-style-alt .mCustomScrollBox:hover ~ .mCSB_scrollTools,
+	.scrollbar-style-alt .mCSB_scrollTools:hover{
+		opacity: 1;
+	}
+	.scrollbar-style-alt .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail{
+		background: #267bc5;
+		border-radius: 0;
+		width: 4px;
+	}
+	.scrollbar-style-alt .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+		background-color: #d32e2e;
+		/*background-color: #003e74;*/
 		/*background-color: rgba(211, 46, 46, 0.1);*/
 		filter: "alpha(opacity=100)";
 		-ms-filter: "alpha(opacity=100)";
+		border-radius: 0;
+		position: relative;
+	}
+	.scrollbar-style-alt .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail,
+	.scrollbar-style-alt .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_draggerRail {
+		width: 10px;
+	}
+	.scrollbar-style-alt .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar,
+	.scrollbar-style-alt .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar {
+		width: 10px;
+	}
+	.scrollbar-style-alt .mCSB_scrollTools.mCSB_scrollTools_vertical .mCSB_dragger_bar:before,
+	.scrollbar-style-alt .mCSB_scrollTools.mCSB_scrollTools_vertical .mCSB_dragger_bar:after{
+		opacity: 0;
+		-webkit-transition: 0.3s all 0.1s;
+		transition: 0.3s all 0.1s;
+	}
+	.scrollbar-style-alt .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar:before,
+	.scrollbar-style-alt .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar:before,
+	.scrollbar-style-alt .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar:after,
+	.scrollbar-style-alt .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar:after {
+		opacity: 1;
+		-webkit-transition-delay: 0.2s;
+		transition-delay: 0.2s;
+	}
+	.scrollbar-style-alt .mCSB_scrollTools.mCSB_scrollTools_vertical .mCSB_dragger_bar:before{
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 7px;
+		width: 6px;
+		margin: -4px 0 0 -3px;
+		background: none;
+		border-top: 1px solid #fff;
+		border-bottom: 1px solid #fff;
+	}
+	.scrollbar-style-alt .mCSB_scrollTools.mCSB_scrollTools_vertical .mCSB_dragger_bar:after{
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		height: 0;
+		width: 6px;
+		margin: -1px 0 0 -3px;
+		background: none;
+		border-top: 1px solid #fff;
 	}
 	/*scrollbar style alt end*/
 }

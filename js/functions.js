@@ -189,18 +189,18 @@ function customScrollInit(){
 	/*produce minimal end*/
 
 	/*produce full*/
-	var $produceFull = $('.location-info__holder, .produce-full-holder, .produce-small');
+	var $produceFull = $('.location-info__holder, .produce-full-holder, .produce-small__holder');
 	if($produceFull.length){
 		$produceFull.mCustomScrollbar({
 			//axis:"x",
-			theme:"minimal-dark",
-			scrollbarPosition: "inside",
+			//theme:"minimal",
+			scrollbarPosition: "outside",
 			autoExpandScrollbar:true,
-			callbacks:{
+			/*callbacks:{
 				onInit:function(){
 					$(this).addClass('scrollbar-style-alt');
 				}
-			}
+			}*/
 			//advanced:{autoExpandHorizontalScroll:true}
 		});
 	}
