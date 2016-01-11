@@ -33,13 +33,13 @@ h1{
 	color: #d32e2e;
 	padding: 0 0 37px;
 }
-.main-heading{
+.sub-heading{
 	padding: 0 0 37px;
 }
-.main-heading:before,
-.main-heading:after { content: ""; display: table; }
-.main-heading:after { clear: both; }
-.main-heading h1{
+.sub-heading:before,
+.sub-heading:after { content: ""; display: table; }
+.sub-heading:after { clear: both; }
+.sub-heading h1{
 	overflow: hidden;
 	padding: 0 20px 0 0;
 }
@@ -1150,10 +1150,17 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 
 /*header*/
 .header-holder{
-	padding: 8px 0;
-	background: #552900 url(../img/bg-header.jpg) no-repeat;
+	padding: 0;
+	background: #ccdeed url(../img/bg-header.jpg) no-repeat 0 100%;
 	-webkit-background-size: cover;
 	background-size: cover;
+}
+.header-alt .header-holder{
+	min-height: 334px;
+}
+.header-alt .header-box{
+	background: #434c51;
+	background: rgba(0, 0, 0, 0.5);
 }
 .header-main .header-holder{
 	background: none;
@@ -1163,7 +1170,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 }
 .header-options{
 	float: right;
-	padding: 22px 0 23px;
+	padding: 30px 0 31px;
 }
 /*search-form*/
 .search-form{
@@ -1350,6 +1357,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	color: #fff;
 }
 .header-options .header-phone{padding: 0 0 0 41px;}
+.header-alt .header-phone{ display: none; }
 .header-phone .depict-phone{
 	font-size: 19px;
 	margin-right: 9px;
@@ -1359,12 +1367,15 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	font-size: 20px;
 	line-height: 22px;
 	color: #fff;
-	padding: 20px 20px 25px 0;
+	padding: 28px 20px 28px 0;
+}
+.header-alt .header-slogan{
+	display: none;
 }
 /*header end*/
 
 /*main*/
-.main-heading .cselect-wrap{
+.sub-heading .cselect-wrap{
 	float: right;
 	width: 290px;
 }
@@ -2522,7 +2533,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 .company-info{
 	float: left;
 	width: 324px;
-	padding: 22px 30px 32px;
+	padding: 30px 28px 29px;
 	border: 1px solid #d3382e;
 	background: #fff;
 	font-size: 14px;
@@ -2531,21 +2542,21 @@ div.cselect-local .ui-multiselect-checkboxes{
 	margin: 0 30px 0 0;
 }
 .company-info__logo{
-	padding: 0 0 5px;
+	padding: 0 0 19px;
 	text-align: center;
 }
 .company-info__title{
 	font: 16px/19px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	color: #333;
-	padding: 0 0 22px;
+	padding: 0 0 14px;
 }
 .company-info__address{
-	padding: 0 0 20px;
+	padding: 0 0 15px;
 }
 .company-info__contacts,
 .user-content .company-info__contacts{
 	margin:0;
-	padding:0 0 15px;
+	padding:0 0 21px;
 	list-style:none;
 }
 .company-info__contacts li,
@@ -2696,7 +2707,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 	position: relative;
 }
 .prod-tab{
-	padding: 20px 30px;
+	padding: 14px 30px;
 	background: #267bc5;
 	font-size: 0;
 	letter-spacing: -4px;
@@ -2850,10 +2861,10 @@ div.cselect-local .ui-multiselect-checkboxes{
 	background: #b41e18;
 }
 .gallery .owl-nav .owl-prev{
-	left: 20px;
+	left: 15px;
 }
 .gallery .owl-nav .owl-next{
-	right: 20px;
+	right: 15px;
 }
 .gallery .owl-nav [class*=owl-]:before,
 .gallery .owl-nav [class*=owl-]:after{
@@ -2890,7 +2901,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 .gallery .slide-counter{
 	display: inline-block;
 	text-align: center;
-	margin-top: 30px;
+	margin-top: 34px;
 	position: relative;
 	cursor: default;
 	min-width: 50px;
