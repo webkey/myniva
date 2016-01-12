@@ -117,3 +117,41 @@ input[type="reset"].btn-default-empty:active{
 	font-size: 19px;
 }
 /*style default button end*/
+/*btn-close*/
+.btn-close{
+	width: 46px;
+	height: 46px;
+	background: #4c4c4c;
+	background: rgba(0, 0, 0, 0.7);
+	cursor: pointer;
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+}
+.btn-close:hover{
+	background: #333;
+	background: rgba(0, 0, 0, 0.8);
+}
+.btn-close:before,
+.btn-close:after{
+	content: '';
+	position: absolute;
+	left: 12px;
+	top: 22px;
+	height: 2px;
+	width: 22px;
+	border-right: 1px;
+	background: #fff;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.btn-close:before{
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.btn-close:after{
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+/*btn-close end*/

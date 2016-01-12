@@ -838,7 +838,7 @@ function fancyboxInit(){
 	var popup = $('.fancybox-open');
 	if (popup.length) {
 		popup.fancybox({
-			wrapCSS: 'fancybox-callback',
+			wrapCSS: 'fancybox-default',
 			padding: 0,
 			openEffect: 'none',
 			closeEffect: 'none'
@@ -846,8 +846,9 @@ function fancyboxInit(){
 	}
 
 	/*fancybox gallery*/
-	if ($('.fancybox-gallery').length) {
-		$('.fancybox-gallery')
+	var $fancyboxGallery = $('.fancybox-gallery');
+	if ($fancyboxGallery.length) {
+		$fancyboxGallery
 				//.attr('data-fancybox-group', 'photo-gallery')
 				.fancybox({
 					wrapCSS: 'fancybox-gallery-popup',
@@ -890,6 +891,19 @@ function accordionInit(){
 }
 /*ui accordion initial end*/
 
+/*open gallery*/
+function openGallery(){
+	var productPreview = $('.product-visual');
+	if(!productPreview.length){return}
+	productPreview.on('click', function (e) {
+		$(this).closest('.product-info__main').addClass('open-gallery');
+	});
+	$('.btn-close').on('click', function () {
+		$(this).closest('.product-info__main').removeClass('open-gallery');
+	});
+}
+/*open gallery end*/
+
 /** ready/load/resize document **/
 
 $(document).ready(function(){
@@ -906,6 +920,7 @@ $(document).ready(function(){
 	fancyboxInit();
 	productGalleryInit();
 	accordionInit();
+	openGallery();
 });
 $(window).load(function () {
 	owlInit();

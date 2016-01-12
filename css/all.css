@@ -347,25 +347,37 @@ table th{
 	font-size: 14px;
 	line-height: 18px;
 	letter-spacing: normal;
-	padding-left: 54px;
+}
+.file{
+	font-size: 14px;
+	line-height: 18px;
+	padding: 0 0 0 53px;
+	position: relative;
 	min-height: 46px;
 }
-.files-item [class*="depict-files-"]{
+.file__title{
+	padding: 5px 0 7px;
+}
+.file__title a{
+	text-decoration: none;
+	margin: 0 0 0 -53px;
+	display: inline-block;
+	padding: 0 0 0 53px;
+}
+.file__title a span{
+	padding-top: 5px;
+	color: #0059a6;
+	text-decoration: underline;
+}
+.file__title a:hover span{
+	text-decoration: none;
+}
+.file [class*="depict-files-"]{
 	position: absolute;
 	left: 0;
 	top: 0;
 }
-.files-item__content{
-	padding: 0 0 0 53px;
-	position: relative;
-}
-.files-item__title{
-	padding: 5px 0 7px;
-}
-.files-item__title a{
-	padding-top: 5px;
-}
-.files-content .files-info{
+.file__info{
 	color: #666;
 }
 /*files item end*/
@@ -383,6 +395,11 @@ table th{
 	padding: 0 0 48px 30px;
 }
 /*download files items end*/
+/*aligned content*/
+.align-center{
+	text-align: center;
+}
+/*aligned content end*/
 /*elements form style*/
 input[type="text"],
 input[type="password"],
@@ -2531,15 +2548,27 @@ div.cselect-local .ui-multiselect-checkboxes{
 .company-contacts:after { clear: both; }
 /*company info*/
 .company-info{
-	float: left;
-	width: 324px;
-	padding: 30px 28px 29px;
+	padding: 30px 28px 82px;
 	border: 1px solid #d3382e;
 	background: #fff;
 	font-size: 14px;
 	line-height: 20px;
 	color: #333;
+	overflow: hidden;
+	position: relative;
+}
+.company-contacts .company-info{
+	float: left;
+	width: 324px;
+	min-height: 364px;
 	margin: 0 30px 0 0;
+}
+.company-info__heading{
+	display: block;
+	padding: 0 0 20px;
+	font: 16px/18px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	color: #d32e2e;
 }
 .company-info__logo{
 	padding: 0 0 19px;
@@ -2556,7 +2585,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 .company-info__contacts,
 .user-content .company-info__contacts{
 	margin:0;
-	padding:0 0 21px;
+	padding:0 0 15px;
 	list-style:none;
 }
 .company-info__contacts li,
@@ -2566,8 +2595,14 @@ div.cselect-local .ui-multiselect-checkboxes{
 .user-content .company-info__contacts li:before{
 	content: none;
 }
+.company-info__btn{
+	position: absolute;
+	left: 28px;
+	right: 28px;
+	bottom: 29px;
+}
 .company-info__btn .btn-default-empty{
-	padding: 13px 23px 12px 18px;
+	padding: 13px 18px 12px;
 }
 /*company info end*/
 
@@ -2861,10 +2896,10 @@ div.cselect-local .ui-multiselect-checkboxes{
 	background: #b41e18;
 }
 .gallery .owl-nav .owl-prev{
-	left: 15px;
+	left: 20px;
 }
 .gallery .owl-nav .owl-next{
-	right: 15px;
+	right: 20px;
 }
 .gallery .owl-nav [class*=owl-]:before,
 .gallery .owl-nav [class*=owl-]:after{
@@ -3066,6 +3101,158 @@ div.cselect-local .ui-multiselect-checkboxes{
 }
 /*contact info end*/
 
+/*product info*/
+.product-info{
+	padding: 0 0 52px;
+	position: relative;
+}
+.product-info__purpose{
+	padding: 0 0 29px;
+}
+.product-info:after{
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 14px;
+	width: 100%;
+	border-bottom: 1px solid #99bddb;
+}
+/*product info main*/
+.product-info__main{
+	margin: 0 0 40px;
+	position: relative;
+	background: #fff;
+}
+.product-info__main:before,
+.product-info__main:after { content: ""; display: table; }
+.product-info__main:after { clear: both; }
+.product-info__frame{
+	width: 100%;
+	float: left;
+}
+/*product visual*/
+.product-visual{
+	margin-right: 355px;
+	min-height: 362px;
+	position: relative;
+	cursor: pointer;
+	background: #ccdeed no-repeat 50% 50%;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.product-visual__options{
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	font-size: 0;
+	letter-spacing: -4px;
+}
+.product-visual__options>*{
+	font-size: 16px;
+	letter-spacing: normal;
+	display: inline-block;
+	vertical-align: top;
+	height: 46px;
+}
+.product-visual__view{
+	background: #d32e2e url(../img/depict-camera.png) no-repeat 50% 50%;
+	width: 46px;
+}
+.product-visual__count{
+	line-height: 46px;
+	color: #fff;
+	text-align: center;
+	background: #0059a6;
+	min-width: 46px;
+	padding: 0 6px;
+}
+/*product visual end*/
+
+/*product company info*/
+.product-info__main .company-info{
+	width: 324px;
+	float: right;
+	margin-left: -324px;
+	min-height: 362px;
+	padding-top: 26px;
+}
+/*product company info end*/
+
+/*product info gallery*/
+.product-info__gallery{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+	background: #000;
+	visibility: hidden;
+	overflow: hidden;
+}
+.open-gallery .product-info__gallery{
+	z-index: 5;
+	visibility: visible;
+}
+.product-info__gallery .gallery{
+	margin: 0;
+	padding: 0;
+}
+.product-info__gallery .btn-close{
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	z-index: 6;
+	background: #0059a6;
+	background: rgba(0, 89, 166, 0.7);
+	-webkit-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+	-webkit-transform: scale(0, 0);
+	-ms-transform: scale(0, 0);
+	transform: scale(0, 0);
+	opacity: 0;
+}
+.open-gallery .product-info__gallery .btn-close{
+	-webkit-transform: scale(1, 1);
+	-ms-transform: scale(1, 1);
+	transform: scale(1, 1);
+	opacity: 1;
+}
+.product-info__gallery .btn-close:hover{
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	z-index: 6;
+	background: #004b95;
+	background: rgba(0, 89, 166, 0.8);
+}
+.product-info__gallery .owl-nav{
+	-webkit-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+	-webkit-transform: translate(0, 83px);
+	-ms-transform: translate(0, 83px);
+	transform: translate(0, 83px);
+}
+.open-gallery .product-info__gallery .owl-nav{
+	-webkit-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+/*product info gallery end*/
+/*product info main end*/
+
+/*product info order*/
+.product-info__order-btn {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 35px;
+}
+.product-info__order .file{
+	display: inline-block;
+	vertical-align: top;
+}
+/*product info order end*/
+/*product info end*/
+
 /*spec*/
 .spec table,
 .spec .tbl{
@@ -3082,7 +3269,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 	color: #333;
 	text-align: center;
 	background: #fff;
-	padding: 10px 18px;
+	padding: 9px 18px;
 }
 .spec .tbl td:first-child,
 .spec table td:first-child{
@@ -3103,6 +3290,27 @@ div.cselect-local .ui-multiselect-checkboxes{
 	background: #e5eef6;
 }
 /*spec end*/
+
+/*certificates*/
+.cert{
+	border: 1px solid #99bddb;
+	padding: 31px 50px 21px;
+}
+.cert__holder{
+	font-size: 0;
+	letter-spacing: -4px;
+	padding: 0 0 6px;
+}
+.cert__item{
+	font-size: 16px;
+	letter-spacing: -4px;
+	display: inline-block;
+	vertical-align: top;
+	width: 20%;
+	padding: 0 10px 21px;
+	text-align: center;
+}
+/*certificates end*/
 /*main end*/
 
 /*footer*/
