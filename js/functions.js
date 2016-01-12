@@ -328,20 +328,6 @@ function slickSlidersInit(){
 	}
 	/*promo slider end*/
 
-	/*promo slider*/
-	//var sliderproduceFull = $('.produce-full');
-	//if(sliderproduceFull.length){
-	//	sliderproduceFull.slick({
-	//		fade: true,
-	//		//swipe: false,
-	//		speed: 500,
-	//		infinite: true,
-	//		dots: false,
-	//		arrows: false
-	//	});
-	//}
-	/*promo slider end*/
-
 	/*departments slider*/
 	var sliderDepartments = $('.departments-slider');
 	if(sliderDepartments.length){
@@ -375,6 +361,21 @@ function slickSlidersInit(){
 			}]
 		});}
 	/*clients slider end*/
+
+	/*news slider*/
+	var sliderNews= $('.news-slider');
+	if(sliderNews.length){
+		sliderNews.slick({
+			speed: 300,
+			infinite: true,
+			//autoplay: true,
+			//autoplaySpeed: 3000,
+			dots: true,
+			cssEase: 'ease-in-out',
+			arrows: false
+		});
+	}
+	/*news slider end*/
 }
 /*slick sliders init end*/
 
@@ -421,9 +422,6 @@ function owlInit(){
 		} else {
 			currentItem = 1;
 		}
-		console.log('item ', item);
-		console.log('cloned ', cloned/2);
-		console.log('currentItem ', currentItem);
 		$(event.target).find('.slide-counter').text(currentItem + '/' +items)
 	}
 
@@ -817,13 +815,159 @@ function fancyboxInit(){
 					openEffect: 'none',
 					closeEffect: 'none',
 					padding: 0,
-					margin: [10,50,10,50]
+					margin: 50
 				});
 	}
 }
 /* fancybox initial */
 
 /*products gallery initial*/
+(function () {
+	var ProductGallery = function (options) {
+		this.options = options;
+		var $synopsis_section = $(options.synopsis_section);
+		this.$synopsisSection = $synopsis_section;
+		this.$synopsisControl = $(options.synopsis_control, $synopsis_section);
+		this.$controlLeft = $(options.control_left, $synopsis_section);
+		this.$controlRight = $(options.control_right, $synopsis_section);
+		this.$smallThumbs = $(options.small_thumbs, $synopsis_section);
+		this.$mask = $(options.mask, $synopsis_section);
+		this.$bgArea = $(options.bg_area, $synopsis_section);
+
+		var $container = $(options.produce_container);
+		this.$container = $container;
+		this.$thumbs = $(options.thumbs, $container);
+		this.$thumbsContainer = $(options.thumbs_container, $container);
+		this.$fullContainer = $(options.full_container, $container);
+
+		this.modifiers = {
+			hover: 'made-hover',
+			active: 'made-active',
+			open: 'made-opened',
+			lt_active: 'lt-active',
+			rt_active: 'rt-active'
+		};
+
+		this.slick = this.initSlick();
+
+		this.initScrollbar();
+		this.bindEvents();
+
+		this.switchControls();
+	};
+
+	ProductGallery.prototype.switchControls = function () {
+		var self = this,
+			modifiers = this.modifiers,
+			synopsisControl = self.$synopsisControl;
+
+		var $synopsisSection = self.$synopsisSection;
+
+		synopsisControl.on('click', function (event) {
+			event.preventDefault();
+		});
+
+		var clearClasses = function () {
+			$synopsisSection.removeClass(modifiers.lt_active);
+			$synopsisSection.removeClass(modifiers.rt_active);
+			synopsisControl.closest('li').removeClass(modifiers.active);
+		};
+
+		self.$controlLeft.on('click', function () {
+			clearClasses();
+
+			$synopsisSection.addClass(modifiers.lt_active);
+			$(this).closest('li').addClass(modifiers.active);
+		});
+
+		self.$controlRight.on('click', function () {
+			clearClasses();
+
+			$synopsisSection.addClass(modifiers.rt_active);
+			$(this).closest('li').addClass(modifiers.active);
+		})
+	};
+
+	ProductGallery.prototype.initSlick = function () {
+		var $slickSlider = this.$fullContainer.slick({
+			fade: true,
+			speed: 250,
+			infinite: false,
+			dots: false,
+			arrows: false
+		});
+
+		return $slickSlider;
+	};
+
+	ProductGallery.prototype.initScrollbar = function () {
+		this.$thumbsContainer.mCustomScrollbar({
+			axis:"x",
+			scrollbarPosition: "inside",
+			advanced:{autoExpandHorizontalScroll:true},
+			//snapAmount:156,
+			keyboard:{
+				//scrollAmount:156,
+				enable: false
+			},
+			mouseWheel:{
+				//deltaFactor:156
+				enable: false
+			},
+			scrollInertia:500
+		});
+	};
+
+	ProductGallery.prototype.scrollToActiveThumb = function () {
+		var left = this.$thumbs.eq(this.slick.slick('slickCurrentSlide')).position().left,
+			width = this.$thumbsContainer.width(),
+			scrollOffset = (left - width / 2 < 0) ? 0 : left - width / 2;
+
+		this.$thumbsContainer.mCustomScrollbar('scrollTo', scrollOffset);
+	};
+
+	ProductGallery.prototype.bindEvents = function () {
+		var self = this,
+			modifiers = this.modifiers;
+
+		this.$thumbs.on('click', function () {
+			var $activeThumb = $(this).parent(),
+				activeIndex = $activeThumb.index();
+
+			self.$thumbs.parent().removeClass(modifiers.active);
+			$activeThumb.addClass(modifiers.active);
+
+			self.slick.slick('slickGoTo',activeIndex);
+		});
+
+		self.slick.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+			self.$thumbs.parent().removeClass(modifiers.active);
+
+			self.$thumbs.parent().eq(nextSlide).addClass(modifiers.active);
+		});
+
+		self.slick.on('afterChange', function () {
+			self.scrollToActiveThumb();
+		});
+
+		self.$smallThumbs.on('click', function (event) {
+			var current = $(this);
+			self.$controlLeft.trigger('click');
+			setTimeout(function () {
+				self.$thumbs.eq(current.closest('li').index()).trigger('click');
+			}, 400);
+			event.preventDefault();
+		})
+
+		self.$mask.on('click', function () {
+			self.$controlRight.trigger('click');
+		})
+	};
+
+	window.ProductGallery = ProductGallery;
+
+}());
+
 function productGalleryInit() {
 	var options = {
 		synopsis_section: '.synopsis-section',
@@ -854,6 +998,14 @@ function accordionInit(){
 }
 /*ui accordion initial end*/
 
+/*ui tabs initial*/
+function tabsInit(){
+	$('.tabs').tabs({
+		animate: 'easeInOutQuint'
+	});
+}
+/*ui tabs initial end*/
+
 /*open gallery*/
 function openGallery(){
 	var productPreview = $('.product-visual');
@@ -866,6 +1018,15 @@ function openGallery(){
 	});
 }
 /*open gallery end*/
+
+/*masonry initial*/
+function masonryInit(){
+	$('.news__list').masonry({
+		itemSelector: '.news__item',
+		percentPosition: true
+	})
+}
+/*masonry initial end*/
 
 /** ready/load/resize document **/
 
@@ -884,9 +1045,11 @@ $(document).ready(function(){
 	fancyboxInit();
 	productGalleryInit();
 	accordionInit();
+	tabsInit();
 	openGallery();
 });
 $(window).load(function () {
 	owlInit();
 	customScrollInit();
+	masonryInit();
 });

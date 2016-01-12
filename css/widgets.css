@@ -992,7 +992,7 @@
 		width: 30px;
 		height: 30px;
 		right: -42px;
-		top: 0;
+		top: -42px;
 		background: none;
 		-webkit-transition: 0.2s cubic-bezier(0, 0, 0, 1);
 		transition: 0.2s cubic-bezier(0, 0, 0, 1);

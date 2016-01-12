@@ -137,6 +137,9 @@ strong em{
 /*gradient end*/
 
 /*TEXT PAGES*/
+.user-content{
+	padding-bottom: 30px;
+}
 .user-content *+h2,
 .user-content *+h3,
 .user-content *+h4,
@@ -301,7 +304,6 @@ table th{
 	background-color: #e5eef6;
 	border-left: 4px solid #0059a6;
 	padding: 30px 35px 28px 30px;
-	margin: 0 0 20px;
 }
 .blockquote .q{
 	display: block;
@@ -880,7 +882,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	margin: 0;
 	min-height: 50px;
 }
-.content-widget{ padding: 0 0 30px; }
+.content-widget{ padding: 0 0 40px; }
 .inner-page{
 	padding: 30px 0 0;
 }
@@ -2841,7 +2843,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 /*gallery*/
 .gallery{
 	padding: 0;
-	margin: 0 0 53px;
+	margin: 0;
 	position: relative;
 }
 .gallery-item{
@@ -2953,14 +2955,17 @@ div.cselect-local .ui-multiselect-checkboxes{
 	line-height: 16px;
 }
 .date-event__time{
-	color: #267bc5;
+	color: #0059a6;
 	font-size: 14px;
 	line-height: 16px;
 	vertical-align: top;
 	padding-right: 6px;
 }
+.alt-color .date-event__time{
+	color: #267bc5;
+}
 .date-event__label{
-	background: #267bc5;
+	background: #0059a6;
 	display: inline-block;
 	vertical-align: top;
 	font-size: 10px;
@@ -2970,6 +2975,9 @@ div.cselect-local .ui-multiselect-checkboxes{
 	text-align: center;
 	padding: 0 6px;
 	cursor: default;
+}
+.alt-color .date-event__label{
+	background: #267bc5;
 }
 /*date event end*/
 
@@ -3043,6 +3051,10 @@ div.cselect-local .ui-multiselect-checkboxes{
 	float: left;
 	width: 33.3%;
 	padding: 0 10px;
+}
+.contact-info__title{
+	display: block;
+	padding: 0 0 10px;
 	font: 16px/22px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	color: #d32e2e;
 	text-transform: uppercase;
@@ -3092,6 +3104,332 @@ div.cselect-local .ui-multiselect-checkboxes{
 	padding-top: 0;
 }
 /*contact info end*/
+
+/*tabs*/
+.ui-tabs-panel[aria-hidden="true"] {
+	display: block !important;
+	height: 0;
+	overflow: hidden;
+}
+.ui-tabs-panel[aria-hidden="false"] {
+	display: block !important;
+	height: auto;
+}
+.tabs-controls{
+	width: 100%;
+	position: relative;
+	z-index: 2;
+}
+.tabs-controls li{
+	float: left;
+	width: 50%;
+	height: 68px;
+	font: 16px/68px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+	color: #fff;
+}
+.tabs-controls a{
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	height: 68px;
+	padding: 0 18px;
+	background: #0059a6;
+	border-bottom: 1px solid transparent;
+	position: relative;
+}
+.tabs-controls .alt-color a{
+	background: #267bc5;
+}
+.tabs-controls li.ui-tabs-active a{
+	border-color:  #80acd3;
+}
+.tabs-controls li.ui-tabs-active.alt-color a{
+	border-color: #0059a6;
+}
+.tabs-controls a:after,
+.tabs-controls a:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	display: none;
+}
+.tabs-controls .ui-tabs-active a:before,
+.tabs-controls .ui-tabs-active a:after{
+	display: block;
+}
+.tabs-controls a:after {
+	border-color: rgba(0, 89, 166, 0);
+	border-top-color: #267bc5;
+	border-width: 14px;
+	margin-left: -14px;
+}
+.tabs-controls a:before {
+	border-color: rgba(128, 172, 211, 0);
+	border-top-color: #0059a6;
+	border-width: 15px;
+	margin-left: -15px;
+}
+.tabs-controls li:first-child a:after {
+	border-top-color: #0059a6;
+}
+.tabs-controls li:first-child a:before {
+	border-top-color: #80acd3;
+}
+.tabs-controls a>span{
+	border-bottom: 1px dotted #fff;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.tabs-controls a:hover>span,
+.tabs-controls .ui-tabs-active a>span{
+	border-color: transparent;
+}
+/*tabs end*/
+/*news slider*/
+.news-slider{
+	margin: 0 0 20px;
+	padding: 0;
+	position: relative;
+}
+.news-slider:after,
+.news-slider:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.news-slider:after {
+	border-color: rgba(0, 89, 166, 0);
+	border-top-color: #0059a6;
+	border-width: 14px;
+	margin-left: -14px;
+}
+.news-slider:before {
+	border-color: rgba(128, 172, 211, 0);
+	border-top-color: #80acd3;
+	border-width: 15px;
+	margin-left: -15px;
+}
+.alt-color .news-slider:after {
+	border-top-color: #267bc5;
+}
+.alt-color .news-slider:before {
+	border-top-color: #0059a6;
+}
+.news-slider,
+.news-slider__item{
+	background: #0059a6;
+	color: #fff;
+}
+.alt-color .news-slider,
+.alt-color .news-slider__item{
+	background: #267bc5;
+}
+.news-slider__item a{
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	padding: 30px 60px 45px;
+}
+.alt-color .date-event__time{
+	color: #267bc5;
+}
+.alt-color .date-event__label{
+	background: #267bc5;
+}
+.news-slider__img{
+	float: right;
+	width: 240px;
+	margin-left: 30px;
+}
+.news-slider__content{
+	overflow: hidden;
+	padding: 0 0 30px;
+}
+.news-slider__rubric{
+	font: 14px/22px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	color: #80acd3;
+	text-transform: uppercase;
+	padding: 0 0 40px;
+}
+.alt-color .news-slider__rubric{
+	color: #0059a6;
+}
+.news-slider__title{
+	font: 24px/28px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	color: #fff;
+	padding: 0 0 20px;
+}
+.news-slider__text{
+	padding: 0 0 12px;
+}
+.news-slider__time{
+	display: block;
+	font-style: normal;
+	font-size: 14px;
+	line-height: 22px;
+	color: #80acd3;
+}
+.alt-color .news-slider__time{
+	color: #0059a6;
+}
+
+.news-slider .slick-dots{
+	margin: 0;
+	bottom: 30px;
+	line-height: 15px;
+	left: 59px;
+	right: auto;
+	width: auto;
+	padding: 0;
+	text-align: left;
+}
+.news-slider .slick-dots li,
+.news-slider .slick-dots li button{
+	width: 19px;
+	padding: 0;
+	height: auto;
+	vertical-align: top;
+}
+.news-slider .slick-dots li{
+	width: 27px;
+	margin: 0 1px;
+}
+.news-slider .slick-dots li button{
+	height: 25px;
+	background: none;
+	padding: 10px 4px;
+	width: 27px;
+}
+.news-slider .slick-dots li button:before{
+	content: '';
+	display: block;
+	position: relative;
+	left: auto;
+	top: auto;
+	border: 1px solid #fff;
+	width: 100%;
+	height: 5px;
+	opacity: 1;
+	box-shadow: 0 0 0 1px transparent;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.news-slider .slick-dots li button:hover:before{
+	box-shadow: 0 0 0 1px #fff;
+}
+.news-slider .slick-dots li.slick-active button:before{
+	background: #fff;
+	box-shadow: none;
+}
+/*news slider end*/
+
+.news-slider + *{
+	position: relative;
+}
+
+/*news*/
+.news{
+	padding: 50px 0 50px;
+}
+.news__list{
+	margin: 0 -20px;
+}
+.news__list:before,
+.news__list:after { content: ""; display: table; }
+.news__list:after { clear: both; }
+.news__item{
+	float: left;
+	width: 50%;
+	padding: 0 20px 20px;
+	background: #fff;
+	background: rgba(255, 255, 255, 0.8);
+}
+.news__item a{
+	text-decoration: none;
+	color: #333;
+}
+.news__item h3,
+.news__item .news__preview{
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.news__item a:hover h3,
+.news__item a:hover .news__preview{
+	color: #0059a6;
+}
+.alt-color .news__item a:hover h3,
+.alt-color .news__item a:hover .news__preview{
+	color: #267bc5;
+}
+.btn-news{
+	border-color: #0059a6;
+	color: #0059a6;
+}
+.btn-news:hover{
+	background: #0059a6;
+	color: #fff;
+}
+.alt-color .btn-news{
+	border-color: #267bc5;
+	color: #267bc5;
+}
+.alt-color .btn-news:hover{
+	background: #267bc5;
+	color: #fff;
+}
+/*news end*/
+
+/*archive info*/
+.archive-info{
+	padding: 20px 18px 0;
+	border: 1px solid #d3382e;
+	background: #fff;
+	overflow: hidden;
+}
+.archive-info__title{
+	float: left;
+	padding: 0 0 10px;
+	margin-right: 20px;
+	font: 16px/22px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	color: #d32e2e;
+	text-transform: uppercase;
+}
+.archive-info__list{
+	overflow: hidden;
+	font-size: 14px;
+	line-height: 22px;
+}
+.archive-info__date{
+	float: left;
+	padding: 0 20px 20px 0;
+}
+.archive-info__date a{
+	text-decoration: none;
+	cursor: default;
+}
+.archive-info__date a:link{
+	cursor: pointer;
+}
+.archive-info__date a:hover{
+	text-decoration: underline;
+}
+.archive-info__date.active a{
+	color: #d32e2e;
+	text-decoration: none;
+}
+/*archive info end*/
 
 /*product info*/
 .product-info{
@@ -3336,7 +3674,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 /*error 404 end*/
 
 /*contacts*/
-.contacts{ padding: 0 0 19px; }
+.contacts{ padding: 0 0 20px; }
 .contacts h2{
 	font: 16px/22px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	color: #d3382e;
