@@ -20,11 +20,7 @@
 	display: inline-block;
 	vertical-align: top;
 }
-.depict-files-pdf{ background-position: 0 0; width: 39px; height: 46px; }
-.depict-files-xls{ background-position: 0 -66px; width: 39px; height: 46px; }
-.depict-files-doc{ background-position: 0 -132px; width: 39px; height: 46px; }
-.depict-files-zip{ background-position: 0 -198px; width: 39px; height: 46px; }
-.depict-files-jpg{ background-position: 0 -264px; width: 39px; height: 46px; }
+
 /*depict files end*/
 
 /*social icons*/
