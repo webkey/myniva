@@ -55,17 +55,17 @@ h3{
 }
 h4{
 	font-size: 16px;
-	line-height: 20px;
-	padding: 0 0 13px;
+	line-height: 22px;
+	padding: 0 0 12px;
 }
 h5{
 	font-family: 'gothampro-regular', Arial, Helvetica, sans-serif;
 	font-size: 12px;
-	line-height: 14px;
+	line-height: 22px;
 	text-transform: uppercase;
 	color: #666;
 	font-weight: 100;
-	padding: 0 0 12px;
+	padding: 0 0 9px;
 }
 h6{
 	font-size: 12px;
@@ -871,7 +871,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	padding: 8px 0 0;
 }
 .main{
-	padding: 0 0 98px;
+	padding: 0 0 68px;
 	position: relative;
 	clear: both;
 	z-index: 2;
@@ -1188,7 +1188,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 }
 .header-options{
 	float: right;
-	padding: 30px 0 31px;
+	padding: 32px 0 33px;
 }
 /*search-form*/
 .search-form{
@@ -2179,7 +2179,8 @@ div.cselect-local .ui-multiselect-checkboxes{
 /*location map*/
 .local-map {
 	width: 100%;
-	background: #ebebe1;
+	background: #ccdeed;
+	height: 505px;
 }
 .location .local-map {
 	height: 485px;
@@ -2203,16 +2204,6 @@ div.cselect-local .ui-multiselect-checkboxes{
 .map-shadow:after {
 	top: auto;
 	bottom: -20px;
-}
-.gm-style-iw * {
-	display: block;
-}
-.gm-style-iw h4, .gm-style-iw p {
-	margin: 0;
-	padding: 0;
-}
-.gm-style-iw a {
-	color: #4272db;
 }
 /*location map end*/
 
@@ -2255,7 +2246,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 .location-info-btn [class*="btn-"]{
 	border-color: #fff;
 	color: #fff;
-	padding: 13px 23px 12px 18px;
+	padding: 13px 18px 12px;
 }
 .location-info-btn [class*="btn-"]:hover{
 	background: #fff;
@@ -3343,6 +3334,53 @@ div.cselect-local .ui-multiselect-checkboxes{
 	vertical-align: top;
 }
 /*error 404 end*/
+
+/*contacts*/
+.contacts{
+	padding: 0 0 10px;
+}
+.contacts h2{
+	font: 16px/22px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	color: #d3382e;
+	text-transform: uppercase;
+	padding: 0 0 20px;
+}
+.contacts__container{
+	margin: 0 -20px;
+}
+.contacts__col{
+	width: 33.3%;
+	float: left;
+	padding: 0 20px;
+}
+.contacts__box{
+	padding: 0 0 30px;
+}
+.contacts__anchor{
+	padding: 0 0 10px;
+}
+.contacts__anchor a{
+	text-decoration: none;
+	padding-top: 3px;
+}
+.contacts__anchor a i{
+	margin: 5px 5px 0 0;
+}
+.contacts__anchor a span{
+	border-bottom: 1px dotted #0059a7;
+}
+.contacts__anchor a:hover span{
+	border-color: transparent;
+}
+.contacts__place{
+	font-family: 'gothampro-regular', Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 22px;
+	text-transform: uppercase;
+	color: #666;
+	font-weight: 100;
+}
+/*contacts end*/
 /*main end*/
 
 /*footer*/

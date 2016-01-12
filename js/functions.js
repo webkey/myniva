@@ -433,6 +433,128 @@ function owlInit(){
 /*owl carousel init end*/
 
 /*map init*/
+var styleMap = [
+	{
+		"featureType": "water",
+		"elementType": "geometry.fill",
+		"stylers": [
+			{ "color": "#c6d0dd" },
+			//{ saturation: 0 },
+			//{ lightness: 0 },
+			//{ gamma: 1.51 }
+		]
+	},{
+		"featureType": "transit",
+		"stylers": [
+			{ "color": "#808080" },
+			{ "visibility": "off" }
+		]
+	},{
+		"featureType": "road.highway",
+		"elementType": "geometry.stroke",
+		"stylers": [
+			{ "visibility": "on" },
+			{ "color": "#b4c2d3" }
+		]
+	},{
+		"featureType": "road.highway",
+		"elementType": "geometry.fill",
+		"stylers": [
+			{ "color": "#A2B3C8" }
+		]
+	},{
+		"featureType": "road.local",
+		"elementType": "geometry.fill",
+		"stylers": [
+			{ "visibility": "on" },
+			{ "color": "#A2B3C8" },
+			{ "weight": 1.8 }
+		]
+	},{
+		"featureType": "road.local",
+		"elementType": "geometry.stroke",
+		"stylers": [
+			{ "color": "#d7d7d7" }
+		]
+	},{
+		"featureType": "poi",
+		"elementType": "geometry.fill",
+		"stylers": [
+			{ "visibility": "on" },
+			{ "color": "#ebebeb" }
+		]
+	},{
+		"featureType": "administrative",
+		"elementType": "geometry",
+		"stylers": [
+			{ "color": "#2e5484" }
+		]
+	},{
+		"featureType": "road.arterial",
+		"elementType": "geometry.fill",
+		"stylers": [
+			{ "color": "#A2B3C8" }
+		]
+	},{
+		"featureType": "road.arterial",
+		"elementType": "geometry.fill",
+		"stylers": [
+			{ "color": "#A2B3C8" }
+		]
+	},{
+		"featureType": "landscape",
+		"elementType": "geometry.fill",
+		"stylers": [
+			{ "visibility": "on" },
+			{ "color": "#f9fafb" }
+		]
+	},{
+		"featureType": "road",
+		"elementType": "labels.text.fill",
+		"stylers": [
+			{ "color": "#696969" }
+		]
+	},{
+		"featureType": "administrative",
+		"elementType": "labels.text.fill",
+		"stylers": [
+			{ "visibility": "on" },
+			{ "color": "#224a7d" }
+		]
+	},{
+		"featureType": "poi",
+		"elementType": "labels.icon",
+		"stylers": [
+			{ "visibility": "off" }
+		]
+	},{
+		"featureType": "poi",
+		"elementType": "labels",
+		"stylers": [
+			{ "visibility": "off" }
+		]
+	},{
+		"featureType": "road.arterial",
+		"elementType": "geometry.stroke",
+		"stylers": [
+			{ "color": "#d6d6d6" }
+		]
+	},{
+		"featureType": "road",
+		"elementType": "labels.icon",
+		"stylers": [
+			{ "visibility": "off" }
+		]
+	},{
+	},{
+		"featureType": "poi",
+		"elementType": "geometry.fill",
+		"stylers": [
+			{ "color": "#d5dde6" }
+		]
+	}
+];
+
 function mapInitNiva(){
 	if (!$('#map-niva-holding').length) {return;}
 
@@ -458,127 +580,7 @@ function mapInitNiva(){
 				opened: false,
 			},
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
-			styles: [
-				{
-					"featureType": "water",
-					"elementType": "geometry.fill",
-					"stylers": [
-						{ "color": "#c6d0dd" },
-						//{ saturation: 0 },
-						//{ lightness: 0 },
-						//{ gamma: 1.51 }
-					]
-				},{
-					"featureType": "transit",
-					"stylers": [
-						{ "color": "#808080" },
-						{ "visibility": "off" }
-					]
-				},{
-					"featureType": "road.highway",
-					"elementType": "geometry.stroke",
-					"stylers": [
-						{ "visibility": "on" },
-						{ "color": "#b4c2d3" }
-					]
-				},{
-					"featureType": "road.highway",
-					"elementType": "geometry.fill",
-					"stylers": [
-						{ "color": "#A2B3C8" }
-					]
-				},{
-					"featureType": "road.local",
-					"elementType": "geometry.fill",
-					"stylers": [
-						{ "visibility": "on" },
-						{ "color": "#A2B3C8" },
-						{ "weight": 1.8 }
-					]
-				},{
-					"featureType": "road.local",
-					"elementType": "geometry.stroke",
-					"stylers": [
-						{ "color": "#d7d7d7" }
-					]
-				},{
-					"featureType": "poi",
-					"elementType": "geometry.fill",
-					"stylers": [
-						{ "visibility": "on" },
-						{ "color": "#ebebeb" }
-					]
-				},{
-					"featureType": "administrative",
-					"elementType": "geometry",
-					"stylers": [
-						{ "color": "#2e5484" }
-					]
-				},{
-					"featureType": "road.arterial",
-					"elementType": "geometry.fill",
-					"stylers": [
-						{ "color": "#A2B3C8" }
-					]
-				},{
-					"featureType": "road.arterial",
-					"elementType": "geometry.fill",
-					"stylers": [
-						{ "color": "#A2B3C8" }
-					]
-				},{
-					"featureType": "landscape",
-					"elementType": "geometry.fill",
-					"stylers": [
-						{ "visibility": "on" },
-						{ "color": "#f9fafb" }
-					]
-				},{
-					"featureType": "road",
-					"elementType": "labels.text.fill",
-					"stylers": [
-						{ "color": "#696969" }
-					]
-				},{
-					"featureType": "administrative",
-					"elementType": "labels.text.fill",
-					"stylers": [
-						{ "visibility": "on" },
-						{ "color": "#224a7d" }
-					]
-				},{
-					"featureType": "poi",
-					"elementType": "labels.icon",
-					"stylers": [
-						{ "visibility": "off" }
-					]
-				},{
-					"featureType": "poi",
-					"elementType": "labels",
-					"stylers": [
-						{ "visibility": "off" }
-					]
-				},{
-					"featureType": "road.arterial",
-					"elementType": "geometry.stroke",
-					"stylers": [
-						{ "color": "#d6d6d6" }
-					]
-				},{
-					"featureType": "road",
-					"elementType": "labels.icon",
-					"stylers": [
-						{ "visibility": "off" }
-					]
-				},{
-				},{
-					"featureType": "poi",
-					"elementType": "geometry.fill",
-					"stylers": [
-						{ "color": "#d5dde6" }
-					]
-				}
-			],
+			styles: styleMap
 		}
 		var mapElement = document.getElementById('map-niva-holding');
 		var map = new google.maps.Map(mapElement, mapOptions);
@@ -631,7 +633,7 @@ function mapInitNiva(){
 		}
 	}
 }
-/*map init end*/
+
 function mapInitLMZ(){
 	if (!$('#map-lmz').length) {return;}
 
@@ -657,132 +659,92 @@ function mapInitLMZ(){
 				opened: false,
 			},
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
-			styles: [
-				{
-					"featureType": "water",
-					"elementType": "geometry.fill",
-					"stylers": [
-						{ "color": "#c6d0dd" },
-						//{ saturation: 0 },
-						//{ lightness: 0 },
-						//{ gamma: 1.51 }
-					]
-				},{
-					"featureType": "transit",
-					"stylers": [
-						{ "color": "#808080" },
-						{ "visibility": "off" }
-					]
-				},{
-					"featureType": "road.highway",
-					"elementType": "geometry.stroke",
-					"stylers": [
-						{ "visibility": "on" },
-						{ "color": "#b4c2d3" }
-					]
-				},{
-					"featureType": "road.highway",
-					"elementType": "geometry.fill",
-					"stylers": [
-						{ "color": "#A2B3C8" }
-					]
-				},{
-					"featureType": "road.local",
-					"elementType": "geometry.fill",
-					"stylers": [
-						{ "visibility": "on" },
-						{ "color": "#A2B3C8" },
-						{ "weight": 1.8 }
-					]
-				},{
-					"featureType": "road.local",
-					"elementType": "geometry.stroke",
-					"stylers": [
-						{ "color": "#d7d7d7" }
-					]
-				},{
-					"featureType": "poi",
-					"elementType": "geometry.fill",
-					"stylers": [
-						{ "visibility": "on" },
-						{ "color": "#ebebeb" }
-					]
-				},{
-					"featureType": "administrative",
-					"elementType": "geometry",
-					"stylers": [
-						{ "color": "#2e5484" }
-					]
-				},{
-					"featureType": "road.arterial",
-					"elementType": "geometry.fill",
-					"stylers": [
-						{ "color": "#A2B3C8" }
-					]
-				},{
-					"featureType": "road.arterial",
-					"elementType": "geometry.fill",
-					"stylers": [
-						{ "color": "#A2B3C8" }
-					]
-				},{
-					"featureType": "landscape",
-					"elementType": "geometry.fill",
-					"stylers": [
-						{ "visibility": "on" },
-						{ "color": "#f9fafb" }
-					]
-				},{
-					"featureType": "road",
-					"elementType": "labels.text.fill",
-					"stylers": [
-						{ "color": "#696969" }
-					]
-				},{
-					"featureType": "administrative",
-					"elementType": "labels.text.fill",
-					"stylers": [
-						{ "visibility": "on" },
-						{ "color": "#224a7d" }
-					]
-				},{
-					"featureType": "poi",
-					"elementType": "labels.icon",
-					"stylers": [
-						{ "visibility": "off" }
-					]
-				},{
-					"featureType": "poi",
-					"elementType": "labels",
-					"stylers": [
-						{ "visibility": "off" }
-					]
-				},{
-					"featureType": "road.arterial",
-					"elementType": "geometry.stroke",
-					"stylers": [
-						{ "color": "#d6d6d6" }
-					]
-				},{
-					"featureType": "road",
-					"elementType": "labels.icon",
-					"stylers": [
-						{ "visibility": "off" }
-					]
-				},{
-				},{
-					"featureType": "poi",
-					"elementType": "geometry.fill",
-					"stylers": [
-						{ "color": "#d5dde6" }
-					]
-				}
-			],
+			styles: styleMap,
 		}
 		var mapElement = document.getElementById('map-lmz');
 		var map = new google.maps.Map(mapElement, mapOptions);
 		var locations = [
 			['ул. Селицкого, д. 9', 'Республика Беларусь, г. Минск', 'info@niva.by', 'undefined', 'undefined', 53.8113, 27.6823, 'img/map-pin.png']
+		];
+		for (i = 0; i < locations.length; i++) {
+			if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
+			if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
+			if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
+			if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
+			if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
+			marker = new google.maps.Marker({
+				icon: markericon,
+				position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+				map: map,
+				title: locations[i][0],
+				desc: description,
+				tel: telephone,
+				email: email,
+				web: web
+			});
+			link = '';
+			bindInfoWindow(marker, map, locations[i][0], description, telephone, email, web, link);
+		}
+		function bindInfoWindow(marker, map, title, desc, telephone, email, web, link) {
+			var infoWindowVisible = (function () {
+				var currentlyVisible = false;
+				return function (visible) {
+					if (visible !== undefined) {
+						currentlyVisible = visible;
+					}
+					return currentlyVisible;
+				};
+			}());
+			iw = new google.maps.InfoWindow();
+			google.maps.event.addListener(marker, 'click', function() {
+				if (infoWindowVisible()) {
+					iw.close();
+					infoWindowVisible(false);
+				} else {
+					var html= "<div style='color:#000;background-color:#fff;padding:5px;width:170px;'><h4>"+title+"</h4><p>"+desc+"<p></div>";
+					iw = new google.maps.InfoWindow({content:html});
+					iw.open(map,marker);
+					infoWindowVisible(true);
+				}
+			});
+			google.maps.event.addListener(iw, 'closeclick', function () {
+				infoWindowVisible(false);
+			});
+		}
+	}
+}
+
+function mapInitContacts(){
+	if (!$('#map-niva-contacts').length) {return;}
+
+	google.maps.event.addDomListener(window, 'load', init);
+	var map;
+	function init() {
+		var mapOptions = {
+			center: new google.maps.LatLng(52.854244, 27.465155),
+			zoom: 6,
+			zoomControl: true,
+			zoomControlOptions: {
+				style: google.maps.ZoomControlStyle.DEFAULT,
+			},
+			disableDoubleClickZoom: false,
+			mapTypeControl: false,
+			scaleControl: false,
+			scrollwheel: false,
+			panControl: true,
+			streetViewControl: false,
+			draggable : true,
+			overviewMapControl: true,
+			overviewMapControlOptions: {
+				opened: false,
+			},
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			styles: styleMap
+		};
+		var mapElement = document.getElementById('map-niva-contacts');
+		var map = new google.maps.Map(mapElement, mapOptions);
+		var locations = [
+			['ул. Селицкого, д. 9', 'г. Минск, Беларусь', 'undefined', 'undefined', 'undefined', 52.854244, 27.465155, 'img/map-niva-pin.png']
 		];
 		for (i = 0; i < locations.length; i++) {
 			if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
@@ -818,7 +780,7 @@ function mapInitLMZ(){
 					iw.close();
 					infoWindowVisible(false);
 				} else {
-					var html= "<div style='color:#000;background-color:#fff;padding:5px;width:150px;'><h4>"+title+"</h4><p>"+desc+"<p></div>";
+					var html= "<div style='color:#000;background-color:#fff;padding:5px;width:170px;'><h4>"+title+"</h4><p>"+desc+"<p></div>";
 					iw = new google.maps.InfoWindow({content:html});
 					iw.open(map,marker);
 					infoWindowVisible(true);
@@ -918,6 +880,7 @@ $(document).ready(function(){
 	slickSlidersInit();
 	mapInitNiva();
 	mapInitLMZ();
+	mapInitContacts();
 	fancyboxInit();
 	productGalleryInit();
 	accordionInit();

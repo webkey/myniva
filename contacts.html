@@ -348,30 +348,81 @@
 	<div class="main">
 		<div class="max-wrap">
 			<div class="content inner-page">
+				<div class="heading">
+					<div class="large-align">
+						<!--breadcrumbs-->
+						<div class="breadcrumbs">
+							<div class="breadcrumbs__item">Контакты<i class="arrow fa fa-chevron-right"></i></div>
+						</div>
+						<!--breadcrumbs end-->
+						<h1>Контакты</h1>
+					</div>
+				</div>
 				<div class="content-align">
 					<div class="user-content">
-						<div class="heading">
-							<div class="large-align">
-								<!--breadcrumbs-->
-								<div class="breadcrumbs">
-									<div class="breadcrumbs__item">Контакты<i class="arrow fa fa-chevron-right"></i></div>
-								</div>
-								<!--breadcrumbs end-->
-								<h1>Контакты</h1>
-							</div>
-						</div>
+						<!--contacts-->
 						<div class="contacts">
 							<h2>Головное предприятие</h2>
 							<div class="contacts__container">
 								<div class="contacts__col">
 									<div class="contacts__box">
 										<h3>Нива-холдинг</h3>
+										<div class="contacts__anchor">
+											<a href="#"><i class="depict-icon-local"></i><span>223710, Республика Беларусь, Минская область, Солигорский район, ул. Заводская, 4</span></a>
+										</div>
+										<div class="contacts__item-line">Координаты для GPS-навигации: 52.854244, 27.465155</div>
+									</div>
+									<div class="contacts__btn">
+										<a href="#callback-popup" class="btn-default fancybox-open"><i class="fa fa-envelope"></i><span class="text-inner">Обратная связь</span></a>
+									</div>
+								</div>
+								<div class="contacts__col">
+									<div class="contacts__box">
+										<div class="contacts__place">Приемная</div>
+										<div class="contacts__item-line">Тел.: +37517 426-98-03</div>
+										<div class="contacts__item-line">Эл. почта: <a href="mailto:info@niva.by">info@niva.by</a></div>
+									</div>
+									<div class="contacts__box">
+										<div class="contacts__place">Зам. генерального директора по управлению персоналом</div>
+										<div class="contacts__item-line">Тел.: +37517 426-99-50</div>
+										<div class="contacts__item-line">Эл. почта: <a href="mailto:a.kovalchuk@niva.by">a.kovalchuk@niva.by</a></div>
+									</div>
+									<div class="contacts__box">
+										<div class="contacts__place">Зам. генерального директора по МТO</div>
+										<div class="contacts__item-line">Тел.: +37517 426-98-03</div>
+										<div class="contacts__item-line">Эл. почта: <a href="mailto:info@niva.by">info@niva.by</a></div>
+									</div>
+									<div class="contacts__box">
+										<div class="contacts__place">Зам. генерального директора по экономике</div>
+										<div class="contacts__item-line">Тел.: +37517 426-99-50</div>
+										<div class="contacts__item-line">Эл. почта: <a href="mailto:a.kovalchuk@niva.by">a.kovalchuk@niva.by</a></div>
+									</div>
+								</div>
+								<div class="contacts__col">
+									<div class="contacts__box">
+										<div class="contacts__place">Служба снабжения (т/ф)</div>
+										<div class="contacts__item-line">Тел.: +37517 426-99-50</div>
+										<div class="contacts__item-line">Эл. почта: <a href="mailto:a.kovalchuk@niva.by">a.kovalchuk@niva.by</a></div>
+									</div>
+									<div class="contacts__box">
+										<div class="contacts__place">Главный конструктор</div>
+										<div class="contacts__item-line">Тел.: +37517 426-98-03</div>
+										<div class="contacts__item-line">Эл. почта: <a href="mailto:info@niva.by">info@niva.by</a></div>
+									</div>
+									<div class="contacts__box">
+										<div class="contacts__place">Главный бухгалтер</div>
+										<div class="contacts__item-line">Тел.: +37517 426-99-50</div>
+										<div class="contacts__item-line">Эл. почта: <a href="mailto:a.kovalchuk@niva.by">a.kovalchuk@niva.by</a></div>
 									</div>
 								</div>
 							</div>
 						</div>
+						<!--contacts end-->
 					</div>
 				</div>
+				<!--location map-->
+				<div id="map-niva-contacts" class="local-map map-shadow"></div>
+				<!--location map end-->
 			</div>
 		</div>
 	</div>
@@ -396,12 +447,48 @@
 </footer>
 <!--footer end-->
 
+<!--popups-->
+<div class="popups">
+	<div class="popup">
+		<!-- callback form -->
+		<div id="callback-popup" class="callback-form">
+			<form action="#" method="get">
+				<div class="callback-popup-title">Форма обратной связи</div>
+				<div class="form-row">
+					<div class="input-wrap">
+						<input type="text" placeholder="Имя">
+					</div>
+					<div class="input-wrap">
+						<input type="text" placeholder="Компания">
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="input-wrap">
+						<input type="email" placeholder="Эл. почта">
+					</div>
+					<div class="input-wrap">
+						<input type="text" placeholder="Телефон">
+					</div>
+				</div>
+				<textarea placeholder="Сообщение"></textarea>
+				<div class="form-buttons">
+					<input type="submit" value="Отправить">
+				</div>
+			</form>
+		</div>
+		<!-- callback form end -->
+	</div>
+</div>
+<!--popups-->
+
 <!--JQuery library-->
 <script src="js/jquery-1.11.3.min.js"></script>
 <!--JQuery UI-->
 <script src="js/jquery-ui.min.js"></script>
 <!--Widgets-->
 <script src="js/widgets.js"></script>
+<!--Map-->
+<script src="https://maps.googleapis.com/maps/api/js?key=&amp;sensor=false&amp;extension=.js"></script>
 <!--Main functions-->
 <script src="js/functions.js"></script>
 </body>
