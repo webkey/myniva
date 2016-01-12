@@ -106,6 +106,7 @@
 		this.$controlRight = $(options.control_right, $synopsis_section);
 		this.$smallThumbs = $(options.small_thumbs, $synopsis_section);
 		this.$mask = $(options.mask, $synopsis_section);
+		this.$bgArea = $(options.bg_area, $synopsis_section);
 
 		var $container = $(options.produce_container);
 		this.$container = $container;

@@ -96,7 +96,8 @@ a:hover{
 }
 img{
 	border: none;
-	vertical-align: top;
+	max-width: 100%;
+	height: auto;
 }
 b, strong, th{
 	font-family:'gothampro-bold', Arial, Helvetica, sans-serif;
@@ -2050,7 +2051,7 @@ li.made-active .produce-thumbs__text,
 	transition: all 0.4s;
 }
 .synopsis-section.rt-active .rubric-visual-bg{
-	width: 100%;
+	/*width: 100%;*/
 }
 /*synopsis item full*/
 .synopsis-item__full{
@@ -3311,6 +3312,39 @@ div.cselect-local .ui-multiselect-checkboxes{
 	text-align: center;
 }
 /*certificates end*/
+
+/*error 404*/
+.error-404{
+	padding: 17.5% 0;
+}
+.error-404__info{
+	float: right;
+	width: 369px;
+	margin-left: 6.3%;
+}
+.error-404__info h1{
+	font: 34px/40px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	color: #d32e2e;
+	padding: 0 0 13px;
+}
+.error-404__info h2{
+	font: 16px/22px 'gothampro-regular', Arial, Helvetica, sans-serif;
+	color: #d32e2e;
+	padding: 0 0 50px;
+}
+.error-404__line{
+	padding: 0 0 18px;
+}
+.error-404__img{
+	text-align: center;
+	overflow: hidden;
+	margin: 14px 0 0;
+}
+.error-404__img img{
+	display: inline-block;
+	vertical-align: top;
+}
+/*error 404 end*/
 /*main end*/
 
 /*footer*/

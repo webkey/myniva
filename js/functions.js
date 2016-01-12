@@ -870,6 +870,7 @@ function productGalleryInit() {
 		control_right: '.synopsis__controls_right',
 		small_thumbs: '.produce-small__heading',
 		mask: '.rubric-visual-mask',
+		bg_area: '.rubric-visual-bg',
 
 		produce_container: '.produce',
 		thumbs: '.produce-thumbs__item',
