@@ -3336,25 +3336,29 @@ div.cselect-local .ui-multiselect-checkboxes{
 /*error 404 end*/
 
 /*contacts*/
-.contacts{
-	padding: 0 0 10px;
-}
+.contacts{ padding: 0 0 19px; }
 .contacts h2{
 	font: 16px/22px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	color: #d3382e;
 	text-transform: uppercase;
-	padding: 0 0 20px;
+	padding: 0 0 28px;
 }
 .contacts__container{
 	margin: 0 -20px;
 }
+.contacts__container:before,
+.contacts__container:after { content: ""; display: table; }
+.contacts__container:after { clear: both; }
 .contacts__col{
 	width: 33.3%;
 	float: left;
 	padding: 0 20px;
 }
 .contacts__box{
-	padding: 0 0 30px;
+	padding: 0 0 32px;
+}
+.contacts__box h3{
+	padding: 0 0 12px;
 }
 .contacts__anchor{
 	padding: 0 0 10px;
@@ -3364,7 +3368,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 	padding-top: 3px;
 }
 .contacts__anchor a i{
-	margin: 5px 5px 0 0;
+	margin: 3px 8px 0 1px;
 }
 .contacts__anchor a span{
 	border-bottom: 1px dotted #0059a7;

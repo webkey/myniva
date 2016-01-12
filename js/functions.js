@@ -722,7 +722,7 @@ function mapInitContacts(){
 	function init() {
 		var mapOptions = {
 			center: new google.maps.LatLng(52.854244, 27.465155),
-			zoom: 6,
+			zoom: 7,
 			zoomControl: true,
 			zoomControlOptions: {
 				style: google.maps.ZoomControlStyle.DEFAULT,
@@ -732,7 +732,7 @@ function mapInitContacts(){
 			scaleControl: false,
 			scrollwheel: false,
 			panControl: true,
-			streetViewControl: false,
+			streetViewControl: true,
 			draggable : true,
 			overviewMapControl: true,
 			overviewMapControlOptions: {
