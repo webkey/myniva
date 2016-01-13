@@ -2980,7 +2980,6 @@ div.cselect-local .ui-multiselect-checkboxes{
 	color: #fff;
 	text-align: center;
 	padding: 0 6px;
-	cursor: default;
 }
 .alt-color .date-event__label{
 	background: #267bc5;
@@ -3112,20 +3111,22 @@ div.cselect-local .ui-multiselect-checkboxes{
 /*contact info end*/
 
 /*tabs*/
+.tabs-panel{
+	padding-top: 40px;
+}
+.tabs-purchase.tabs-panel,
+.tabs-news.tabs-panel{
+	padding-top: 0;
+}
 .ui-tabs-panel[aria-hidden="true"] {
 	display: block !important;
 	height: 0;
 	overflow: hidden;
-	padding: 0;
+	padding-top: 0;
 }
 .ui-tabs-panel[aria-hidden="false"] {
 	display: block !important;
 	height: auto;
-	padding-top: 40px;
-}
-.tabs-purchase.ui-tabs-panel[aria-hidden="false"],
-.tabs-news.ui-tabs-panel[aria-hidden="false"]{
-	padding-top: 0;
 }
 .tabs-controls{
 	width: 100%;
@@ -3219,6 +3220,10 @@ div.cselect-local .ui-multiselect-checkboxes{
 	margin: 0 0 20px;
 	padding: 0;
 	position: relative;
+	overflow: hidden;
+}
+.after-initialized.news-slider{
+	overflow: visible;
 }
 .news-slider:after,
 .news-slider:before {
@@ -3262,8 +3267,11 @@ div.cselect-local .ui-multiselect-checkboxes{
 	color: #fff;
 	text-decoration: none;
 	display: block;
-	padding: 30px 60px 45px;
+	padding: 34px 60px 43px;
 }
+.news-slider__item a:before,
+.news-slider__item a:after { content: ""; display: table; }
+.news-slider__item a:after { clear: both; }
 .alt-color .date-event__time{
 	color: #267bc5;
 }
@@ -3272,8 +3280,9 @@ div.cselect-local .ui-multiselect-checkboxes{
 }
 .news-slider__img{
 	float: right;
-	width: 240px;
-	margin-left: 30px;
+	max-width: 387px;
+	margin-left: 40px;
+	padding: 9px 0 0;
 }
 .news-slider__content{
 	overflow: hidden;
@@ -3283,7 +3292,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 	font: 14px/22px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	color: #80acd3;
 	text-transform: uppercase;
-	padding: 0 0 40px;
+	padding: 0 0 35px;
 }
 .alt-color .news-slider__rubric{
 	color: #0059a6;
@@ -3291,10 +3300,10 @@ div.cselect-local .ui-multiselect-checkboxes{
 .news-slider__title{
 	font: 24px/28px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	color: #fff;
-	padding: 0 0 20px;
+	padding: 0 0 12px;
 }
 .news-slider__text{
-	padding: 0 0 12px;
+	padding: 0 0 15px;
 }
 .news-slider__time{
 	display: block;
@@ -3311,7 +3320,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 	margin: 0;
 	bottom: 30px;
 	line-height: 15px;
-	left: 59px;
+	left: 53px;
 	right: auto;
 	width: auto;
 	padding: 0;
@@ -3367,10 +3376,10 @@ div.cselect-local .ui-multiselect-checkboxes{
 
 /*news*/
 .news{
-	padding: 50px 0 50px;
+	padding: 34px 0 50px;
 }
 .news__list{
-	margin: 0 -20px;
+	margin: 0 -20px 9px;
 }
 .news__list:before,
 .news__list:after { content: ""; display: table; }
@@ -3378,13 +3387,18 @@ div.cselect-local .ui-multiselect-checkboxes{
 .news__item{
 	float: left;
 	width: 50%;
-	padding: 0 20px 20px;
+	padding: 0 20px 28px;
 	background: #fff;
 	background: rgba(255, 255, 255, 0.8);
 }
 .news__item a{
 	text-decoration: none;
 	color: #333;
+}
+.news__item h3{
+	font-size: 24px;
+	line-height: 29px;
+	padding: 0 0 17px;
 }
 .news__item h3,
 .news__item .news__preview{
@@ -3419,15 +3433,14 @@ div.cselect-local .ui-multiselect-checkboxes{
 
 /*archive info*/
 .archive-info{
-	padding: 20px 18px 0;
+	padding: 18px 27px 0;
 	border: 1px solid #d3382e;
 	background: #fff;
 	overflow: hidden;
 }
 .archive-info__title{
 	float: left;
-	padding: 0 0 10px;
-	margin-right: 20px;
+	padding: 0 42px 0 18px;
 	font: 16px/22px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	color: #d32e2e;
 	text-transform: uppercase;
@@ -3439,7 +3452,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 }
 .archive-info__date{
 	float: left;
-	padding: 0 20px 20px 0;
+	padding: 0 30px 18px 0;
 }
 .archive-info__date a{
 	text-decoration: none;
@@ -3460,7 +3473,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 .preview-text{
 	background: #0059a6;
 	color: #fff;
-	padding: 32px 40px;
+	padding: 42px 55px;
 	margin: 0 0 40px;
 }
 .alt-color .preview-text{
@@ -3509,13 +3522,13 @@ div.cselect-local .ui-multiselect-checkboxes{
 	color: #666;
 	font-size: 12px;
 	line-height: 16px;
-	padding: 0 0 18px;
+	padding: 0 0 23px;
 }
 .partners__country i{
 	margin: 1px 10px 0 0;
 }
 .partners__img{
-	padding: 0 0 20px;
+	padding: 0 0 25px;
 }
 .partners__title{
 	font-size: 10px;
@@ -3543,20 +3556,19 @@ div.cselect-local .ui-multiselect-checkboxes{
 .agents-previews__list .agents-previews__item{
 	display: inline-block;
 	vertical-align: top;
-	height: 318px;
 	padding: 0 15px 30px;
 	width: 33.3%;
 }
 .agents-previews__item a{
 	display: block;
 	background: #267bc5;
-	padding: 28px;
-	height: 100%;
+	padding: 28px 28px 18px;
+	min-height: 288px;
 	color: #fff;
 	text-decoration: none;
 }
 .agents-previews__img{
-	padding: 0 15% 20px;
+	padding: 0 12% 20px;
 }
 .agents-previews__title{
 	display: block;
