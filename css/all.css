@@ -2520,11 +2520,16 @@ div.cselect-local .ui-multiselect-checkboxes{
 }
 .product-box__list .product-box__sub-sub{
 	overflow: hidden;
+	display: none;
 }
 .product-box__list .product-box__sub-sub ul,
 .user-content .product-box__list .product-box__sub-sub ul{
 	margin-top: 10px;
 	padding-bottom: 6px;
+}
+.product-box__list .product-box__sub-sub>ul,
+.user-content .product-box__list .product-box__sub-sub>ul{
+	display: block;
 }
 .product-box__list ul ul li,
 .user-content .product-box__list ul ul li{

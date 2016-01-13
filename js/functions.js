@@ -1121,8 +1121,6 @@ function scrollNavInit(){
 		this.$accordionEventItem = this.$accordionEvent.closest('li');
 		this.$collapsibleElement = $(options.collapsibleElement);
 
-		this.$collapseAllLevel = options.collapseAllLevel;
-
 		this.modifiers = {
 			hover: 'made-hover',
 			active: 'made-active',
@@ -1154,17 +1152,18 @@ function scrollNavInit(){
 
 			if (current.siblings(collapsibleElement).is(':visible')){
 				console.log(2);
-				currentAccordionItem.removeClass(modifiers.active);
+				currentAccordion.find(self.$accordionItem).removeClass(modifiers.active);
 				currentAccordionCollapsible.slideUp();
 				return;
 			}
 
-			currentAccordionItem.find(collapsibleElement).slideUp();
-			currentAccordionItem.siblings().find(collapsibleElement).slideUp();
+			currentAccordionItem.find(collapsibleElement).not(collapsibleElement.children(collapsibleElement)).slideUp();
+			currentAccordionItem.siblings().find(collapsibleElement).not(collapsibleElement.children(collapsibleElement)).slideUp();
 			currentAccordion.find(accordionItem).not(currentAccordionItem.parents(self.$accordionItem)).removeClass(modifiers.active);
-			//currentAccordionCollapsible.slideUp();
 			currentAccordionItem.addClass(modifiers.active);
+
 			current.siblings(collapsibleElement).slideDown();
+			current.closest('.dt').siblings(collapsibleElement).slideDown();
 
 			console.log(3);
 		})
@@ -1180,8 +1179,8 @@ function multiAccordionInit() {
 		accordion: '.product-box__list',
 		accordionItem: '.product-box__list li', //обертка, на которуюю добавляются классы событий
 		accordionEvent: '.product-box__list a', //элемент, по которому производим событие
-		collapsibleElement: '.product-box__list ul', //элемент, который сворачивается, разворачивается
-		collapseAllLevel: true //сворачивать все уровни аккридона?
+		accordionEventWrap: '.dt', //элемент, по которому производим событие
+		collapsibleElement: '.product-box__list ul, .product-box__sub-sub' //элемент, который сворачивается, разворачивается
 	};
 
 	new MultiAccordion(options);
