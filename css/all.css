@@ -2477,21 +2477,21 @@ div.cselect-local .ui-multiselect-checkboxes{
 .product-box__list a:hover>span{
 	text-decoration: underline;
 }
-.product-box__list .active>a,
-.product-box__list .active>.dt>a{
+.product-box__list .made-active>a,
+.product-box__list .made-active>.dt>a{
 	color: #d32e2e;
 }
-.product-box__list>.active>a>span{
+.product-box__list>.made-active>a>span{
 	text-decoration: none;
 }
 .product-box__list .fa{
 	color: #cb3033;
 	font-size: 12px;
-	-webkit-transition: all 0.2s;
-	transition: all 0.2s;
+	/*-webkit-transition: all 0.2s;*/
+	/*transition: all 0.2s;*/
 }
-.product-box__list .active>a>.fa,
-.product-box__list .active>.dt>a>.fa{
+.product-box__list .made-active>a>.fa,
+.product-box__list .made-active>.dt>a>.fa{
 	-webkit-transform: rotate(90deg);
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
@@ -2499,6 +2499,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 .product-box__list ul,
 .user-content .product-box__list ul{
 	padding: 0;
+	display: none;
 }
 .product-box__list ul li,
 .product-box__list ul li:first-child,

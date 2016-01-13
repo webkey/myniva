@@ -1054,9 +1054,9 @@ $.extend($.easing, {
 
 	$.fn.navScroller = function(options) {
 		settings = $.extend({
-			scrollToOffset: 0,
+			scrollToOffset: 30,
 			scrollSpeed: 800,
-			activateParentNode: true,
+			activateParentNode: true
 		}, options );
 		navItems = this;
 
@@ -1109,6 +1109,86 @@ function scrollNavInit(){
 }
 /*scroll navigation end*/
 
+/*multi accordion*/
+(function () {
+	var MultiAccordion = function (options) {
+		this.options = options;
+		var $accordion = $(options.accordion);
+
+		this.$accordion = $accordion;
+		this.$accordionEvent = $(options.accordionEvent);
+		this.$accordionItem = $(options.accordionItem);
+		this.$accordionEventItem = this.$accordionEvent.closest('li');
+		this.$collapsibleElement = $(options.collapsibleElement);
+
+		this.$collapseAllLevel = options.collapseAllLevel;
+
+		this.modifiers = {
+			hover: 'made-hover',
+			active: 'made-active',
+			open: 'made-opened',
+			collapsed: 'made-collapsed'
+		};
+
+		this.bindEvents();
+	};
+
+	MultiAccordion.prototype.bindEvents = function () {
+		var 	self = this,
+				modifiers = this.modifiers,
+				accordionItem = this.$accordionEventItem,
+				collapsibleElement = this.$collapsibleElement;
+
+		self.$accordionEvent.on('click', function (e) {
+			e.preventDefault();
+			var current = $(this);
+			var currentAccordionItem = current.closest(accordionItem);
+
+			if (!currentAccordionItem.has(collapsibleElement).length){
+				console.log(1);
+				return;
+			}
+
+			var currentAccordion = current.closest(self.$accordion);
+			var currentAccordionCollapsible = currentAccordion.find(collapsibleElement);
+
+			if (current.siblings(collapsibleElement).is(':visible')){
+				console.log(2);
+				currentAccordionItem.removeClass(modifiers.active);
+				currentAccordionCollapsible.slideUp();
+				return;
+			}
+
+			currentAccordionItem.find(collapsibleElement).slideUp();
+			currentAccordionItem.siblings().find(collapsibleElement).slideUp();
+			currentAccordion.find(accordionItem).not(currentAccordionItem.parents(self.$accordionItem)).removeClass(modifiers.active);
+			//currentAccordionCollapsible.slideUp();
+			currentAccordionItem.addClass(modifiers.active);
+			current.siblings(collapsibleElement).slideDown();
+
+			console.log(3);
+		})
+	};
+
+
+	window.MultiAccordion = MultiAccordion;
+
+}());
+
+function multiAccordionInit() {
+	var options = {
+		accordion: '.product-box__list',
+		accordionItem: '.product-box__list li', //обертка, на которуюю добавляются классы событий
+		accordionEvent: '.product-box__list a', //элемент, по которому производим событие
+		collapsibleElement: '.product-box__list ul', //элемент, который сворачивается, разворачивается
+		collapseAllLevel: true //сворачивать все уровни аккридона?
+	};
+
+	new MultiAccordion(options);
+}
+
+/*multi accordion end*/
+
 /** ready/load/resize document **/
 
 $(document).ready(function(){
@@ -1127,6 +1207,7 @@ $(document).ready(function(){
 	productGalleryInit();
 	openGallery();
 	scrollNavInit();
+	multiAccordionInit();
 });
 $(window).load(function () {
 	owlInit();
