@@ -1001,7 +1001,8 @@ function accordionInit(){
 /*ui tabs initial*/
 function tabsInit(){
 	$('.tabs').tabs({
-		animate: 'easeInOutQuint'
+		animate: 'easeInOutQuint',
+		active: 1
 	});
 }
 /*ui tabs initial end*/
@@ -1120,11 +1121,11 @@ $(document).ready(function(){
 	productGalleryInit();
 	openGallery();
 	scrollNavInit();
+	accordionInit();
+	tabsInit();
 });
 $(window).load(function () {
 	owlInit();
 	customScrollInit();
 	masonryInit();
-	accordionInit();
-	tabsInit();
 });
