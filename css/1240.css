@@ -1,0 +1,26 @@
+@media only screen and (max-width: 1239px){}
+/*agents boxes*/
+.agents-box {
+	padding-bottom: 50px;
+}
+.agents-box__holder {
+	float: none;
+	width: 100%;
+	margin-top: 0;
+}
+.agents-box__content {
+	padding-bottom: 10px;
+}
+.agents-box__img-wrap {
+	float: none;
+	width: 100%;
+	max-width: 500px;
+	height: 300px;
+}
+.agents-box__img {
+	margin-right: 0;
+}
+.agents-box__link {
+	bottom: 30px;
+}
+/*agents boxes end*/

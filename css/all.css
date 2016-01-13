@@ -884,8 +884,10 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 }
 .content-widget{ padding: 0 0 40px; }
 .large-align{
-	max-width: 1300px;
-	padding: 0 30px;
+	/*max-width: 1300px;*/
+	/*padding: 0 30px;*/
+	max-width: 1360px;
+	padding: 0 60px;
 	margin: 0 auto;
 }
 .footer{
@@ -3524,7 +3526,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 
 /*agents previews*/
 .agents-previews{
-	padding: 0 0 30px;
+	padding-bottom: 30px;
 }
 .agents-previews__list{
 	margin: 0 -15px;
@@ -3532,7 +3534,6 @@ div.cselect-local .ui-multiselect-checkboxes{
 	letter-spacing: -4px;
 }
 .agents-previews__item{
-	padding: 0 15px 30px;
 	text-align: center;
 	font-size: 12px;
 	line-height: 18px;
@@ -3542,7 +3543,8 @@ div.cselect-local .ui-multiselect-checkboxes{
 .agents-previews__list .agents-previews__item{
 	display: inline-block;
 	vertical-align: top;
-	height: 288px;
+	height: 318px;
+	padding: 0 15px 30px;
 	width: 33.3%;
 }
 .agents-previews__item a{
@@ -3553,6 +3555,9 @@ div.cselect-local .ui-multiselect-checkboxes{
 	color: #fff;
 	text-decoration: none;
 }
+.agents-previews__img{
+	padding: 0 15% 20px;
+}
 .agents-previews__title{
 	display: block;
 	padding: 0 0 10px;
@@ -3562,6 +3567,68 @@ div.cselect-local .ui-multiselect-checkboxes{
 	border-bottom: 1px dotted #fff;
 }
 /*agents previews end*/
+
+/*agents boxes*/
+.agents-boxes{
+	padding: 0 0 30px;
+	margin: 0 -15px;
+}
+.agents-box:before,
+.agents-box:after { content: ""; display: table; }
+.agents-box:after { clear: both; }
+.agents-box__holder{
+	float: left;
+	width: 100%;
+}
+.agents-box__holder{
+	float: left;
+	width: 66.6%;
+	position: relative;
+	margin-top: -5px;
+}
+.agents-box__content{
+	padding: 0 15px;
+}
+.agents-box__content h2{
+	padding: 0 0 16px;
+}
+.agents-box__content p{
+	padding: 0 0 22px;
+}
+.agents-box__list,
+.user-content .agents-box__list{
+	padding: 0 0 17px;
+}
+.agents-box__list li,
+.user-content .agents-box__list li{
+	padding: 0 0 10px;
+}
+.user-content .agents-box__list li:before{
+	content: none;
+}
+.agents-box__img-wrap{
+	float: right;
+	width: 33.3%;
+	height: 400px;
+	padding: 0 15px;
+	/*margin-left: 33.3%;*/
+}
+.agents-box__img{
+	position: relative;
+	height: 100%;
+	background: #ccdeed no-repeat 50% 50%;
+	-webkit-background-size: cover;
+	background-size: cover;
+	margin-right: -60px;
+}
+.agents-box__link{
+	position: absolute;
+	padding: 0 18px;
+	bottom: 40px;
+	width: 100%;
+	text-align: center;
+}
+/*agents boxes end*/
 
 /*product info*/
 .product-info{
