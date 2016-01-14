@@ -7,8 +7,8 @@
 .two-menu-active .max-wrap{
 	padding-left: 390px;
 }
-.two-menu-active .footer .max-wrap{
-	padding-left: 390px;
+.footer {
+	margin-left: 175px;
 }
 .content-align{
 	padding: 0 30px;
