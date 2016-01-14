@@ -33,14 +33,14 @@
 /*panel end*/
 
 /*logo*/
-.panel .logo{
+.logo{
 	-webkit-background-size: 62%;
 	background-size: 62%;
 	font-size: 12px;
 	line-height: 16px;
 	height: 136px;
 }
-.panel .logo a{
+.logo a{
 	padding: 101px 0 0;
 }
 /*logo end*/
