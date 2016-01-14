@@ -145,38 +145,6 @@ function customScrollInit(){
 	}
 	/*main navigation end*/
 
-	/*produce thumbs*/
-	/*var $produceThumbs = $(".produce-thumbs");
-	if($produceThumbs.length){
-		$produceThumbs.mCustomScrollbar({
-			axis:"x",
-			//theme:"dark",
-			scrollbarPosition: "inside",
-			//autoExpandScrollbar:true,
-			advanced:{autoExpandHorizontalScroll:true},
-			snapAmount:156,
-			keyboard:{scrollAmount:156},
-			mouseWheel:{ deltaFactor:156},
-			scrollInertia:400
-		});
-	}*/
-	/*produce thumbs end*/
-
-	/*products thumbs*/
-	var $prodThumbs = $(".prod-thumbs");
-	if($prodThumbs.length){
-		$prodThumbs.mCustomScrollbar({
-			axis:"x",
-			scrollbarPosition: "inside",
-			advanced:{autoExpandHorizontalScroll:true},
-			mouseWheel:{
-				enable: false
-			},
-			scrollInertia:500
-		});
-	}
-	/*products thumbs end*/
-
 	/*produce minimal*/
 	var $produceMinimal = $(".produce-minimal");
 	if($produceMinimal.length){
@@ -844,7 +812,7 @@ function fancyboxInit(){
 		this.$container = $container;
 		this.$thumbs = $(options.thumbs, $container);
 		this.$thumbsContainer = $(options.thumbs_container, $container);
-		this.$fullContainer = $(options.full_container, $container);
+		this.$panel = $(options.full_container, $container);
 
 		this.modifiers = {
 			hover: 'made-hover',
@@ -895,7 +863,7 @@ function fancyboxInit(){
 	};
 
 	ProductGallery.prototype.initSlick = function () {
-		var $slickSlider = this.$fullContainer.slick({
+		var $slickSlider = this.$panel.slick({
 			fade: true,
 			speed: 250,
 			infinite: false,
@@ -1007,8 +975,7 @@ function accordionInit(){
 /*ui tabs initial*/
 function tabsInit(){
 	$('.tabs').tabs({
-		animate: 'easeInOutQuint',
-		//active: 1
+		animate: 'easeInOutQuint'
 	});
 }
 /*ui tabs initial end*/
@@ -1113,80 +1080,157 @@ function scrollNavInit(){
 (function () {
 	var MultiAccordion = function (options) {
 		this.options = options;
-		var $accordion = $(options.accordion);
-
-		this.$accordion = $accordion;
-		this.$accordionEvent = $(options.accordionEvent);
-		this.$accordionItem = $(options.accordionItem);
-		this.$accordionEventItem = this.$accordionEvent.closest('li');
+		var container = $(options.accordionContainer);
+		this.$accordionItem = $(options.accordionItem, container);
+		this.$accordionEvent = $(options.accordionEvent, container);
 		this.$collapsibleElement = $(options.collapsibleElement);
+		this.$duration = options.duration;
 
 		this.modifiers = {
-			hover: 'made-hover',
-			active: 'made-active',
-			open: 'made-opened',
-			collapsed: 'made-collapsed'
+			active: 'made-active'
 		};
 
-		this.bindEvents();
+		this.bindEvents()
 	};
 
 	MultiAccordion.prototype.bindEvents = function () {
-		var 	self = this,
-				modifiers = this.modifiers,
-				accordionItem = this.$accordionEventItem,
-				collapsibleElement = this.$collapsibleElement;
+		var self = this,
+			modifiers = this.modifiers,
+			duration = this.$duration,
+			accordionItem = this.$accordionItem,
+			collapsibleElement = this.$collapsibleElement;
 
 		self.$accordionEvent.on('click', function (e) {
 			e.preventDefault();
 			var current = $(this);
 			var currentAccordionItem = current.closest(accordionItem);
 
-			if (!currentAccordionItem.has(collapsibleElement).length){
-				console.log(1);
-				return;
+			if (current.parent().prop("tagName") != currentAccordionItem.prop("tagName")){
+				current = current.parent();
 			}
 
-			var currentAccordion = current.closest(self.$accordion);
-			var currentAccordionCollapsible = currentAccordion.find(collapsibleElement);
+			if (!currentAccordionItem.has(collapsibleElement).length){
+				return;
+			}
 
 			if (current.siblings(collapsibleElement).is(':visible')){
-				console.log(2);
-				currentAccordion.find(self.$accordionItem).removeClass(modifiers.active);
-				currentAccordionCollapsible.slideUp();
+				currentAccordionItem.removeClass(modifiers.active).find(collapsibleElement).slideUp(duration);
+				currentAccordionItem.find(accordionItem).removeClass(modifiers.active);
 				return;
 			}
 
-			currentAccordionItem.find(collapsibleElement).not(collapsibleElement.children(collapsibleElement)).slideUp();
-			currentAccordionItem.siblings().find(collapsibleElement).not(collapsibleElement.children(collapsibleElement)).slideUp();
-			currentAccordion.find(accordionItem).not(currentAccordionItem.parents(self.$accordionItem)).removeClass(modifiers.active);
+			currentAccordionItem.siblings().removeClass(modifiers.active).find(collapsibleElement).slideUp(duration);
+			currentAccordionItem.siblings().find(accordionItem).removeClass(modifiers.active);
 			currentAccordionItem.addClass(modifiers.active);
-
-			current.siblings(collapsibleElement).slideDown();
-			current.closest('.dt').siblings(collapsibleElement).slideDown();
-
-			console.log(3);
+			current.siblings(collapsibleElement).slideDown(duration);
 		})
 	};
 
-
 	window.MultiAccordion = MultiAccordion;
-
 }());
 
 function multiAccordionInit() {
-	var options = {
-		accordion: '.product-box__list',
-		accordionItem: '.product-box__list li', //обертка, на которуюю добавляются классы событий
-		accordionEvent: '.product-box__list a', //элемент, по которому производим событие
-		accordionEventWrap: '.dt', //элемент, по которому производим событие
-		collapsibleElement: '.product-box__list ul, .product-box__sub-sub' //элемент, который сворачивается, разворачивается
+	new MultiAccordion({
+		accordionContainer: '.product-box__list',
+		accordionItem: 'li', //непосредственный родитель сворачивающегося элемента
+		accordionEvent: 'a', //элемент, по которому производим клик
+		collapsibleElement: '.product-box__list>li>ul, .product-box__sub-sub', //элемент, который сворачивается/разворачивается
+		duration: 200
+	});
+	new MultiAccordion({
+		accordionContainer: '.prod-links__list',
+		accordionItem: 'li',
+		accordionEvent: 'a',
+		collapsibleElement: '.prod-links__list>li>ul, .prod-links__sub-sub',
+		duration: 200
+	});
+}
+/*multi accordion end*/
+
+/*products gallery initial*/
+(function () {
+	var CompanyProducts = function (options) {
+		this.options = options;
+
+		var $container = $(options.container);
+		this.$container = $container;
+		this.$thumbs = $(options.thumbs, $container);
+		this.$thumbsContainer = $(options.thumbsContainer, $container);
+		this.$panel = $(options.panel, $container);
+		this.$tabPanel = $(options.tabPanel, $container);
+
+		this.modifiers = {
+			active: 'made-active',
+			openedTab: 'opened-tab',
+			closedTab: 'closed-tab',
+			disabledThumbs: 'prod-disabled-thumb'
+		};
+
+		this.initScrollbar();
+		this.bindEvents();
 	};
 
-	new MultiAccordion(options);
-}
+	CompanyProducts.prototype.initScrollbar = function () {
+		this.$thumbsContainer.mCustomScrollbar({
+			axis:"x",
+			scrollbarPosition: "inside",
+			advanced:{autoExpandHorizontalScroll:true},
+			keyboard:{
+				enable: false
+			},
+			mouseWheel:{
+				enable: false
+			},
+			scrollInertia:500
+		});
+	};
 
-/*multi accordion end*/
+	CompanyProducts.prototype.bindEvents = function () {
+		var self = this,
+			modifiers = this.modifiers,
+			tabPanel = this.$tabPanel;
+
+		tabPanel.addClass(modifiers.closedTab);
+
+		this.$thumbs.on('click', function (e) {
+			var $currentThumb = $(this).parent();
+			if ($currentThumb.hasClass(modifiers.disabledThumbs)) { return; }
+
+			var activeIndex = $currentThumb.index();
+
+			var left = $currentThumb.position().left,
+				width = self.$thumbsContainer.width(),
+				widthThumb = $currentThumb.width(),
+				scrollOffset = (left - width / 2 < 0) ? 0 : left - width / 2 + widthThumb/2;
+
+			self.$thumbsContainer.mCustomScrollbar('scrollTo', scrollOffset);
+
+			self.$thumbs.parent().removeClass(modifiers.active);
+			$currentThumb.addClass(modifiers.active);
+
+			tabPanel.removeClass(modifiers.active);
+			tabPanel.removeClass(modifiers.openedTab);
+			tabPanel.eq(activeIndex).addClass(modifiers.active);
+
+			e.preventDefault();
+		});
+	};
+
+	window.CompanyProducts = CompanyProducts;
+
+}());
+
+function companyProductsInit() {
+	if(!$('.prod').length){return;}
+	new CompanyProducts({
+		container: '.prod',
+		thumbs: '.prod-thumbs__item',
+		thumbsContainer: '.prod-thumbs',
+		panel: '.prod-container',
+		tabPanel: '.prod-tab'
+	});
+}
+/*products gallery initial end*/
 
 /** ready/load/resize document **/
 
@@ -1207,6 +1251,7 @@ $(document).ready(function(){
 	openGallery();
 	scrollNavInit();
 	multiAccordionInit();
+	companyProductsInit();
 });
 $(window).load(function () {
 	owlInit();
