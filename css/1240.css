@@ -1,4 +1,63 @@
 @media only screen and (max-width: 1239px){}
+/*main blocks*/
+/*MAX-WRAP*/
+.max-wrap{
+	padding-left: 175px;
+}
+.two-menu-active .max-wrap{
+	padding-left: 390px;
+}
+.two-menu-active .footer .max-wrap{
+	padding-left: 390px;
+}
+.content-align{
+	padding: 0 30px;
+}
+.large-align{
+	padding: 0 30px;
+}
+/*MAX-WRAP end*/
+/*main blocks end*/
+
+/*panel*/
+.panel{
+	width: 175px;
+}
+.drop-visible{
+	width: 215px;
+	left: 175px;
+}
+.panel-holder {
+	padding: 136px 0 80px;
+}
+/*panel end*/
+
+/*logo*/
+.panel .logo{
+	-webkit-background-size: 62%;
+	background-size: 62%;
+	font-size: 12px;
+	line-height: 16px;
+	height: 136px;
+}
+.panel .logo a{
+	padding: 101px 0 0;
+}
+/*logo end*/
+
+/*main navigation*/
+.nav-list li>a {
+	font-size: 12px;
+	line-height: 14px;
+	padding: 14px 35px 14px 20px;
+}
+.nav-drop__list li>a {
+	font-size: 13px;
+	line-height: 15px;
+	padding: 9px 35px 9px 20px;
+}
+/*main navigation end*/
+
 /*agents boxes*/
 .agents-box {
 	padding-bottom: 50px;

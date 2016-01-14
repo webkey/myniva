@@ -160,16 +160,8 @@ function customScrollInit(){
 	var $produceFull = $('.location-info__holder, .produce-full-holder, .produce-small__holder');
 	if($produceFull.length){
 		$produceFull.mCustomScrollbar({
-			//axis:"x",
-			//theme:"minimal",
 			scrollbarPosition: "outside",
-			autoExpandScrollbar:true,
-			/*callbacks:{
-				onInit:function(){
-					$(this).addClass('scrollbar-style-alt');
-				}
-			}*/
-			//advanced:{autoExpandHorizontalScroll:true}
+			autoExpandScrollbar:true
 		});
 	}
 	/*produce full end*/
@@ -183,6 +175,14 @@ function customScrollInit(){
 			autoExpandScrollbar:true
 		});
 	}
+	var productMenu = $('.product-menu');
+	productMenu.find('.product-box__menu').equalHeight({
+		amount: 3,
+		useParent: true,
+		parent: productMenu,
+		resize: true
+	});
+
 	/*product custom scroll end*/
 }
 /*custom scroll init end*/
@@ -807,6 +807,7 @@ function fancyboxInit(){
 		this.$smallThumbs = $(options.small_thumbs, $synopsis_section);
 		this.$mask = $(options.mask, $synopsis_section);
 		this.$bgArea = $(options.bg_area, $synopsis_section);
+		this.$itemFull = $(options.item_full, $synopsis_section);
 
 		var $container = $(options.produce_container);
 		this.$container = $container;
@@ -852,6 +853,8 @@ function fancyboxInit(){
 
 			$synopsisSection.addClass(modifiers.lt_active);
 			$(this).closest('li').addClass(modifiers.active);
+			//self.$bgArea.animate({width: '20%'}, 1000, 'linear');
+			//self.$itemFull.animate({left: '0'}, 1000, 'linear');
 		});
 
 		self.$controlRight.on('click', function () {
@@ -859,6 +862,8 @@ function fancyboxInit(){
 
 			$synopsisSection.addClass(modifiers.rt_active);
 			$(this).closest('li').addClass(modifiers.active);
+			//self.$bgArea.animate({width: '100%'}, 1000, 'linear');
+			//self.$itemFull.animate({left: '-100%'}, 1000, 'linear');
 		})
 	};
 
@@ -931,7 +936,7 @@ function fancyboxInit(){
 				self.$thumbs.eq(current.closest('li').index()).trigger('click');
 			}, 400);
 			event.preventDefault();
-		})
+		});
 
 		self.$mask.on('click', function () {
 			self.$controlRight.trigger('click');
@@ -951,6 +956,7 @@ function productGalleryInit() {
 		small_thumbs: '.produce-small__heading',
 		mask: '.rubric-visual-mask',
 		bg_area: '.rubric-visual-bg',
+		item_full: '.synopsis-item__full',
 
 		produce_container: '.produce',
 		thumbs: '.produce-thumbs__item',

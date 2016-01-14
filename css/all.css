@@ -883,13 +883,6 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	padding-top: 30px;
 }
 .content-widget{ padding: 0 0 40px; }
-.large-align{
-	/*max-width: 1300px;*/
-	/*padding: 0 30px;*/
-	max-width: 1360px;
-	padding: 0 60px;
-	margin: 0 auto;
-}
 .footer{
 	margin: -68px auto 0 240px;
 	height: 68px;
@@ -920,6 +913,13 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .content .content-align{
 	padding-bottom: 30px;
 }
+.large-align{
+	/*max-width: 1300px;*/
+	/*padding: 0 30px;*/
+	max-width: 1360px;
+	padding: 0 60px;
+	margin: 0 auto;
+}
 /*MAX-WRAP end*/
 /*main blocks end*/
 
@@ -935,14 +935,13 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 /*logo*/
 .logo{
 	display: block;
-	background: #fff url(../img/logo.png) no-repeat 50% 50%;
+	background: #fff url(../img/logo.png) no-repeat 50% 34%;
 	width: 152px;
 	height: 123px;
-	text-indent: -9999px;
-	overflow: hidden;
 	margin: 0;
-	-webkit-transition: 0.1s;
-	transition: 0.1s;
+	font: 14px/18px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	text-align: center;
 }
 .panel .logo{
 	position: absolute;
@@ -955,6 +954,9 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	display: block;
 	height: 100%;
 	cursor: default;
+	text-decoration: none;
+	color: #0059a6;
+	padding: 134px 0 0;
 }
 .logo a:link{
 	cursor: pointer;
@@ -2059,7 +2061,7 @@ li.made-active .produce-thumbs__text,
 	transition: all 0.4s;
 }
 .synopsis-section.rt-active .rubric-visual-bg{
-	/*width: 100%;*/
+	width: 100%;
 }
 /*synopsis item full*/
 .synopsis-item__full{
@@ -2071,7 +2073,7 @@ li.made-active .produce-thumbs__text,
 	width: 80%;
 	padding: 34px 40px 30px;
 	overflow: hidden;
-	z-index: 3;
+	z-index: 4;
 	-webkit-transition: all 0.4s;
 	transition: all 0.4s;
 }
@@ -2087,6 +2089,8 @@ li.made-active .produce-thumbs__text,
 	float: left;
 	width: 300px;
 	height: 100%;
+	position: relative;
+	z-index: 3;
 	-webkit-transition: 0.6s all 0.4s;
 	transition: 0.6s all 0.4s;
 	-webkit-transform: translate(-300px, 0);
@@ -2443,8 +2447,10 @@ div.cselect-local .ui-multiselect-checkboxes{
 	transition: all 0.2s;
 }
 .product-box__menu{
-	height: 348px;
-	overflow: hidden;
+	/*height: 348px;*/
+	/*overflow: hidden;*/
+	position: relative;
+	overflow: visible;
 }
 
 /*product box list*/
