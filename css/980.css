@@ -73,6 +73,12 @@ body.nav-opened{
 /*logo end*/
 
 /*main navigation*/
+.nav-list{
+	overflow: hidden;
+}
+.nav-list li{
+	position: static;
+}
 .nav-list li>a {
 	font-size: 14px;
 	line-height: 17px;
@@ -89,13 +95,77 @@ body.nav-opened{
 	height: auto;
 	padding: 0;
 }
+.nav-list li.hide-element{
+	display: block;
+}
+.nav-drop{
+	background: #e5eef6;
+}
+.nav-sub-drop{
+	background: #fff;
+}
+.nav-drop,
+.nav-sub-drop{
+	/*overflow: hidden;*/
+	display: block;
+	/*max-height: 0;*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	-webkit-transform: translate(-100%, 0);
+	-ms-transform: translate(-100%, 0);
+	transform: translate(-100%, 0);
+	-webkit-transition: transform 0.2s;
+	transition: transform 0.2s;
+	z-index: 1;
+	padding-bottom: 9999px;
+	margin-bottom: -9999px;
+}
+.active>.nav-drop,
+.active>.nav-sub-drop{
+	/*max-height: none;*/
+	-webkit-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	transform: translate(0, 0);
+	z-index: 2;
+}
+.two-menu-active .has-drop-hidden .drop-visible{
+	display: block;
+}
+.two-menu-active .has-drop-visible.active>a,
+.two-menu-active .has-drop-visible.made-current>a{
+	background: #d32e2e;
+	color: #fff;
+}
+.nav-list .has-drop-visible>.depict-angle,
+.nav-list .has-drop-visible>a>.depict-angle,
+.nav-list .has-drop-hidden>.depict-angle,
+.nav-list .has-drop-hidden>a>.depict-angle{
+	-webkit-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
 /*main navigation end*/
+
+/*user options*/
+.panel .user-options{
+	z-index: 3;
+}
+/*user options end*/
 
 /*overlay page*/
 .overlay-page{
 	display: block;
 }
 /*overlay page end*/
+.panel .mCSB_container{
+	overflow: visible;
+}
+.panel .mCSB_outside + .mCS-minimal.mCSB_scrollTools_vertical,
+.panel .mCSB_outside + .mCS-minimal-dark.mCSB_scrollTools_vertical{
+	z-index: 2;
+}
 /*panel end*/
 
 /*header*/
@@ -106,6 +176,10 @@ body.nav-opened{
 .header-holder{
 	background: #0059a6;
 	height: 46px;
+}
+.nav-opened .header-main .header-holder{
+	background: #434c51;
+	background: rgba(0, 0, 0, 0.5);
 }
 .header-holder .large-align{
 	height: 100%;
@@ -118,6 +192,7 @@ body.nav-opened{
 	margin-left: 0;
 	-webkit-transition: all 0.4s;
 	transition: all 0.4s;
+	display: block;
 }
 .nav-opened .logo-head{
 	opacity: 0;
@@ -127,7 +202,8 @@ body.nav-opened{
 .btn-menu{
 	display: block;
 }
-.header-options{
+.header-options,
+.header-main .header-options{
 	padding: 0;
 }
 .btn-search-open {

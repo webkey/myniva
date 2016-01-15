@@ -227,28 +227,54 @@ function mainNavigation() {
 	$($navigationList).on('click', 'a', function (e) {
 		var $currentLink = $(this);
 		var $currentItem = $currentLink.closest('li');
-		if(!$currentItem.has('ul').length || $currentItem.has('.drop-visible').length) { return; }
 
-		var $siblingDrop = $currentItem.siblings('li:not(.has-drop-visible, .has-drop-hidden)').find('.nav-drop, .nav-sub-drop');
-		var $currentItemDrop = $currentItem.find('.nav-drop, .nav-sub-drop');
+		var flag;
+		 if($('.btn-menu').is(':hidden')){
+			 flag = $currentItem.has('.drop-visible').length
+		} else {
+			flag = false
+		}
+		console.log(flag);
+		if(!$currentItem.has('ul').length || flag) { return; }
+
+		var dropDownMenu = $('.nav-drop, .nav-sub-drop');
+		var $siblingDrop = $currentItem.siblings('li:not(.has-drop-visible, .has-drop-hidden)').find(dropDownMenu);
+		var $currentItemDrop = $currentItem.find(dropDownMenu);
+
+		var _templateBackTo = '<div class="back-to-parent"><i class="depict-angle fa fa-chevron-left"></i><span>Назад</span></div>';
+		if(!$currentLink.siblings('div').has('.back-to-parent').length){
+			$currentLink.siblings('div').prepend(_templateBackTo);
+		}
+
+		var paragraphTitle = $currentLink.children('span').text();
+		$($currentLink).closest('.panel').find('.logo').text(paragraphTitle);
 
 		e.preventDefault();
-		if($currentItem.hasClass('active')){
+		if($currentItem.hasClass('active') || $currentItem.hasClass('made-current')){
 			closeDrops($siblingDrop);
 			closeDrops($currentItemDrop);
 			return;
 		}
 		closeDrops($siblingDrop);
 		closeDrops($currentItemDrop);
-		$currentItem
-				.children('.nav-drop, .nav-sub-drop')
-				.stop().slideDown(dur);
+
 		$currentItem.addClass('active');
+		if ($('.btn-menu').is(':visible')) {
+			return;
+		}
+		$currentItem.children(dropDownMenu).stop().slideDown(dur);
 	});
+
+	$($navigationList).on('click', '.back-to-parent', function (e) {
+		$(this).closest('li').removeClass('active');
+	});
+
 	/*close all drops*/
 	function closeDrops(drop) {
-		drop.slideUp(dur);
-		drop.closest('li').removeClass('active');
+		drop.closest('li').removeClass('active made-current');
+		if ($('.btn-menu').is(':hidden')) {
+			drop.slideUp(dur);
+		}
 	}
 }
 /*navigation accordion end*/

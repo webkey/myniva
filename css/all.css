@@ -864,11 +864,15 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	z-index: 3;
 }
 .header-main{
-	margin: 0 0 -46px;
 	min-height: 46px;
+	margin: 0 0 -46px;
+}
+.header-alt{
+	min-height: 87px;
+	margin: 0 0 -87px;
 }
 .header-main .header-options{
-	padding: 8px 0 0;
+	padding: 12px 0 0;
 }
 .main{
 	padding: 0 0 68px;
@@ -978,6 +982,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	font: 14px/17px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	color: #0059a6;
+	background: #ccdeed;
 	text-decoration: none;
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
@@ -986,7 +991,8 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .nav-list>li:hover>a{
 	background: #e5eef6;
 }
-.nav-list li.active>a{
+.nav-list li.active>a,
+.nav-list li.made-current>a{
 	background: #d32e2e;
 	color: #fff;
 }
@@ -1004,7 +1010,9 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	transition: all 0.3s;
 }
 .nav-list li.active>.depict-angle,
-.nav-list li.active>a>.depict-angle{
+.nav-list li.active>a>.depict-angle,
+.nav-list li.made-current>.depict-angle,
+.nav-list li.made-current>a>.depict-angle{
 	color: #fff;
 	-webkit-transform: rotate(-180deg);
 	-ms-transform: rotate(-180deg);
@@ -1016,6 +1024,9 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .nav-drop{
 	background: #e5eef6;
 	display: none;
+}
+.made-current>.nav-drop{
+	display: block;
 }
 .drop-visible{
 	width: 240px;
@@ -1053,12 +1064,14 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .nav-drop__list li:hover>a{
 	background: #fff;
 }
-.nav-drop__list li.active>a{
+.nav-drop__list li.active>a,
+.nav-drop__list li.made-current>a{
 	background: #d32e2e;
 	color: #fff;
 }
 .two-menu-active .has-drop-visible>a,
-.two-menu-active .has-drop-visible.active>a{
+.two-menu-active .has-drop-visible.active>a,
+.two-menu-active .has-drop-visible.made-current>a{
 	background: #e5eef6;
 	color: #0059a6;
 }
@@ -1071,7 +1084,9 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	transform: rotate(-90deg);
 }
 .nav-drop__list li.active>.depict-angle,
-.nav-drop__list li.active>a>.depict-angle{
+.nav-drop__list li.active>a>.depict-angle,
+.nav-drop__list li.made-current>.depict-angle,
+.nav-drop__list li.made-current>a>.depict-angle{
 	color: #fff;
 }
 /*nav-drop end*/
@@ -1079,6 +1094,9 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 /*nav-sub-drop*/
 .nav-sub-drop{
 	display: none;
+}
+.made-current>.nav-sub-drop{
+	display: block;
 }
 .nav-sub-drop__list li{
 	border-top: 1px solid #ccdeed;
@@ -1094,12 +1112,15 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	background: #fff;
 	text-decoration: underline;
 }
-.nav-sub-drop__list li.active>a{
+.nav-sub-drop__list li.active>a,
+.nav-sub-drop__list li.made-current>a{
 	background: #d32e2e;
 	color: #fff;
 }
 .nav-sub-drop__list li.active>.depict-angle,
-.nav-sub-drop__list li.active>a>.depict-angle{
+.nav-sub-drop__list li.active>a>.depict-angle,
+.nav-sub-drop__list li.made-current>.depict-angle,
+.nav-sub-drop__list li.made-current>a>.depict-angle{
 	color: #fff;
 }
 /*nav-sub-drop end*/
@@ -1196,9 +1217,6 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	background-size: cover;
 }
 .header-alt .header-holder{
-	min-height: 334px;
-}
-.header-alt .header-box{
 	background: #434c51;
 	background: rgba(0, 0, 0, 0.5);
 }
@@ -1225,11 +1243,10 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	padding: 0 13px 0 13px;
 	font-size: 0;
 	letter-spacing: -4px;
-	background: #0059a6;
 	-webkit-transition: background 0.2s;
 	transition: background 0.2s;
 	cursor: pointer;
-	/*display: none;*/
+	display: none;
 }
 .btn-menu:after{
 	content: '';
@@ -1312,6 +1329,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	font: 14px/18px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	text-align: center;
+	display: none;
 }
 .logo-head a{
 	display: block;
@@ -2681,6 +2699,15 @@ div.cselect-local .ui-multiselect-checkboxes{
 }
 /*product box list end*/
 /*product box end*/
+
+/*caption image*/
+.caption-img{
+	background: url(../img/img-company-01.jpg) no-repeat 50% 100%;
+	height: 334px;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+/*caption image end*/
 
 /*company contacts*/
 .company-contacts{
