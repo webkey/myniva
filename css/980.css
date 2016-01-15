@@ -19,12 +19,12 @@ body.nav-opened{
 }
 .panel{
 	width: 270px;
-	-webkit-transition: transform 0.2s, box-shadow 0.2s;
-	transition: transform 0.2s, box-shadow 0.2s;
+	box-shadow: 0 0 7px transparent;
 	-webkit-transform: translateX(-270px);
 	-ms-transform: translateX(-270px);
 	transform: translateX(-270px);
-	box-shadow: 0 0 7px transparent;
+	-webkit-transition: transform 0.2s, box-shadow 0.2s;
+	transition: transform 0.2s, box-shadow 0.2s;
 }
 .nav-opened .main{
 	/*-webkit-filter: blur(2px) grayscale(0.6);*/
@@ -193,6 +193,8 @@ body.nav-opened{
 }
 
 .two-menu-active .has-drop-visible>a,
+.two-menu-active .has-drop-visible:hover>a,
+.two-menu-active .has-drop-visible>a:hover,
 .two-menu-active .has-drop-visible.active>a,
 .two-menu-active .has-drop-visible.made-current>a,
 .two-menu-active .has-drop-visible>a .depict-angle,
