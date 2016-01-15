@@ -874,6 +874,13 @@ function fancyboxInit(){
 }
 /* fancybox initial */
 
+/* magic popup initial */
+//$('.fancybox-open').magnificPopup({
+//	type: 'inline',
+//	showCloseBtn: true
+//});
+/* magic popup initial end */
+
 /*products gallery initial*/
 (function () {
 	var ProductGallery = function (options) {

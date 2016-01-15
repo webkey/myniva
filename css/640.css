@@ -29,3 +29,19 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sea
 	height: 90px;
 }
 /*callback form end*/
+
+/*widget.css*/
+/*fancybox*/
+.fancybox-modal {
+	top: 20px !important;
+}
+.fancybox-inner {
+	overflow: visible !important;
+	height: auto !important;
+}
+.fancybox-overlay-fixed{
+	overflow-y: auto !important;
+
+}
+/*fancybox end*/
+/*widget.css end*/
