@@ -1,3 +1,17 @@
+(function($) {
+	$.fn.closest_child = function(filter) {
+		var $found = $(),
+				$currentSet = this; // Current place
+		while ($currentSet.length) {
+			$found = $currentSet.filter(filter);
+			if ($found.length) break;  // At least one match: break loop
+			// Get all children of the current set
+			$currentSet = $currentSet.children();
+		}
+		return $found.first(); // Return first match of the collection
+	}
+})(jQuery);
+
 /* placeholder */
 function placeholderInit(){
 	$('[placeholder]').placeholder();
@@ -218,7 +232,7 @@ function clearDropNavigation() {
 
 /*navigation accordion*/
 function mainNavigation() {
-	var dur = 200;
+	var dur = 300;
 	var $navigationList = $('.nav-list');
 	if (!$navigationList.length) {
 		return;
@@ -229,7 +243,7 @@ function mainNavigation() {
 		var $currentItem = $currentLink.closest('li');
 
 		var flag;
-		 if($('.btn-menu').is(':hidden')){
+		if($('.btn-menu').is(':hidden')){
 			 flag = $currentItem.has('.drop-visible').length
 		} else {
 			flag = false
@@ -237,17 +251,23 @@ function mainNavigation() {
 		console.log(flag);
 		if(!$currentItem.has('ul').length || flag) { return; }
 
+		$('.panel').addClass('level-overlay');
+
 		var dropDownMenu = $('.nav-drop, .nav-sub-drop');
 		var $siblingDrop = $currentItem.siblings('li:not(.has-drop-visible, .has-drop-hidden)').find(dropDownMenu);
 		var $currentItemDrop = $currentItem.find(dropDownMenu);
 
+		//добавить кноку "< назад"
 		var _templateBackTo = '<div class="back-to-parent"><i class="depict-angle fa fa-chevron-left"></i><span>Назад</span></div>';
-		if(!$currentLink.siblings('div').has('.back-to-parent').length){
-			$currentLink.siblings('div').prepend(_templateBackTo);
-		}
+		if($('.btn-menu').is(':visible')){
+			if(!$currentLink.siblings('div').has('.back-to-parent').length){
+				$currentLink.siblings('div').closest_child('ul').before(_templateBackTo);
+			}
 
-		var paragraphTitle = $currentLink.children('span').text();
-		$($currentLink).closest('.panel').find('.logo').text(paragraphTitle);
+			//подставляем название родителя
+			//var paragraphTitle = $currentLink.children('span').text();
+			//$($currentLink).closest('.panel').find('.categories-caption__text').text(paragraphTitle);
+		}
 
 		e.preventDefault();
 		if($currentItem.hasClass('active') || $currentItem.hasClass('made-current')){
@@ -260,6 +280,7 @@ function mainNavigation() {
 
 		$currentItem.addClass('active');
 		if ($('.btn-menu').is(':visible')) {
+			$currentItem.children(dropDownMenu).show(0);
 			return;
 		}
 		$currentItem.children(dropDownMenu).stop().slideDown(dur);
@@ -267,6 +288,10 @@ function mainNavigation() {
 
 	$($navigationList).on('click', '.back-to-parent', function (e) {
 		$(this).closest('li').removeClass('active');
+	});
+
+	$('.nav-drop>.back-to-parent').on('click', function (e) {
+		$('.panel').removeClass('level-overlay');
 	});
 
 	/*close all drops*/
@@ -1332,5 +1357,5 @@ $(window).load(function () {
 	}
 });
 $(window).resize(function () {
-	clearDropNavigation();
+	//clearDropNavigation();
 });

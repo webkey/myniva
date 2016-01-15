@@ -962,6 +962,44 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	cursor: pointer;
 }
 /*logo end*/
+
+/*categories caption*/
+.categories-caption{
+	font: 16px/22px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	width: 100%;
+	height: 85px;
+	color: #d32e2e;
+	background: #ccdeed;
+	display: none;
+}
+.categories-caption__text{
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0 30px;
+}
+/*categories caption end*/
+
+/*back to parent category*/
+.back-to-parent{
+	font: 12px/17px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	padding: 15px 30px 14px;
+	text-transform: uppercase;
+	color: #fff;
+	background: #89aece;
+	text-align: left;
+	cursor: pointer;
+	border-top: 1px solid #a3c3df;
+	display: none;
+}
+.back-to-parent i{
+	font-size: 11px;
+	line-height: inherit;
+	pointer-events: none;
+	margin-right: 5px;
+}
+/*back to parent category end*/
+
 /*main navigation*/
 /*nav-list*/
 .nav-list{
@@ -989,12 +1027,15 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 }
 .nav-list>li>a:hover,
 .nav-list>li:hover>a{
-	background: #e5eef6;
+	/*background: #e5eef6;*/
+	/*background: #ccdeed;*/
 }
 .nav-list li.active>a,
 .nav-list li.made-current>a{
-	background: #d32e2e;
-	color: #fff;
+	background: #ccdeed;
+	color: #d32e2e;
+	/*background: #d32e2e;*/
+	/*color: #fff;*/
 }
 .nav-list li>.depict-angle,
 .nav-list li>a>.depict-angle{
@@ -1013,7 +1054,8 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .nav-list li.active>a>.depict-angle,
 .nav-list li.made-current>.depict-angle,
 .nav-list li.made-current>a>.depict-angle{
-	color: #fff;
+	/*color: #fff;*/
+	color: #d32e2e;
 	-webkit-transform: rotate(-180deg);
 	-ms-transform: rotate(-180deg);
 	transform: rotate(-180deg);
@@ -1025,7 +1067,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	background: #e5eef6;
 	display: none;
 }
-.made-current>.nav-drop{
+.made-drop-open>.nav-drop{
 	display: block;
 }
 .drop-visible{
@@ -1035,6 +1077,8 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	left: 240px;
 	top: 0;
 	padding: 0 0 68px;
+
+	background: #bdd5e8;
 }
 .drop-visible__holder{
 	height: 100%;
@@ -1046,34 +1090,67 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	display: none;
 }
 .has-drop-visible .nav-drop__list{
-	border-bottom: 1px solid #b7d0e6;
+	/*border-bottom: 1px solid #b7d0e6;*/
+	border-bottom: 1px solid #90b3d2;
 }
 .nav-drop__list li{
 	border-top: 1px solid #a3c3df;
 	position: relative;
 }
 .drop-visible .nav-drop__list li{
-	border-top: 1px solid #b7d0e6;
+	/*border-top: 1px solid #b7d0e6;*/
+	border-top: 1px solid #90b3d2;
 }
 .nav-drop__list li>a{
 	background: #e5eef6;
 	text-transform: none;
 	padding: 10px 45px 9px 30px;
 }
+.drop-visible,
+.drop-visible .nav-drop__list li>a,
+.drop-visible .nav-drop__list li:hover>a,
+.drop-visible .nav-drop__list li>a:hover{
+	background: #bdd5e8;
+}
+.drop-visible .nav-drop__list li.active>a,
+.drop-visible .nav-drop__list li.made-current>a{
+	background: #bdd5e8;
+}
+.drop-visible .nav-sub-drop__list li{
+	border-top-color: #b7d0e6;
+}
+.drop-visible .nav-sub-drop{
+	background: #fff;
+}
+.drop-visible .nav-sub-drop__list li>a,
+.drop-visible .nav-sub-drop__list li:hover>a,
+.drop-visible .nav-sub-drop__list li>a:hover{
+	background: #fff;
+}
+.drop-visible .nav-drop__list li.made-current>a,
+.drop-visible .nav-sub-drop__list li.made-current>a{
+	background: #d32e2e;
+	color: #fff;
+}
+
 .nav-drop__list li>a:hover,
 .nav-drop__list li:hover>a{
-	background: #fff;
+	/*background: #fff;*/
+	background: #e5eef6;
 }
 .nav-drop__list li.active>a,
 .nav-drop__list li.made-current>a{
-	background: #d32e2e;
-	color: #fff;
+	/*background: #d32e2e;*/
+	/*color: #fff;*/
+	background: #e5eef6;
+	color: #d32e2e;
 }
 .two-menu-active .has-drop-visible>a,
 .two-menu-active .has-drop-visible.active>a,
 .two-menu-active .has-drop-visible.made-current>a{
-	background: #e5eef6;
-	color: #0059a6;
+	background: #bdd5e8;
+	/*color: #0059a6;*/
+	color: #d32e2e;
 }
 .nav-list .has-drop-visible>.depict-angle,
 .nav-list .has-drop-visible>a>.depict-angle,
@@ -1083,8 +1160,14 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	-ms-transform: rotate(-90deg);
 	transform: rotate(-90deg);
 }
+.nav-list .has-drop-visible>.depict-angle,
+.nav-list .has-drop-visible>a>.depict-angle{
+	color: #d32e2e;
+}
 .nav-drop__list li.active>.depict-angle,
-.nav-drop__list li.active>a>.depict-angle,
+.nav-drop__list li.active>a>.depict-angle{
+	color: #d32e2e;
+}
 .nav-drop__list li.made-current>.depict-angle,
 .nav-drop__list li.made-current>a>.depict-angle{
 	color: #fff;
@@ -1094,8 +1177,9 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 /*nav-sub-drop*/
 .nav-sub-drop{
 	display: none;
+	background: #fff;
 }
-.made-current>.nav-sub-drop{
+.made-drop-open>.nav-sub-drop{
 	display: block;
 }
 .nav-sub-drop__list li{
@@ -1195,15 +1279,16 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0, 89, 166, 0.6);
-	opacity: 0;
-	-webkit-transition: opacity 0.8s;
-	transition: opacity 0.8s;
+	/*background: rgba(0, 89, 166, 0.6);*/
+	/*background: rgba(255, 255, 255, 0.7);*/
+	/*opacity: 0;*/
+	/*-webkit-transition: opacity 0.8s;*/
+	/*transition: opacity 0.8s;*/
 	z-index: -99;
 	display: none;
 }
 .nav-opened .overlay-page{
-	opacity: 1;
+	/*opacity: 1;*/
 	z-index: 3;
 }
 /*overlay page end*/
