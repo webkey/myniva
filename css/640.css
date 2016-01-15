@@ -1,0 +1,8 @@
+@media only screen and (max-width: 639px){}
+
+/*product container*/
+.prod-tab.opened-tab,
+.prod-tab.made-active {
+	padding: 14px 20px;
+}
+/*product container end*/

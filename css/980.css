@@ -217,6 +217,7 @@ body.nav-opened{
 .drop-visible .nav-sub-drop__list li.made-current>a {
 	color: #0059a6;
 	background: #ccdeed;
+	text-decoration: none;
 }
 /*main navigation end*/
 

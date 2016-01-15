@@ -1365,8 +1365,10 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	position: absolute;
 	left: 0;
 	top: 0;
-	/*-webkit-transition: all 0.4s;*/
-	/*transition: all 0.4s;*/
+	/*-webkit-transition: transform 0.4s, width 0.4s;*/
+	/*transition: all 0.4s, width 0.4s;*/
+	/*-webkit-transform: translateZ(0);*/
+	/*transform: translateZ(0);*/
 }
 /*for all line menu end*/
 /*first line menu*/

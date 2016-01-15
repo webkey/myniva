@@ -121,28 +121,45 @@ function selectResize(){
 function showInput(){
 	var searchForm = $('.search-form__header');
 	if(!searchForm.length){ return; }
-	$('body').on('click', '.switcher-form-js', function(e){
+
+	var dur = 300;
+
+	$('body').on('click', '.btn-search-open', function(e){
 		var $currentBtnOpen = $(this);
 		var $currentWrap = $currentBtnOpen.closest('.header');
-		var $searchForm = $currentWrap.find('.search-form__header');
-		if ($searchForm.is(':visible')) {
-			closeSearchForm($searchForm);
+		var $searchFormContainer = $currentWrap.find('.search-form__header');
+
+		var $searchForm = $searchFormContainer.find('form');
+		if ( $searchForm.find('input:not(:submit)').val().length && $searchFormContainer.is(':visible') ){
+			$searchForm.submit();
 			return;
 		}
 
-		var dur = 300;
-		$searchForm
+		if ($searchFormContainer.is(':visible')){
+			closeSearchForm($searchFormContainer);
+			return;
+		}
+
+		$searchFormContainer
 			.stop()
 			.slideDown(dur, function(){
-				$searchForm.find('input[type="search"], input[type="text"]').val('');
-				$searchForm.find('input[type="search"], input[type="text"]').trigger('focus');
+				//$searchFormContainer.find('input[type="search"], input[type="text"]').val('');
+				$searchFormContainer.find('input[type="search"], input[type="text"]').trigger('focus');
 				$currentWrap.addClass('form-opened')
 			});
-		function closeSearchForm(form){
-			form.stop().slideUp(dur);
-			form.closest('.header').removeClass('form-opened')
-		}
 	});
+
+	$('body').on('click', '.js-btn-search-close', function(e){
+		var $searchFormContainer = $(this).closest('.search-form__header');
+		$searchFormContainer.find('input:not(:submit)').val('');
+
+		closeSearchForm($searchFormContainer);
+	});
+
+	function closeSearchForm(form){
+		form.stop().slideUp(dur);
+		form.closest('.header').removeClass('form-opened')
+	}
 }
 /*showInput end*/
 
