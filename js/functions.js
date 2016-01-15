@@ -847,11 +847,11 @@ function mapInitContacts(){
 
 /* fancybox initial */
 function fancyboxInit(){
-	/*example popups*/
+	/*modal window*/
 	var popup = $('.fancybox-open');
 	if (popup.length) {
 		popup.fancybox({
-			wrapCSS: 'fancybox-default',
+			wrapCSS: 'fancybox-modal',
 			padding: 0,
 			openEffect: 'none',
 			closeEffect: 'none'

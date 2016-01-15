@@ -7,8 +7,8 @@ body.nav-opened{
 .header,
 .main,
 .footer{
-	-webkit-transition: transform 0.2s;
-	transition: transform 0.2s;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
 }
 .nav-opened .header,
 .nav-opened .main,
@@ -23,8 +23,8 @@ body.nav-opened{
 	-webkit-transform: translateX(-270px);
 	-ms-transform: translateX(-270px);
 	transform: translateX(-270px);
-	-webkit-transition: transform 0.2s, box-shadow 0.2s;
-	transition: transform 0.2s, box-shadow 0.2s;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
 }
 .nav-opened .main{
 	/*-webkit-filter: blur(2px) grayscale(0.6);*/
@@ -174,8 +174,8 @@ body.nav-opened{
 	-webkit-transform: translate(-100%, 0);
 	-ms-transform: translate(-100%, 0);
 	transform: translate(-100%, 0);
-	-webkit-transition: transform 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
-	transition: transform 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+	-webkit-transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+	transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
 	z-index: 1;
 	padding-bottom: 9999px;
 	margin-bottom: -9999px;
@@ -333,3 +333,36 @@ body.nav-opened{
 	text-align: left;
 }
 /*company contacts end*/
+
+/*callback form*/
+.callback-form{
+	width: auto;
+	max-width: 800px;
+}
+/*callback form end*/
+
+/*widget.css*/
+/*fancybox*/
+.fancybox-lock body{
+	overflow: hidden;
+}
+.fancybox-modal{
+	width: auto !important;
+	left: 20px !important;
+	right: 20px !important;
+}
+.fancybox-inner {
+	width: auto !important;
+	/*padding: 0 52px;*/
+}
+.fancybox-close:before,
+.fancybox-close:after{
+	left: 5px;
+	top: 15px;
+}
+.fancybox-close{
+	width: 32px;
+	height: 32px;
+}
+/*fancybox end*/
+/*widget.css end*/
