@@ -95,7 +95,7 @@ body.nav-opened{
 .nav-drop__list>li:before{
 	content: '';
 	position: absolute;
-	right: 0;
+	left: 0;
 	top: 0;
 	height: 100%;
 	width: 0;
