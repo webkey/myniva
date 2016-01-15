@@ -32,9 +32,6 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sea
 
 /*widget.css*/
 /*fancybox*/
-.fancybox-modal {
-	top: 20px !important;
-}
 .fancybox-inner {
 	overflow: visible !important;
 	height: auto !important;
