@@ -345,6 +345,7 @@ body.nav-opened{
 /*fancybox*/
 .fancybox-lock body{
 	overflow: hidden;
+	position:fixed;
 }
 .fancybox-modal{
 	width: auto !important;
