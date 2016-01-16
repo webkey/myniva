@@ -1,5 +1,9 @@
 @media only screen and (max-width: 639px){}
 /*user content*/
+.user-content ol,
+.user-content ul{
+	padding: 0;
+}
 /*element form*/
 input[type="text"], input[type="password"], input[type="email"], input[type="search"], textarea{ margin: 0 0 18px; }
 .form-row{ margin: 0 -9px; }
@@ -14,6 +18,20 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sea
 	padding: 14px 20px;
 }
 /*product container end*/
+
+/*contacts*/
+.contacts__col,
+.contacts__group{
+	width: auto;
+	float: none;
+}
+.contacts__col{
+	padding-bottom: 50px;
+}
+.contacts__group-col{
+	padding-bottom: 0;
+}
+/*contacts end*/
 
 /*callback form*/
 .callback-form{

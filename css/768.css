@@ -4,9 +4,6 @@ h1 {
 	line-height: 36px;
 	padding: 0 0 30px;
 }
-.user-content ol{
-	padding: 0;
-}
 
 /*company contacts*/
 .company-contacts .company-info {
@@ -30,3 +27,14 @@ h1 {
 	padding: 0;
 }
 /*products container end*/
+
+/*contacts*/
+.contacts__col,
+.contacts__group{
+	width: 50%;
+}
+.contacts__group-col{
+	float: none;
+	width: auto;
+}
+/*contacts end*/
