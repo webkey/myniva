@@ -383,13 +383,33 @@ function slickSlidersInit(){
 			slidesToScroll: 4,
 			speed: 300,
 			infinite: false,
-			dots: true
+			dots: true, responsive: [{
+				breakpoint: 640,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2
+				}
+			}, {
+				breakpoint: 500,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					dots: false
+				}
+			}]
 		});
 	}
+	sliderDepartments.on('beforeChange', function(event, slick, currentSlide){
+		$(this).find('.slick-slide').eq(currentSlide).removeClass('separator-show');
+	});
+	sliderDepartments.on('afterChange', function(event, slick, currentSlide){
+		$(this).find('.slick-slide').eq(currentSlide).addClass('separator-show');
+	});
 	/*departments slider end*/
 
 	/*clients slider*/
 	var sliderClient = $('.clients-list');
+
 	if(sliderClient.length){
 		sliderClient.slick({
 			slidesToShow: 8,
@@ -397,16 +417,59 @@ function slickSlidersInit(){
 			slide: 'li',
 			speed: 300,
 			arrows: true,
-			infinite: false,
+			infinite: true,
 			dots: false,
 			responsive: [{
-				breakpoint: 1400,
+				breakpoint: 1290,
 				settings: {
 					slidesToShow: 7,
 					slidesToScroll: 7
 				}
+			},{
+				breakpoint: 1080,
+				settings: {
+					slidesToShow: 6,
+					slidesToScroll: 6
+				}
+			},{
+				breakpoint: 940,
+				settings: {
+					slidesToShow: 7,
+					slidesToScroll: 7
+				}
+			},{
+				breakpoint: 840,
+				settings: {
+					slidesToShow: 6,
+					slidesToScroll: 6
+				}
+			},{
+				breakpoint: 740,
+				settings: {
+					slidesToShow: 5,
+					slidesToScroll: 5
+				}
+			},{
+				breakpoint: 640,
+				settings: {
+					slidesToShow: 4,
+					slidesToScroll: 4
+				}
+			},{
+				breakpoint: 520,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 3
+				}
+			},{
+				breakpoint: 420,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2
+				}
 			}]
-		});}
+		});
+	}
 	/*clients slider end*/
 
 	/*news slider*/
@@ -610,10 +673,18 @@ function mapInitNiva(){
 	if (!$('#map-niva-holding').length) {return;}
 
 	google.maps.event.addDomListener(window, 'load', init);
-	var map;
+	var map,
+			centerMapL = "54.03666787309223",
+			centerMapR = "22.594093177112136";
+
+	if($(window).width() < 980) {
+		centerMapL = "53.16995207146201";
+		centerMapR = "27.48641749999999";
+	}
+
 	function init() {
 		var mapOptions = {
-			center: new google.maps.LatLng(54.03666787309223,22.594093177112136),
+			center: new google.maps.LatLng(centerMapL, centerMapR),
 			zoom: 6,
 			zoomControl: true,
 			zoomControlOptions: {
@@ -876,7 +947,7 @@ function fancyboxInit(){
 
 /*products gallery initial*/
 (function () {
-	var ProductGallery = function (options) {
+	var Synopsis = function (options) {
 		this.options = options;
 		var $synopsis_section = $(options.synopsis_section);
 		this.$synopsisSection = $synopsis_section;
@@ -910,43 +981,43 @@ function fancyboxInit(){
 		this.switchControls();
 	};
 
-	ProductGallery.prototype.switchControls = function () {
+	Synopsis.prototype.switchControls = function () {
 		var self = this,
 			modifiers = this.modifiers,
 			synopsisControl = self.$synopsisControl;
 
 		var $synopsisSection = self.$synopsisSection;
 
-		synopsisControl.on('click', function (event) {
-			event.preventDefault();
-		});
-
-		var clearClasses = function () {
-			$synopsisSection.removeClass(modifiers.lt_active);
-			$synopsisSection.removeClass(modifiers.rt_active);
-			synopsisControl.closest('li').removeClass(modifiers.active);
-		};
-
 		self.$controlLeft.on('click', function () {
-			clearClasses();
+			var currentControl = $(this);
+			if (currentControl.hasClass(modifiers.active)) {return;}
 
+			clearClasses();
 			$synopsisSection.addClass(modifiers.lt_active);
-			$(this).closest('li').addClass(modifiers.active);
+			$(this).addClass(modifiers.active);
 			//self.$bgArea.animate({width: '20%'}, 1000, 'linear');
 			//self.$itemFull.animate({left: '0'}, 1000, 'linear');
 		});
 
 		self.$controlRight.on('click', function () {
-			clearClasses();
+			var currentControl = $(this);
+			if (currentControl.hasClass(modifiers.active)) {return;}
 
+			clearClasses();
 			$synopsisSection.addClass(modifiers.rt_active);
-			$(this).closest('li').addClass(modifiers.active);
+			$(this).addClass(modifiers.active);
 			//self.$bgArea.animate({width: '100%'}, 1000, 'linear');
 			//self.$itemFull.animate({left: '-100%'}, 1000, 'linear');
-		})
+		});
+
+		var clearClasses = function () {
+			$synopsisSection.removeClass(modifiers.lt_active);
+			$synopsisSection.removeClass(modifiers.rt_active);
+			synopsisControl.removeClass(modifiers.active);
+		};
 	};
 
-	ProductGallery.prototype.initSlick = function () {
+	Synopsis.prototype.initSlick = function () {
 		var $slickSlider = this.$panel.slick({
 			fade: true,
 			speed: 250,
@@ -958,7 +1029,7 @@ function fancyboxInit(){
 		return $slickSlider;
 	};
 
-	ProductGallery.prototype.initScrollbar = function () {
+	Synopsis.prototype.initScrollbar = function () {
 		this.$thumbsContainer.mCustomScrollbar({
 			axis:"x",
 			scrollbarPosition: "inside",
@@ -976,7 +1047,7 @@ function fancyboxInit(){
 		});
 	};
 
-	ProductGallery.prototype.scrollToActiveThumb = function () {
+	Synopsis.prototype.scrollToActiveThumb = function () {
 		var left = this.$thumbs.eq(this.slick.slick('slickCurrentSlide')).position().left,
 			width = this.$thumbsContainer.width(),
 			scrollOffset = (left - width / 2 < 0) ? 0 : left - width / 2;
@@ -984,7 +1055,7 @@ function fancyboxInit(){
 		this.$thumbsContainer.mCustomScrollbar('scrollTo', scrollOffset);
 	};
 
-	ProductGallery.prototype.bindEvents = function () {
+	Synopsis.prototype.bindEvents = function () {
 		var self = this,
 			modifiers = this.modifiers;
 
@@ -1022,14 +1093,14 @@ function fancyboxInit(){
 		})
 	};
 
-	window.ProductGallery = ProductGallery;
+	window.Synopsis = Synopsis;
 
 }());
 
-function productGalleryInit() {
+function synopsisInit() {
 	var options = {
 		synopsis_section: '.synopsis-section',
-		synopsis_control: '.synopsis__controls>li>a',
+		synopsis_control: '.synopsis__controls>li',
 		control_left: '.synopsis__controls_left',
 		control_right: '.synopsis__controls_right',
 		small_thumbs: '.produce-small__heading',
@@ -1043,7 +1114,7 @@ function productGalleryInit() {
 		full_container: '.produce-full'
 	};
 
-	new ProductGallery(options);
+	new Synopsis(options);
 }
 /*products gallery initial end*/
 
@@ -1356,7 +1427,7 @@ $(document).ready(function(){
 	mapInitLMZ();
 	mapInitContacts();
 	fancyboxInit();
-	productGalleryInit();
+	synopsisInit();
 	openGallery();
 	scrollNavInit();
 	multiAccordionInit();
