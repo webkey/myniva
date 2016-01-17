@@ -451,7 +451,7 @@ function slickSlidersInit(){
 			slide: 'li',
 			speed: 300,
 			arrows: true,
-			infinite: true,
+			infinite: false,
 			dots: false,
 			responsive: [{
 				breakpoint: 1290,
