@@ -125,12 +125,6 @@ body.nav-opened{
 	transform: translateZ(0);
 }
 .nav-list>li.active:before,
-.nav-drop__list,
-.nav-sub-drop__list{
-	overflow-x: hidden;
-	overflow-y: auto;
-	height: calc(100% - 141px);
-}
 .nav-drop__list>li.active:before{
 	width: 100%;
 	height: 100%;
@@ -158,6 +152,13 @@ body.nav-opened{
 	-webkit-transform: rotate(-90deg);
 	-ms-transform: rotate(-90deg);
 	transform: rotate(-90deg);
+	color: #0059a6;
+}
+.nav-drop__list,
+.nav-sub-drop__list{
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: calc(100% - 141px);
 }
 .nav-drop__list li>a,
 .nav-drop__list li:hover>a,

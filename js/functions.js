@@ -213,6 +213,7 @@ function dropNavigation() {
 		var btn = $(this);
 		$('body').toggleClass('nav-opened');
 		btn.toggleClass('active');
+		$('.nav-list li').removeClass('active');
 
 		if($searchForm.is(':visible')){
 			$searchForm.find('.btn-search-close').trigger('click');
@@ -317,10 +318,6 @@ function mainNavigation() {
 			if(!$currentLink.siblings('div').has('.back-to-parent').length){
 				$currentLink.siblings('div').closest_child('ul').before(_templateBackTo);
 			}
-
-			//подставляем название родителя
-			//var paragraphTitle = $currentLink.children('span').text();
-			//$($currentLink).closest('.panel').find('.categories-caption__text').text(paragraphTitle);
 		}
 
 		e.preventDefault();
@@ -350,7 +347,7 @@ function mainNavigation() {
 
 	/*close all drops*/
 	function closeDrops(drop) {
-		drop.closest('li').removeClass('active made-current');
+		drop.closest('li').removeClass('active made-drop-open');
 		if ($('.btn-menu').is(':hidden')) {
 			drop.slideUp(dur);
 		}
