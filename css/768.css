@@ -28,6 +28,35 @@ h1 {
 }
 /*products container end*/
 
+/*partners*/
+.partners__list .partners__item {
+	width: 33.3%;
+}
+/*partners end*/
+
+/*agents previews*/
+.agents-previews__list .agents-previews__item{
+	display: block;
+	width: auto;
+	padding: 0 15px 20px;
+}
+.agents-previews__item a{
+	padding: 22px 20px;
+	min-height: 0;
+	overflow: hidden;
+}
+.agents-previews__img {
+	padding: 0;
+	margin-right: 20px;
+	float: left;
+	width: 100px;
+}
+.agents-previews__content{
+	overflow: hidden;
+	text-align: left;
+}
+/*agents previews end*/
+
 /*contacts*/
 .contacts__col,
 .contacts__group{
@@ -38,3 +67,26 @@ h1 {
 	width: auto;
 }
 /*contacts end*/
+
+/*error 404*/
+.error-404{
+	text-align: center;
+	padding: 7% 0;
+}
+.error-404__info {
+	float: none;
+	margin: 0 auto 40px;
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+	width: auto;
+}
+.error-404__bg{
+	overflow: visible;
+	text-align: center;
+	min-height: 0;
+	max-height: 227px;
+	margin: 0 auto;
+	max-width: 504px;
+}
+/*error 404 end*/

@@ -198,9 +198,9 @@ function customScrollInit(){
 	/*produce full end*/
 
 	/*product custom scroll*/
-	var $productMenu = $('.product-box__menu');
-	if($productMenu.length){
-		$productMenu.mCustomScrollbar({
+	var $productBoxMenu = $('.product-box__menu');
+	if($productBoxMenu.length){
+		$productBoxMenu.mCustomScrollbar({
 			theme:"minimal-dark",
 			scrollbarPosition: "inside",
 			autoExpandScrollbar:true
@@ -840,10 +840,17 @@ function mapInitContacts(){
 	if (!$('#map-niva-contacts').length) {return;}
 
 	google.maps.event.addDomListener(window, 'load', init);
-	var map;
+	var map,
+		centerMapL = "54.03666787309223",
+		centerMapR = "22.594093177112136";
+
+	if($(window).width() < 980) {
+		centerMapL = "53.16995207146201";
+		centerMapR = "27.48641749999999";
+	}
 	function init() {
 		var mapOptions = {
-			center: new google.maps.LatLng(52.854244, 27.465155),
+			center: new google.maps.LatLng(centerMapL, centerMapR),
 			zoom: 7,
 			zoomControl: true,
 			zoomControlOptions: {
@@ -1412,6 +1419,18 @@ function companyProductsInit() {
 }
 /*products gallery initial end*/
 
+/*equal height initial*/
+function equalHeightInit(){
+	var parentsList = $('.partners__list');
+	parentsList.find('.partners__img').equalHeight({
+		//amount: 4,
+		useParent: true,
+		parent: parentsList,
+		resize: true
+	});
+}
+/*equal height initial end*/
+
 /** ready/load/resize document **/
 
 $(document).ready(function(){
@@ -1439,6 +1458,7 @@ $(window).load(function () {
 	masonryInit();
 	accordionInit();
 	tabsInit();
+	equalHeightInit();
 
 	if(!$('.overlay-page').length){
 		$('.header').after('<div class="overlay-page" />');
