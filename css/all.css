@@ -41,7 +41,7 @@ h1{
 .heading-caption:after { content: ""; display: table; }
 .heading-caption:after { clear: both; }
 .heading-caption h1{
-	overflow: hidden;
+	float: left;
 	padding: 0 20px 0 0;
 }
 h2{
@@ -1551,10 +1551,6 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 /*header end*/
 
 /*main*/
-.heading-caption .cselect-wrap{
-	float: right;
-	width: 290px;
-}
 .promo-section{
 	position: relative;
 }
@@ -2572,13 +2568,20 @@ div.cselect-local .ui-multiselect-checkboxes{
 /*clients end*/
 
 /*product menu*/
+.cselect-products{
+	float: right;
+	width: 290px;
+}
 .product-menu{
+	overflow: hidden;
+}
+.product-menu__list{
 	font-size: 0;
 	letter-spacing: -4px;
 	margin-left: -1px;
 }
-.product-menu .product-box{
-	width: 33.3%;
+.product-menu__list .product-box{
+	width: 33.29%;
 	display: inline-block;
 	vertical-align: top;
 	font-size: 16px;
@@ -2589,50 +2592,52 @@ div.cselect-local .ui-multiselect-checkboxes{
 
 /*product box*/
 .product-box__title{
+	position: relative;
 	background: #0059a6;
-	padding: 5px 20px 5px 0;
+	padding: 5px 0 5px 100px;
 	height: 82px;
+	font-size: 0;
+	letter-spacing: -4px;
+	white-space: nowrap;
+	overflow: hidden;
 }
-.product-box__title_holder{
-	display: table;
-	border-collapse: collapse;
-	border-spacing: 0;
-	text-decoration: none;
-	color: #80acd3;
+.product-box__title:after{
+	content: '';
+	display: inline-block;
 	height: 100%;
-}
-.product-box__title_holder>div{
-	display: table-cell;
+	font-size: 16px;
+	letter-spacing: normal;
 	vertical-align: middle;
-	height: 100%;
-	cursor: default;
 }
-.product-box__title_icon{
+.product-box__title-icon{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100px;
 	background: no-repeat 50% 50%;
 	-webkit-background-size: 65px;
 	background-size: 65px;
-	width: 100px;
 	opacity: 0.5;
-	-webkit-transition: all 0.2s;
-	transition: all 0.2s;
 	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
 	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
 }
-.product-box__title_text{
-	overflow: hidden;
+.product-box__title-text{
+	display: inline-block;
+	vertical-align: middle;
+	width: 98%;
+	padding-right: 6px;
+	white-space: normal;
 	font: 14px/18px 'gothampro-bold', Arial, Helvetica, sans-serif;
-	text-transform: uppercase;
+	letter-spacing: normal;
 	color: #80acd3;
-	-webkit-transition: all 0.2s;
-	transition: all 0.2s;
+	text-transform: uppercase;
 }
+
 .product-box__menu{
-	/*height: 348px;*/
-	/*overflow: hidden;*/
 	position: relative;
 	overflow: visible;
 }
-
 /*product box list*/
 .product-box__list,
 .user-content .product-box__list,

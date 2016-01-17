@@ -1,7 +1,11 @@
 @media only screen and (max-width: 639px){}
 /*user content*/
 .heading-caption {
-	padding: 0 0 27px;
+	padding: 0;
+}
+.heading-caption h1{
+	float: none;
+	padding-bottom: 37px;
 }
 .user-content ol,
 .user-content ul{
@@ -237,16 +241,31 @@ div.cselect-local.ui-multiselect-menu{
 }
 /*clients end*/
 
+/*product menu*/
+.cselect-products{
+	float: none;
+	width: 290px;
+	display: block;
+	max-width: 100%;
+	margin: 0 0 0 auto;
+}
+.product-menu__list{
+	padding-top: 30px;
+}
+/*product box*/
+.product-menu .product-box{
+	display: block;
+	width: auto;
+}
+/*product box end*/
+/*product menu end*/
+
 /*product container*/
 .prod-tab.opened-tab,
 .prod-tab.made-active {
 	padding: 14px 20px;
 }
 /*product container end*/
-
-/*tabs*/
-
-/*tabs end*/
 
 /*news slider*/
 .news-slider {
