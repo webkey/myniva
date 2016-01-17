@@ -899,6 +899,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	color: #d32e2e;
 	background: #ccdeed;
 	display: none;
+	border-bottom: 1px solid #a3c3df;
 }
 .categories-caption__text{
 	display: table-cell;
@@ -910,14 +911,14 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 /*back to parent category*/
 .back-to-parent{
 	font: 12px/17px 'gothampro-bold', Arial, Helvetica, sans-serif;
-	padding: 15px 30px 14px;
+	padding: 15px 30px 15px;
 	text-transform: uppercase;
 	color: #fff;
 	background: #89aece;
 	text-align: left;
 	cursor: pointer;
-	border-top: 1px solid #a3c3df;
 	display: none;
+	height: 48px;
 }
 .back-to-parent i{
 	font-size: 11px;
@@ -1145,6 +1146,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	width: 100%;
 	border-top: 1px solid #a3c3df;
 	background: #ccdeed;
+	height: 88px;
 }
 .user-options-holder{
 	padding: 20px 16px;

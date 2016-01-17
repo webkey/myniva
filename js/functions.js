@@ -165,17 +165,6 @@ function showInput(){
 
 /*custom scroll init*/
 function customScrollInit(){
-	/*main navigation*/
-	if($('.panel-frame').length){
-		$('.panel-frame, .drop-visible__holder').mCustomScrollbar({
-			//axis:"x",
-			theme:"minimal-dark",
-			scrollbarPosition: "inside",
-			autoExpandScrollbar:true
-		});
-	}
-	/*main navigation end*/
-
 	/*produce minimal*/
 	var $produceMinimal = $(".produce-minimal");
 	if($produceMinimal.length){
@@ -235,14 +224,63 @@ function dropNavigation() {
 		$('.btn-menu').toggleClass('active');
 	});
 	var $searchForm = $('.search-form');
+
+	/*main navigation scroll*/
+	if($('.nav-list').length){
+		var $body = $('body'),
+			$btnMenu = $('.btn-menu'),
+			_classInit = 'nav-custom-scroll-initialized',
+			_classDestroy = 'nav-custom-scroll-destroy';
+
+		if($btnMenu.is(':hidden')){
+			$('.panel-frame, .drop-visible__holder').mCustomScrollbar({
+				//axis:"x",
+				theme:"minimal-dark",
+				scrollbarPosition: "inside",
+				autoExpandScrollbar:true
+			});
+
+			$body.addClass(_classInit);
+		} else {
+			$body.addClass(_classDestroy);
+		}
+
+		$(window).on('debouncedresize', function () {
+			if($btnMenu.is(':hidden') && $body.hasClass(_classDestroy)){
+				$body.removeClass(_classDestroy);
+				$body.addClass(_classInit);
+
+				$('.panel-frame, .drop-visible__holder').mCustomScrollbar({
+					//axis:"x",
+					theme:"minimal-dark",
+					scrollbarPosition: "inside",
+					autoExpandScrollbar:true
+				});
+
+				return;
+			}
+
+			if($btnMenu.is(':visible') && $body.hasClass(_classInit)){
+				$body.removeClass(_classInit);
+				$body.addClass(_classDestroy);
+
+				$('.panel-frame, .drop-visible__holder').mCustomScrollbar("destroy");
+			}
+		});
+	}
+	/*main navigation scroll end*/
 }
 function clearDropNavigation() {
 	var panel = $('.panel'),
 		btn = $('.btn-menu');
 
-	if (panel.is(':visible') && btn.is(':visible')) {
+	if (panel.is(':visible') && btn.is(':hidden')) {
 		$('body').removeClass('nav-opened');
 		btn.removeClass('active');
+	}
+
+	if ( !md.mobile() ){
+		console.log('foo');
 	}
 }
 /*drop navigation end*/
@@ -265,7 +303,6 @@ function mainNavigation() {
 		} else {
 			flag = false
 		}
-		console.log(flag);
 		if(!$currentItem.has('ul').length || flag) { return; }
 
 		$('.panel').addClass('level-overlay');
@@ -1467,6 +1504,6 @@ $(window).load(function () {
 		$('.header').after('<div class="overlay-page" />');
 	}
 });
-$(window).resize(function () {
-	//clearDropNavigation();
+$(window).on('debouncedresize', function () {
+	clearDropNavigation();
 });

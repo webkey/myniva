@@ -67,6 +67,16 @@
 }
 /*header end*/
 
+/*user options*/
+.post-link a{
+	line-height: 20px;
+	font-size: 12px;
+}
+.post-link a i{
+	display: none;
+}
+/*user options end*/
+
 /*agents boxes*/
 .agents-box {
 	padding-bottom: 50px;

@@ -51,6 +51,9 @@ body.nav-opened{
 /*main blocks end*/
 
 /*panel*/
+.panel-frame{
+	padding: 0;
+}
 .nav-opened .panel{
 	-webkit-transform: translateX(0);
 	-ms-transform: translateX(0);
@@ -87,9 +90,21 @@ body.nav-opened{
 /*back to parent category end*/
 
 /*main navigation*/
+.nav{
+	height: 100%;
+	overflow: hidden;
+}
+.nav-list{
+	height: calc(100% - 92px);
+	overflow-y: auto;
+	overflow-x: hidden;
+}
 .nav-list li{
 	position: static;
 	border-top: 1px solid #a3c3df;
+}
+.nav-list li:first-child{
+	border-color: transparent !important;
 }
 .nav-list>li:before,
 .nav-drop__list>li:before{
@@ -110,6 +125,12 @@ body.nav-opened{
 	transform: translateZ(0);
 }
 .nav-list>li.active:before,
+.nav-drop__list,
+.nav-sub-drop__list{
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: calc(100% - 141px);
+}
 .nav-drop__list>li.active:before{
 	width: 100%;
 	height: 100%;
@@ -132,7 +153,8 @@ body.nav-opened{
 .nav-list li.active>.depict-angle,
 .nav-list li.active>a>.depict-angle,
 .nav-list li.made-current>.depict-angle,
-.nav-list li.made-current>a>.depict-angle{
+.nav-list li.made-current>a>.depict-angle,
+.nav-list li.made-drop-open>a>.depict-angle{
 	-webkit-transform: rotate(-90deg);
 	-ms-transform: rotate(-90deg);
 	transform: rotate(-90deg);
@@ -159,26 +181,21 @@ body.nav-opened{
 .nav-sub-drop{
 	background: #ccdeed !important;
 }
-/*.nav-sub-drop{
-	background: #fff !important;
-}*/
 .nav-drop,
 .nav-sub-drop{
-	/*overflow: hidden;*/
 	display: block;
-	/*max-height: 0;*/
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
+	height: 100%;
+	padding: 0 0 80px;
 	-webkit-transform: translate(-100%, 0);
 	-ms-transform: translate(-100%, 0);
 	transform: translate(-100%, 0);
 	-webkit-transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
 	transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
 	z-index: 1;
-	padding-bottom: 9999px;
-	margin-bottom: -9999px;
 }
 .active>.nav-drop,
 .active>.nav-sub-drop{
@@ -321,6 +338,11 @@ body.nav-opened{
 .search-form .btn-search-close{ right: -1px; }
 /*search form end*/
 /*header end*/
+
+/*user options*/
+.post-link a{ font-size: 16px; }
+.post-link a i{ display: inline-block; }
+/*user options end*/
 
 /*company contacts*/
 .company-contacts .company-info {
