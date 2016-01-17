@@ -2794,7 +2794,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 .company-info__contacts,
 .user-content .company-info__contacts{
 	margin:0;
-	padding:0 0 15px;
+	padding:0 0 5px;
 	list-style:none;
 }
 .company-info__contacts li,
@@ -3172,6 +3172,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 	display: inline-block;
 	text-align: center;
 	margin-top: 34px;
+	margin-left: 34px;
 	position: relative;
 	cursor: default;
 	min-width: 50px;
@@ -3900,7 +3901,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 
 /*product info*/
 .product-info{
-	padding: 0 0 52px;
+	padding: 0 0 32px;
 	position: relative;
 }
 .product-info__purpose{
@@ -3919,6 +3920,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 	margin: 0 0 40px;
 	position: relative;
 	background: #fff;
+	overflow: hidden;
 }
 .product-info__main:before,
 .product-info__main:after { content: ""; display: table; }
@@ -3926,6 +3928,8 @@ div.cselect-local .ui-multiselect-checkboxes{
 .product-info__frame{
 	width: 100%;
 	float: left;
+	position: relative;
+	z-index: 1;
 }
 /*product visual*/
 .product-visual{
@@ -3933,29 +3937,34 @@ div.cselect-local .ui-multiselect-checkboxes{
 	min-height: 362px;
 	position: relative;
 	cursor: pointer;
-	background: #ccdeed no-repeat 50% 50%;
+	/*background: #ccdeed no-repeat 50% 50%;*/
 	-webkit-background-size: cover;
 	background-size: cover;
 }
 .product-visual__options{
 	position: absolute;
 	right: 20px;
+	left: 20px;
 	bottom: 20px;
 	font-size: 0;
 	letter-spacing: -4px;
+	text-align: right;
 }
-.product-visual__options>*{
-	font-size: 16px;
+.product-visual__view{
 	letter-spacing: normal;
 	display: inline-block;
 	vertical-align: top;
 	height: 46px;
-}
-.product-visual__view{
+	font-size: 16px;
 	background: #d32e2e url(../img/depict-camera.png) no-repeat 50% 50%;
 	width: 46px;
 }
 .product-visual__count{
+	letter-spacing: normal;
+	display: inline-block;
+	vertical-align: top;
+	height: 46px;
+	font-size: 16px;
 	line-height: 46px;
 	color: #fff;
 	text-align: center;
@@ -3971,7 +3980,20 @@ div.cselect-local .ui-multiselect-checkboxes{
 	float: right;
 	margin-left: -324px;
 	min-height: 362px;
-	padding-top: 26px;
+	padding: 26px 28px 82px;
+	z-index: 1;
+	opacity: 1;
+	-webkit-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	transform: translate(0, 0);
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.product-info__main.open-gallery .company-info{
+	opacity: 0;
+	-webkit-transform: translate(355px, 0);
+	-ms-transform: translate(355px, 0);
+	transform: translate(355px, 0);
 }
 /*product company info end*/
 
@@ -3979,16 +4001,22 @@ div.cselect-local .ui-multiselect-checkboxes{
 .product-info__gallery{
 	position: absolute;
 	width: 100%;
-	bottom: 0;
+	top: 0;
 	left: 0;
-	z-index: -1;
 	background: #000;
-	visibility: hidden;
 	overflow: hidden;
+
+	-webkit-transform: translate(-355px, 0);
+	-ms-transform: translate(-355px, 0);
+	transform: translate(-355px, 0);
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
 }
 .open-gallery .product-info__gallery{
-	z-index: 5;
-	visibility: visible;
+	z-index: 2;
+	-webkit-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	transform: translate(0, 0);
 }
 .product-info__gallery .gallery{
 	margin: 0;
@@ -4042,10 +4070,12 @@ div.cselect-local .ui-multiselect-checkboxes{
 	display: inline-block;
 	vertical-align: top;
 	margin-right: 35px;
+	padding-bottom: 20px;
 }
 .product-info__order .file{
 	display: inline-block;
 	vertical-align: top;
+	padding-bottom: 20px;
 }
 /*product info order end*/
 /*product info end*/
@@ -4103,7 +4133,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 	letter-spacing: -4px;
 	display: inline-block;
 	vertical-align: top;
-	width: 20%;
+	width: 19.9%;
 	padding: 0 10px 21px;
 	text-align: center;
 }

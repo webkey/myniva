@@ -69,6 +69,12 @@ h3 {
 }
 /*agents previews end*/
 
+/*certificates*/
+.cert{
+	padding: 31px 10px 21px;
+}
+/*certificates end*/
+
 /*contacts*/
 .contacts__col,
 .contacts__group{

@@ -523,6 +523,9 @@ function owlInit(){
 		var currentItem = (item ? item - cloned/2 : 0) + 1;
 		var items = event.item.count;
 		$(event.target).find('.owl-prev').after('<div class="slide-counter">' + currentItem + '/' +items+ '</div>');
+		if ($('.product-info__main').length){
+			$(event.target).closest('.product-info__main').find('.product-visual__count').text(items);
+		}
 	}
 
 	function callback2(event) {

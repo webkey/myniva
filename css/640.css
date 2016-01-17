@@ -349,6 +349,43 @@ div.cselect-local.ui-multiselect-menu{
 }
 /*agents previews end*/
 
+/*product info*/
+/*product info main*/
+.product-info__frame{
+	float: none;
+	padding: 0 0 30px;
+}
+.product-visual{
+	margin-right: 0;
+}
+.product-info__main .company-info {
+	float: none;
+	width: 324px;
+	max-width: 100%;
+	margin: 0 auto;
+}
+.product-info__main.open-gallery .company-info {
+	opacity: 1;
+	-webkit-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+.product-info__main .company-info__btn .btn-default-empty{
+	font-size: 16px;
+}
+.product-info__gallery{
+	-webkit-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	transform: translate(0, 0);
+}
+/*product info main end*/
+/*product info end*/
+
+/*certificates*/
+.cert{ padding: 31px 10px 21px; }
+.cert__item{ width: 33.29%; }
+/*certificates end*/
+
 /*contacts*/
 .contacts__col,
 .contacts__group{
