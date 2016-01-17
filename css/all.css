@@ -341,64 +341,13 @@ table th{
 	margin: 0 0 0 20px;
 }
 /*content img end*/
-/*files item*/
-.files-item{
-	font-size: 14px;
-	line-height: 18px;
-	letter-spacing: normal;
-}
-.file{
-	font-size: 14px;
-	line-height: 18px;
-	padding: 0 0 0 53px;
-	position: relative;
-	min-height: 46px;
-}
-.file__title{
-	padding: 5px 0 7px;
-}
-.file__title a{
-	text-decoration: none;
-	margin: 0 0 0 -53px;
-	display: inline-block;
-	padding: 0 0 0 53px;
-}
-.file__title a span{
-	padding-top: 5px;
-	color: #0059a6;
-	text-decoration: underline;
-}
-.file__title a:hover span{
-	text-decoration: none;
-}
-.file [class*="depict-files-"]{
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-.file__info{
-	color: #666;
-}
-/*files item end*/
-/*download files items*/
-.files{
-	padding: 0 0 20px;
-	margin-left: -30px;
-	font-size: 0;
-	letter-spacing: -4px;
-}
-.files .files-item{
-	display: inline-block;
-	vertical-align: top;
-	width: 33.3%;
-	padding: 0 0 48px 30px;
-}
-/*download files items end*/
+
 /*aligned content*/
 .align-center{
 	text-align: center;
 }
 /*aligned content end*/
+
 /*elements form style*/
 input[type="text"],
 input[type="password"],
@@ -637,6 +586,61 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 /*custom select style*/
 /*select end*/
 /*elements form style end*/
+
+/*download files items*/
+/*files item*/
+.files{
+	padding: 0 0 20px;
+	margin-left: -30px;
+	font-size: 0;
+	letter-spacing: -4px;
+}
+.files-item{
+	font-size: 14px;
+	line-height: 18px;
+	letter-spacing: normal;
+}
+.files .files-item{
+	display: inline-block;
+	vertical-align: top;
+	width: 33.29%;
+	padding: 0 0 48px 30px;
+}
+.file{
+	font-size: 14px;
+	line-height: 18px;
+	padding: 0 0 0 53px;
+	position: relative;
+	min-height: 46px;
+}
+.file__title{
+	padding: 5px 0 7px;
+}
+.file__title a{
+	text-decoration: none;
+	margin: 0 0 0 -53px;
+	display: inline-block;
+	padding: 0 0 0 53px;
+}
+.file__title a span{
+	padding-top: 5px;
+	color: #0059a6;
+	text-decoration: underline;
+}
+.file__title a:hover span{
+	text-decoration: none;
+}
+.file [class*="depict-files-"]{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.file__info{
+	color: #666;
+}
+/*files item end*/
+/*download files items end*/
+
 /* breadcrumbs */
 .breadcrumbs{
 	font: 12px/14px 'gothampro-regular', Arial, Helvetica, sans-serif;
@@ -2440,7 +2444,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 /*location info end*/
 /*location end*/
 
-/*clients*/
+/*clients section*/
 .clients-section{
 	padding: 45px 40px;
 }
@@ -2565,7 +2569,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 }
 /*clients slider arrows end*/
 /*clients slider end*/
-/*clients end*/
+/*clients section end*/
 
 /*product menu*/
 .cselect-products{
@@ -3278,14 +3282,14 @@ div.cselect-local .ui-multiselect-checkboxes{
 
 /*contact info*/
 .contact-info{
-	padding: 20px 18px;
+	padding: 20px 18px 7px;
 	border: 1px solid #d3382e;
 	background: #fff;
 	overflow: hidden;
 }
 .contact-info__header{
 	float: left;
-	width: 33.3%;
+	width: 23.29%;
 	padding: 0 10px;
 }
 .contact-info__title{
@@ -3305,12 +3309,10 @@ div.cselect-local .ui-multiselect-checkboxes{
 	letter-spacing: normal;
 	display: inline-block;
 	vertical-align: top;
-	width: 50%;
+	width: 49.9%;
 	padding: 0 10px;
 }
-.contact-info__box{
-	padding: 11px 0 9px;
-}
+.contact-info__box{ padding: 11px 0 19px; }
 .contact-info__box:first-child{
 	padding-top: 0;
 }
@@ -4122,7 +4124,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 .contacts__container:after { content: ""; display: table; }
 .contacts__container:after { clear: both; }
 .contacts__col{
-	width: 33.3%;
+	width: 33.29%;
 	float: left;
 	padding: 0 20px;
 }
@@ -4245,12 +4247,12 @@ div.cselect-local .ui-multiselect-checkboxes{
 .footer-col_left{
 	text-align: left;
 	padding-right: 6px;
-	width: 40%;
+	width: 39.9%;
 }
 .footer-col_right{
 	text-align: right;
 	padding-left: 6px;
-	width: 60%;
+	width: 59.9%;
 }
 .site-developer{
 	line-height: 23px;

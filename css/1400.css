@@ -1,4 +1,9 @@
 @media only screen and (max-width: 1400px){}
+/*download files items*/
+.files .files-item{
+	width: 49.9%;
+}
+/*download files items end*/
 .product-menu .product-box{
 	width: 49.9%;
 }

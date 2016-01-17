@@ -18,6 +18,14 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sea
 .form-row, .input-wrap { padding: 0 0 18px; }
 /*element form end*/
 
+/*download files items*/
+.files .files-item{
+	display: block;
+	width: auto;
+	padding-bottom: 28px;
+}
+/*download files items end*/
+
 /*breadcrumbs*/
 .breadcrumbs{
 	padding: 0 0 10px;
@@ -229,17 +237,19 @@ div.cselect-local.ui-multiselect-menu{
 /*location info end*/
 /*location end*/
 
-/*clients*/
+/*clients section*/
 .clients-section {
 	padding: 35px 10px;
 }
+/*clients slider*/
 .clients-list .slick-prev {
 	margin-right: 8px;
 }
 .clients-list .slick-prev {
 	margin-left: 8px;
 }
-/*clients end*/
+/*clients slider end*/
+/*clients section end*/
 
 /*product menu*/
 .cselect-products{
@@ -266,6 +276,13 @@ div.cselect-local.ui-multiselect-menu{
 	padding: 14px 20px;
 }
 /*product container end*/
+
+/*contact info*/
+.contact-info__col {
+	display: block;
+	width: auto;
+}
+/*contact info end*/
 
 /*news slider*/
 .news-slider {
