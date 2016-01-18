@@ -13,6 +13,68 @@ h3 {
 	line-height: 24px;
 }
 
+/*promo section*/
+.promo-slide__title{
+	font-size: 48px;
+	line-height: 52px;
+}
+.promo-slide__text{
+	font-size: 22px;
+	line-height: 26px;
+}
+/*promo section end*/
+
+/*synopsis section*/
+/*synopsis controls*/
+.synopsis__controls > li {
+	font-size: 18px;
+	line-height: 22px;
+	padding: 16px 20px 15px;
+}
+/*synopsis controls end*/
+/*synopsis content*/
+.synopsis-item__full{
+	width: 87%;
+}
+.rubric-visual-bg{
+	width: 13%;
+}
+/*produce full*/
+.produce-full-menu,
+.produce-full-menu li>a{
+	font-size: 15px;
+}
+.synopsis-item__full{
+	padding: 34px 20px 30px;
+}
+.produce-full-img {
+	display: none;
+}
+/*produce full end*/
+/*rubric visual*/
+.rubric-visual{
+	padding: 30px 30px 40px;
+}
+.rubric-visual-title {
+	font-size: 16px;
+	line-height: 22px;
+	padding: 0;
+	max-height: 266px;
+}
+/*departments slider*/
+.departments-slider-wrap{
+	padding: 21px 45px;
+}
+.rubric-visual .departments-slider-wrap {
+	left: 30px;
+	right: 30px;
+	bottom: 30px;
+}
+/*departments slider end*/
+/*rubric visual end*/
+/*synopsis content end*/
+/*synopsis section end*/
+
 /*company contacts*/
 .company-contacts .company-info {
 	float: none;

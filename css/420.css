@@ -1,4 +1,41 @@
 @media only screen and (max-width: 439px){}
+/*synopsis section*/
+/*synopsis controls*/
+.synopsis__controls > li {
+	font-size: 13px;
+	line-height: 15px;
+}
+/*synopsis controls end*/
+/*synopsis content*/
+.rubric-visual-title {
+	font-size: 14px;
+	line-height: 20px;
+}
+/*synopsis content end*/
+/*synopsis section end*/
+
+
+
+/*location*/
+/*location head*/
+.location-head{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+/*location head end*/
+/*location map*/
+.location .local-map {
+	height: 223px;
+}
+/*location map end*/
+/*location info*/
+.location-info{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+/*location info end*/
+/*location end*/
+
 /*partners*/
 .partners__list .partners__item{
 	width: auto;

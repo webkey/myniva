@@ -418,6 +418,38 @@ function slickSlidersInit(){
 			speed: 300,
 			infinite: false,
 			dots: true, responsive: [{
+				breakpoint: 1400,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 3
+				}
+			},{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2
+				}
+			},{
+				breakpoint: 1000,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					dots: false
+				}
+			},{
+				breakpoint: 980,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2
+				}
+			},{
+				breakpoint: 840,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					dots: false
+				}
+			},{
 				breakpoint: 640,
 				settings: {
 					slidesToShow: 2,
@@ -433,12 +465,6 @@ function slickSlidersInit(){
 			}]
 		});
 	}
-	sliderDepartments.on('beforeChange', function(event, slick, currentSlide){
-		$(this).find('.slick-slide').eq(currentSlide).removeClass('separator-show');
-	});
-	sliderDepartments.on('afterChange', function(event, slick, currentSlide){
-		$(this).find('.slick-slide').eq(currentSlide).addClass('separator-show');
-	});
 	/*departments slider end*/
 
 	/*clients slider*/
@@ -714,7 +740,7 @@ function mapInitNiva(){
 			centerMapL = "54.03666787309223",
 			centerMapR = "22.594093177112136";
 
-	if($(window).width() < 980) {
+	if($(window).width() < 640) {
 		centerMapL = "53.16995207146201";
 		centerMapR = "27.48641749999999";
 	}

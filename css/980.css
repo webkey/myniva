@@ -269,6 +269,11 @@ body.nav-opened{
 	overflow: visible !important;
 }
 /*custom scroll end*/
+
+/*user options*/
+.post-link a{ font-size: 16px; }
+.post-link a i{ display: inline-block; }
+/*user options end*/
 /*panel end*/
 
 /*header*/
@@ -340,10 +345,32 @@ body.nav-opened{
 /*search form end*/
 /*header end*/
 
-/*user options*/
-.post-link a{ font-size: 16px; }
-.post-link a i{ display: inline-block; }
-/*user options end*/
+/*location*/
+/*location head*/
+.location .location-head{
+	position: relative;
+	left: auto;
+	top: auto;
+	width: auto;
+}
+/*location head end*/
+
+/*location info*/
+.location-info{
+	font-size: 15px;
+	padding: 30px 26px;
+	width: 48%;
+}
+.location-info__holder {
+	height: 274px;
+	margin: 0 0 15px;
+}
+.location-info h3{
+	font-size: 18px;
+	line-height: 22px;
+}
+/*location info end*/
+/*location end*/
 
 /*company contacts*/
 .company-contacts .company-info {

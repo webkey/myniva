@@ -4,6 +4,32 @@
 	width: 49.9%;
 }
 /*download files items end*/
+
+/*synopsis section*/
+/*synopsis content*/
+.synopsis-item__full{
+	width: 85%;
+}
+.rubric-visual-bg{
+	width: 15%;
+}
+/*produce full*/
+.produce-full-menu,
+.produce-full-menu li>a{
+	font-size: 15px;
+}
+.synopsis-item__full{
+	padding: 34px 30px 30px;
+}
+.produce-full-img {
+	width: 190px;
+}
+/*produce full end*/
+/*synopsis content end*/
+/*synopsis section end*/
+
+/*product menu*/
 .product-menu .product-box{
 	width: 49.9%;
 }
+/*product menu end*/
