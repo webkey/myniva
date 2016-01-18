@@ -357,6 +357,12 @@ body.nav-opened{
 }
 /*company contacts end*/
 
+/*error 404*/
+.error-404__bg:before {
+	padding-top: 45%;
+}
+/*error 404 end*/
+
 /*callback form*/
 .callback-form{
 	width: auto;

@@ -1,4 +1,18 @@
 @media only screen and (max-width: 639px){}
+.nav-opened .header,
+.nav-opened .main,
+.nav-opened .footer{
+	-webkit-transform: translateX(200px);
+	-ms-transform: translateX(200px);
+	transform: translateX(200px);
+}
+.panel{
+	width: 200px;
+	-webkit-transform: translateX(-200px);
+	-ms-transform: translateX(-200px);
+	transform: translateX(-200px);
+}
+
 /*user content*/
 .heading-caption {
 	padding: 0;
