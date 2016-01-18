@@ -1299,9 +1299,9 @@ y-axis
 	width: 2px;
 	height: 100%;
 	margin: 0 auto;
-	-webkit-border-radius: 16px;
-	-moz-border-radius: 16px;
-	border-radius: 16px;
+	/*-webkit-border-radius: 16px;*/
+	/*-moz-border-radius: 16px;*/
+	/*border-radius: 16px;*/
 }
 .mCSB_scrollTools .mCSB_dragger{
 	/* the draggable element */
@@ -1316,9 +1316,9 @@ y-axis
 	width: 4px;
 	height: 100%;
 	margin: 0 auto;
-	-webkit-border-radius: 16px;
-	-moz-border-radius: 16px;
-	border-radius: 16px;
+	/*-webkit-border-radius: 16px;*/
+	/*-moz-border-radius: 16px;*/
+	/*border-radius: 16px;*/
 	text-align: center;
 }
 .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar,

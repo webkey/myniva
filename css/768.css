@@ -1,7 +1,7 @@
 @media only screen and (max-width: 767px){}
 h1 {
-	font-size: 30px;
-	line-height: 36px;
+	font-size: 26px;
+	line-height: 30px;
 	padding: 0 0 30px;
 }
 h2 {
@@ -49,6 +49,11 @@ h3 {
 }
 .produce-full-img {
 	display: none;
+}
+.produce-full-item>h2{
+	font-size: 20px;
+	line-height: 24px;
+	padding: 0 0 27px;
 }
 /*produce full end*/
 /*rubric visual*/

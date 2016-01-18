@@ -165,7 +165,7 @@ function showInput(){
 
 /*custom scroll init*/
 function customScrollInit(){
-	/*produce minimal*/
+	/*scroll produce-minimal*/
 	var $produceMinimal = $(".produce-minimal");
 	if($produceMinimal.length){
 		$produceMinimal.mCustomScrollbar({
@@ -174,19 +174,37 @@ function customScrollInit(){
 			autoExpandScrollbar:true
 		});
 	}
-	/*produce minimal end*/
+	/*scroll produce-minimal end*/
 
-	/*produce full*/
-	var $produceFull = $('.location-info__holder, .produce-full-holder, .produce-small__holder');
+	/*scroll location-info, produce-small*/
+	var $produceFull = $('.location-info__holder, .produce-small__holder');
 	if($produceFull.length){
 		$produceFull.mCustomScrollbar({
 			scrollbarPosition: "outside",
 			autoExpandScrollbar:true
 		});
 	}
-	/*produce full end*/
+	/*scroll location-info, produce-small end*/
 
-	/*product custom scroll*/
+	/*scroll produce-full*/
+	var $produceFullHolder = $('.produce-full-holder');
+	if($produceFullHolder.length){
+		$produceFullHolder.mCustomScrollbar({
+			scrollbarPosition: "outside",
+			autoExpandScrollbar:true,
+			callbacks:{
+				onTotalScroll:function(){
+					$(this).addClass('mCustomScrollFull');
+				},
+				onScroll:function(){
+					$(this).removeClass('mCustomScrollFull');
+				}
+			}
+		});
+	}
+	/*scroll produce-full end*/
+
+	/*scroll product-custom*/
 	var $productBoxMenu = $('.product-box__menu');
 	if($productBoxMenu.length){
 		$productBoxMenu.mCustomScrollbar({
@@ -203,7 +221,7 @@ function customScrollInit(){
 		resize: true
 	});
 
-	/*product custom scroll end*/
+	/*scroll product-custom end*/
 }
 /*custom scroll init end*/
 
@@ -278,10 +296,6 @@ function clearDropNavigation() {
 	if (panel.is(':visible') && btn.is(':hidden')) {
 		$('body').removeClass('nav-opened');
 		btn.removeClass('active');
-	}
-
-	if ( !md.mobile() ){
-		console.log('foo');
 	}
 }
 /*drop navigation end*/
@@ -1045,10 +1059,10 @@ function fancyboxInit(){
 
 		this.slick = this.initSlick();
 
+		this.switchControls();
 		this.initScrollbar();
 		this.bindEvents();
-
-		this.switchControls();
+		this.initAccordion();
 	};
 
 	Synopsis.prototype.switchControls = function () {
@@ -1161,6 +1175,10 @@ function fancyboxInit(){
 		self.$mask.on('click', function () {
 			self.$controlRight.trigger('click');
 		})
+	};
+
+	Synopsis.prototype.initAccordion = function () {
+
 	};
 
 	window.Synopsis = Synopsis;
@@ -1335,16 +1353,17 @@ function scrollNavInit(){
 			collapsibleElement = this.$collapsibleElement;
 
 		self.$accordionEvent.on('click', function (e) {
-			e.preventDefault();
 			var current = $(this);
 			var currentAccordionItem = current.closest(anyAccordionItem);
 
-			if (current.parent().prop("tagName") != currentAccordionItem.prop("tagName")){
-				current = current.parent();
-			}
-
 			if (!currentAccordionItem.has(collapsibleElement).length){
 				return;
+			}
+
+			e.preventDefault();
+
+			if (current.parent().prop("tagName") != currentAccordionItem.prop("tagName")) {
+				current = current.parent();
 			}
 
 			if (current.siblings(collapsibleElement).is(':visible')){
@@ -1358,8 +1377,6 @@ function scrollNavInit(){
 				siblingContainers.find(collapsibleElement).slideUp(animateSpeed);
 				siblingContainers.find(anyAccordionItem).removeClass(modifiers.active);
 			}
-			//.siblings().removeClass(modifiers.active).find(collapsibleElement).slideUp(animateSpeed);
-			//currentAccordionItem.siblings().find(anyAccordionItem).removeClass(modifiers.active);
 
 			currentAccordionItem.siblings().removeClass(modifiers.active).find(collapsibleElement).slideUp(animateSpeed);
 			currentAccordionItem.siblings().find(anyAccordionItem).removeClass(modifiers.active);
@@ -1379,6 +1396,15 @@ function multiAccordionInit() {
 			accordionItem: 'li', //непосредственный родитель сворачиваемого элемента
 			accordionEvent: 'a', //элемент, по которому производим клик
 			collapsibleElement: '.product-box__list>li>ul, .product-box__sub-sub', //элемент, который сворачивается/разворачивается
+			animateSpeed: 200
+		});
+	}
+	if($('.produce-full-menu').length){
+		new MultiAccordion({
+			accordionContainer: '.produce-full-menu__col>ul',
+			accordionItem: 'li', //непосредственный родитель сворачиваемого элемента
+			accordionEvent: 'a', //элемент, по которому производим клик
+			collapsibleElement: '.produce-full-menu__col>ul>li>ul, .product-box__sub-sub', //элемент, который сворачивается/разворачивается
 			animateSpeed: 200
 		});
 	}

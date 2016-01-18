@@ -50,7 +50,7 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sea
 /*promo section*/
 /*promo slider*/
 .promo-slide{
-	padding: 56px 10px 46px;
+	padding: 68px 10px 40px;
 	height: 265px;
 }
 .promo-slide__caption-holder{
@@ -124,7 +124,18 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sea
 .rubric-visual-mask{
 	display: none;
 }
-
+/*product small*/
+.produce-small__icon{
+	opacity: 1;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+}
+.produce-small__text{
+	font-size: 17px;
+	line-height: 19px;
+	color: #fff;
+}
+/*product small end*/
 .rubric-visual-bg{
 	width: 100%;
 	-webkit-transform: translate(100%, 0);
@@ -162,21 +173,25 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sea
 	width: auto;
 }
 .synopsis-item__visual{
-	height: 445px;
 	float: left;
 	width: 50%;
 }
+/*rubric visual*/
 .rubric-visual{
-	padding: 30px 20px 40px;
+	height: auto;
+	min-height: 494px;
+	padding: 30px 20px;
 }
 .rubric-visual-title{
 	font-size: 16px;
 	line-height: 22px;
 }
+/*rubric visual end*/
 /*departments slider*/
 .rubric-visual .departments-slider-wrap{
 	left: 20px;
 	right: 20px;
+	padding: 21px 50px 39px;
 }
 /*departments slider end*/
 /*synopsis content end*/
@@ -246,6 +261,7 @@ div.cselect-local.ui-multiselect-menu{
 	width: auto;
 	left: auto;
 	margin: 0 auto;
+	max-width: none;
 }
 .location-info__holder{
 	height: auto;

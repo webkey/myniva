@@ -10,11 +10,34 @@
 .rubric-visual-title {
 	font-size: 14px;
 	line-height: 20px;
+	max-height: 220px;
 }
+/*product small*/
+.produce-small{
+	padding: 5px 10px 20px;
+}
+.produce-small__text{
+	font-size: 12px;
+	line-height: 18px;
+}
+.produce-small__heading{
+	height: 60px;
+}
+.produce-small__angle{
+	font-size: 10px;
+	margin-top: -7px;
+}
+/*product small end*/
+/*rubric visual*/
+.rubric-visual {
+	min-height: 445px;
+}
+.rubric-visual .departments-slider-wrap {
+	padding: 21px 45px;
+}
+/*rubric visual end*/
 /*synopsis content end*/
 /*synopsis section end*/
-
-
 
 /*location*/
 /*location head*/

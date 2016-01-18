@@ -360,6 +360,7 @@ body.nav-opened{
 	font-size: 15px;
 	padding: 30px 26px;
 	width: 48%;
+	max-width: 360px;
 }
 .location-info__holder {
 	height: 274px;
