@@ -228,16 +228,33 @@ function customScrollInit(){
 /*drop navigation*/
 function dropNavigation() {
 	$('.header').on('click', '.btn-menu, .overlay-page', function (e) {
-		var btn = $(this);
-		$('body').toggleClass('nav-opened');
-		btn.toggleClass('active');
-		$('.nav-list li').removeClass('active');
-
+		// Если открыта форма поиска, закрываем ее
 		if($searchForm.is(':visible')){
 			$searchForm.find('.btn-search-close').trigger('click');
 		}
+
+		var btn = $(this);
+
+		// Очищаем аттрибут "style" у всех развернутых дропов.
+		// Нельзя использовать .hide или подобные методы,
+		// т.к. необходимо, чтоб не было записи инлайновой style="display: none;"
+		var dropDownMenu = $('.panel .nav-drop, .panel .nav-sub-drop');
+		if (!btn.hasClass('active')) {
+			dropDownMenu.attr('style','');
+		}
+
+		// Удаляем с пунктов меню всех уровнев классы-модификаторы
+		$('.nav-list li').removeClass('active made-drop-open made-current');
+
+		// Добавляем на боди класс открывающий меню. Открытие через CSS3 translate
+		$('body').toggleClass('nav-opened');
+
+		// Добавляем на кнопку меню активный класс
+		btn.toggleClass('active');
+
 		e.preventDefault();
 	});
+
 	$('.wrapper').on('click', '.overlay-page', function (e) {
 		$('body').toggleClass('nav-opened');
 		$('.btn-menu').toggleClass('active');
@@ -293,9 +310,17 @@ function clearDropNavigation() {
 	var panel = $('.panel'),
 		btn = $('.btn-menu');
 
-	if (panel.is(':visible') && btn.is(':hidden')) {
+	if (panel.is(':visible') && btn.is(':hidden') && btn.hasClass('active')) {
+		console.log(1);
 		$('body').removeClass('nav-opened');
 		btn.removeClass('active');
+	}
+
+	if (!md.mobile() && btn.is(':visible') && btn.hasClass('active')) {
+		console.log(2);
+		$('body').removeClass('nav-opened');
+		btn.removeClass('active');
+		panel.find('li').removeClass('active');
 	}
 }
 /*drop navigation end*/
@@ -344,10 +369,7 @@ function mainNavigation() {
 		closeDrops($currentItemDrop);
 
 		$currentItem.addClass('active');
-		if ($('.btn-menu').is(':visible')) {
-			$currentItem.children(dropDownMenu).show(0);
-			return;
-		}
+
 		$currentItem.children(dropDownMenu).stop().slideDown(dur);
 	});
 

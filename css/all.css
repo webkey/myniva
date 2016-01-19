@@ -1059,7 +1059,6 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	position: relative;
 }
 .drop-visible .nav-drop__list li{
-	/*border-top: 1px solid #b7d0e6;*/
 	border-top: 1px solid #90b3d2;
 }
 .nav-drop__list li>a{
@@ -1114,7 +1113,9 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .nav-list .has-drop-visible>.depict-angle,
 .nav-list .has-drop-visible>a>.depict-angle,
 .nav-list .has-drop-hidden>.depict-angle,
-.nav-list .has-drop-hidden>a>.depict-angle{
+.nav-list .has-drop-hidden>a>.depict-angle,
+.nav-list .has-drop-hidden.active>.depict-angle,
+.nav-list .has-drop-visible.active>a>.depict-angle{
 	-webkit-transform: rotate(-90deg);
 	-ms-transform: rotate(-90deg);
 	transform: rotate(-90deg);
@@ -1575,10 +1576,26 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 }
 .header-slogan{
 	overflow: hidden;
-	font-size: 20px;
+	font-size: 0;
 	line-height: 22px;
+	letter-spacing: -4px;
 	color: #fff;
-	padding: 32px 50px 32px 0;
+	/*padding: 32px 50px 32px 0;*/
+	padding: 5px 50px 5px 0;
+}
+.header-slogan:after{
+	content: '';
+	display: inline-block;
+	display:-moz-inline-stack;
+	height: 77px;
+	vertical-align: middle;
+}
+.header-slogan__text{
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 20px;
+	letter-spacing: normal;
+	width: 98%;
 }
 /*header end*/
 

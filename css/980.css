@@ -43,6 +43,7 @@ body.nav-opened{ overflow: hidden; }
 /*main blocks end*/
 
 /*panel*/
+.panel .mCS_destroyed{ position: static !important; }
 .panel-frame{ padding: 0; }
 .nav-opened .panel{
 	-webkit-transform: translateX(0);
@@ -155,6 +156,9 @@ body.nav-opened{ overflow: hidden; }
 	position: relative;
 	height: auto;
 	padding: 0;
+}
+.drop-visible .nav-drop__list li{
+	border-top: none;
 }
 .nav-list li.hide-element{ display: block; }
 .nav-drop,

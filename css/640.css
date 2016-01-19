@@ -47,6 +47,32 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sea
 /*breadcrumbs end*/
 /*user content end*/
 
+/*panel*/
+.nav-title{
+	font-size: 14px;
+	line-height: 18px;
+	padding: 0 5px 0 10px;
+}
+.nav-title__text{
+	font-size: 14px;
+}
+.nav-back{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.nav-list li>a,
+.nav-drop__list li>a,
+.nav-drop__list li:hover>a,
+.nav-drop__list li>a:hover{
+	padding-left: 10px;
+	padding-right: 30px;
+}
+.nav-list li>.depict-angle,
+.nav-list li>a>.depict-angle{
+	right: 12px;
+}
+/*panel end*/
+
 /*user options*/
 .post-link a{
 	line-height: 20px;
