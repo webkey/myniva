@@ -226,9 +226,18 @@ function customScrollInit(){
 /*custom scroll init end*/
 
 /*drop navigation*/
+
+// при загрузке страницы, добавляем <div class="overlay-page"></div>
+$(window).load(function () {
+	if(!$('.overlay-page').length){
+		$('.header').after('<div class="overlay-page" />');
+	}
+});
+
 function dropNavigation() {
 	$('.header').on('click', '.btn-menu, .overlay-page', function (e) {
 		// Если открыта форма поиска, закрываем ее
+		var $searchForm = $('.search-form');
 		if($searchForm.is(':visible')){
 			$searchForm.find('.btn-search-close').trigger('click');
 		}
@@ -255,12 +264,14 @@ function dropNavigation() {
 		e.preventDefault();
 	});
 
+	// По клику на область вне меню, закрываем менюю
+	// .overlay-page
 	$('.wrapper').on('click', '.overlay-page', function (e) {
 		$('body').toggleClass('nav-opened');
 		$('.btn-menu').toggleClass('active');
 	});
-	var $searchForm = $('.search-form');
 
+	//
 	/*main navigation scroll*/
 	if($('.nav-list').length){
 		var $body = $('body'),
@@ -1148,7 +1159,7 @@ function fancyboxInit(){
 			},
 			mouseWheel:{
 				//deltaFactor:156
-				enable: false
+				enable: true
 			},
 			scrollInertia:500
 		});
@@ -1442,16 +1453,16 @@ function multiAccordionInit() {
 			animateSpeed: 200
 		});
 	}
-	if($('.produce-full-menu').length){
-		new MultiAccordion({
-			accordionContainer: '.produce-full-menu__col>ul',
-			accordionItem: 'li',
-			accordionEvent: 'a',
-			collapsibleElement: '.produce-full-menu__col>ul>li>ul, .product-box__sub-sub',
-			animateSpeed: 200,
-			collapsibleAll: true
-		});
-	}
+	//if($('.produce-full-menu').length){
+	//	new MultiAccordion({
+	//		accordionContainer: '.produce-full-menu__col>ul',
+	//		accordionItem: 'li',
+	//		accordionEvent: 'a',
+	//		collapsibleElement: '.produce-full-menu__col>ul>li>ul, .product-box__sub-sub',
+	//		animateSpeed: 200,
+	//		collapsibleAll: true
+	//	});
+	//}
 }
 /*multi accordion end*/
 
@@ -1488,7 +1499,7 @@ function multiAccordionInit() {
 				enable: false
 			},
 			mouseWheel:{
-				enable: false
+				//enable: false
 			},
 			scrollInertia:500
 		});
@@ -1592,10 +1603,6 @@ $(window).load(function () {
 	accordionInit();
 	tabsInit();
 	equalHeightInit();
-
-	if(!$('.overlay-page').length){
-		$('.header').after('<div class="overlay-page" />');
-	}
 });
 $(window).on('debouncedresize', function () {
 	clearDropNavigation();
