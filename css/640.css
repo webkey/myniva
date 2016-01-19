@@ -47,6 +47,16 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sea
 /*breadcrumbs end*/
 /*user content end*/
 
+/*user options*/
+.post-link a{
+	line-height: 20px;
+	font-size: 12px;
+}
+.post-link a i{
+	display: none;
+}
+/*user options end*/
+
 /*promo section*/
 /*promo slider*/
 .promo-slide{
@@ -124,7 +134,13 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sea
 .rubric-visual-mask{
 	display: none;
 }
-/*product small*/
+/*produce small*/
+.produce-small__item{
+	cursor: default;
+}
+.produce-small__item:before{
+	content: none;
+}
 .produce-small__icon{
 	opacity: 1;
 	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
@@ -135,7 +151,10 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sea
 	line-height: 19px;
 	color: #fff;
 }
-/*product small end*/
+.produce-small__angle{
+	display: block;
+}
+/*produce small end*/
 .rubric-visual-bg{
 	width: 100%;
 	-webkit-transform: translate(100%, 0);
