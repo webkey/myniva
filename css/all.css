@@ -3162,7 +3162,25 @@ div.cselect-local .ui-multiselect-checkboxes{
 .prod-thumbs{
 	padding: 20px 30px 0;
 	background: #0059a6;
+	position: relative;
 }
+.prod-thumbs .mCustomScrollBtn{
+	display: block;
+	height: 80px;
+	width: 20px;
+	position: absolute;
+	top: 50%;
+	margin-top: -40px;
+	cursor: pointer;
+	background: lightsalmon;
+}
+.prod-thumbs .mCustomScrollBtnPrev{
+	left: 0;
+}
+.prod-thumbs .mCustomScrollBtnNext{
+	right: 0;
+}
+
 .prod-thumbs-list,
 .user-content .prod-thumbs-list{
 	list-style:none;

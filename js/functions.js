@@ -1155,7 +1155,7 @@ function fancyboxInit(){
 			//snapAmount:156,
 			keyboard:{
 				//scrollAmount:156,
-				enable: false
+				enable: true
 			},
 			mouseWheel:{
 				//deltaFactor:156
@@ -1468,7 +1468,12 @@ function multiAccordionInit() {
 
 /*products gallery initial*/
 (function () {
-	var CompanyProducts = function (options) {
+	var CompanyProducts = function (settings) {
+		var options = $.extend({
+			scrollBtnPrev: '',
+			scrollBtnNext: ''
+		}, settings || {});
+
 		this.options = options;
 
 		var $container = $(options.container);
@@ -1477,6 +1482,10 @@ function multiAccordionInit() {
 		this.$thumbsContainer = $(options.thumbsContainer, $container);
 		this.$panel = $(options.panel, $container);
 		this.$tabPanel = $(options.tabPanel, $container);
+		this._scrollBtnPrev = options.scrollBtnPrev;
+		this._scrollBtnNext = options.scrollBtnNext;
+		this.$scrollBtnPrev = $(this._scrollBtnPrev);
+		this.$scrollBtnNext = $(this._scrollBtnNext);
 
 		this.modifiers = {
 			active: 'made-active',
@@ -1488,10 +1497,21 @@ function multiAccordionInit() {
 		this.initScrollbar();
 		this.bindEvents();
 		this.initAccordion();
+		this.prevNextThumb();
+	};
+
+	CompanyProducts.prototype.thumbPosition = function (currentThumb) {
+		var left = currentThumb.position().left,
+			width = this.$thumbsContainer.width(),
+			widthThumb = currentThumb.width(),
+			scrollOffset = (left - width / 2 < 0) ? 0 : left - width / 2 + widthThumb / 2;
+
+		this.$thumbsContainer.mCustomScrollbar('scrollTo', scrollOffset);
 	};
 
 	CompanyProducts.prototype.initScrollbar = function () {
-		this.$thumbsContainer.mCustomScrollbar({
+		var self = this;
+		self.$thumbsContainer.mCustomScrollbar({
 			axis:"x",
 			scrollbarPosition: "inside",
 			advanced:{autoExpandHorizontalScroll:true},
@@ -1501,7 +1521,12 @@ function multiAccordionInit() {
 			mouseWheel:{
 				//enable: false
 			},
-			scrollInertia:500
+			scrollInertia:500,
+			callbacks:{
+				onInit:function(){
+					$(this).prepend('<span class="mCustomScrollBtn mCustomScrollBtnPrev '+self._scrollBtnPrev+'"><i></i></span>').append('<span class="mCustomScrollBtn mCustomScrollBtnNext '+self._scrollBtnNext+'"><i></i></span>');
+				}
+			}
 		});
 	};
 
@@ -1529,12 +1554,7 @@ function multiAccordionInit() {
 
 			var activeIndex = $currentThumb.index();
 
-			var left = $currentThumb.position().left,
-				width = self.$thumbsContainer.width(),
-				widthThumb = $currentThumb.width(),
-				scrollOffset = (left - width / 2 < 0) ? 0 : left - width / 2 + widthThumb/2;
-
-			self.$thumbsContainer.mCustomScrollbar('scrollTo', scrollOffset);
+			self.thumbPosition($currentThumb);
 
 			self.$thumbs.parent().removeClass(modifiers.active);
 			$currentThumb.addClass(modifiers.active);
@@ -1545,6 +1565,28 @@ function multiAccordionInit() {
 
 			e.preventDefault();
 		});
+	};
+
+	CompanyProducts.prototype.prevNextThumb = function () {
+		var self = this,
+			modifiers = this.modifiers,
+			tabPanel = this.$tabPanel;
+
+		this.$container.on('click', self.$scrollBtnPrev, function () {
+			console.log('prev!click');
+
+			var currentBtn = $(this),
+				activeThumb = self.$thumbs;
+			console.log(activeThumb);
+
+			currentBtn.closest();
+		});
+
+		this.$container.on('click', self.$scrollBtnNext, function () {
+			console.log('next!click');
+
+			var currentBtn = $(this);
+		})
 	};
 
 	window.CompanyProducts = CompanyProducts;
