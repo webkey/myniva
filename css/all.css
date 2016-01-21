@@ -1433,7 +1433,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .search-form .input-wrapper input[type="search"],
 .search-form .input-wrapper input[type="text"]{
 	color: #333;
-	font: 18px/30px 'gothampro-light', Arial, Helvetica, sans-serif;
+	font: 18px/30px 'gothampro-regular', Arial, Helvetica, sans-serif;
 	padding: 10px 0;
 	height: auto;
 	background: none;
