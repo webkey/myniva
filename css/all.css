@@ -981,8 +981,13 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 }
+.nav-list>li>a{
+	font-size: 16px;
+	line-height: 18px;
+}
 .nav-list>li>a:hover{
-	background: #d1e4f3;
+	background: #0059a6;
+	color: #fff;
 }
 .nav-list li.active>a,
 .nav-list li.made-drop-open>a{
@@ -990,12 +995,17 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	/*color: #d32e2e;*/
 	/*background: #d32e2e;*/
 	/*color: #fff;*/
-	color: #0059a6;
-	background: #ccdeed;
+	/*color: #0059a6;*/
+	/*background: #ccdeed;*/
+	background: #0059a6;
+	color: #ccdeed;
 }
-.nav-list li.made-current>a{
-	background: #d32e2e;
-	color: #fff;
+.nav-list li.made-current>a,
+.nav-list li.made-current>a:hover{
+	/*background: #d32e2e;*/
+	/*color: #fff;*/
+	color: #0059a6;
+	background: #e5eef6;
 }
 .nav-list li>.depict-angle,
 .nav-list li>a>.depict-angle{
@@ -1020,6 +1030,10 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	-webkit-transform: rotate(-180deg);
 	-ms-transform: rotate(-180deg);
 	transform: rotate(-180deg);
+}
+.nav-list>li>a:hover>.depict-angle,
+.nav-list>li.active>a>.depict-angle{
+	color: #fff;
 }
 /*nav-drop*/
 .nav-drop{
@@ -1066,6 +1080,9 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	/*background: #e5eef6;*/
 	background: #dbe8f2;
 }
+.nav-drop__list li.active>a{
+	color: #d32e2e;
+}
 .drop-visible,
 .drop-visible .nav-drop__list li>a,
 .drop-visible .nav-drop__list li>a:hover{
@@ -1074,9 +1091,10 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .drop-visible .nav-drop__list li.active>a{
 	/*background: #bdd5e8;*/
 	background: #e5eef6;
+	color: #d32e2e;
 }
 .drop-visible .nav-drop__list li>a:hover{
-	background: #eaf3fb;
+	/*background: #eaf3fb;*/
 }
 .drop-visible .nav-sub-drop__list li{
 	border-top-color: #b7d0e6;
@@ -1085,17 +1103,22 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	/*background: #fff;*/
 	background: #f2f7fb;
 }
-.drop-visible .nav-sub-drop__list li>a{
+.drop-visible .nav-sub-drop__list li>a,
+.drop-visible .nav-sub-drop__list li>a:hover{
 	/*background: #fff;*/
 	background: #f2f7fb;
 }
 .drop-visible .nav-sub-drop__list li>a:hover{
-	background: #f4f9fd;
+	/*background: #f4f9fd;*/
 }
 .drop-visible .nav-drop__list li.made-current>a,
 .drop-visible .nav-sub-drop__list li.made-current>a{
-	background: #d32e2e;
-	color: #fff;
+	/*background: #d32e2e;*/
+	/*color: #fff;*/
+	color: #d32e2e;
+}
+.drop-visible .nav-sub-drop__list li.made-current>a{
+	background: #fff;
 }
 .nav-drop__list li.active>a,
 .nav-drop__list li.made-current>a{
@@ -1106,7 +1129,11 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 }
 .nav-drop__list li>a:hover{
 	/*background: #fff;*/
-	background: #dfecf6;
+	/*background: #dfecf6;*/
+	color: #d32e2e;
+}
+.nav-drop__list li>a:hover .depict-angle{
+	color: #d32e2e;
 }
 .two-menu-active .has-drop-visible>a,
 .two-menu-active .has-drop-visible>a:hover,
@@ -1123,10 +1150,12 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .nav-list .has-drop-hidden>.depict-angle,
 .nav-list .has-drop-hidden>a>.depict-angle,
 .nav-list .has-drop-hidden.active>.depict-angle,
-.nav-list .has-drop-visible.active>a>.depict-angle{
+.nav-list .has-drop-visible.active>a>.depict-angle,
+.nav-list .has-drop-visible>a:hover>.depict-angle{
 	-webkit-transform: rotate(-90deg);
 	-ms-transform: rotate(-90deg);
 	transform: rotate(-90deg);
+	color: #0059a6;
 }
 .nav-list .has-drop-visible>.depict-angle,
 .nav-list .has-drop-visible>a>.depict-angle{
@@ -1134,11 +1163,12 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 }
 .nav-drop__list li.active>.depict-angle,
 .nav-drop__list li.active>a>.depict-angle{
-	/*color: #d32e2e;*/
+	color: #d32e2e;
 }
 .nav-drop__list li.made-current>.depict-angle,
 .nav-drop__list li.made-current>a>.depict-angle{
-	color: #fff;
+	/*color: #fff;*/
+	color: #d32e2e;
 }
 /*nav-drop end*/
 /*nav-sub-drop*/
@@ -1157,17 +1187,21 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	font-family: 'gothampro-regular', Arial, Helvetica, sans-serif;
 	background: #e6eff6;
 	text-transform: none;
+	padding-left: 50px;
 }
 .nav-sub-drop__list li.active>a{
 	background: #e6eff6;
 }
 .nav-sub-drop__list li>a:hover,
 .nav-sub-drop__list li:hover>a{
-	background: #eaf3fa;
+	color: #d32e2e;
 }
+.nav-sub-drop__list li.made-current>a:hover,
 .nav-sub-drop__list li.made-current>a{
-	color: #fff;
-	background: #d32e2e;
+	/*color: #fff;*/
+	/*background: #d32e2e;*/
+	color: #d32e2e;
+	background: #fff;
 }
 .nav-sub-drop__list li.active>.depict-angle,
 .nav-sub-drop__list li.active>a>.depict-angle,

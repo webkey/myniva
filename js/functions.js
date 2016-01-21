@@ -394,7 +394,7 @@ function mainNavigation() {
 
 	/*close all drops*/
 	function closeDrops(drop) {
-		drop.closest('li').removeClass('active made-drop-open');
+		drop.closest('li').removeClass('active made-drop-open made-current');
 		if ($('.btn-menu').is(':hidden')) {
 			drop.slideUp(dur);
 		}
