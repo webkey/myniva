@@ -1453,6 +1453,17 @@ function multiAccordionInit() {
 			animateSpeed: 200
 		});
 	}
+
+	//if($('.category__list').length){
+	//	new MultiAccordion({
+	//		accordionContainer: '.category__list',
+	//		accordionItem: 'li',
+	//		accordionEvent: 'a',
+	//		collapsibleElement: '.category__list>li>ul',
+	//		animateSpeed: 200
+	//	});
+	//}
+
 	//if($('.produce-full-menu').length){
 	//	new MultiAccordion({
 	//		accordionContainer: '.produce-full-menu__col>ul',
