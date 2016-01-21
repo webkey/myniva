@@ -1513,7 +1513,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	position: absolute;
 	left: 0;
 	top: 0;
-	border: 1px solid #666;
+	border: 1px solid #0059a6;
 	border-radius: 1px;
 	-webkit-transition: 0.4s cubic-bezier(0, 0, 0, 1);
 	transition: 0.4s cubic-bezier(0, 0, 0, 1);
@@ -1539,11 +1539,11 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	transform: scale(1.2, 1.2);
 }
 .btn-search:hover .depict-search{
-	color: #333;
+	color: #0059a6;
 }
 .btn-search:hover .depict-search:before,
 .btn-search:hover .depict-search:after{
-	border-color: #333;
+	border-color: #0059a6;
 }
 .search-form .btn-search input[type="submit"]{
 	padding: 0;
@@ -1571,7 +1571,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	top: 0.9em;
 	height: 2px;
 	width: 40px;
-	background: #666;
+	background: #0059a6;
 	border-radius: 5px;
 	-webkit-transition: 0.3s;
 	transition: 0.3s;
@@ -1593,7 +1593,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 }
 .btn-search-close:hover:before,
 .btn-search-close:hover:after{
-	background: #333;
+	background: #0059a6;
 }
 /*search-form end*/
 /*search form opener*/
