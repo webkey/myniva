@@ -2032,8 +2032,7 @@ li.made-active .produce-thumbs__text,
 	vertical-align: middle;
 	width: 98%;
 	white-space: normal;
-	font-size: 12px;
-	line-height: 18px;
+	font: 12px/18px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	letter-spacing: normal;
 	text-transform: uppercase;
 	color: #80acd3;
@@ -3270,6 +3269,8 @@ div.cselect-local .ui-multiselect-checkboxes{
 	margin-top: -40px;
 	cursor: pointer;
 	background: lightsalmon;
+
+	display: none;
 }
 .prod-thumbs .mCustomScrollBtnPrev{
 	left: 0;
@@ -3290,9 +3291,8 @@ div.cselect-local .ui-multiselect-checkboxes{
 .user-content .prod-thumbs-list li{
 	display: inline-block;
 	vertical-align: top;
-	width: 156px;
-	font-size: 12px;
-	line-height: 18px;
+	width: 176px;
+	font: 13px/20px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	white-space: normal;
 	text-transform: uppercase;
 	margin: 0;
@@ -3313,31 +3313,39 @@ div.cselect-local .ui-multiselect-checkboxes{
 	height: 167px;
 	cursor: pointer;
 	background: none;
-}
-.made-active .prod-thumbs__item{
-	background: #267bc5;
-}
-.prod-disabled-thumb .prod-thumbs__item{
+
 	opacity: 0.5;
 	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
 	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+
+	-webkit-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+}
+.prod-thumbs__item:hover,
+.made-active .prod-thumbs__item{
+	/*background: #267bc5;*/
+
+	opacity: 1;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+}
+.prod-disabled-thumb .prod-thumbs__item{
+	width: 0;
 	cursor: default;
+	display: none;
 }
 .prod-thumbs__icon{
 	background: no-repeat 50% 50%;
 	min-height: 83px;
-	-webkit-transition: all 0.2s;
-	transition: all 0.2s;
-}
-.made-active .prod-thumbs__icon,
-.prod-thumbs__item:hover .prod-thumbs__icon{
-	opacity: 1;
 }
 .prod-thumbs__text{
 	display: block;
 	color: #fff;
 	-webkit-transition: 0.2s;
 	transition: 0.2s;
+}
+.made-active .prod-thumbs__text{
+	color: #fff;
 }
 /*mCustomScrollBox*/
 .prod-thumbs .mCSB_horizontal.mCSB_inside > .mCSB_container{
@@ -3450,7 +3458,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 }
 .prod-links__list a{
 	text-decoration: none;
-	font: 16px/22px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	font: 16px/22px 'gothampro-regular', Arial, Helvetica, sans-serif;
 	padding-top: 4px;
 	color: #fff;
 }
