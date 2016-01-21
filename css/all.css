@@ -1142,8 +1142,10 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	/*color: #0059a6;*/
 	/*color: #d32e2e;*/
 	/*background: #bdd5e8;*/
-	color: #0059a6;
-	background: #e5eef6;
+	/*color: #0059a6;*/
+	/*background: #e5eef6;*/
+	background: #0059a6;
+	color: #fff;
 }
 .nav-list .has-drop-visible>.depict-angle,
 .nav-list .has-drop-visible>a>.depict-angle,
