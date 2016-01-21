@@ -1156,6 +1156,8 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	-ms-transform: rotate(-90deg);
 	transform: rotate(-90deg);
 	color: #0059a6;
+
+	display: none;
 }
 .nav-list .has-drop-visible>.depict-angle,
 .nav-list .has-drop-visible>a>.depict-angle{
