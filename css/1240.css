@@ -56,6 +56,9 @@
 	line-height: 15px;
 	padding: 9px 35px 9px 20px;
 }
+.nav-sub-drop__list li>a {
+	padding-left: 36px;
+}
 /*main navigation end*/
 
 /*header*/
