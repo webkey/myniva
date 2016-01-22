@@ -134,7 +134,6 @@ body{
 	height: 100%;
 	min-width: 320px;
 	background: #fff;
-	overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6{
 	font: 16px/22px 'gothampro-bold', Arial, Helvetica, sans-serif;
