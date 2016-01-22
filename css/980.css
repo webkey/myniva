@@ -356,6 +356,19 @@ body.nav-opened{ overflow: hidden; }
 .company-info__btn{ text-align: left; }
 /*company contacts end*/
 
+/*contacts*/
+.contacts__col{
+	width: 33.29%;
+}
+.contacts__group{
+	width: 66.59%;
+}
+.contacts__group-col{
+	float: left;
+	width: 49.9%;
+}
+/*contacts end*/
+
 /*error 404*/
 .error-404__bg:before { padding-top: 45%; }
 /*error 404 end*/

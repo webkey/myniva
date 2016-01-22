@@ -1,17 +1,130 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed);
-@import url(fonts.css);
 @import url(../fonts/font-awesome-4.5.0/css/font-awesome.min.css);
-@import url(normalize.css);
-@import url(buttons.css);
-@import url(sp.css);
 @import url(widgets.css);
 
 /*fonts*/
-/*@import url(fonts.css);*/
+/* gotham-pro regular */
+@font-face {
+	font-family: 'gothampro-regular';
+	src: url('../fonts/gotham-pro/regular/gothampro-regular.eot');
+	src: url('../fonts/gotham-pro/regular/gothampro-regular.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/gotham-pro/regular/gothampro-regular.woff') format('woff'),
+	url('../fonts/gotham-pro/regular/gothampro-regular.ttf') format('truetype'),
+	url('../fonts/gotham-pro/regular/gothampro-regular.svg#gothampro-regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/* gotham-pro bold */
+@font-face {
+	font-family: 'gothampro-bold';
+	src: url('../fonts/gotham-pro/bold/gothampro-bold.eot');
+	src: url('../fonts/gotham-pro/bold/gothampro-bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/gotham-pro/bold/gothampro-bold.woff') format('woff'),
+	url('../fonts/gotham-pro/bold/gothampro-bold.ttf') format('truetype'),
+	url('../fonts/gotham-pro/bold/gothampro-bold.svg#gothampro-bold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/* gotham-pro bold italic */
+@font-face {
+	font-family: 'gothampro-bold-italic';
+	src: url('../fonts/gotham-pro/bold-italic/gothampro-bold-italic.eot');
+	src: url('../fonts/gotham-pro/bold-italic/gothampro-bold-italic.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/gotham-pro/bold-italic/gothampro-bold-italic.woff') format('woff'),
+	url('../fonts/gotham-pro/bold-italic/gothampro-bold-italic.ttf') format('truetype'),
+	url('../fonts/gotham-pro/bold-italic/gothampro-bold-italic.svg#gothampro-bold-italic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/* gotham-pro italic */
+@font-face {
+	font-family: 'gothampro-italic';
+	src: url('../fonts/gotham-pro/italic/gothampro-italic.eot');
+	src: url('../fonts/gotham-pro/italic/gothampro-italic.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/gotham-pro/italic/gothampro-italic.woff') format('woff'),
+	url('../fonts/gotham-pro/italic/gothampro-italic.ttf') format('truetype'),
+	url('../fonts/gotham-pro/italic/gothampro-italic.svg#gothampro-italic') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 /*fonts end*/
 
 /*normalize*/
-/*@import url(normalize.css);*/
+/*! normalize,css v3.0.2 | MIT License | git.io/normalize */
+/*
+Browser support:
+- Google Chrome (latest)
+- Mozilla Firefox (latest)
+- Mozilla Firefox 4
+- Opera (latest)
+- Apple Safari 6+
+- Internet Explorer 8+
+*/
+html{ font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+body{ margin: 0; }
+article, div, details, figcaption, figure, footer, header, main, menu, nav, section, summary{ display: block; }
+audio, canvas, progress, video{ display: inline-block; vertical-align: baseline; }
+audio:not([controls]){ display: none; height: 0; }
+[hidden], template{ display: none; }
+a{ background-color: transparent; }
+a:active, a:hover{ outline: 0; }
+abbr[title]{ border-bottom: 1px dotted; }
+b, strong{ font-weight: bold; }
+dfn{ font-style: italic; }
+h1{ font-size: 2em; margin: 0.67em 0; }
+mark{ background: #ff0; color: #000; }
+small{ font-size: 80%; }
+sub, sup{ font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup{ top: -0.5em; }
+sub{ bottom: -0.25em; }
+img{ border: 0; }
+svg:not(:root){ overflow: hidden; }
+figure{ margin: 1em 40px; }
+hr{ -moz-box-sizing: content-box; box-sizing: content-box; height: 0; }
+pre{ overflow: auto; }
+code, kbd, pre, samp{ font-family: monospace, monospace; font-size: 1em; }
+button, input, optgroup, select, textarea{ color: inherit; font: inherit; margin: 0; }
+button{ overflow: visible; }
+button, select{ text-transform: none; }
+button, html input[type="button"], input[type="reset"], input[type="submit"]{ -webkit-appearance: none; cursor: pointer; border-right: 0; }
+button[disabled], html input[disabled]{ cursor: default; }
+button::-moz-focus-inner, input::-moz-focus-inner{ border: 0; padding: 0; }
+input{ line-height: normal; }
+input[type="checkbox"], input[type="radio"]{ box-sizing: border-box; padding: 0; }
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button{ height: auto; }
+input[type="search"]{ -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration{ -webkit-appearance: none; }
+fieldset{ border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
+legend{ border: 0; padding: 0; }
+textarea{ overflow: auto; }
+optgroup{ font-weight: bold; }
+table{ border-collapse: collapse; border-spacing: 0; }
+td, th{ padding: 0; }
+/* reset */
+/** {max-height: 100000px;}*/
+*, *:before, *:after{ -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body{ -webkit-font-smoothing: antialiased; }
+body, html{ height: 100%; width: 100%; }
+select[disabled]{ cursor: default; }
+img{ vertical-align: top; max-width: 100%; }
+form { margin:0; padding:0; }
+input{ vertical-align: middle; }
+input[type=radio], input[type=checkbox], select{ cursor: pointer; }
+*:focus{ outline: none; -moz-outline: 3px solid #fff !important; }
+input[type="radio"]:focus{ -moz-outline-radius: 12px !important; -moz-outline-offset: 0 !important; }
+input[type="checkbox"]:focus{ -moz-outline-offset: -1px !important; -moz-outline: 1px solid #000 !important; }
+input::-ms-clear { display: none; }
+blockquote, q{ quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after{ content: ''; content: none; }
+ins{ text-decoration: none; }
+del{ text-decoration: line-through; }
+fieldset{ border: none; margin: 0; padding: 0; }
+table{ border: 0; padding: 0; margin: 0; }
+/* reset end */
+*, :after, :before {
+	/*-webkit-font-smoothing: antialiased;*/
+	/*-moz-osx-font-smoothing: grayscale;*/
+}
 /*normalize end*/
 
 /*------ typographic styles ------*/
@@ -120,16 +233,213 @@ strong em{
 	font-style:normal;
 }
 /*------ typographic styles end ------*/
-/*clearfix*/
-/*@import url(clearfix.css);*/
-/*clearfix end*/
+/*icons*/
+[class|="depict-icon"],
+[class*=" depict-icon-"]{
+	background:url(../img/sprite-icons.png) 0 0 no-repeat;
+	display: inline-block;
+	vertical-align: top;
+}
+.depict-icon-arrow-wb{ background-position: 0 0; width: 10px; height: 7px; }
+.depict-icon-arrow-wt{ background-position: 0 -27px; width: 11px; height: 7px; }
+.depict-icon-arrow-br{ background-position: 0 -54px; width: 7px; height: 10px; }
+.depict-icon-arrow-bl{ background-position: 0 -84px; width: 7px; height: 10px; }
+.depict-icon-arrow-bt{ background-position: 0 -114px; width: 10px; height: 7px; }
+.depict-icon-arrow-bb{ background-position: 0 -141px; width: 10px; height: 7px; }
+.depict-icon-local{
+	background: url(../img/depict-local.png) no-repeat;
+	width: 11px;
+	height: 14px;
+}
+[class|="depict-flag"],
+[class*=" depict-flag-"]{
+	display: inline-block;
+	vertical-align: top;
+	width: 18px;
+	height: 13px;
+	box-shadow: -1px 1px 0 rgba(0, 0, 0, 0.6);
+	background: #fff no-repeat;
+}
+.depict-flag-blr{
+	background-image: url(../img/depict-flag-blr.png);
+}
+.depict-flag-de{
+	background-image: url(../img/depict-flag-de.png);
+}
+/*icons end*/
 
-/*sp*/
-/*@import url(sp.css);*/
-/*sp end*/
+/*depict files*/
+[class|="depict-files"],
+[class*=" depict-files-"]{
+	background:url(../img/sprite-files.png) 0 0 no-repeat;
+	display: inline-block;
+	vertical-align: top;
+}
+.depict-files-pdf{ background-position: 0 0; width: 39px; height: 46px; }
+.depict-files-xls{ background-position: 0 -66px; width: 39px; height: 46px; }
+.depict-files-doc{ background-position: 0 -132px; width: 39px; height: 46px; }
+.depict-files-zip{ background-position: 0 -198px; width: 39px; height: 46px; }
+.depict-files-jpg{ background-position: 0 -264px; width: 39px; height: 46px; }
+/*depict files end*/
 
 /*btn*/
-/*@import url(buttons.css);*/
+[class|="btn"],
+[class*=" btn-"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+button{
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	text-align: center;
+	text-decoration:none;
+}
+[class|="btn"] input[type="submit"],
+[class*=" btn-"] input[type="submit"],
+[class|="btn"] input[type="reset"],
+[class*=" btn-"] input[type="reset"]{
+	background: url("../img/empty.png") repeat;
+	cursor: pointer;
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 99;
+	border:0;
+}
+/*style default button*/
+/*btn-default*/
+.btn-default,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+button{
+	font: 16px/20px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	color: #fff;
+	padding: 12px 25px;
+	border: 1px solid transparent;
+	background: #d32e2e;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+	position: relative;
+}
+.btn-default:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+button:hover{
+	background: #b41e18;
+}
+.btn-default:active{
+	bottom: -1px;
+}
+/*btn-default end*/
+/*btn-default-alt*/
+.btn-default-alt,
+input[type="submit"].btn-default-alt,
+input[type="button"].btn-default-alt,
+input[type="reset"].btn-default-alt{
+	font: 16px/20px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	color: #d32e2e;
+	padding: 12px 18px;
+	border: 1px solid #d32e2e;
+	background: #fff;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+	position: relative;
+}
+.btn-default-alt:hover,
+input[type="submit"].btn-default-alt:hover,
+input[type="button"].btn-default-alt:hover,
+input[type="reset"].btn-default-alt:hover{
+	background: #d32e2e;
+	color: #fff;
+}
+.btn-default-alt:active,
+input[type="submit"].btn-default-alt:active,
+input[type="button"].btn-default-alt:active,
+input[type="reset"].btn-default-alt:active{
+	bottom: -1px;
+}
+/*btn-default-alt end*/
+/*btn-default-empty*/
+.btn-default-empty,
+input[type="submit"].btn-default-empty,
+input[type="button"].btn-default-empty,
+input[type="reset"].btn-default-empty{
+	font: 16px/20px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	color: #d32e2e;
+	padding: 12px 18px;
+	border: 1px solid #d32e2e;
+	background: none;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+	position: relative;
+}
+.btn-default-empty:hover,
+input[type="submit"].btn-default-empty:hover,
+input[type="button"].btn-default-empty:hover,
+input[type="reset"].btn-default-empty:hover{
+	background: #d32e2e;
+	color: #fff;
+}
+.btn-default-empty:active,
+input[type="submit"].btn-default-empty:active,
+input[type="button"].btn-default-empty:active,
+input[type="reset"].btn-default-empty:active{
+	bottom: -1px;
+}
+/*btn-default-empty end*/
+[class*="btn-"] i{
+	margin-right: 12px;
+	font-size: 19px;
+	line-height: 20px;
+}
+[class*="btn-"] i.fa-envelope{
+	font-size: 19px;
+}
+/*style default button end*/
+/*btn-close*/
+.btn-close{
+	width: 46px;
+	height: 46px;
+	background: #4c4c4c;
+	background: rgba(0, 0, 0, 0.7);
+	cursor: pointer;
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+}
+.btn-close:hover{
+	background: #333;
+	background: rgba(0, 0, 0, 0.8);
+}
+.btn-close:before,
+.btn-close:after{
+	content: '';
+	position: absolute;
+	left: 12px;
+	top: 22px;
+	height: 2px;
+	width: 22px;
+	border-right: 1px;
+	background: #fff;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.btn-close:before{
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.btn-close:after{
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+/*btn-close end*/
 /*btn end*/
 
 /*gradient*/
@@ -897,7 +1207,9 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 
 /*nav title*/
 .nav-title{
-	font: 0/22px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	font-family: 'gothampro-bold', Arial, Helvetica, sans-serif;
+	font-size: 0;
+	line-height: 22px;
 	text-transform: uppercase;
 	width: 100%;
 	height: 85px;
@@ -2745,19 +3057,11 @@ div.cselect-local .ui-multiselect-checkboxes{
 	font-size: 14px;
 	letter-spacing: normal;
 	opacity: 1;
-	-webkit-transform: translateY(0) perspective(220px) rotateX(0deg);
-	-ms-transform: translateY(0) perspective(220px) rotateX(0deg);
-	transform: translateY(0) perspective(220px) rotateX(0deg);
-	-webkit-transition: all 0.2s linear 0.2s;
-	transition: all 0.2s linear 0.2s;
+	-webkit-transition: opacity 0.2s linear;
+	transition: opacity 0.2s linear;
 }
 .clients-list li:hover a>img{
-	opacity: 1;
-	-webkit-transform: translateY(0px) perspective(0) rotateX(90deg);
-	-ms-transform: translateY(0px) perspective(0) rotateX(90deg);
-	transform: translateY(0px) perspective(0) rotateX(90deg);
-	-webkit-transition-delay: 0s;
-	transition-delay: 0s;
+	opacity: 0;
 }
 .clients-label{
 	content: attr(data-label);
@@ -2773,20 +3077,12 @@ div.cselect-local .ui-multiselect-checkboxes{
 	height: 100%;
 	width: 100%;
 	z-index: 1;
-	opacity: 1;
-	-webkit-transform: translateY(0px) perspective(220px) rotateX(-90deg);
-	-ms-transform: translateY(0px) perspective(220px) rotateX(-90deg);
-	transform: translateY(0px) perspective(220px) rotateX(-90deg);
-	-webkit-transition: all 0.2s linear;
-	transition: all 0.2s linear;
+	opacity: 0;
+	-webkit-transition: opacity 0.2s linear;
+	transition: opacity 0.2s linear;
 }
 .clients-list li:hover .clients-label{
 	opacity: 1;
-	-webkit-transform: translateY(0px) perspective(0) rotateX(0deg);
-	-ms-transform: translateY(0px) perspective(0) rotateX(0deg);
-	transform: translateY(0px) perspective(0) rotateX(0deg);
-	-webkit-transition-delay: 0.2s;
-	transition-delay: 0.2s;
 }
 .clients-label>span{
 	font-size: 8px;
@@ -4723,26 +5019,26 @@ li:hover>.category__link a>span{
 	width: 59.9%;
 }
 .site-developer{
-	line-height: 23px;
+	line-height: 28px;
 }
 .site-developer_logo{
 	display: inline-block;
 	vertical-align: top;
 	background: url(../img/bg-developer.png) no-repeat;
-	width: 123px;
-	height: 23px;
+	width: 100px;
+	height: 28px;
 	font-size: 12px;
 	line-height: 23px;
 	text-align: center;
 	text-decoration: none;
 	color: #fff;
-	-webkit-transition: 0.1s all 0.2s ease-in-out;
-	transition: 0.1s all 0.2s ease-in-out;
+	text-indent: -9999px;
+	overflow: hidden;
+	-webkit-transition: opacity 0.2s;
+	transition: opacity 0.2s;
 }
 .site-developer_logo:hover{
-	background-position: -123px 0;
-	-webkit-transition-delay: 0s;
-	transition-delay: 0s;
+	opacity: 0.85;
 }
 /*footer end*/
 

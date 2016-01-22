@@ -40,3 +40,14 @@
 	width: 49.9%;
 }
 /*product menu end*/
+
+/*contacts*/
+.contacts__col,
+.contacts__group{
+	width: 50%;
+}
+.contacts__group-col{
+	float: none;
+	width: auto;
+}
+/*contacts end*/
