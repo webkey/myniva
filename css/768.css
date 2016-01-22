@@ -101,11 +101,17 @@ h3 {
 /*contact info end*/
 
 /*products container*/
-.prod-thumbs { padding: 20px 20px 0; }
+.prod-thumbs { padding: 20px 54px 0; }
 .prod-tab-col {
 	display: block;
 	width: auto;
 	padding: 0;
+}
+.prod-thumbs .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonLeft {
+	left: 6px;
+}
+.prod-thumbs .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonRight {
+	right: 6px;
 }
 /*products container end*/
 

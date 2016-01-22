@@ -278,12 +278,13 @@ function dropNavigation() {
 			_classInit = 'nav-custom-scroll-initialized',
 			_classDestroy = 'nav-custom-scroll-destroy';
 
-		if($btnMenu.is(':hidden')){
+		if($btnMenu.is(':hidden') && !md.mobile()){
 			$('.panel-frame, .drop-side__holder').mCustomScrollbar({
 				//axis:"x",
 				theme:"minimal-dark",
 				scrollbarPosition: "inside",
-				autoExpandScrollbar:true
+				autoExpandScrollbar:true,
+				scrollInertia: 20
 			});
 
 			$body.addClass(_classInit);
@@ -356,7 +357,6 @@ function mainNavigation() {
 		var $currentLink = $(this);
 		var $currentItem = $currentLink.closest('li');
 
-		var flag;
 		var $btnMenu = $('.btn-menu');
 
 		if($btnMenu.is(':visible') && $currentItem.has('ul').length){
@@ -378,8 +378,6 @@ function mainNavigation() {
 		if(!$currentItem.has('ul').length || $currentItem.has('.drop-side').length) {
 			return;
 		}
-
-
 
 		var dropDownMenu = $('.nav-drop, .nav-sub-drop');
 		var $siblingDrop = $currentItem.siblings('li:not(.has-drop-side)').find(dropDownMenu);
@@ -1496,8 +1494,7 @@ function multiAccordionInit() {
 (function () {
 	var CompanyProducts = function (settings) {
 		var options = $.extend({
-			scrollBtnPrev: '',
-			scrollBtnNext: ''
+
 		}, settings || {});
 
 		this.options = options;
@@ -1505,13 +1502,10 @@ function multiAccordionInit() {
 		var $container = $(options.container);
 		this.$container = $container;
 		this.$thumbs = $(options.thumbs, $container);
+		this.$thumbsItem = $(options.thumbsItem, $container);
 		this.$thumbsContainer = $(options.thumbsContainer, $container);
 		this.$panel = $(options.panel, $container);
 		this.$tabPanel = $(options.tabPanel, $container);
-		this._scrollBtnPrev = options.scrollBtnPrev;
-		this._scrollBtnNext = options.scrollBtnNext;
-		this.$scrollBtnPrev = $(this._scrollBtnPrev);
-		this.$scrollBtnNext = $(this._scrollBtnNext);
 
 		this.modifiers = {
 			active: 'made-active',
@@ -1523,7 +1517,6 @@ function multiAccordionInit() {
 		this.initScrollbar();
 		this.bindEvents();
 		this.initAccordion();
-		this.prevNextThumb();
 	};
 
 	CompanyProducts.prototype.thumbPosition = function (currentThumb) {
@@ -1537,20 +1530,49 @@ function multiAccordionInit() {
 
 	CompanyProducts.prototype.initScrollbar = function () {
 		var self = this;
+		var amount = Math.max.apply(Math, self.$thumbs.map(function () {
+			return $(this).outerWidth(true);
+		}).get());
+		console.log(amount);
 		self.$thumbsContainer.mCustomScrollbar({
 			axis:"x",
-			scrollbarPosition: "inside",
+			scrollbarPosition: "outside",
 			advanced:{autoExpandHorizontalScroll:true},
-			keyboard:{
-				enable: false
-			},
-			mouseWheel:{
-				//enable: false
-			},
 			scrollInertia:500,
+			scrollButtons:{
+				enable:true,
+				scrollType:"stepped"
+			},
+			keyboard:{
+				enable: true,
+				scrollType:"stepped"
+			},
+			snapAmount:amount,
+			mouseWheel:{
+				scrollAmount:amount
+			},
 			callbacks:{
-				onInit:function(){
-					$(this).prepend('<span class="mCustomScrollBtn mCustomScrollBtnPrev '+self._scrollBtnPrev+'"><i></i></span>').append('<span class="mCustomScrollBtn mCustomScrollBtnNext '+self._scrollBtnNext+'"><i></i></span>');
+				onInit:function () {
+					console.log(3);
+					$(this).addClass('mCSB_buttonLeftDisabled');
+				},
+				whileScrolling:function(){
+					if($(this).hasClass('mCSB_buttonLeftDisabled')){
+						console.log(1);
+						$(this).removeClass('mCSB_buttonLeftDisabled');
+					}
+					if($(this).hasClass('mCSB_buttonRightDisabled')){
+						console.log(2);
+						$(this).removeClass('mCSB_buttonRightDisabled');
+					}
+				},
+				onTotalScroll: function () {
+					console.log(3);
+					$(this).addClass('mCSB_buttonRightDisabled');
+				},
+				onTotalScrollBack: function () {
+					console.log(4);
+					$(this).addClass('mCSB_buttonLeftDisabled');
 				}
 			}
 		});
@@ -1593,28 +1615,6 @@ function multiAccordionInit() {
 		});
 	};
 
-	CompanyProducts.prototype.prevNextThumb = function () {
-		var self = this,
-			modifiers = this.modifiers,
-			tabPanel = this.$tabPanel;
-
-		this.$container.on('click', self.$scrollBtnPrev, function () {
-			console.log('prev!click');
-
-			var currentBtn = $(this),
-				activeThumb = self.$thumbs;
-			console.log(activeThumb);
-
-			currentBtn.closest();
-		});
-
-		this.$container.on('click', self.$scrollBtnNext, function () {
-			console.log('next!click');
-
-			var currentBtn = $(this);
-		})
-	};
-
 	window.CompanyProducts = CompanyProducts;
 
 }());
@@ -1624,6 +1624,7 @@ function companyProductsInit() {
 	new CompanyProducts({
 		container: '.prod',
 		thumbs: '.prod-thumbs__item',
+		thumbsItem: '.prod-thumbs-list>li',
 		thumbsContainer: '.prod-thumbs',
 		panel: '.prod-container',
 		tabPanel: '.prod-tab'
@@ -1651,7 +1652,6 @@ $(document).ready(function(){
 	showInput();
 	dropNavigation();
 	mainNavigation();
-	//breadDrop();
 	breadHover();
 	slickSlidersInit();
 	mapInitNiva();
