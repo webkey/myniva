@@ -291,6 +291,9 @@ function dropNavigation() {
 		} else {
 			$body.addClass(_classDestroy);
 		}
+		if(md.mobile()){
+			$('.panel-frame, .drop-side__holder').mCustomScrollbar("destroy");
+		}
 
 		$(window).on('debouncedresize', function () {
 			if($btnMenu.is(':hidden') && $body.hasClass(_classDestroy)){
@@ -311,10 +314,6 @@ function dropNavigation() {
 				$body.removeClass(_classInit);
 				$body.addClass(_classDestroy);
 
-				$('.panel-frame, .drop-side__holder').mCustomScrollbar("destroy");
-			}
-
-			if(md.mobile()){
 				$('.panel-frame, .drop-side__holder').mCustomScrollbar("destroy");
 			}
 		});
