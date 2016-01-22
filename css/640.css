@@ -77,7 +77,12 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sea
 .nav-sub-drop__list>li>a,
 .nav-sub-drop__list>li>a:hover,
 .nav-sub-drop__list>li.active>a,
-.nav-sub-drop__list>li.made-current>a{
+.nav-sub-drop__list>li.made-current>a,
+
+.drop-side .nav-drop__list>li>a,
+.drop-side .nav-sub-drop__list>li>a,
+.drop-side .nav-sub-drop__list>li>a:hover,
+.drop-side .nav-sub-drop__list>li.made-current>a{
 	padding-left: 10px;
 	padding-right: 30px;
 }

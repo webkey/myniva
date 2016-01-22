@@ -121,13 +121,13 @@ body.nav-opened{ overflow: hidden; }
 	color: #0059a6;
 	background: #ccdeed;
 }
-.nav-sub-drop__list>li.made-current>a,
+/*.nav-sub-drop__list>li.made-current>a,
 .nav-sub-drop__list>li.made-current>a:hover,
 .drop-side .nav-sub-drop__list>li.made-current>a,
 .drop-side .nav-sub-drop__list>li.made-current>a:hover{
 	color: #d32e2e;
 	background: #fff;
-}
+}*/
 .nav-list li>a{
 	font-size: 15px;
 	line-height: 19px;

@@ -3026,20 +3026,21 @@ div.cselect-local .ui-multiselect-checkboxes{
 /*category list*/
 .category__list,
 .user-content .category__list,
-.category__list ul{
+.category__list ul,
+.user-content .category__list ul{
 	margin:0;
 	padding:0;
 	list-style:none;
-	font-size: 16px;
+	font-size: 14px;
 	line-height: 18px;
 }
 .category__list,
 .user-content .category__list{
-	padding: 28px 0 18px;
+	padding: 27px 0 18px;
 }
 .category__list>li,
 .user-content .category__list>li{
-	padding: 0 0 10px;
+	padding: 0 0 9px;
 }
 .user-content .category__list li:before{
 	content: none;
@@ -3050,61 +3051,25 @@ div.cselect-local .ui-multiselect-checkboxes{
 	font: 14px/22px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	padding-top: 4px;
 }
-.category__list .made-active>a,
-.category__list .made-active>.dt>a{
-	color: #d32e2e;
+.category__list>li>.category__link{
+	padding-left: 28px;
 }
-.category__list a:hover>span{
+.category__list a:hover>span,
+li:hover>.category__link a>span{
 	text-decoration: underline;
 }
-.category__list .category__link>a>i{
-	color: #cb3033;
-	font-size: 12px;
-	position: relative;
-	width: 14px;
-	left: 14px;
-	margin: 0 0 0 -14px;
-	padding: 0 0 0 5px;
-}
-.category__list .made-active>.category__link>a>i{
-	-webkit-transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
-	transform: rotate(90deg);
-	left: 16px;
-	top: -3px;
-}
-.category__list ul,
-.user-content .category__list ul{
-	padding: 0;
-	/*display: none;*/
-}
-.category__list .category__link{
-	padding-left: 22px;
-}
-.category__list ul,
-.user-content .category__list ul{
+.category__list>li>ul,
+.user-content .category__list>li>ul{
 	background: #e5eef6;
-	padding: 0 20px;
+	padding: 1px 10px 6px 20px;
+	margin: 7px 0 0 8px;
 }
-.category__list ul,
-.user-content .category__list .product-box__sub-sub ul{
-	margin-top: 10px;
-	padding-bottom: 6px;
+.category__list>li>ul>li,
+.user-content .category__list>li>ul>li{
+	padding: 6px 0;
 }
-.category__list .product-box__sub-sub>ul,
-.user-content .category__list .product-box__sub-sub>ul{
-	display: block;
-}
-.category__list ul ul li,
-.user-content .category__list ul ul li{
-	padding: 10px 0 0;
-}
-.category__list ul ul li:first-child,
-.user-content .category__list ul ul li:first-child{
-	padding: 5px 0 0;
-}
-.category__list ul ul li a{
-	font-family: 'gothampro-regular', Arial, Helvetica, sans-serif;
+.category__list>li>ul>li>a{
+	font: 14px/18px 'gothampro-regular', Arial, Helvetica, sans-serif;
 }
 /*category list end*/
 /*product box end*/

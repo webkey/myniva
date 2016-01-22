@@ -226,7 +226,6 @@ function customScrollInit(){
 /*custom scroll init end*/
 
 /*drop navigation*/
-
 // при загрузке страницы, добавляем <div class="overlay-page"></div>
 $(window).load(function () {
 	if(!$('.overlay-page').length){
@@ -266,7 +265,7 @@ function dropNavigation() {
 
 	// По клику на область вне меню, закрываем меню
 	// .overlay-page
-	$('.wrapper').on('click', '.overlay-page', function (e) {
+	$('.wrapper').on('click', '.overlay-page', function () {
 		$('body').toggleClass('nav-opened');
 		$('.btn-menu').toggleClass('active');
 	});
@@ -326,8 +325,12 @@ function clearDropNavigation() {
 		btn.removeClass('active');
 	}
 
+	if (panel.is(':visible') && btn.is(':hidden')) {
+		$('.made-current>.nav-sub-drop').slideDown(300);
+		panel.find('li').removeClass('active');
+	}
+
 	if (!md.mobile() && btn.is(':visible') && btn.hasClass('active')) {
-		console.log(1);
 		$('body').removeClass('nav-opened');
 		btn.removeClass('active');
 		panel.find('li').removeClass('active');
@@ -397,11 +400,11 @@ function mainNavigation() {
 		$currentItem.children(dropDownMenu).stop().slideDown(dur);
 	});
 
-	$($navigationList).on('click', '.nav-back', function (e) {
+	$($navigationList).on('click', '.nav-back', function () {
 		$(this).closest('li').removeClass('active');
 	});
 
-	$('.nav-drop>.nav-back').on('click', function (e) {
+	$('.nav-drop>.nav-back').on('click', function () {
 		$('.panel').removeClass('level-overlay');
 	});
 
@@ -1405,7 +1408,6 @@ function scrollNavInit(){
 	MultiAccordion.prototype.totalCollapsible = function () {
 		var self = this;
 		self.$totalCollapsible.on('click', function () {
-			console.log($(this));
 			self.$collapsibleElement.slideUp(self._animateSpeed);
 			self.$accordionItem.removeClass(self.modifiers.active);
 		})
