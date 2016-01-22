@@ -2145,7 +2145,7 @@ li.made-active .produce-thumbs__text,
 	display: inline-block;
 }
 .produce-full-holder{
-	overflow: hidden;
+	overflow: auto;
 	height: 177px;
 }
 .produce-full-holder .mCustomScrollBox:after{
@@ -2236,6 +2236,9 @@ li.made-active .produce-thumbs__text,
 .synopsis-container .produce-small,
 .synopsis-container .produce-small__holder{
 	height: 100%;
+}
+.synopsis-container .produce-small__holder{
+	overflow: auto;
 }
 .produce-small__item{
 	cursor: pointer;
@@ -3231,7 +3234,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 
 .product-box__menu{
 	position: relative;
-	overflow: visible;
+	overflow: auto;
 }
 /*product box list*/
 .product-box__list,
