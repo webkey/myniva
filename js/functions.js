@@ -278,7 +278,7 @@ function dropNavigation() {
 			_classInit = 'nav-custom-scroll-initialized',
 			_classDestroy = 'nav-custom-scroll-destroy';
 
-		if($btnMenu.is(':hidden') && !md.mobile()){
+		if($btnMenu.is(':hidden')){
 			$('.panel-frame, .drop-side__holder').mCustomScrollbar({
 				//axis:"x",
 				theme:"minimal-dark",
@@ -311,6 +311,10 @@ function dropNavigation() {
 				$body.removeClass(_classInit);
 				$body.addClass(_classDestroy);
 
+				$('.panel-frame, .drop-side__holder').mCustomScrollbar("destroy");
+			}
+
+			if(md.mobile()){
 				$('.panel-frame, .drop-side__holder').mCustomScrollbar("destroy");
 			}
 		});
