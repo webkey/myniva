@@ -61,9 +61,23 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sea
 	padding-right: 10px;
 }
 .nav-list li>a,
-.nav-drop__list li>a,
-.nav-drop__list li:hover>a,
-.nav-drop__list li>a:hover{
+.nav-list li.active>a,
+
+.nav-list>li>a,
+.nav-list>li>a:hover,
+.nav-list>li.active>a,
+.nav-list>li.made-current>a,
+.nav-list>li.made-current>a:hover,
+
+.nav-drop__list>li>a,
+.nav-drop__list>li>a:hover,
+.nav-drop__list>li.active>a,
+.nav-drop__list>li.made-current>a,
+
+.nav-sub-drop__list>li>a,
+.nav-sub-drop__list>li>a:hover,
+.nav-sub-drop__list>li.active>a,
+.nav-sub-drop__list>li.made-current>a{
 	padding-left: 10px;
 	padding-right: 30px;
 }

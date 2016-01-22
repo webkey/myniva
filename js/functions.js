@@ -252,8 +252,8 @@ function dropNavigation() {
 			dropDownMenu.attr('style','');
 		}
 
-		// Удаляем с пунктов меню всех уровнев классы-модификаторы
-		$('.nav-list li').removeClass('active made-drop-open made-current');
+		// Удаляем с пунктов меню всех уровней классы-модификаторы
+		$('.nav-list li').removeClass('active made-current:not(.has-drop-side)');
 
 		// Добавляем на боди класс открывающий меню. Открытие через CSS3 translate
 		$('body').toggleClass('nav-opened');
@@ -264,7 +264,7 @@ function dropNavigation() {
 		e.preventDefault();
 	});
 
-	// По клику на область вне меню, закрываем менюю
+	// По клику на область вне меню, закрываем меню
 	// .overlay-page
 	$('.wrapper').on('click', '.overlay-page', function (e) {
 		$('body').toggleClass('nav-opened');
@@ -280,7 +280,7 @@ function dropNavigation() {
 			_classDestroy = 'nav-custom-scroll-destroy';
 
 		if($btnMenu.is(':hidden')){
-			$('.panel-frame, .drop-visible__holder').mCustomScrollbar({
+			$('.panel-frame, .drop-side__holder').mCustomScrollbar({
 				//axis:"x",
 				theme:"minimal-dark",
 				scrollbarPosition: "inside",
@@ -297,7 +297,7 @@ function dropNavigation() {
 				$body.removeClass(_classDestroy);
 				$body.addClass(_classInit);
 
-				$('.panel-frame, .drop-visible__holder').mCustomScrollbar({
+				$('.panel-frame, .drop-side__holder').mCustomScrollbar({
 					//axis:"x",
 					theme:"minimal-dark",
 					scrollbarPosition: "inside",
@@ -311,7 +311,7 @@ function dropNavigation() {
 				$body.removeClass(_classInit);
 				$body.addClass(_classDestroy);
 
-				$('.panel-frame, .drop-visible__holder').mCustomScrollbar("destroy");
+				$('.panel-frame, .drop-side__holder').mCustomScrollbar("destroy");
 			}
 		});
 	}
@@ -322,13 +322,12 @@ function clearDropNavigation() {
 		btn = $('.btn-menu');
 
 	if (panel.is(':visible') && btn.is(':hidden') && btn.hasClass('active')) {
-		console.log(1);
 		$('body').removeClass('nav-opened');
 		btn.removeClass('active');
 	}
 
 	if (!md.mobile() && btn.is(':visible') && btn.hasClass('active')) {
-		console.log(2);
+		console.log(1);
 		$('body').removeClass('nav-opened');
 		btn.removeClass('active');
 		panel.find('li').removeClass('active');
@@ -338,39 +337,53 @@ function clearDropNavigation() {
 
 /*main navigation*/
 function mainNavigation() {
+	// скорость анимации
 	var dur = 300;
+
 	var $navigationList = $('.nav-list');
 	if (!$navigationList.length) {
 		return;
 	}
+
+	// открываем дроп текущего пункта
+	// не цсс, а скриптом, чтобы можно было плано закрыть дроп
+	$('.made-current>.nav-sub-drop').slideDown(0);
 
 	$($navigationList).on('click', 'a', function (e) {
 		var $currentLink = $(this);
 		var $currentItem = $currentLink.closest('li');
 
 		var flag;
-		if($('.btn-menu').is(':hidden')){
-			 flag = $currentItem.has('.drop-visible').length
-		} else {
-			flag = false
-		}
-		if(!$currentItem.has('ul').length || flag) { return; }
+		var $btnMenu = $('.btn-menu');
 
-		$('.panel').addClass('level-overlay');
+		if($btnMenu.is(':visible') && $currentItem.has('ul').length){
+			e.preventDefault();
+			$currentItem.addClass('active');
+
+			$('.panel').addClass('level-overlay');
+
+			//добавить кноку "< назад"
+			var _templateBackTo = '<div class="nav-back"><i class="depict-angle fa fa-chevron-left"></i><span>Назад</span></div>';
+			if($btnMenu.is(':visible')){
+				if(!$currentLink.siblings('div').has('.nav-back').length){
+					$currentLink.siblings('div').closest_child('ul').before(_templateBackTo);
+				}
+			}
+			return;
+		}
+
+		if(!$currentItem.has('ul').length || $currentItem.has('.drop-side').length) {
+			return;
+		}
+
+
 
 		var dropDownMenu = $('.nav-drop, .nav-sub-drop');
-		var $siblingDrop = $currentItem.siblings('li:not(.has-drop-visible, .has-drop-hidden)').find(dropDownMenu);
+		var $siblingDrop = $currentItem.siblings('li:not(.has-drop-side)').find(dropDownMenu);
 		var $currentItemDrop = $currentItem.find(dropDownMenu);
 
-		//добавить кноку "< назад"
-		var _templateBackTo = '<div class="nav-back"><i class="depict-angle fa fa-chevron-left"></i><span>Назад</span></div>';
-		if($('.btn-menu').is(':visible')){
-			if(!$currentLink.siblings('div').has('.nav-back').length){
-				$currentLink.siblings('div').closest_child('ul').before(_templateBackTo);
-			}
-		}
-
 		e.preventDefault();
+
 		if($currentItem.hasClass('active') || $currentItem.hasClass('made-current')){
 			closeDrops($siblingDrop);
 			closeDrops($currentItemDrop);
@@ -379,7 +392,7 @@ function mainNavigation() {
 		closeDrops($siblingDrop);
 		closeDrops($currentItemDrop);
 
-		$currentItem.addClass('active');
+		$currentItem.toggleClass('active');
 
 		$currentItem.children(dropDownMenu).stop().slideDown(dur);
 	});
@@ -394,7 +407,7 @@ function mainNavigation() {
 
 	/*close all drops*/
 	function closeDrops(drop) {
-		drop.closest('li').removeClass('active made-drop-open made-current');
+		drop.closest('li').removeClass('active made-current');
 		if ($('.btn-menu').is(':hidden')) {
 			drop.slideUp(dur);
 		}

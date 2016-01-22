@@ -76,9 +76,9 @@ body.nav-opened{ overflow: hidden; }
 /*main navigation*/
 .nav{
 	height: 100%;
-	/*overflow: hidden;*/
 	padding-top: 85px;
 }
+/*general styles main navigation*/
 .nav-list{
 	height: 100%;
 	overflow-y: auto;
@@ -90,6 +90,121 @@ body.nav-opened{ overflow: hidden; }
 	border-top: none;
 	border-bottom: 1px solid #a3c3df;
 }
+.nav-list li.hide-element{
+	display: block;
+}
+.nav-list li>a,
+.nav-list li.active>a,
+
+.nav-list>li>a,
+.nav-list>li>a:hover,
+.nav-list>li.active>a,
+.nav-list>li.made-current>a,
+.nav-list>li.made-current>a:hover,
+
+.nav-drop__list>li>a,
+.nav-drop__list>li>a:hover,
+.nav-drop__list>li.active>a,
+.nav-drop__list>li.made-current>a,
+
+.nav-sub-drop__list>li>a,
+.nav-sub-drop__list>li>a:hover,
+.nav-sub-drop__list>li.active>a,
+.nav-sub-drop__list>li.made-current>a,
+
+.drop-side .nav-drop__list>li>a,
+.drop-side .nav-sub-drop__list>li>a,
+.drop-side .nav-sub-drop__list>li>a:hover,
+.drop-side .nav-sub-drop__list>li.made-current>a{
+	padding-left: 30px;
+	padding-right: 45px;
+	color: #0059a6;
+	background: #ccdeed;
+}
+.nav-sub-drop__list>li.made-current>a,
+.nav-sub-drop__list>li.made-current>a:hover,
+.drop-side .nav-sub-drop__list>li.made-current>a,
+.drop-side .nav-sub-drop__list>li.made-current>a:hover{
+	color: #d32e2e;
+	background: #fff;
+}
+.nav-list li>a{
+	font-size: 15px;
+	line-height: 19px;
+}
+.nav-list>li>a {
+	font-size: 16px;
+	line-height: 20px;
+}
+.nav-list li>a>.depict-angle,
+.nav-list li>a:hover>.depict-angle,
+.nav-list li.active>a>.depict-angle,
+.nav-list li.made-current>a>.depict-angle,
+
+.nav-list>li>a>.depict-angle,
+.nav-list>li>a:hover>.depict-angle,
+.nav-list>li.active>a>.depict-angle,
+.nav-list>li.made-current>a>.depict-angle,
+
+.nav-drop__list>li>a>.depict-angle,
+.nav-drop__list>li>a:hover>.depict-angle,
+.nav-drop__list>li.active>a>.depict-angle,
+.nav-drop__list>li.made-current>a>.depict-angle,
+
+.has-drop-side>a>.depict-angle,
+.has-drop-side>a:hover>.depict-angle,
+.has-drop-side.active>a>.depict-angle,
+.has-drop-side.made-current>a>.depict-angle{
+	display: block;
+	-webkit-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+	color: #0059a6;
+}
+.nav-drop__list,
+.nav-sub-drop__list{
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 100%;
+}
+.drop-side{
+	width: auto;
+	top: auto;
+	left: auto;
+	position: relative;
+	height: auto;
+	padding: 0;
+}
+.nav-drop,
+.nav-sub-drop{
+	background: #ccdeed !important;
+}
+.nav-drop,
+.nav-sub-drop{
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 133px 0 88px;
+	-webkit-transform: translate(-100%, 0);
+	-ms-transform: translate(-100%, 0);
+	transform: translate(-100%, 0);
+	-webkit-transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+	transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+	z-index: 1;
+}
+.active>.nav-drop,
+.active>.nav-sub-drop{
+	-webkit-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	transform: translate(0, 0);
+	z-index: 2;
+}
+/*general styles main navigation*/
+
+/*shape drop move*/
 .nav-list>li:before,
 .nav-drop__list>li:before{
 	content: '';
@@ -116,108 +231,7 @@ body.nav-opened{ overflow: hidden; }
 	-webkit-transition: opacity 0.3s;
 	transition: opacity 0.3s;
 }
-.nav-list li>a {
-	font-size: 14px;
-	line-height: 17px;
-	padding: 15px 45px 15px 30px;
-}
-.nav-list li.active>a,
-.nav-list li.active>.depict-angle,
-.nav-list li.active>a>.depict-angle{ color: #0059a6; }
-.nav-list li>.depict-angle,
-.nav-list li>a>.depict-angle,
-.nav-list li.active>.depict-angle,
-.nav-list li.active>a>.depict-angle,
-.nav-list li.made-current>.depict-angle,
-.nav-list li.made-current>a>.depict-angle,
-.nav-list li.made-drop-open>a>.depict-angle{
-	-webkit-transform: rotate(-90deg);
-	-ms-transform: rotate(-90deg);
-	transform: rotate(-90deg);
-	color: #0059a6;
-}
-.nav-drop__list,
-.nav-sub-drop__list{
-	overflow-x: hidden;
-	overflow-y: auto;
-	height: 100%;
-}
-.nav-drop__list li>a,
-.nav-drop__list li:hover>a,
-.nav-drop__list li>a:hover{
-	padding: 10px 45px 9px 30px;
-	color: #0059a6;
-	background: #ccdeed;
-}
-.drop-visible {
-	width: auto;
-	top: auto;
-	left: auto;
-	position: relative;
-	height: auto;
-	padding: 0;
-}
-.drop-visible .nav-drop__list li{
-	border-top: none;
-}
-.nav-list li.hide-element{ display: block; }
-.nav-drop,
-.nav-sub-drop{ background: #ccdeed !important; }
-.nav-drop,
-.nav-sub-drop{
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	padding: 133px 0 88px;
-	-webkit-transform: translate(-100%, 0);
-	-ms-transform: translate(-100%, 0);
-	transform: translate(-100%, 0);
-	-webkit-transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
-	transition: all 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
-	z-index: 1;
-}
-.active>.nav-drop,
-.active>.nav-sub-drop{
-	/*max-height: none;*/
-	-webkit-transform: translate(0, 0);
-	-ms-transform: translate(0, 0);
-	transform: translate(0, 0);
-	z-index: 2;
-}
-.two-menu-active .has-drop-hidden .drop-visible{ display: block; }
-
-.two-menu-active .has-drop-visible>a,
-.two-menu-active .has-drop-visible:hover>a,
-.two-menu-active .has-drop-visible>a:hover,
-.two-menu-active .has-drop-visible.active>a,
-.two-menu-active .has-drop-visible.made-current>a,
-.two-menu-active .has-drop-visible>a .depict-angle,
-.two-menu-active .has-drop-visible.active>a .depict-angle,
-.two-menu-active .has-drop-visible.made-current>a .depict-angle{
-	color: #0059a6;
-	background: #ccdeed;
-}
-.drop-visible,
-.drop-visible .nav-drop__list li>a,
-.drop-visible .nav-drop__list li:hover>a,
-.drop-visible .nav-drop__list li>a:hover,
-.drop-visible .nav-drop__list li.active>a,
-.drop-visible .nav-drop__list li.made-current>a{
-	color: #0059a6;
-	background: #ccdeed;
-}
-.drop-visible .nav-sub-drop__list li>a,
-.drop-visible .nav-sub-drop__list li:hover>a,
-.drop-visible .nav-sub-drop__list li>a:hover,
-.drop-visible .nav-sub-drop__list li.active>a,
-.drop-visible .nav-sub-drop__list li.made-current>a {
-	color: #0059a6;
-	background: #ccdeed;
-	text-decoration: none;
-}
+/*shape drop move end*/
 /*main navigation end*/
 
 /*user options*/
