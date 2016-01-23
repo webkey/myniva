@@ -1,5 +1,9 @@
 @media only screen and (max-width: 979px){}
+html{ overflow-x: hidden; }
 body.nav-opened{ overflow: hidden; }
+body.nav-opened .wrapper{
+	overflow-x: hidden;
+}
 
 /*main blocks*/
 .header,
