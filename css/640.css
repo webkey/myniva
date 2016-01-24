@@ -180,6 +180,9 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sea
 	display: none;
 }
 /*produce small*/
+.produce-small{
+	width: auto;
+}
 .produce-small__item{
 	cursor: default;
 }
@@ -232,9 +235,6 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sea
 	transform: translate(0, 0);
 	-webkit-transition: all 0.6s cubic-bezier(0.65, 0.05, 0.36, 1);
 	transition: all 0.6s cubic-bezier(0.65, 0.05, 0.36, 1);
-}
-.produce-small{
-	width: auto;
 }
 .synopsis-item__visual{
 	float: left;
