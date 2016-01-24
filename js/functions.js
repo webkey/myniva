@@ -1474,118 +1474,7 @@ function multiAccordionInit() {
 		});
 	}
 
-	//if($('.category__list').length){
-	//	new MultiAccordion({
-	//		accordionContainer: '.category__list',
-	//		accordionItem: 'li',
-	//		accordionEvent: 'a',
-	//		collapsibleElement: '.category__list>li>ul',
-	//		animateSpeed: 200
-	//	});
-	//}
-
-	//if($('.produce-full-menu').length){
-	//	new MultiAccordion({
-	//		accordionContainer: '.produce-full-menu__col>ul',
-	//		accordionItem: 'li',
-	//		accordionEvent: 'a',
-	//		collapsibleElement: '.produce-full-menu__col>ul>li>ul, .product-box__sub-sub',
-	//		animateSpeed: 200,
-	//		collapsibleAll: true
-	//	});
-	//}
-}
-/*multi accordion end*/
-
-/*products gallery initial*/
-(function () {
-	var CompanyProducts = function (settings) {
-		var options = $.extend({
-
-		}, settings || {});
-
-		this.options = options;
-
-		var $container = $(options.container);
-		this.$container = $container;
-		this.$thumbs = $(options.thumbs, $container);
-		this.$thumbsItem = $(options.thumbsItem, $container);
-		this.$thumbsContainer = $(options.thumbsContainer, $container);
-		this.$panel = $(options.panel, $container);
-		this.$tabPanel = $(options.tabPanel, $container);
-
-		this.modifiers = {
-			active: 'made-active',
-			openedTab: 'opened-tab',
-			closedTab: 'closed-tab',
-			disabledThumbs: 'prod-disabled-thumb'
-		};
-
-		this.initScrollbar();
-		this.bindEvents();
-		this.initAccordion();
-	};
-
-	CompanyProducts.prototype.thumbPosition = function (currentThumb) {
-		var left = currentThumb.position().left,
-			width = this.$thumbsContainer.width(),
-			widthThumb = currentThumb.width(),
-			scrollOffset = (left - width / 2 < 0) ? 0 : left - width / 2 + widthThumb / 2;
-
-		this.$thumbsContainer.mCustomScrollbar('scrollTo', scrollOffset);
-	};
-
-	CompanyProducts.prototype.initScrollbar = function () {
-		var self = this;
-		var amount = Math.max.apply(Math, self.$thumbs.map(function () {
-			return $(this).outerWidth(true);
-		}).get());
-		console.log(amount);
-		self.$thumbsContainer.mCustomScrollbar({
-			axis:"x",
-			scrollbarPosition: "outside",
-			advanced:{autoExpandHorizontalScroll:true},
-			scrollInertia:500,
-			scrollButtons:{
-				enable:true,
-				scrollType:"stepped"
-			},
-			keyboard:{
-				enable: true,
-				scrollType:"stepped"
-			},
-			snapAmount:amount,
-			mouseWheel:{
-				scrollAmount:amount
-			},
-			callbacks:{
-				onInit:function () {
-					console.log(3);
-					$(this).addClass('mCSB_buttonLeftDisabled');
-				},
-				whileScrolling:function(){
-					if($(this).hasClass('mCSB_buttonLeftDisabled')){
-						console.log(1);
-						$(this).removeClass('mCSB_buttonLeftDisabled');
-					}
-					if($(this).hasClass('mCSB_buttonRightDisabled')){
-						console.log(2);
-						$(this).removeClass('mCSB_buttonRightDisabled');
-					}
-				},
-				onTotalScroll: function () {
-					console.log(3);
-					$(this).addClass('mCSB_buttonRightDisabled');
-				},
-				onTotalScrollBack: function () {
-					console.log(4);
-					$(this).addClass('mCSB_buttonLeftDisabled');
-				}
-			}
-		});
-	};
-
-	CompanyProducts.prototype.initAccordion = function () {
+	if($('.prod-links__list').length){
 		new MultiAccordion({
 			accordionContainer: '.prod-links__list',
 			accordionItem: 'li', //непосредственный родитель сворачиваемого элемента
@@ -1594,48 +1483,104 @@ function multiAccordionInit() {
 			animateSpeed: 200,
 			collapsibleAll: true //сворачивать элементы в соседних аккордеонах
 		});
-	};
+	}
+}
+/*multi accordion end*/
 
-	CompanyProducts.prototype.bindEvents = function () {
-		var self = this,
-			modifiers = this.modifiers,
-			tabPanel = this.$tabPanel;
-
-		tabPanel.addClass(modifiers.closedTab);
-
-		this.$thumbs.on('click', function (e) {
-			var $currentThumb = $(this).parent();
-			if ($currentThumb.hasClass(modifiers.disabledThumbs)) { return; }
-
-			var activeIndex = $currentThumb.index();
-
-			self.thumbPosition($currentThumb);
-
-			self.$thumbs.parent().removeClass(modifiers.active);
-			$currentThumb.addClass(modifiers.active);
-
-			tabPanel.removeClass(modifiers.active);
-			tabPanel.removeClass(modifiers.openedTab);
-			tabPanel.eq(activeIndex).addClass(modifiers.active);
-
-			e.preventDefault();
-		});
-	};
-
-	window.CompanyProducts = CompanyProducts;
-
-}());
+/*products gallery initial*/
 
 function companyProductsInit() {
 	if(!$('.prod').length){return;}
-	new CompanyProducts({
-		container: '.prod',
-		thumbs: '.prod-thumbs__item',
-		thumbsItem: '.prod-thumbs-list>li',
-		thumbsContainer: '.prod-thumbs',
-		panel: '.prod-container',
-		tabPanel: '.prod-tab'
+
+	var $productThumbsList = $('.prod-thumbs__list');
+	$productThumbsList.on('init', function (event, slick) {
+		if (slick.currentSlide == 0) {
+			slick.$prevArrow.addClass('made-arrow-disable');
+		}
 	});
+	$productThumbsList.slick({
+		slidesToShow: 5,
+		slidesToScroll: 1,
+		arrows: true,
+		dots: false,
+		infinite:false,
+		focusOnSelect: true,
+		asNavFor: '.prod-container',
+		responsive: [
+			{
+				breakpoint: 1500,
+				settings: {
+					slidesToShow: 4
+				}
+			},
+			{
+				breakpoint: 1400,
+				settings: {
+					slidesToShow: 3
+				}
+			},
+			{
+				breakpoint: 1060,
+				settings: {
+					slidesToShow: 2
+				}
+			},
+			{
+				breakpoint: 980,
+				settings: {
+					slidesToShow: 4
+				}
+			},
+			{
+				breakpoint: 800,
+				settings: {
+					slidesToShow: 3
+				}
+			},
+			{
+				breakpoint: 640,
+				settings: {
+					slidesToShow: 2
+				}
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1
+				}
+			}
+		]
+	}).on('afterChange', function (event, slick, currentSlide) {
+		var slidesLength = slick.$slides.length;
+		var $prevArrow = slick.$prevArrow;
+		var $nextArrow = slick.$nextArrow;
+		if(currentSlide > 0 && currentSlide < slidesLength - 1){
+			$prevArrow.removeClass('made-arrow-disable');
+			$nextArrow.removeClass('made-arrow-disable');
+			return;
+		}
+		if(currentSlide == 0){
+			$prevArrow.addClass('made-arrow-disable');
+			return;
+		}
+		if(currentSlide == slidesLength - 1){
+			$nextArrow.addClass('made-arrow-disable');
+		}
+	});
+
+	$('.prod-container').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		infinite:false,
+		adaptiveHeight: true,
+		asNavFor: '.prod-thumbs__list'
+	});
+
+	$('.prod-links__list').on('click', function () {
+		$(this).closest('.slick-list').css('height','auto');
+	})
 }
 /*products gallery initial end*/
 
