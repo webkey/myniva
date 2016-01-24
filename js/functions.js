@@ -235,7 +235,6 @@ function customScrollInit(){
 		this._animateSpeed = options.animationSpeed;
 
 		this._overlayClass = options.overlayClass;                // Класс оверлея.
-		this.$overlay = $(options.overlayClass);
 		this._overlayBoolean = options.overlayBoolean;            // Добавить оверлей (по-умолчанию == false). Если не true, то не будет работать по клику вне навигации.
 
 		this.$getCustomScroll = $(options.getCustomScroll);
@@ -264,8 +263,6 @@ function customScrollInit(){
 			_overlayClass = self._overlayClass;
 
 		if (self._overlayBoolean) {
-			if (self.$overlay.length) { return; }
-
 			var overlayClassSubstring = _overlayClass.substring(1);
 			$('.header').after('<div class="' + overlayClassSubstring + '"></div>');
 		}
@@ -310,7 +307,7 @@ function customScrollInit(){
 
 		// По клику на область вне меню, закрываем меню
 		// .overlay-page
-		self.$overlay.on('click', function () {
+		$body.on('click', self._overlayClass, function () {
 			$body.toggleClass(_opened);
 			$buttonMenu.toggleClass(_active);
 		});
