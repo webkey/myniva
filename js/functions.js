@@ -1032,17 +1032,10 @@ function mapInitContacts(){
 	if (!$('#map-niva-contacts').length) {return;}
 
 	google.maps.event.addDomListener(window, 'load', init);
-	var map,
-		centerMapL = "54.03666787309223",
-		centerMapR = "22.594093177112136";
-
-	if($(window).width() < 980) {
-		centerMapL = "53.16995207146201";
-		centerMapR = "27.48641749999999";
-	}
+	var map;
 	function init() {
 		var mapOptions = {
-			center: new google.maps.LatLng(centerMapL, centerMapR),
+			center: new google.maps.LatLng(53.154244, 27.465155),
 			zoom: 7,
 			zoomControl: true,
 			zoomControlOptions: {
@@ -1450,7 +1443,8 @@ function scrollNavInit(){
 	var MultiAccordion = function (settings) {
 		var options = $.extend({
 			collapsibleAll: false,
-			animateSpeed: 300
+			animateSpeed: 300,
+			resizeCollapsible: false
 		}, settings || {});
 
 		this.options = options;
@@ -1462,6 +1456,7 @@ function scrollNavInit(){
 		this._collapsibleAll = options.collapsibleAll;
 		this._animateSpeed = options.animateSpeed;
 		this.$totalCollapsible = $(options.totalCollapsible);//элемент, по клику на который сворачиваются все аккордены в наборе
+		this._resizeCollapsible = options.resizeCollapsible;//флаг, сворачивание всех открытых аккордеонов при ресайзе
 
 		this.modifiers = {
 			active: 'made-active'
@@ -1469,6 +1464,16 @@ function scrollNavInit(){
 
 		this.bindEvents();
 		this.totalCollapsible();
+
+		var self = this;
+		console.log(self._resizeCollapsible);
+		$(window).on('resize', function () {
+			if(self._resizeCollapsible){
+				console.log(1);
+				self.$collapsibleElement.slideUp(self._animateSpeed);
+				self.$accordionItem.removeClass(self.modifiers.active);
+			}
+		});
 	};
 
 	MultiAccordion.prototype.totalCollapsible = function () {
@@ -1501,17 +1506,31 @@ function scrollNavInit(){
 				current = current.parent();
 			}
 
+			//var closestWrapEqualHeight = current.closest('.product-box__menu');
 			if (current.siblings(collapsibleElement).is(':visible')){
 				currentAccordionItem.removeClass(modifiers.active).find(collapsibleElement).slideUp(animateSpeed);
 				currentAccordionItem.find(anyAccordionItem).removeClass(modifiers.active);
-				return;
+				//if(current.parents('div').hasClass('product-box__menu')){
+				//	closestWrapEqualHeight.css('max-height','none');
+				//	setTimeout(function () {
+				//		closestWrapEqualHeight.css('height', current.closest(accordionContainer).outerHeight());
+				//	},1000);
+				//	closestWrapEqualHeight.find('.mCustomScrollBox').css('max-height','none');
+				//	console.log(current.closest(accordionContainer));
+				//}
+				//return;
 			}
+
 
 			if (self._collapsibleAll){
 				var siblingContainers = $(accordionContainer).not(current.closest(accordionContainer));
 				siblingContainers.find(collapsibleElement).slideUp(animateSpeed);
 				siblingContainers.find(anyAccordionItem).removeClass(modifiers.active);
 			}
+
+			//if(current.parents('div').hasClass('product-box__menu')){
+			//	closestWrapEqualHeight.css('max-height',closestWrapEqualHeight.height());
+			//}
 
 			currentAccordionItem.siblings().removeClass(modifiers.active).find(collapsibleElement).slideUp(animateSpeed);
 			currentAccordionItem.siblings().find(anyAccordionItem).removeClass(modifiers.active);
@@ -1531,22 +1550,37 @@ function multiAccordionInit() {
 			accordionItem: 'li',
 			accordionEvent: 'a',
 			collapsibleElement: '.product-box__list>li>ul, .product-box__sub-sub',
-			animateSpeed: 200
+			animateSpeed: 200,
+			resizeCollapsible: true
 		});
 	}
 
 	if($('.prod-links__list').length){
 		new MultiAccordion({
 			accordionContainer: '.prod-links__list',
-			accordionItem: 'li', //непосредственный родитель сворачиваемого элемента
-			accordionEvent: 'a', //элемент, по которому производим клик
-			collapsibleElement: '.prod-links__list>li>ul, .prod-links__sub-sub', //элемент, который сворачивается/разворачивается
+			accordionItem: 'li',
+			accordionEvent: 'a',
+			collapsibleElement: '.prod-links__list>li>ul, .prod-links__sub-sub',
 			animateSpeed: 200,
-			collapsibleAll: true //сворачивать элементы в соседних аккордеонах
+			collapsibleAll: true
 		});
 	}
 }
 /*multi accordion end*/
+
+/*equal height initial*/
+function equalHeightInit(){
+	var parentsList = $('.partners__list');
+	if(parentsList.length){
+		parentsList.find('.partners__img').equalHeight({
+			//amount: 4,
+			useParent: true,
+			parent: parentsList,
+			resize: true
+		});
+	}
+}
+/*equal height initial end*/
 
 /*products gallery initial*/
 
@@ -1645,18 +1679,6 @@ function companyProductsInit() {
 }
 /*products gallery initial end*/
 
-/*equal height initial*/
-function equalHeightInit(){
-	var parentsList = $('.partners__list');
-	parentsList.find('.partners__img').equalHeight({
-		//amount: 4,
-		useParent: true,
-		parent: parentsList,
-		resize: true
-	});
-}
-/*equal height initial end*/
-
 /** ready/load/resize document **/
 
 $(document).ready(function(){
@@ -1687,7 +1709,4 @@ $(window).load(function () {
 	accordionInit();
 	tabsInit();
 	equalHeightInit();
-});
-$(window).on('debouncedresize', function () {
-	//clearDropNavigation();
 });
