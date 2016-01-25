@@ -48,17 +48,25 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sea
 /*user content end*/
 
 /*panel*/
+.nav{
+	padding-top: 65px;
+}
 .nav-title{
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 18px;
 	padding: 0 5px 0 10px;
+	height: 65px;
 }
 .nav-title__text{
 	font-size: 14px;
 }
 .nav-back{
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 10px 15px;
+	height: 38px;
+	top: 65px;
+}
+.nav-drop, .nav-sub-drop{
+	padding-top: 103px;
 }
 .nav-list li>a,
 .nav-list li.active>a,
