@@ -1464,16 +1464,8 @@ function scrollNavInit(){
 
 		this.bindEvents();
 		this.totalCollapsible();
+		this.totalCollapsibleOnResize();
 
-		var self = this;
-		console.log(self._resizeCollapsible);
-		$(window).on('resize', function () {
-			if(self._resizeCollapsible){
-				console.log(1);
-				self.$collapsibleElement.slideUp(self._animateSpeed);
-				self.$accordionItem.removeClass(self.modifiers.active);
-			}
-		});
 	};
 
 	MultiAccordion.prototype.totalCollapsible = function () {
@@ -1482,6 +1474,16 @@ function scrollNavInit(){
 			self.$collapsibleElement.slideUp(self._animateSpeed);
 			self.$accordionItem.removeClass(self.modifiers.active);
 		})
+	};
+
+	MultiAccordion.prototype.totalCollapsibleOnResize = function () {
+		var self = this;
+		$(window).on('resize', function () {
+			if(self._resizeCollapsible){
+				self.$collapsibleElement.slideUp(self._animateSpeed);
+				self.$accordionItem.removeClass(self.modifiers.active);
+			}
+		});
 	};
 
 	MultiAccordion.prototype.bindEvents = function () {
@@ -1506,19 +1508,10 @@ function scrollNavInit(){
 				current = current.parent();
 			}
 
-			//var closestWrapEqualHeight = current.closest('.product-box__menu');
 			if (current.siblings(collapsibleElement).is(':visible')){
 				currentAccordionItem.removeClass(modifiers.active).find(collapsibleElement).slideUp(animateSpeed);
 				currentAccordionItem.find(anyAccordionItem).removeClass(modifiers.active);
-				//if(current.parents('div').hasClass('product-box__menu')){
-				//	closestWrapEqualHeight.css('max-height','none');
-				//	setTimeout(function () {
-				//		closestWrapEqualHeight.css('height', current.closest(accordionContainer).outerHeight());
-				//	},1000);
-				//	closestWrapEqualHeight.find('.mCustomScrollBox').css('max-height','none');
-				//	console.log(current.closest(accordionContainer));
-				//}
-				//return;
+				return;
 			}
 
 
@@ -1527,10 +1520,6 @@ function scrollNavInit(){
 				siblingContainers.find(collapsibleElement).slideUp(animateSpeed);
 				siblingContainers.find(anyAccordionItem).removeClass(modifiers.active);
 			}
-
-			//if(current.parents('div').hasClass('product-box__menu')){
-			//	closestWrapEqualHeight.css('max-height',closestWrapEqualHeight.height());
-			//}
 
 			currentAccordionItem.siblings().removeClass(modifiers.active).find(collapsibleElement).slideUp(animateSpeed);
 			currentAccordionItem.siblings().find(anyAccordionItem).removeClass(modifiers.active);

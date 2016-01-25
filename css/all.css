@@ -1941,7 +1941,6 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .promo-slide__text{
 	font: 24px/29px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	color: #fff;
-	width: 400px;
 	max-width: 400%;
 	-webkit-transition: 0.3s all 0.6s ease-out;
 	transition: 0.3s all 0.6s ease-out;
