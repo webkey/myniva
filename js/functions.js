@@ -793,13 +793,7 @@ var styleMap = [
 		"featureType": "administrative",
 		"elementType": "geometry",
 		"stylers": [
-			{ "color": "#2e5484" }
-		]
-	},{
-		"featureType": "road.arterial",
-		"elementType": "geometry.fill",
-		"stylers": [
-			{ "color": "#A2B3C8" }
+			{ "color": "#0059A5" }
 		]
 	},{
 		"featureType": "road.arterial",
@@ -825,7 +819,7 @@ var styleMap = [
 		"elementType": "labels.text.fill",
 		"stylers": [
 			{ "visibility": "on" },
-			{ "color": "#224a7d" }
+			{ "color": "#0059A6" }
 		]
 	},{
 		"featureType": "poi",
@@ -1675,10 +1669,6 @@ $(document).ready(function(){
 	customSelect($('select.cselect'));
 	showInput();
 	mainNavigationInit();
-
-	//dropNavigation();
-	//mainNavigation();
-
 	breadHover();
 	slickSlidersInit();
 	mapInitNiva();
