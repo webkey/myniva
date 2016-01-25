@@ -762,13 +762,13 @@ input[type="checkbox"]{ width: 16px; height: 16px; padding: 0; margin: 0; }
 .form-row .input-wrap{
 	display: inline-block;
 	vertical-align: top;
-	width: 50%;
+	width: 49.99%;
 	padding: 0 15px;
 }
 .form-col{
 	display: inline-block;
 	vertical-align: top;
-	width: 50%;
+	width: 49.99%;
 }
 .label-holder{ padding: 0 0 10px; }
 .label-holder,
@@ -2204,7 +2204,7 @@ li.made-active .produce-thumbs__text,
 }
 .produce-full-menu__col{
 	float: left;
-	width: 50%;
+	width: 49.99%;
 }
 .produce-full-menu__col ul>li{ padding: 0 15px 10px 0; }
 .produce-full-menu__col ul>li ul,
@@ -3993,7 +3993,7 @@ li:hover>.category__link a>span{
 .tabs-controls li,
 .user-content .tabs-controls li{
 	float: left;
-	width: 50%;
+	width: 49.99%;
 	height: 68px;
 	font: 16px/68px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
@@ -4250,7 +4250,7 @@ li:hover>.category__link a>span{
 	vertical-align: top;
 	font-size: 16px;
 	letter-spacing: normal;
-	width: 50%;
+	width: 49.99%;
 	padding: 0 20px 28px;
 	background: #fff;
 	background: rgba(255, 255, 255, 0.8);
@@ -4556,7 +4556,6 @@ li:hover>.category__link a>span{
 	min-height: 362px;
 	position: relative;
 	cursor: pointer;
-	/*background: #ccdeed no-repeat 50% 50%;*/
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -4782,7 +4781,7 @@ li:hover>.category__link a>span{
 	overflow: hidden;
 }
 .contacts__group-col{
-	width: 50%;
+	width: 49.99%;
 }
 .contacts__box{
 	padding: 0 0 32px;
