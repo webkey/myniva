@@ -716,7 +716,7 @@
 	/*company contacts end*/
 
 	/*contact info*/
-	.contact-info{ padding: 20px 8px 7px; }
+	.contact-info{ padding: 20px 8px 0; }
 	.contact-info__header{
 		float: none;
 		width: auto;
@@ -1202,7 +1202,7 @@
 	/*product container end*/
 
 	/*contact info*/
-	.contact-info__col {
+	.contact-info__box {
 		display: block;
 		width: auto;
 	}

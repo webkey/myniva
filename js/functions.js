@@ -1358,7 +1358,7 @@ function masonryInit(){
 }
 /*masonry initial end*/
 
-/*scroll navigation*/
+/*scroll TO*/
 $.extend($.easing, {
 		def: 'easeOutQuad', easeInOutExpo: function (x, t, b, c, d) {
 			if (t == 0) return b;
@@ -1427,10 +1427,17 @@ $.extend($.easing, {
 	}
 })( jQuery );
 
-function scrollNavInit(){
+function scrollAgents(){
+	if(!$('.agents-previews').length){return}
 	$('.agents-previews__item a').navScroller();
 }
-/*scroll navigation end*/
+
+function scrollContacts(){
+	var $contactsAnchor = $('.contacts__anchor');
+	if(!$contactsAnchor.length){return}
+	$contactsAnchor.find('a').navScroller();
+}
+/*scroll TO end*/
 
 /*multi accordion*/
 (function () {
@@ -1677,7 +1684,8 @@ $(document).ready(function(){
 	fancyboxInit();
 	synopsisInit();
 	openGallery();
-	scrollNavInit();
+	scrollAgents();
+	scrollContacts();
 	multiAccordionInit();
 	companyProductsInit();
 });

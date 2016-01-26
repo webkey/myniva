@@ -1503,10 +1503,12 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	padding: 0 5px 0 0;
 }
 .post-link a .text-inner{
-	text-decoration: underline;
+	border-bottom: 1px dotted #0059a6;
+	-webkit-transition: border 0.2s;
+	transition: border 0.2s;
 }
 .post-link a:hover .text-inner{
-	text-decoration: none;
+	border-bottom-color: transparent;
 }
 /*user options end*/
 
@@ -3902,7 +3904,7 @@ li:hover>.category__link a>span{
 
 /*contact info*/
 .contact-info{
-	padding: 20px 18px 7px;
+	padding: 20px 18px 0;
 	border: 1px solid #d3382e;
 	background: #fff;
 	overflow: hidden;
@@ -3924,17 +3926,13 @@ li:hover>.category__link a>span{
 	font-size: 0;
 	letter-spacing: -4px;
 }
-.contact-info__col{
+.contact-info__box{
+	padding: 0 10px 26px;
 	font-size: 16px;
 	letter-spacing: normal;
 	display: inline-block;
 	vertical-align: top;
 	width: 49.9%;
-	padding: 0 10px;
-}
-.contact-info__box{ padding: 11px 0 19px; }
-.contact-info__box:first-child{
-	padding-top: 0;
 }
 .contact-info__person{
 	display: block;
@@ -4905,6 +4903,17 @@ li:hover>.category__link a>span{
 .site-developer{
 	line-height: 28px;
 }
+.site-developer a{
+	text-decoration: none;
+}
+.site-developer .text-inner{
+	border-bottom: 1px solid #0059a6;
+	-webkit-transition: border 0.2s;
+	transition: border 0.2s;
+}
+.site-developer a:hover .text-inner{
+	border-color: transparent;
+}
 .site-developer_logo{
 	display: inline-block;
 	vertical-align: top;
@@ -4921,7 +4930,7 @@ li:hover>.category__link a>span{
 	-webkit-transition: opacity 0.2s;
 	transition: opacity 0.2s;
 }
-.site-developer_logo:hover{
+.site-developer a:hover .site-developer_logo{
 	opacity: 0.85;
 }
 /*footer end*/
