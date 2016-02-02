@@ -741,7 +741,7 @@ function owlInit(){
 
 /*map init*/
 var smallPinMap = 'img/map-pin.png',
-	largePinMap = 'img/map-niva-pin.png';
+		largePinMap = 'img/map-niva-pin.png';
 
 var localObjects = [
 	[
