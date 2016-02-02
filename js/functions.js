@@ -45,6 +45,7 @@ function customSelect(select){
 				show: ['fade', 100],
 				hide: ['fade', 100],
 				create: function(event){
+					var select = $(this);
 					var button = $(this).multiselect('getButton');
 					var widget = $(this).multiselect('widget');
 					button.wrapInner('<span class="select-inner"></span>');
@@ -53,6 +54,12 @@ function customSelect(select){
 					widget.find('.ui-multiselect-checkboxes li:last')
 						.addClass('last')
 						.siblings().removeClass('last');
+					//widget.find('li').each(function () {
+					//	var index = $(this).index();
+					//	console.log();
+					//	var dataLocation = select.find('option').eq(index).data('location');
+					//	$(this).attr('data-location', dataLocation);
+					//});
 					if ( flag ) {
 						$(selectItem).multiselect('uncheckAll');
 						$(selectItem)
@@ -858,87 +865,147 @@ var styleMap = [
 function mapInitNiva(){
 	if (!$('#map-niva-holding').length) {return;}
 
-	google.maps.event.addDomListener(window, 'load', init);
-	var map,
-			centerMapL = "54.03666787309223",
-			centerMapR = "22.594093177112136";
-
+	var latLng = {
+		lat: 54.03666787309223,
+		lng: 22.594093177112136
+	};
 	if($(window).width() < 640) {
-		centerMapL = "53.16995207146201";
-		centerMapR = "27.48641749999999";
+		latLng = {
+			lat: 53.16995207146201,
+			lng: 27.48641749999999
+		};
 	}
 
-	function init() {
-		var mapOptions = {
-			center: new google.maps.LatLng(centerMapL, centerMapR),
-			zoom: 6,
-			zoomControl: true,
-			zoomControlOptions: {
-				style: google.maps.ZoomControlStyle.DEFAULT,
-			},
-			disableDoubleClickZoom: true,
-			mapTypeControl: false,
-			scaleControl: false,
-			scrollwheel: false,
-			panControl: true,
-			streetViewControl: false,
-			draggable : true,
-			overviewMapControl: true,
-			overviewMapControlOptions: {
-				opened: false,
-			},
-			mapTypeId: google.maps.MapTypeId.ROADMAP,
-			styles: styleMap
+	var smallPin = 'img/map-pin.png',
+		largePing = 'img/map-niva-pin.png';
+
+	var objects = [
+		[
+			{lat: 52.854244, lng: 27.465155},
+			largePing,
+			'Унитарное производственное предприятие "Нива"',
+			'<div><h4>Нива Холдинг</h4><p>ул. Заводская, 4<p><p>Республика Беларусь, Минская область, Солигорский район<p><p><a href="mailto:info@niva.by">info@niva.by</a><p></div>'
+		], //Унитарное производственное предприятие "Нива"
+		[
+			{lat: 52.799394, lng: 27.558581},
+			smallPin,
+			'Филиал "Завод горно-шахтного оборудования"',
+			'<div><h4>"Завод горно-шахтного оборудования"</h4><p>ул. Заводская, 4<p><p>Республика Беларусь, Минская область, Солигорский район<p><p><a href="mailto:info@niva.by">info@niva.by</a><p></div>'
+		], //Филиал "Завод горно-шахтного оборудования"
+		[
+			{lat: 52.809892, lng: 27.553314},
+			smallPin,
+			'Филиал «Нива-Сервис»',
+			'<div><h4>«Нива-Сервис»</h4><p>ул. Заводская, 4<p><p>Республика Беларусь, Минская область, Солигорский район<p><p><a href="mailto:info@niva.by">info@niva.by</a><p></div>'
+		],//Филиал «Нива-Сервис»
+		[
+			{lat: 53.812286, lng: 27.677591},
+			smallPin,
+			'Дочернее производственное унитарное предприятие "Белгидравлика"',
+			'<div><h4>"Белгидравлика"</h4><p>ул. Заводская, 4<p><p>Республика Беларусь, Минская область, Солигорский район<p><p><a href="mailto:info@niva.by">info@niva.by</a><p></div>'
+		],//Дочернее производственное унитарное предприятие "Белгидравлика"
+		[
+			{lat: 53.838345, lng: 30.391348},
+			smallPin,
+			'Частное производственное унитарное предприятие "Завод горного машиностроения"',
+			'<div><h4>"Завод горного машиностроения"</h4><p>ул. Заводская, 4<p><p>Республика Беларусь, Минская область, Солигорский район<p><p><a href="mailto:info@niva.by">info@niva.by</a><p></div>'
+		], //Частное производственное унитарное предприятие "Завод горного машиностроения"
+		[
+			{lat: 52.953266, lng: 27.892742},
+			smallPin,
+			'Дочернее частное производственное унитарное предприятие «Завод силовой гидравлики»',
+			'<div><h4>«Завод силовой гидравлики»</h4><p>ул. Заводская, 4<p><p>Республика Беларусь, Минская область, Солигорский район<p><p><a href="mailto:info@niva.by">info@niva.by</a><p></div>'
+		], //Дочернее частное производственное унитарное предприятие «Завод силовой гидравлики»
+		[
+			{lat: 52.854309, lng: 27.475905},
+			smallPin,
+			'ОАО «ЛМЗ Универсал»',
+			'<div><h4>ОАО «ЛМЗ Универсал»</h4><p>ул. Заводская, 4<p><p>Республика Беларусь, Минская область, Солигорский район<p><p><a href="mailto:info@niva.by">info@niva.by</a><p></div>'
+		], //ОАО «ЛМЗ Универсал»
+		[
+			{lat: 47.9105, lng: 33.3918},
+			smallPin,
+			'ООО «НИВА - КРИВБАСС»',
+			'<div><h4>ООО «НИВА - КРИВБАСС»</h4><p>ул. Заводская, 4<p><p>Республика Беларусь, Минская область, Солигорский район<p><p><a href="mailto:info@niva.by">info@niva.by</a><p></div>'
+		], //ООО «НИВА - КРИВБАСС»
+		[
+			{lat: 53.9327, lng: 86.6155},
+			smallPin,
+			'ООО «НИВА - СИБИРЬ»',
+			'<div><h4>ООО «НИВА - СИБИРЬ»</h4><p>ул. Заводская, 4<p><p>Республика Беларусь, Минская область, Солигорский район<p><p><a href="mailto:info@niva.by">info@niva.by</a><p></div>'
+		] //ООО «НИВА - СИБИРЬ»
+	];
+	var markers = [];
+
+	var mapOptions = {
+		zoom: 6,
+		center: latLng,
+		styles: styleMap,
+		mapTypeControl: false,
+		scaleControl: false,
+		scrollwheel: false
+	};
+
+	var map = new google.maps.Map(document.getElementById('map-niva-holding'), mapOptions);
+
+	//setMarkers(map);
+
+	addMarker(0);
+
+	$('.location-link>a').click( function(e) {
+		var index = $(this).data('location');
+		deleteMarkers();
+		moveToLocation( index );
+		addMarker(index);
+		e.preventDefault();
+	});
+
+	$('.location-head select').on('change', function(e) {
+		var index = $(this).find('option:selected').data('location');
+		deleteMarkers();
+		moveToLocation( index );
+		addMarker(index);
+		e.preventDefault();
+	});
+
+	function moveToLocation(index){
+		var object = objects[index];
+		var center = new google.maps.LatLng(object[0]);
+		map.panTo(center);
+	}
+
+
+
+	function addMarker(index) {
+		var object = objects[index];
+		var marker = new google.maps.Marker({
+			position: object[0],
+			map: map,
+			icon: object[1],
+			title: object[2],
+			animation: google.maps.Animation.DROP
+		});
+		markers.push(marker);
+
+		var infowindow = new google.maps.InfoWindow({
+			content: object[3],
+			maxWidth: 200
+		});
+
+		marker.addListener('click', function() {
+			infowindow.open(map, marker);
+		});
+	}
+
+	function setMapOnAll(map) {
+		for (var i = 0; i < markers.length; i++) {
+			markers[i].setMap(map);
 		}
-		var mapElement = document.getElementById('map-niva-holding');
-		var map = new google.maps.Map(mapElement, mapOptions);
-		var locations = [
-			['ул. Заводская, 4', 'Республика Беларусь, Минская область, Солигорский район', 'undefined', 'undefined', 'undefined', 52.66995207146201, 27.48641749999999, 'img/map-niva-pin.png']
-		];
-		for (i = 0; i < locations.length; i++) {
-			if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
-			if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
-			if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
-			if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
-			if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
-			marker = new google.maps.Marker({
-				icon: markericon,
-				position: new google.maps.LatLng(locations[i][5], locations[i][6]),
-				map: map,
-				title: locations[i][0],
-				desc: description,
-				tel: telephone,
-				email: email,
-				web: web
-			});
-			link = '';            bindInfoWindow(marker, map, locations[i][0], description, telephone, email, web, link);
-		}
-		function bindInfoWindow(marker, map, title, desc, telephone, email, web, link) {
-			var infoWindowVisible = (function () {
-				var currentlyVisible = false;
-				return function (visible) {
-					if (visible !== undefined) {
-						currentlyVisible = visible;
-					}
-					return currentlyVisible;
-				};
-			}());
-			iw = new google.maps.InfoWindow();
-			google.maps.event.addListener(marker, 'click', function() {
-				if (infoWindowVisible()) {
-					iw.close();
-					infoWindowVisible(false);
-				} else {
-					var html= "<div style='color:#000;background-color:#fff;padding:5px;width:150px;'><h4>"+title+"</h4><p>"+desc+"<p></div>";
-					iw = new google.maps.InfoWindow({content:html});
-					iw.open(map,marker);
-					infoWindowVisible(true);
-				}
-			});
-			google.maps.event.addListener(iw, 'closeclick', function () {
-				infoWindowVisible(false);
-			});
-		}
+	}
+
+	function deleteMarkers() {
+		setMapOnAll(null);
+		//markers = [];
 	}
 }
 
