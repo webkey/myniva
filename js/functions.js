@@ -870,9 +870,10 @@ function contactsSwitcher(){
 				'<li>'+object[4].phone+'</li>' +
 				'<li>'+object[4].email+'</li>' +
 				'</ul>';
-		currentItem.closest('.location').find('.location-info__holder').html(tpl);
+		currentItem.closest('.location').find('.mCSB_container','.location-info__holder').html(tpl);
 	}
 }
+
 var styleMap = [
 	{
 		"featureType": "water",
