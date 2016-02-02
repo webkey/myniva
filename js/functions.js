@@ -866,13 +866,13 @@ function mapInitNiva(){
 	if (!$('#map-niva-holding').length) {return;}
 
 	var latLng = {
-		lat: 54.03666787309223,
-		lng: 22.594093177112136
+		lat: 53.354244,
+		lng: 22.365155
 	};
 	if($(window).width() < 640) {
 		latLng = {
-			lat: 53.16995207146201,
-			lng: 27.48641749999999
+			lat: 53.354244,
+			lng: 27.465155
 		};
 	}
 
@@ -881,59 +881,70 @@ function mapInitNiva(){
 
 	var objects = [
 		[
-			{lat: 52.854244, lng: 27.465155},
-			largePing,
+			{lat: 52.854244, lng: 27.465155}, //coordinates of marker
+			{latBias: 0.5, lngBias: -5.1}, //bias coordinates for center map
+			largePing, //image pin
+			6,
 			'Унитарное производственное предприятие "Нива"',
 			'<div><h4>Нива Холдинг</h4><p>ул. Заводская, 4<p><p>Республика Беларусь, Минская область, Солигорский район<p><p><a href="mailto:info@niva.by">info@niva.by</a><p></div>'
-		], //Унитарное производственное предприятие "Нива"
-		[
+		],[
 			{lat: 52.799394, lng: 27.558581},
+			{latBias: 0.2, lngBias: -5.1},
 			smallPin,
+			6,
 			'Филиал "Завод горно-шахтного оборудования"',
 			'<div><h4>"Завод горно-шахтного оборудования"</h4><p>ул. Заводская, 4<p><p>Республика Беларусь, Минская область, Солигорский район<p><p><a href="mailto:info@niva.by">info@niva.by</a><p></div>'
-		], //Филиал "Завод горно-шахтного оборудования"
-		[
+		],[
 			{lat: 52.809892, lng: 27.553314},
+			{latBias: 0.2, lngBias: -5.1},
 			smallPin,
+			6,
 			'Филиал «Нива-Сервис»',
 			'<div><h4>«Нива-Сервис»</h4><p>ул. Заводская, 4<p><p>Республика Беларусь, Минская область, Солигорский район<p><p><a href="mailto:info@niva.by">info@niva.by</a><p></div>'
-		],//Филиал «Нива-Сервис»
-		[
+		],[
 			{lat: 53.812286, lng: 27.677591},
+			{latBias: 0.2, lngBias: -5.1},
 			smallPin,
+			6,
 			'Дочернее производственное унитарное предприятие "Белгидравлика"',
 			'<div><h4>"Белгидравлика"</h4><p>ул. Заводская, 4<p><p>Республика Беларусь, Минская область, Солигорский район<p><p><a href="mailto:info@niva.by">info@niva.by</a><p></div>'
-		],//Дочернее производственное унитарное предприятие "Белгидравлика"
-		[
+		],[
 			{lat: 53.838345, lng: 30.391348},
+			{latBias: 0.2, lngBias: -5.1},
 			smallPin,
+			6,
 			'Частное производственное унитарное предприятие "Завод горного машиностроения"',
 			'<div><h4>"Завод горного машиностроения"</h4><p>ул. Заводская, 4<p><p>Республика Беларусь, Минская область, Солигорский район<p><p><a href="mailto:info@niva.by">info@niva.by</a><p></div>'
-		], //Частное производственное унитарное предприятие "Завод горного машиностроения"
-		[
+		],[
 			{lat: 52.953266, lng: 27.892742},
+			{latBias: 0.2, lngBias: -5.1},
 			smallPin,
+			6,
 			'Дочернее частное производственное унитарное предприятие «Завод силовой гидравлики»',
 			'<div><h4>«Завод силовой гидравлики»</h4><p>ул. Заводская, 4<p><p>Республика Беларусь, Минская область, Солигорский район<p><p><a href="mailto:info@niva.by">info@niva.by</a><p></div>'
-		], //Дочернее частное производственное унитарное предприятие «Завод силовой гидравлики»
-		[
+		],[
 			{lat: 52.854309, lng: 27.475905},
+			{latBias: 0.2, lngBias: -5.1},
 			smallPin,
+			6,
 			'ОАО «ЛМЗ Универсал»',
 			'<div><h4>ОАО «ЛМЗ Универсал»</h4><p>ул. Заводская, 4<p><p>Республика Беларусь, Минская область, Солигорский район<p><p><a href="mailto:info@niva.by">info@niva.by</a><p></div>'
-		], //ОАО «ЛМЗ Универсал»
+		],
 		[
 			{lat: 47.9105, lng: 33.3918},
+			{latBias: 0.2, lngBias: -10},
 			smallPin,
+			5,
 			'ООО «НИВА - КРИВБАСС»',
 			'<div><h4>ООО «НИВА - КРИВБАСС»</h4><p>ул. Заводская, 4<p><p>Республика Беларусь, Минская область, Солигорский район<p><p><a href="mailto:info@niva.by">info@niva.by</a><p></div>'
-		], //ООО «НИВА - КРИВБАСС»
-		[
+		],[
 			{lat: 53.9327, lng: 86.6155},
+			{latBias: 10, lngBias: -40},
 			smallPin,
+			3,
 			'ООО «НИВА - СИБИРЬ»',
 			'<div><h4>ООО «НИВА - СИБИРЬ»</h4><p>ул. Заводская, 4<p><p>Республика Беларусь, Минская область, Солигорский район<p><p><a href="mailto:info@niva.by">info@niva.by</a><p></div>'
-		] //ООО «НИВА - СИБИРЬ»
+		]
 	];
 	var markers = [];
 
@@ -970,8 +981,11 @@ function mapInitNiva(){
 
 	function moveToLocation(index){
 		var object = objects[index];
-		var center = new google.maps.LatLng(object[0]);
+		var latCenter = object[0].lat + object[1].latBias;
+		var lngCenter = object[0].lng + object[1].lngBias;
+		var center = new google.maps.LatLng(latCenter,lngCenter);
 		map.panTo(center);
+		map.setZoom(object[3]);
 	}
 
 
@@ -981,14 +995,23 @@ function mapInitNiva(){
 		var marker = new google.maps.Marker({
 			position: object[0],
 			map: map,
-			icon: object[1],
-			title: object[2],
+			icon: object[2],
+			title: object[4],
 			animation: google.maps.Animation.DROP
 		});
 		markers.push(marker);
 
+		var contentPopup = '<div>' +
+				'<h4>'+object[4]+'</h4>' +
+				'<ul class="location-marker">' +
+				'<li>223710, Республика Беларусь, <br> Минская область, Солигорский район, <br> ул. Заводская, 4</li>' +
+				'<li><b>Приёмная:</b> +37517 426-98-03</li>' +
+				'<li><b>Эл. почта:</b> <a href="mailto:info@niva.by">info@niva.by</a></li>' +
+				'</ul>' +
+				'</div>';
+
 		var infowindow = new google.maps.InfoWindow({
-			content: object[3],
+			content: contentPopup,
 			maxWidth: 200
 		});
 
