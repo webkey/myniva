@@ -746,9 +746,9 @@ var smallPinMap = 'img/map-pin.png',
 var localObjects = [
 	[
 		{lat: 52.854244, lng: 27.465155}, //coordinates of marker
-		{latBias: 0.5, lngBias: -5.1}, //bias coordinates for center map
+		{latBias: 0.2, lngBias: -2.5}, //bias coordinates for center map
 		largePinMap, //image pin
-		6,
+		7,
 		{
 			title: 'Унитарное производственное предприятие "Нива"',
 			address: '223710, Республика Беларусь, <br> Минская область, Солигорский район, <br> ул. Заводская, 4',
@@ -757,9 +757,9 @@ var localObjects = [
 		}
 	],[
 		{lat: 52.799394, lng: 27.558581},
-		{latBias: 0.2, lngBias: -5.1},
+		{latBias: 0.1, lngBias: -2.5},
 		smallPinMap,
-		6,
+		7,
 		{
 			title: 'Филиал "Завод горно-шахтного оборудования"',
 			address: 'Республика Беларусь, Метявичское шоссе 5/3, 223710 Солигорский р-н, Минская обл.',
@@ -768,9 +768,9 @@ var localObjects = [
 		}
 	],[
 		{lat: 52.809892, lng: 27.553314},
-		{latBias: 0.2, lngBias: -5.1},
+		{latBias: 0.1, lngBias: -2.5},
 		smallPinMap,
-		6,
+		7,
 		{
 			title: 'Филиал «Нива-Сервис»',
 			address: 'Республика Беларусь, 223710, 1 рудоуправление, № 1, Солигорский р-н, Минская обл.',
@@ -779,9 +779,9 @@ var localObjects = [
 		}
 	],[
 		{lat: 53.812286, lng: 27.677591},
-		{latBias: 0.2, lngBias: -5.1},
+		{latBias: 0.1, lngBias: -2.5},
 		smallPinMap,
-		6,
+		7,
 		{
 			title: 'Дочернее производственное унитарное предприятие "Белгидравлика"',
 			address: 'Республика Беларусь, г.Минск, 220075, ул.Селицкого, д.9',
@@ -790,9 +790,9 @@ var localObjects = [
 		}
 	],[
 		{lat: 53.838345, lng: 30.391348},
-		{latBias: 0.2, lngBias: -5.1},
+		{latBias: 0.1, lngBias: -2.5},
 		smallPinMap,
-		6,
+		7,
 		{
 			title: 'Частное производственное унитарное предприятие "Завод горного машиностроения"',
 			address: 'Республика Беларусь, г.Могилев, 212030, Славгородское шоссе д.171',
@@ -801,9 +801,9 @@ var localObjects = [
 		}
 	],[
 		{lat: 52.953266, lng: 27.892742},
-		{latBias: 0.2, lngBias: -5.1},
+		{latBias: 0.1, lngBias: -2.5},
 		smallPinMap,
-		6,
+		7,
 		{
 			title: 'Дочернее частное производственное унитарное предприятие «Завод силовой гидравлики»',
 			address: 'Республика Беларусь, 223881, Минская обл., Любанский р-н, г.п. Уречье, ул.Коммунальная д.9',
@@ -812,9 +812,9 @@ var localObjects = [
 		}
 	],[
 		{lat: 52.854309, lng: 27.475905},
-		{latBias: 0.2, lngBias: -5.1},
+		{latBias: 0.1, lngBias: -2.5},
 		smallPinMap,
-		6,
+		7,
 		{
 			title: 'ОАО «ЛМЗ Универсал»',
 			address: 'Республика Беларусь, 223710, г.Солигорск, Ул.Заводская д.4',
@@ -824,9 +824,9 @@ var localObjects = [
 	],
 	[
 		{lat: 47.9105, lng: 33.3918},
-		{latBias: 0.2, lngBias: -10},
+		{latBias: 0.1, lngBias: -2.5},
 		smallPinMap,
-		5,
+		7,
 		{
 			title: 'ООО «НИВА - КРИВБАСС»',
 			address: 'Украина, г. Кривой Рог, ул. Цины, 26-Г',
@@ -835,9 +835,9 @@ var localObjects = [
 		}
 	],[
 		{lat: 53.9327, lng: 86.6155},
-		{latBias: 10, lngBias: -40},
+		{latBias: 0.1, lngBias: -2.5},
 		smallPinMap,
-		3,
+		7,
 		{
 			title: 'ООО «НИВА - СИБИРЬ»',
 			address: 'Российская Федерация, 653213, Кемеровская обл., Прокопьевский р-он, с. Верх-Егос, ул. Центральная, 1А',
@@ -1009,7 +1009,7 @@ function mapInitNiva(){
 	var markers = [];
 
 	var mapOptions = {
-		zoom: 6,
+		zoom: 7,
 		center: mapCenter(0),
 		styles: styleMap,
 		mapTypeControl: false,
