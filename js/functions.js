@@ -54,12 +54,6 @@ function customSelect(select){
 					widget.find('.ui-multiselect-checkboxes li:last')
 						.addClass('last')
 						.siblings().removeClass('last');
-					//widget.find('li').each(function () {
-					//	var index = $(this).index();
-					//	console.log();
-					//	var dataLocation = select.find('option').eq(index).data('location');
-					//	$(this).attr('data-location', dataLocation);
-					//});
 					if ( flag ) {
 						$(selectItem).multiselect('uncheckAll');
 						$(selectItem)
@@ -746,124 +740,8 @@ function owlInit(){
 /*owl carousel init end*/
 
 /*map init*/
-var styleMap = [
-	{
-		"featureType": "water",
-		"elementType": "geometry.fill",
-		"stylers": [
-			{ "color": "#c6d0dd" },
-			//{ saturation: 0 },
-			//{ lightness: 0 },
-			//{ gamma: 1.51 }
-		]
-	},{
-		"featureType": "transit",
-		"stylers": [
-			{ "color": "#808080" },
-			{ "visibility": "off" }
-		]
-	},{
-		"featureType": "road.highway",
-		"elementType": "geometry.stroke",
-		"stylers": [
-			{ "visibility": "on" },
-			{ "color": "#b4c2d3" }
-		]
-	},{
-		"featureType": "road.highway",
-		"elementType": "geometry.fill",
-		"stylers": [
-			{ "color": "#A2B3C8" }
-		]
-	},{
-		"featureType": "road.local",
-		"elementType": "geometry.fill",
-		"stylers": [
-			{ "visibility": "on" },
-			{ "color": "#A2B3C8" },
-			{ "weight": 1.8 }
-		]
-	},{
-		"featureType": "road.local",
-		"elementType": "geometry.stroke",
-		"stylers": [
-			{ "color": "#d7d7d7" }
-		]
-	},{
-		"featureType": "poi",
-		"elementType": "geometry.fill",
-		"stylers": [
-			{ "visibility": "on" },
-			{ "color": "#ebebeb" }
-		]
-	},{
-		"featureType": "administrative",
-		"elementType": "geometry",
-		"stylers": [
-			{ "color": "#0059A5" }
-		]
-	},{
-		"featureType": "road.arterial",
-		"elementType": "geometry.fill",
-		"stylers": [
-			{ "color": "#A2B3C8" }
-		]
-	},{
-		"featureType": "landscape",
-		"elementType": "geometry.fill",
-		"stylers": [
-			{ "visibility": "on" },
-			{ "color": "#f9fafb" }
-		]
-	},{
-		"featureType": "road",
-		"elementType": "labels.text.fill",
-		"stylers": [
-			{ "color": "#696969" }
-		]
-	},{
-		"featureType": "administrative",
-		"elementType": "labels.text.fill",
-		"stylers": [
-			{ "visibility": "on" },
-			{ "color": "#0059A6" }
-		]
-	},{
-		"featureType": "poi",
-		"elementType": "labels.icon",
-		"stylers": [
-			{ "visibility": "off" }
-		]
-	},{
-		"featureType": "poi",
-		"elementType": "labels",
-		"stylers": [
-			{ "visibility": "off" }
-		]
-	},{
-		"featureType": "road.arterial",
-		"elementType": "geometry.stroke",
-		"stylers": [
-			{ "color": "#d6d6d6" }
-		]
-	},{
-		"featureType": "road",
-		"elementType": "labels.icon",
-		"stylers": [
-			{ "visibility": "off" }
-		]
-	},{
-	},{
-		"featureType": "poi",
-		"elementType": "geometry.fill",
-		"stylers": [
-			{ "color": "#d5dde6" }
-		]
-	}
-];
-
 var smallPinMap = 'img/map-pin.png',
-	largePinMap = 'img/map-niva-pin.png';
+		largePinMap = 'img/map-niva-pin.png';
 
 var localObjects = [
 	[
@@ -995,26 +873,143 @@ function contactsSwitcher(){
 		currentItem.closest('.location').find('.location-info__holder').html(tpl);
 	}
 }
+var styleMap = [
+	{
+		"featureType": "water",
+		"elementType": "geometry.fill",
+		"stylers": [
+			{ "color": "#c6d0dd" }
+		]
+	},{
+		"featureType": "transit",
+		"stylers": [
+			{ "color": "#808080" },
+			{ "visibility": "off" }
+		]
+	},{
+		"featureType": "road.highway",
+		"elementType": "geometry.stroke",
+		"stylers": [
+			{ "visibility": "on" },
+			{ "color": "#b4c2d3" }
+		]
+	},{
+		"featureType": "road.highway",
+		"elementType": "geometry.fill",
+		"stylers": [
+			{ "color": "#A2B3C8" }
+		]
+	},{
+		"featureType": "road.local",
+		"elementType": "geometry.fill",
+		"stylers": [
+			{ "visibility": "on" },
+			{ "color": "#A2B3C8" },
+			{ "weight": 1.8 }
+		]
+	},{
+		"featureType": "road.local",
+		"elementType": "geometry.stroke",
+		"stylers": [
+			{ "color": "#d7d7d7" }
+		]
+	},{
+		"featureType": "poi",
+		"elementType": "geometry.fill",
+		"stylers": [
+			{ "visibility": "on" },
+			{ "color": "#ebebeb" }
+		]
+	},{
+		"featureType": "administrative",
+		"elementType": "geometry",
+		"stylers": [
+			{ "color": "#0059A5" }
+		]
+	},{
+		"featureType": "road.arterial",
+		"elementType": "geometry.fill",
+		"stylers": [
+			{ "color": "#A2B3C8" }
+		]
+	},{
+		"featureType": "landscape",
+		"elementType": "geometry.fill",
+		"stylers": [
+			{ "visibility": "on" },
+			{ "color": "#f9fafb" }
+		]
+	},{
+		"featureType": "road",
+		"elementType": "labels.text.fill",
+		"stylers": [
+			{ "color": "#696969" }
+		]
+	},{
+		"featureType": "administrative",
+		"elementType": "labels.text.fill",
+		"stylers": [
+			{ "visibility": "on" },
+			{ "color": "#0059A6" }
+		]
+	},{
+		"featureType": "poi",
+		"elementType": "labels.icon",
+		"stylers": [
+			{ "visibility": "off" }
+		]
+	},{
+		"featureType": "poi",
+		"elementType": "labels",
+		"stylers": [
+			{ "visibility": "off" }
+		]
+	},{
+		"featureType": "road.arterial",
+		"elementType": "geometry.stroke",
+		"stylers": [
+			{ "color": "#d6d6d6" }
+		]
+	},{
+		"featureType": "road",
+		"elementType": "labels.icon",
+		"stylers": [
+			{ "visibility": "off" }
+		]
+	},{
+	},{
+		"featureType": "poi",
+		"elementType": "geometry.fill",
+		"stylers": [
+			{ "color": "#d5dde6" }
+		]
+	}
+];
 
 function mapInitNiva(){
 	if (!$('#map-niva-holding').length) {return;}
 
-	var latLng = {
-		lat: 53.354244,
-		lng: 22.365155
-	};
-	if($(window).width() < 640) {
-		latLng = {
-			lat: 53.354244,
-			lng: 27.465155
+	function mapCenter(index){
+		var localObject = localObjects[index];
+
+		var latLng = {
+			lat: localObject[0].lat + localObject[1].latBias,
+			lng: localObject[0].lng + localObject[1].lngBias
 		};
+		if($(window).width() < 640) {
+			latLng = {
+				lat: localObject[0].lat + 0.5,
+				lng: localObject[0].lng
+			}
+		}
+		return latLng;
 	}
 
 	var markers = [];
 
 	var mapOptions = {
 		zoom: 6,
-		center: latLng,
+		center: mapCenter(0),
 		styles: styleMap,
 		mapTypeControl: false,
 		scaleControl: false,
@@ -1043,9 +1038,7 @@ function mapInitNiva(){
 
 	function moveToLocation(index){
 		var object = localObjects[index];
-		var latCenter = object[0].lat + object[1].latBias;
-		var lngCenter = object[0].lng + object[1].lngBias;
-		var center = new google.maps.LatLng(latCenter,lngCenter);
+		var center = new google.maps.LatLng(mapCenter(index));
 		map.panTo(center);
 		map.setZoom(object[3]);
 	}
