@@ -5069,6 +5069,7 @@ li:hover > .category__link a > span{
 	display: inline-block;
 	vertical-align: top;
 	padding-bottom: 20px;
+	text-align: left;
 }
 /*product info order end*/
 /*product info end*/
