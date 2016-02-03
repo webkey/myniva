@@ -1302,6 +1302,18 @@
 		-ms-transform: translate(0, 0);
 		transform: translate(0, 0);
 	}
+
+	.product-info__order{
+		text-align: center;
+	}
+	.product-info__order-btn{
+		margin-right: 15px;
+		margin-left: 15px;
+	}
+	.product-info__order .file{
+		margin-right: 15px;
+		margin-left: 15px;
+	}
 	/*product info main end*/
 	/*product info end*/
 
