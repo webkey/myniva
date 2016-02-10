@@ -522,7 +522,7 @@
 						<!--product info order-->
 						<div class="product-info__order">
 							<div class="product-info__order-btn">
-								<a href="#" class="btn-default">Отправить заявку</a>
+								<a href="#callback-popup" class="btn-default fancybox-open">Отправить заявку</a>
 							</div>
 							<div class="file">
 								<div class="file__title">
@@ -710,6 +710,40 @@
 	</div>
 </footer>
 <!--footer end-->
+
+<!--popups-->
+<div class="popups">
+	<div class="popup">
+		<!-- callback form -->
+		<div id="callback-popup" class="callback-form">
+			<form action="#" method="get">
+				<div class="callback-popup-title">Форма <nobr>обратной связи</nobr></div>
+				<div class="form-row">
+					<div class="input-wrap">
+						<input type="text" placeholder="Имя">
+					</div>
+					<div class="input-wrap">
+						<input type="text" placeholder="Компания">
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="input-wrap">
+						<input type="email" placeholder="Эл. почта">
+					</div>
+					<div class="input-wrap">
+						<input type="text" placeholder="Телефон">
+					</div>
+				</div>
+				<textarea placeholder="Сообщение"></textarea>
+				<div class="form-buttons">
+					<input type="submit" value="Отправить">
+				</div>
+			</form>
+		</div>
+		<!-- callback form end -->
+	</div>
+</div>
+<!--popups-->
 
 <!--JQuery library-->
 <script src="js/jquery-1.11.3.min.js"></script>

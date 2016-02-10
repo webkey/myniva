@@ -2,8 +2,8 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Niva - Новости и закупки</title>	<!--[if IE]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<title>Niva - Закупки ОAO «ЛМЗ Универсал»</title>
+	<!--[if IE]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<!--Mobile optimized-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,12 +14,11 @@
 	<link href="css/all.css" rel="stylesheet" media="all">
 	<!--Media queries style-->
 	<link href="css/mq-all.css" rel="stylesheet" media="all">
-	<!--style for IE-->	<!--[if lte IE 8]>
-	<link rel="stylesheet" href="css/old-ie.css" media="screen, projection"><![endif]-->
+	<!--style for IE-->	<!--[if lte IE 8]>	<link rel="stylesheet" href="css/old-ie.css" media="screen, projection"><![endif]-->
 </head>
 <body>
 <!--wrapper-->
-<div class="wrapper">
+<div class="wrapper two-menu-active">
 	<!--panel-->
 	<div class="panel">
 		<!--logo-->
@@ -59,23 +58,23 @@
 								</ul>
 							</div>
 						</li>
-						<li class="made-current"><a href="news_and_purchase.html"><span>Новости и закупки</span></a></li>
-						<li class="has-drop-side">
+						<li><a href="news_and_purchase.html"><span>Новости и закупки</span></a></li>
+						<li class="has-drop-side made-current">
 							<a href="company.html"><span>Предприятия</span><i class="depict-angle fa fa-chevron-down"></i></a>
 							<div class="nav-drop drop-side">
 								<div class="drop-side__holder">
 									<div class="nav-title"><span class="nav-title__text">Предприятия</span></div>
 									<div class="nav-back"><i class="depict-angle fa fa-chevron-left"></i><span>Назад</span></div>
 									<ul class="nav-drop__list">
-										<li>
+										<li class="made-current">
 											<a href="#"><span>ОАО «ЛМЗ Универсал»</span><i class="depict-angle fa fa-chevron-down"></i></a>
 											<div class="nav-sub-drop">
 												<div class="nav-title"><span class="nav-title__text">ОАО «ЛМЗ Универсал</span></div>
 												<div class="nav-back"><i class="depict-angle fa fa-chevron-left"></i><span>Назад</span></div>
 												<ul class="nav-sub-drop__list">
 													<li class="hide-element"><a href="#">О компании</a></li>
-													<li><a href="#">Новости</a></li>
-													<li><a>Закупки</a></li>
+													<li><a href="company-news.html">Новости</a></li>
+													<li class="made-current"><a>Закупки</a></li>
 													<li><a href="#">Партнёрам</a></li>
 													<li><a href="#">Клиентам</a></li>
 												</ul>
@@ -324,12 +323,12 @@
 	<!--panel-->
 
 	<!--header-->
-	<header class="header">
+	<header class="header header-alt">
 		<div class="max-wrap">
 			<!--search form-->
 			<div class="search-form search-form__header">
 				<div class="large-align">
-					<form action="#">
+					<form action="#" method="post">
 						<div class="input-wrapper">
 							<input type="search" placeholder="Поиск по сайту" />
 							<div class="btn-search">
@@ -378,24 +377,53 @@
 	<!--main-->
 	<div class="main">
 		<div class="max-wrap">
+			<!--caption image-->
+			<div class="caption-img">&nbsp;</div>
+			<!--caption image end-->
 			<div class="content user-content">
 				<div class="heading">
 					<div class="large-align">
 						<!--breadcrumbs-->
 						<div class="breadcrumbs">
-							<div class="breadcrumbs__item">Новости и закупки</div>
+							<div class="breadcrumbs__item"><a href="#">Предприятия</a><i class="arrow fa fa-chevron-right"></i></div>
+							<div class="breadcrumbs__item breadcrumbs__item_has-drop">
+								<a href="#"><span>ОАО «ЛМЗ Универсал»</span><i class="arrow-drop fa fa-chevron-down"></i></a>
+								<div class="breadcrumbs-drop">
+									<div class="breadcrumbs-drop__holder">
+										<div class="breadcrumbs-drop__item"><a href="#">Филиал «Завод горно-шахтного оборудования»</a></div>
+										<div class="breadcrumbs-drop__item"><a href="#">Филиал «Нива-Сервис»</a></div>
+										<div class="breadcrumbs-drop__item"><a href="#">ДУП «Белгидр авлика» СЭЗ Минск»</a></div>
+										<div class="breadcrumbs-drop__item"><a href="#">ЧПУП "Завод горного машиностроения" СЭЗ Могилев»</a></div>
+										<div class="breadcrumbs-drop__item"><a href="#">ДУП «Белгидравлика»</a></div>
+										<div class="breadcrumbs-drop__item"><a href="#">ДПУП «Завод силовой гидравлики»</a></div>
+									</div>
+								</div>
+								<i class="arrow fa fa-chevron-right"></i>
+							</div>
+							<div class="breadcrumbs__item breadcrumbs__item_has-drop breadcrumbs__item_last">
+								<a href="#"><span>Закупки</span><i class="arrow-drop fa fa-chevron-down"></i></a>
+								<div class="breadcrumbs-drop">
+									<div class="breadcrumbs-drop__holder">
+										<div class="breadcrumbs-drop__item"><a href="#">О компании</a></div>
+										<div class="breadcrumbs-drop__item"><a href="#">Новости</a></div>
+										<div class="breadcrumbs-drop__item"><a href="#">Партнёрам</a></div>
+										<div class="breadcrumbs-drop__item"><a href="#">Клиентам</a></div>
+									</div>
+								</div>
+								<i class="arrow fa fa-chevron-right"></i>
+							</div>
 						</div>
 						<!--breadcrumbs end-->
 						<div class="heading-caption">
-							<h1>Новости и закупки</h1>
+							<h1>Закупки</h1>
 						</div>
 					</div>
 				</div>
 				<!--tabs-->
 				<div class="tabs">
 					<ul class="tabs-controls">
-						<li><a href="#tabs-news-id"><div class="text-inner"><span>Новости</span></div></a></li>
-						<li class="alt-color"><a href="#tabs-purchase-id"><div class="text-inner"><span>Закупки</span></div></a></li>
+						<li><a href="#tabs-news-id"><div class="text-inner"><span>Закупки</span></div></a></li>
+						<li class="alt-color"><a href="#tabs-purchase-id"><div class="text-inner"><span>Реализация неликвидов</span></div></a></li>
 					</ul>
 					<div class="tabs-panel tabs-news" id="tabs-news-id">
 						<!--news slider-->
@@ -810,10 +838,46 @@
 </footer>
 <!--footer end-->
 
+<!--popups-->
+<div class="popups">
+	<div class="popup">
+		<!-- callback form -->
+		<div id="callback-popup" class="callback-form">
+			<form action="#" method="get">
+				<div class="callback-popup-title">Форма <nobr>обратной связи</nobr></div>
+				<div class="form-row">
+					<div class="input-wrap">
+						<input type="text" placeholder="Имя">
+					</div>
+					<div class="input-wrap">
+						<input type="text" placeholder="Компания">
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="input-wrap">
+						<input type="email" placeholder="Эл. почта">
+					</div>
+					<div class="input-wrap">
+						<input type="text" placeholder="Телефон">
+					</div>
+				</div>
+				<textarea placeholder="Сообщение"></textarea>
+				<div class="form-buttons">
+					<input type="submit" value="Отправить">
+				</div>
+			</form>
+		</div>
+		<!-- callback form end -->
+	</div>
+</div>
+<!--popups-->
+
 <!--JQuery library-->
 <script src="js/jquery-1.11.3.min.js"></script>
 <!--JQuery UI-->
 <script src="js/jquery-ui.min.js"></script>
+<!--Map-->
+<script src="https://maps.googleapis.com/maps/api/js?key=&amp;sensor=false&amp;extension=.js"></script>
 <!--Widgets-->
 <script src="js/widgets.js"></script>
 <!--Main functions-->
