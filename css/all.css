@@ -4343,24 +4343,80 @@ li:hover > .category__link a > span{
 	float: left;
 	width: 49.99%;
 	height: 68px;
-	font: 16px/68px 'gothampro-bold', Arial, Helvetica, sans-serif;
+	font: 16px/20px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	text-align: center;
 	color: #fff;
 	padding: 0;
 }
+.tabs-controls li:after,
+.tabs-controls li:before,
+.user-content .tabs-controls li:after,
 .user-content .tabs-controls li:before{
-	content: none;
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	background: none;
+	position: absolute;
+	pointer-events: none;
+	display: none;
+	margin-top: -2px;
 }
+.tabs-controls li.ui-tabs-active:before,
+.tabs-controls li.ui-tabs-active:after,
+.user-content .tabs-controls li.ui-tabs-active:before,
+.user-content .tabs-controls li.ui-tabs-active:after{
+	display: block;
+}
+.tabs-controls li:after,
+.user-content .tabs-controls li:after{
+	border-color: rgba(0, 89, 166, 0);
+	border-top-color: #0059a6;
+	border-width: 14px;
+	margin-left: -14px;
+}
+.tabs-controls li:before,
+.user-content .tabs-controls li:before,
+.user-content .tabs-controls li:first-child:before{
+	border-color: rgba(128, 172, 211, 0);
+	border-top-color: #80acd3;
+	border-width: 15px;
+	margin-left: -15px;
+	top: 100%;
+}
+.tabs-controls li.alt-color:after,
+.user-content .tabs-controls li.alt-color:after{
+	border-top-color: #267bc5;
+}
+.tabs-controls li.alt-color:before,
+.user-content .tabs-controls li.alt-color:before{
+	border-top-color: #0059a6;
+}
+
+
+
 .tabs-controls a{
 	display: block;
 	color: #fff;
 	text-decoration: none;
 	height: 68px;
-	padding: 0 18px;
+	padding: 0 9px;
 	background: #0059a6;
 	border-bottom: 1px solid transparent;
 	position: relative;
+	font-size: 0;
+	letter-spacing: -4px;
+}
+.tabs-controls a:before{
+	content: '';
+	display: inline-block;
+	display:-moz-inline-stack;
+	height: 68px;
+	vertical-align: middle;
+	background-color: #f00;
 }
 .tabs-controls .alt-color a{
 	background: #267bc5;
@@ -4371,47 +4427,20 @@ li:hover > .category__link a > span{
 .tabs-controls li.ui-tabs-active.alt-color a{
 	border-color: #0059a6;
 }
-.tabs-controls a:after,
-.tabs-controls a:before{
-	top: 100%;
-	left: 50%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-	display: none;
+.tabs-controls .text-inner{
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 16px;
+	letter-spacing: normal;
+	width: 96%;
 }
-.tabs-controls .ui-tabs-active a:before,
-.tabs-controls .ui-tabs-active a:after{
-	display: block;
-}
-.tabs-controls a:after{
-	border-color: rgba(0, 89, 166, 0);
-	border-top-color: #267bc5;
-	border-width: 14px;
-	margin-left: -14px;
-}
-.tabs-controls a:before{
-	border-color: rgba(128, 172, 211, 0);
-	border-top-color: #0059a6;
-	border-width: 15px;
-	margin-left: -15px;
-}
-.tabs-controls li:first-child a:after{
-	border-top-color: #0059a6;
-}
-.tabs-controls li:first-child a:before{
-	border-top-color: #80acd3;
-}
-.tabs-controls a > span{
+.tabs-controls .text-inner span{
 	border-bottom: 1px dotted #fff;
 	-webkit-transition: all 0.2s;
 	transition: all 0.2s;
 }
-.tabs-controls a:hover > span,
-.tabs-controls .ui-tabs-active a > span{
+.tabs-controls a:hover .text-inner span,
+.tabs-controls .ui-tabs-active .text-inner span{
 	border-color: transparent;
 }
 /*tabs end*/
