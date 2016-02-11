@@ -876,10 +876,11 @@ function contactsSwitcher(){
 
 var styleMap = [
 	{
+		// water
 		"featureType": "water",
 		"elementType": "geometry.fill",
 		"stylers": [
-			{ "color": "#c6d0dd" }
+			{ "color": "#9ec0dd" }
 		]
 	},{
 		"featureType": "transit",
@@ -888,70 +889,78 @@ var styleMap = [
 			{ "visibility": "off" }
 		]
 	},{
+		// road small
 		"featureType": "road.highway",
 		"elementType": "geometry.stroke",
 		"stylers": [
 			{ "visibility": "on" },
-			{ "color": "#b4c2d3" }
+			{ "color": "#b5cfe5" }
 		]
 	},{
+		// road transit
 		"featureType": "road.highway",
 		"elementType": "geometry.fill",
 		"stylers": [
-			{ "color": "#A2B3C8" }
+			{ "color": "#86b0d5" }
 		]
 	},{
+		//road local bg
 		"featureType": "road.local",
 		"elementType": "geometry.fill",
 		"stylers": [
 			{ "visibility": "on" },
-			{ "color": "#A2B3C8" },
+			{ "color": "#87afd3" },
 			{ "weight": 1.8 }
 		]
 	},{
+		//road local border
 		"featureType": "road.local",
 		"elementType": "geometry.stroke",
 		"stylers": [
-			{ "color": "#d7d7d7" }
+			{ "color": "#87afd3" }
 		]
 	},{
+		// road
 		"featureType": "poi",
 		"elementType": "geometry.fill",
 		"stylers": [
 			{ "visibility": "on" },
-			{ "color": "#ebebeb" }
+			{ "color": "#87afd3" }
 		]
 	},{
+		// borders country
 		"featureType": "administrative",
 		"elementType": "geometry",
 		"stylers": [
-			{ "color": "#0059A5" }
+			{ "color": "#0059a6" }
 		]
 	},{
 		"featureType": "road.arterial",
 		"elementType": "geometry.fill",
 		"stylers": [
-			{ "color": "#A2B3C8" }
+			{ "color": "#87afd3" }
 		]
 	},{
+		// land
 		"featureType": "landscape",
 		"elementType": "geometry.fill",
 		"stylers": [
 			{ "visibility": "on" },
-			{ "color": "#f9fafb" }
+			{ "color": "#f7fafc" }
 		]
 	},{
 		"featureType": "road",
 		"elementType": "labels.text.fill",
 		"stylers": [
-			{ "color": "#696969" }
+			{ "color": "#87afd3" }
 		]
 	},{
+		//name administrative
 		"featureType": "administrative",
 		"elementType": "labels.text.fill",
 		"stylers": [
 			{ "visibility": "on" },
-			{ "color": "#0059A6" }
+			{ "color": "#0059a6" }
 		]
 	},{
 		"featureType": "poi",
@@ -966,10 +975,11 @@ var styleMap = [
 			{ "visibility": "off" }
 		]
 	},{
+		//smallest road
 		"featureType": "road.arterial",
 		"elementType": "geometry.stroke",
 		"stylers": [
-			{ "color": "#d6d6d6" }
+			{ "color": "#87afd3" }
 		]
 	},{
 		"featureType": "road",
@@ -978,11 +988,11 @@ var styleMap = [
 			{ "visibility": "off" }
 		]
 	},{
-	},{
+		// forest
 		"featureType": "poi",
 		"elementType": "geometry.fill",
 		"stylers": [
-			{ "color": "#d5dde6" }
+			{ "color": "#d8e6f1" }
 		]
 	}
 ];
