@@ -1738,6 +1738,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 }
 .user-options-holder{
 	padding: 13px 16px;
+	margin: 30px 0 0;
 }
 .lang{
 	list-style: none;
@@ -4057,18 +4058,27 @@ li:hover > .category__link a > span{
 	padding: 0;
 	margin: 0;
 	position: relative;
+	/*height: 362px;*/
+	/*overflow: hidden;*/
 }
 .gallery-item{
 	background: #267bc5;
-	/*width: 300px;*/
+	height: 362px;
+}
+.gallery .owl-item:last-child{
+	margin-left: -1px;
 }
 .gallery-item a{
 	display: block;
 	height: 100%;
+	-webkit-background-size: 100% auto;
+	background-size: 100% auto;
 }
-.gallery-item img{
-	/*opacity: 0 !important;*/
-	/*display: none !important;*/
+.gallery .gallery-item img{
+	height: 100%;
+	width: auto;
+	position: relative;
+	display: block;
 }
 .gallery .owl-nav{
 	position: absolute;
@@ -5272,6 +5282,17 @@ li:hover > .category__link a > span{
 	padding-top: 40%;
 }
 /*error 404 end*/
+
+/*login form*/
+.login-form{
+	width: 300px;
+	margin: 0 auto;
+}
+.login-form h2,
+.login-form .form-buttons{
+	text-align: center;
+}
+/*login form end*/
 /*main end*/
 
 /*footer*/
