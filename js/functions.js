@@ -9,20 +9,6 @@
 
 var md = new MobileDetect(window.navigator.userAgent);
 
-/*resize only width*/
-var resizeByWidth = true;
-
-var prevWidth = -1;
-$(window).resize(function () {
-	var currentWidth = $('body').outerWidth();
-	resizeByWidth = prevWidth != currentWidth;
-	if(resizeByWidth){
-		$(window).trigger('resizeByWidth');
-		prevWidth = currentWidth;
-	}
-});
-/*resize only width end*/
-
 /* placeholder */
 function placeholderInit(){
 	$('[placeholder]').placeholder();
