@@ -515,6 +515,7 @@ function mainNavigationInit(){
 function breadHover(){
 	var $breadcrumbsItemHasDrop = $('.breadcrumbs__item_has-drop');
 	if (md.mobile()) {
+
 		$breadcrumbsItemHasDrop.on('click', function (e) {
 			var $breadcrumbsItmeCurrent = $(this);
 			if ($breadcrumbsItmeCurrent.hasClass('hover')){
