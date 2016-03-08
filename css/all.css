@@ -1249,15 +1249,12 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	color: #333;
 	text-decoration: none;
 }
-.breadcrumbs a:hover{
-	text-decoration: underline;
-}
 .breadcrumbs__item_has-drop,
 .breadcrumbs__item_has-drop:first-child{
 	vertical-align: top;
 	border: 1px solid #0059a6;
 	background: #fff;
-	width: 258px;
+	/*width: 258px;*/
 	padding: 0;
 	margin: 0 32px 8px 0;
 }
@@ -1284,6 +1281,22 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .breadcrumbs__item_has-drop > a{
 	display: block;
 	padding: 9px 28px 9px 13px;
+	max-width: 51px;
+	min-width: 0;
+	-webkit-transition: max-width 0.5s, min-width 0.5s;
+	transition: max-width 0.5s, min-width 0.5s;
+}
+.breadcrumbs__item:last-of-type > a,
+.breadcrumbs__item:last-child > a,
+.breadcrumbs__item_last > a,
+.breadcrumbs__item.hover > a,
+.breadcrumbs__item.breadcrumbs__item_long > a{
+	min-width: 200px;
+	max-width: 500px;
+}
+.breadcrumbs__item_has-drop.breadcrumbs__item_short > a{
+	max-width: 51px;
+	min-width: 0;
 }
 .breadcrumbs__item_has-drop > a > span{
 	display: block;
@@ -1295,6 +1308,9 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	background: #fff;
 	z-index: 9;
 }
+.breadcrumbs__item_has-drop.hover > a > span{
+	text-decoration: underline;
+}
 .breadcrumbs__item_has-drop .arrow-drop{
 	position: absolute;
 	right: 9px;
@@ -1305,9 +1321,8 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	transition: 0.3s;
 }
 .breadcrumbs__item_has-drop.hover .arrow-drop{
-	/*-webkit-transform: rotate(-180deg);*/
-	/*-ms-transform: rotate(-180deg);*/
-	/*transform: rotate(-180deg);*/
+	-webkit-transition-delay: 0.25s;
+	transition-delay: 0.25s;
 	-webkit-transform: rotateX(-180deg);
 	-ms-transform: rotateX(-180deg);
 	transform: rotateX(-180deg);
@@ -1332,6 +1347,8 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	top: -1px;
 }
 .breadcrumbs__item_has-drop.hover > .breadcrumbs-drop{
+	-webkit-transition-delay: 0.25s;
+	transition-delay: 0.25s;
 	top: 100%;
 	opacity: 1;
 }
@@ -1340,6 +1357,9 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 }
 .breadcrumbs-drop__item a{
 	display: block;
+}
+.breadcrumbs-drop__item a:hover{
+	text-decoration: underline;
 }
 /* breadcrumbs end */
 /*user content end*/

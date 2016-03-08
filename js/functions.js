@@ -9,6 +9,20 @@
 
 var md = new MobileDetect(window.navigator.userAgent);
 
+/*resize only width*/
+var resizeByWidth = true;
+
+var prevWidth = -1;
+$(window).resize(function () {
+	var currentWidth = $('body').outerWidth();
+	resizeByWidth = prevWidth != currentWidth;
+	if(resizeByWidth){
+		$(window).trigger('resizeByWidth');
+		prevWidth = currentWidth;
+	}
+});
+/*resize only width end*/
+
 /* placeholder */
 function placeholderInit(){
 	$('[placeholder]').placeholder();
@@ -502,12 +516,20 @@ function breadHover(){
 	var $breadcrumbsItemHasDrop = $('.breadcrumbs__item_has-drop');
 	if (md.mobile()) {
 		$breadcrumbsItemHasDrop.on('click', function (e) {
-			if ($(this).hasClass('hover')){
+			var $breadcrumbsItmeCurrent = $(this);
+			if ($breadcrumbsItmeCurrent.hasClass('hover')){
 				return;
 			}
 			e.stopPropagation();
-			$breadcrumbsItemHasDrop.removeClass('hover');
-			$(this).toggleClass('hover');
+
+			$breadcrumbsItemHasDrop
+				.removeClass('hover breadcrumbs__item_long')
+				.addClass('breadcrumbs__item_short');
+
+			$breadcrumbsItmeCurrent
+				.addClass('hover breadcrumbs__item_long')
+				.removeClass('breadcrumbs__item_short');
+
 			e.preventDefault();
 		});
 
@@ -518,14 +540,21 @@ function breadHover(){
 		$(document).on('click', function () {
 			$('.breadcrumbs__item_has-drop').removeClass('hover');
 		});
-		return;
+
+	} else {
+		$breadcrumbsItemHasDrop.on('mouseenter', function () {
+			$breadcrumbsItemHasDrop
+				.removeClass('hover breadcrumbs__item_long')
+				.addClass('breadcrumbs__item_short');
+
+			$(this)
+				.addClass('hover breadcrumbs__item_long')
+				.removeClass('breadcrumbs__item_short');
+
+		}).on('mouseleave', function () {
+			$(this).removeClass('hover');
+		});
 	}
-	$breadcrumbsItemHasDrop.on('mouseenter', function () {
-		$breadcrumbsItemHasDrop.removeClass('hover');
-		$(this).addClass('hover');
-	}).on('mouseleave', function () {
-		$(this).removeClass('hover');
-	});
 }
 /*breadcrumbs add hover class end*/
 
@@ -1870,7 +1899,6 @@ $(document).ready(function(){
 	multiAccordionInit();
 	companyProductsInit();
 	$('.owl-carousel').imagesLoaded( function() {
-		console.log('all images are loaded!');
 		owlInit();
 	});
 });
