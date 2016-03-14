@@ -1292,7 +1292,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 .breadcrumbs__item.hover > a,
 .breadcrumbs__item.breadcrumbs__item_long > a{
 	min-width: 200px;
-	max-width: 500px;
+	max-width: 350px;
 }
 .breadcrumbs__item_has-drop.breadcrumbs__item_short > a{
 	max-width: 51px;
@@ -1308,7 +1308,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	background: #fff;
 	z-index: 9;
 }
-.breadcrumbs__item_has-drop.hover > a > span{
+.breadcrumbs__item_has-drop > a:hover > span{
 	text-decoration: underline;
 }
 .breadcrumbs__item_has-drop .arrow-drop{

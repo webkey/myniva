@@ -849,6 +849,18 @@
 	.breadcrumbs{
 		padding: 0 0 10px;
 	}
+	.breadcrumbs__item:last-of-type > a,
+	.breadcrumbs__item:last-child > a,
+	.breadcrumbs__item_last > a,
+	.breadcrumbs__item.hover > a,
+	.breadcrumbs__item.breadcrumbs__item_long > a{
+		min-width: 140px;
+		max-width: 270px;
+	}
+	.breadcrumbs__item_has-drop.breadcrumbs__item_short > a{
+		max-width: 51px;
+		min-width: 0;
+	}
 	/*breadcrumbs end*/
 	/*user content end*/
 
