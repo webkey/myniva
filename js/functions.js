@@ -1637,9 +1637,10 @@ $.extend($.easing, {
 	}
 })( jQuery );
 
-function scrollSynopsis(){
-	if(!$('.synopsis').length){return}
-	$('.synopsis__controls > li').navScroller();
+function scrollAgents(){
+	var $contactsAnchor = $('.agents-previews__list');
+	if(!$contactsAnchor.length){return}
+	$contactsAnchor.find('a').navScroller();
 }
 
 function scrollContacts(){
@@ -1895,6 +1896,7 @@ $(document).ready(function(){
 	fancyboxInit();
 	synopsisInit();
 	openGallery();
+	scrollAgents();
 	scrollContacts();
 	multiAccordionInit();
 	companyProductsInit();
