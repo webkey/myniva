@@ -449,6 +449,15 @@ strong em{
 .depict-flag-de{
 	background-image: url(../img/depict-flag-de.png);
 }
+.depict-flag-pol{
+    background-image: url(../img/depict-flag-pol.png);
+}
+.depict-flag-usa{
+    background-image: url(../img/depict-flag-usa.png);
+}
+.depict-flag-rus{
+    background-image: url(../img/depict-flag-rus.png);
+}
 /*icons end*/
 
 /*depict files*/
@@ -463,17 +472,17 @@ strong em{
 	width: 39px;
 	height: 46px;
 }
-.depict-files-xls{
+.depict-files-xls, .depict-files-xlsx{
 	background-position: 0 -66px;
 	width: 39px;
 	height: 46px;
 }
-.depict-files-doc{
+.depict-files-doc, .depict-files-docx{
 	background-position: 0 -132px;
 	width: 39px;
 	height: 46px;
 }
-.depict-files-zip{
+.depict-files-zip, .depict-files-rar{
 	background-position: 0 -198px;
 	width: 39px;
 	height: 46px;
@@ -4078,8 +4087,9 @@ li:hover > .category__link a > span{
 	padding: 0;
 	margin: 0;
 	position: relative;
-	/*height: 362px;*/
-	/*overflow: hidden;*/
+	height: 362px;
+	overflow: hidden;
+	background: #267bc5;
 }
 .gallery-item{
 	background: #267bc5;
@@ -4124,6 +4134,7 @@ li:hover > .category__link a > span{
 	margin-top: -23px;
 	text-indent: -9999px;
 	overflow: hidden;
+	cursor: pointer;
 	border-radius: 0;
 	-webkit-transition: all 0.2s;
 	transition: all 0.2s;
@@ -5055,7 +5066,7 @@ li:hover > .category__link a > span{
 	width: 100%;
 	top: 0;
 	left: 0;
-	background: #000;
+	background: #0e4b80;
 	overflow: hidden;
 
 	-webkit-transform: translate(-355px, 0);
@@ -5073,6 +5084,16 @@ li:hover > .category__link a > span{
 .product-info__gallery .gallery{
 	margin: 0;
 	padding: 0;
+	-webkit-transform: translate(355px, 0);
+	-ms-transform: translate(355px, 0);
+	transform: translate(355px, 0);
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.open-gallery .product-info__gallery .gallery{
+	-webkit-transform: translate(0, 0);
+	-ms-transform: translate(0, 0);
+	transform: translate(0, 0);
 }
 .product-info__gallery .btn-close{
 	position: absolute;
@@ -5108,6 +5129,9 @@ li:hover > .category__link a > span{
 	-webkit-transform: translate(0, 83px);
 	-ms-transform: translate(0, 83px);
 	transform: translate(0, 83px);
+}
+.product-info__gallery .owl-nav.disabled{
+	display: block;
 }
 .open-gallery .product-info__gallery .owl-nav{
 	-webkit-transform: translate(0, 0);
@@ -5372,8 +5396,8 @@ li:hover > .category__link a > span{
 .site-developer_logo{
 	display: inline-block;
 	vertical-align: top;
-	background: url(../img/bg-developer.png) no-repeat;
-	width: 100px;
+	background: url(../img/bg-developer.png) no-repeat 0 50%;
+	width: 123px;
 	height: 28px;
 	font-size: 12px;
 	line-height: 23px;
