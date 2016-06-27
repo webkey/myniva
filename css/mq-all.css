@@ -121,7 +121,7 @@
 @media only screen and (max-width: 1139px){
 	/*product info*/
 	/*product info main*/
-	.product-visual{ margin-right: 52%; }
+	.product-visual{ margin-right: 50%; }
 	.product-info__main .company-info {
 		width: 48%;
 		margin-left: -50%;
@@ -137,6 +137,11 @@
 		-webkit-transform: translate(-52%, 0);
 		-ms-transform: translate(-52%, 0);
 		transform: translate(-52%, 0);
+	}
+	.product-info__gallery .gallery{
+		-webkit-transform: translate(52%, 0);
+		-ms-transform: translate(52%, 0);
+		transform: translate(52%, 0);
 	}
 	/*product info main end*/
 	/*product info end*/
@@ -1147,7 +1152,8 @@
 		transform: translate(0, 0);
 	}
 	.product-info__main .company-info__btn .btn-default-empty{ font-size: 16px; }
-	.product-info__gallery{
+	.product-info__gallery,
+	.product-info__gallery .gallery{
 		-webkit-transform: translate(0, 0);
 		-ms-transform: translate(0, 0);
 		transform: translate(0, 0);

@@ -1247,7 +1247,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	min-height: 87px;
 	margin: 0 0 -87px;
 }
-.header-main .header-options{ padding: 12px 0 0; }
+.header-main .header-options{ padding: 12px 0; }
 .main{
 	padding: 0 0 68px;
 	position: relative;
@@ -1618,16 +1618,10 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	top: 0;
 	width: 100%;
 	height: 100%;
-	/*background: rgba(0, 89, 166, 0.6);*/
-	/*background: rgba(255, 255, 255, 0.7);*/
-	/*opacity: 0;*/
-	/*-webkit-transition: opacity 0.8s;*/
-	/*transition: opacity 0.8s;*/
 	z-index: -99;
 	display: none;
 }
 .nav-opened .overlay-page{
-	/*opacity: 1;*/
 	z-index: 3;
 }
 /*overlay page end*/
@@ -1713,10 +1707,6 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	position: absolute;
 	left: 0;
 	top: 0;
-	/*-webkit-transition: all 0.4s;*/
-	/*transition: all 0.4s;*/
-	/*-webkit-transform: translateZ(0);*/
-	/*transform: translateZ(0);*/
 }
 /*for all line menu end*/
 /*first line menu*/
@@ -1957,7 +1947,6 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	line-height: 22px;
 	letter-spacing: -4px;
 	color: #fff;
-	/*padding: 32px 50px 32px 0;*/
 	padding: 5px 50px 5px 0;
 }
 .header-slogan:after{
@@ -2010,7 +1999,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background: rgba(0, 0, 0, 0.45);
+	background: none;
 }
 .promo-slide__caption{
 	display: table;
@@ -2048,6 +2037,7 @@ div.cselect .ui-multiselect-checkboxes label.ui-state-active{
 	font: 24px/29px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	color: #fff;
 	max-width: 400%;
+	text-shadow: 1px 1px 1px #000;
 	-webkit-transition: 0.3s all 0.6s ease-out;
 	transition: 0.3s all 0.6s ease-out;
 }
@@ -2822,8 +2812,6 @@ li.made-active .produce-thumbs__text,
 	-webkit-transform: translate(0, 0);
 	-ms-transform: translate(0, 0);
 	transform: translate(0, 0);
-	/*-webkit-transition-delay: 0.4s;*/
-	/*transition-delay: 0.4s;*/
 }
 /*synopsis item small end*/
 
@@ -2841,7 +2829,7 @@ li.made-active .produce-thumbs__text,
 .location{ position: relative; }
 /*location head*/
 .location-head{
-	padding: 30px 25px 20px;
+	padding: 30px 39px 20px;
 	background: #d32e2e;
 }
 .location .location-head{
@@ -2853,9 +2841,8 @@ li.made-active .produce-thumbs__text,
 	height: 77px;
 }
 .location-select{
-	float: left;
-	width: 176px;
-	margin: 0 0 0 14px;
+	width: auto;
+	overflow: hidden;
 }
 button.cselect-local .select-inner{
 	padding: 0 10px 1px 0;
@@ -2891,6 +2878,7 @@ div.cselect-local .ui-multiselect-checkboxes{
 	text-transform: uppercase;
 	color: #fff;
 	margin-left: 20px;
+	display: none;
 }
 .location-link a{
 	text-decoration: none;
@@ -3383,6 +3371,7 @@ li:hover > .category__link a > span{ text-decoration: underline; }
 	padding: 0 0 19px;
 	text-align: center;
 }
+.company-info__logo img{ max-height: 60px; }
 .company-info__title{
 	font: 16px/19px 'gothampro-bold', Arial, Helvetica, sans-serif;
 	color: #333;
@@ -3403,6 +3392,7 @@ li:hover > .category__link a > span{ text-decoration: underline; }
 	left: 28px;
 	right: 28px;
 	bottom: 29px;
+	text-align: center;
 }
 .company-info__btn .btn-default-empty{ padding: 13px 18px 12px; }
 /*company info end*/
@@ -3666,10 +3656,10 @@ li:hover > .category__link a > span{ text-decoration: underline; }
 	position: relative;
 	height: 362px;
 	overflow: hidden;
-	background: #267bc5;
+	background: #fff;
 }
 .gallery-item{
-	background: #267bc5;
+	background: #fff;
 	height: 362px;
 }
 .gallery .owl-item:last-child{ margin-left: -1px; }
@@ -4473,6 +4463,9 @@ a:hover .agents-previews__title > span{ border-color: transparent; }
 	min-height: 362px;
 	position: relative;
 	cursor: pointer;
+	background-color: #fff;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
 	-webkit-background-size: cover;
 	background-size: cover;
 }
@@ -4538,7 +4531,7 @@ a:hover .agents-previews__title > span{ border-color: transparent; }
 	width: 100%;
 	top: 0;
 	left: 0;
-	background: #0e4b80;
+	background: #fff;
 	overflow: hidden;
 
 	-webkit-transform: translate(-355px, 0);

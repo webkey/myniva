@@ -717,7 +717,15 @@ function slickSlidersInit(){
 	}
 	/*news slider end*/
 }
+function previewImg() {
+	var $productVisual = $('.product-visual');
+	$.each($productVisual, function () {
+		$(this).css('background-image', 'url('+$(this).closest('.product-info').find('.gallery-item:first-child img').attr('src')+')')
+	});
+}
 /*slick sliders init end*/
+
+
 
 /*gallery init*/
 function galleryInit(){
@@ -732,7 +740,7 @@ function galleryInit(){
 		$status.text(i + '/' + slideSize);
 
 		if ($('.product-info__main').length){
-			$(event.target).closest('.product-info__main').find('.product-visual__count').text(slideSize);
+			$(event.target).closest('.product-info__main').first('.gallery-item').find('.product-visual__count').text(slideSize);
 		}
 	}).slick({
 		slidesToShow: 1,
@@ -756,6 +764,21 @@ function galleryInit(){
 	})
 }
 /*owl carousel init end*/
+
+/*open gallery*/
+function openGallery(){
+	var productPreview = $('.product-visual');
+	if(!productPreview.length){return}
+	productPreview.on('click', function (e) {
+		e.preventDefault();
+		// $(this).closest('.product-info__main').addClass('open-gallery');
+		$(this).closest('.product-info__main').find('.fancybox-gallery:first-child').trigger('click');
+	});
+	// $('.btn-close').on('click', function () {
+	// 	$(this).closest('.product-info__main').removeClass('open-gallery');
+	// });
+}
+/*open gallery end*/
 
 /*map init*/
 var smallPinMap = 'img/map-pin.png',
@@ -1085,8 +1108,18 @@ function mapInitNiva(){
 		});
 		markers.push(marker);
 
+		var latLng = marker.getPosition();
+		var kf = Math.pow(10, 8);
+
 		var infoWindow = new google.maps.InfoWindow({
-			content: '<div class="location-marker"><h4>'+object[4].title+'</h4><ul class="location-marker-content"><li>'+object[4].address+'</li><li>'+object[4].phone+'</li><li>'+object[4].email+'</li></ul></div>',
+			content: '<div class="location-marker">' +
+			'<h4>'+object[4].title+'</h4>' +
+			'<ul class="location-marker-content">' +
+			'<li>'+object[4].address+'</li>' +
+			'<li>'+object[4].phone+'</li>' +
+			'<li>'+object[4].email+'</li>' +
+			'<li><b>Координаты: </b>'+Math.round(latLng.lat() * kf) / kf + ', ' + Math.round(latLng.lng() * kf) / kf+'</li>' +
+			'</ul></div>',
 			maxWidth: 300
 		});
 
@@ -1513,19 +1546,6 @@ function tabsInit(){
 }
 /*ui tabs initial end*/
 
-/*open gallery*/
-function openGallery(){
-	var productPreview = $('.product-visual');
-	if(!productPreview.length){return}
-	productPreview.on('click', function (e) {
-		$(this).closest('.product-info__main').addClass('open-gallery');
-	});
-	$('.btn-close').on('click', function () {
-		$(this).closest('.product-info__main').removeClass('open-gallery');
-	});
-}
-/*open gallery end*/
-
 /*masonry initial*/
 function masonryInit(){
 	$('.news__list').masonry({
@@ -1868,6 +1888,7 @@ $(document).ready(function(){
 	multiAccordionInit();
 	companyProductsInit();
 	$('.gallery').imagesLoaded( function() {
+		previewImg();
 		galleryInit();
 	});
 });
